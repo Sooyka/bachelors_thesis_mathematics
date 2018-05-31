@@ -1,0 +1,413 @@
+\documentclass[a4paper]{article}
+\usepackage{polski}
+\usepackage[polish,english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[pdftex,
+            pdfauthor={Bartosz Sójka},
+            pdftitle={Praca licencjacka},
+            pdfsubject={Explanation of connection between Hopf algebras and Makov chains}]{hyperref}
+
+%\setlength\parindent{0pt}
+
+\newtheorem{observation}{Observation}
+\newtheorem{definition}{Definition}
+
+\title{Explanation of connection between Hopf algebras and Markov chains}
+\author{Bartosz Sójka}
+\date{May 2018}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+\textbf{\large Uniwersytet Wrocławski\\
+Wydział Matematyki i Informatyki\\
+Instytut Matematyczny}\\
+\textit{\large specjalność teoretyczna}\\
+\vspace{4cm}
+%\maketitle
+\textbf{\textit{\large Bartosz Sójka}\\
+\vspace{0.5cm}
+{\Large Explanation of connection between Hopf algebras and Markov chains}}\\
+\end{center}
+\vspace{3cm}
+{\large \hspace*{6.5cm}Praca licencjacka\\
+\hspace*{6.5cm}napisana pod kierunkiem\\
+\hspace*{6.5cm}prof. dr. hab. Dariusza Buraczewskiego }\\
+\vfill
+\begin{center}
+{\large Wrocław 2018}\\
+\end{center}
+\newpage
+
+\begin{abstract}
+
+In~\cite{Diaconis2014} Persi Diaconis, Amy Pang and Arun Ram described how to use Hopf algebras for
+study Markov chains. As it involves ideas from quite different branches of mathematics it could be hard to
+grasp a concept if someone is not familliar with them.
+The point of this paper is to describe some of their results in a more step-by-step, simplified way,
+so that they could be accesible for third year students who have passed probability
+and abstract algebra courses. I will focus on the example of shuffling cards by inverse riffle shuffle method.
+Structure will be as follows: firstly there will be introduction to both Hopf algebras and Markov chains,
+then there will be explanation how to describe a Markov chain with a Hopf algebra, finally I will describe
+how to find left eigenbasis and right eigenbasis of Markov chain associated with riffle shuffling
+using Hopf algebras.
+
+
+\end{abstract}
+
+\section{Markov chains}
+Finite Markov chain is a random process on the finite set of states such that
+the probability of being in some state in the moment $n+1$ depends only on in which state one was
+in the moment $n$. Now we will put this more formally.\\
+Let $S = \{s_1, \dots, s_k\}$. The sequence of random variables $(X_0, X_1, \dots)$ with values in $S$
+is a Markov chain with state space $S$ if for all $n \in \mathbb{N}$,
+for all $s_{i_0}, s_{i_1}, \dots, s_{i_{n+1}} \in S$ such that
+\begin{equation*}
+\mathbb{P}(X_0 = s_{i_0}, \dots, X_n = s_{i_n}) > 0
+\end{equation*}
+following condition (called Markov property) holds:
+\begin{equation}
+\mathbb{P}(X_{n+1} = s_{i_{n+1}} \mid X_0 = s_{i_0}, \dots, X_n = s_{i_n}) =
+\mathbb{P}(X_{n+1} = s_{i_{n+1}} \mid X_n = s_{i_n}).
+\end{equation}
+It states that for all $s_i, s_j \in S$ the probability of moving from the state
+$s_i$ to the state $s_j$ is the same no matter what states $s_{i_0}, \dots, s_{i_{n-1}}$
+were visited before. \\
+For the Markov chain $(X_0, X_1, \dots)$ the $|S| \times |S|$ matrix
+$K_{i,j} = \mathbb{P}(X_{n+1} = s_j \mid X_n = s_i)$ is called the transition matrix. We will sometimes
+write $K(s_i, s_j)$ instead of $K_{i,j}$. Note that the sum of
+any row is equal to 1 since it is the sum of probabilities of moving somewhere frome $s_i$.
+Now the $K^n_{i,j}$ is the chance of moving from $s_i$ to $s_j$ in $n$ steps. \\
+Markov chains can be also viewed as random walks on the directed, labeled graphs, where states are vertices
+and edge's label is the probability of moving from one vertex to another. \\
+Card shuffling can be viewed as a Markov chain on all possible arragments of the cards
+in the deck with $K(x,y)$ equal to probability of going from arragment $x$ to arragment $y$ in one shuffle. \\
+More extensive indroduction can be found in~\cite{LePeWi}. \\
+Cośtam cośtam stationary distirution. \\
+
+\section{Hopf algebras}
+%
+\subsection{Tensor products}
+%
+First we will introduce tensor produkt of the vector spaces. Let $V, W$ be vector spaces over the field $K$.
+Let $Z$ be a vector space with basis $V \times W$. Note, that we are taking entire $V \times W$ as a basis
+of $Z$ not just a basis of $V \times W$. Consequently every non-zero element of $Z$ has unique
+representation in the form
+$\displaystyle\sum^n_{i = 1}\alpha_i(v_i,w_i)$.
+%for some $n \in \mathbb{N}$, $\alpha_1, \dots, \alpha_n \in K$, $v_1,
+%\dots, v_n \in V$, $w_1, \dots, w_n\in W$.
+Let $\simeq$ be the smallest equivalece relation on $Z$ satisfaing: \\
+%
+For all $v,v_1,v_2 \in V$, $w, w_1, w_2 \in W$, $k \in K$
+\begin{gather*}
+(v,w_1) + (v, w_2) \simeq (v, w_1 + w_2), \\
+(v_1,w) +(v_2, w) \simeq (v_1+v_2,w), \\
+k(v, w) \simeq (kv, w), \\
+k(v, w) \simeq (v, kw).
+\end{gather*}
+Since for all $z_1, z_2, z_3, z_4 \in Z$, all $k \in K$
+\begin{align*}
+z_1 \simeq z_2 \land z_3 \simeq z_4 &\implies z_1 + z_3 \simeq z_2 + z_4 \mathrm{\ and} \\
+z_1 \simeq z_2 &\implies kz_1 \simeq kz_2,
+\end{align*}
+%
+we treat $Z/_\simeq$ as a vector space with operations
+%
+\begin{align*}
+[z_1]_{/\simeq} + [z_2]_{/\simeq} &\coloneqq [z_1 + z_2]_{/\simeq}, \\
+k[z_1]_{/\simeq} &\coloneqq [kz_1]_{/\simeq}.
+\end{align*}
+%
+We denote equivalece class $[(v,w)]_{/\simeq}$ as $v \otimes w$.
+The tensor product $V \otimes W \coloneqq Z/_\simeq$.
+Note, that in $V \otimes W$ there are vectors that can not be writen as $v \otimes w$ for any $v$, $w$.
+However every $z \in V \otimes W$ can be writen in as $z =\displaystyle\sum^n_{i = 1}v_i \otimes w_i$
+for some $v_1, \dots, v_n \in V$, $w_1, \dots, w_n \in W$.
+(More detailed explanation of this fact and the following example will come in the
+\hyperref[observation:1]{Observation 1.}.)\\
+For example take $v_1,\dots, v_n, w_1, \dots, w_n$ such that they are lineary independent
+in corresponding spaces.
+Then take $\displaystyle\sum^n_{i=1}(v_i,w_i)$. There are no $v, w$
+such that $ [(v,w)]_{/\simeq} = \left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_{/\simeq}$.
+Thus for the element $\left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_{/\simeq}$ of $V\otimes W$
+there are no $v, w$ such that $v \otimes w = \left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_{/\simeq}$.
+However, since $\left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_{/\simeq} =
+\displaystyle\sum^n_{i=1}[(v_i,w_i)]_{/\simeq}$ it can be writen as
+$\displaystyle\sum^n_{i=1}v_i \otimes w_i$. \\
+Now we will make some futher observations on how $V \otimes W$ looks like.
+\begin{observation}
+\label{observation:1}
+If $\{b_i\}_{i \in I}$, $\{c_j\}_{j \in J}$ are basises of, respectively, $V$and $W$,
+then $\{b_i \otimes c_j : i \in I, j \in J\}$ is the basis of $V \otimes W$.
+\end{observation}
+\begin{proof}
+Let $z = \displaystyle\sum^n_{i = 1}\alpha_i(v_i,w_i)$ be an arbitraly non-zero element of $Z$. We will show
+that $[z]_{/\simeq}$ has representation as $\displaystyle\sum^m_{i = 1}\beta_i [(b_i,c_i)]_{/\simeq}$
+$\left(=\displaystyle\sum^m_{i = 1}\beta_i(b_i \otimes c_i)\right)$.
+\begin{align*}
+[z]_{/\simeq} = \left[\sum^n_{i = 1}\alpha_i(v_i,w_i)\right]_{/\simeq} &=
+\sum^n_{i = 1}\alpha_i[(v_i,w_i)]_{/\simeq} = \\
+\sum^n_{i = 1}\alpha_i\left[\left(\sum^{l_1}_{j=1}\gamma_{i,j}b_{i,j},
+\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_{/\simeq} &=
+\sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(b_{i,j},
+\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_{/\simeq} = \\
+\sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(\sum^{l_2}_{k=1}\gamma_{i,k}
+\left(b_{i,j},c_{i,k}\right)\right)\right]_{/\simeq} &=
+\sum^n_{i = 1}\alpha_i\left[\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\gamma_{i,j}\gamma_{i,k}(b_{i,j}, c_{i,k})\right]_{/\simeq} = \\
+\sum^n_{i = 1}\alpha_i\left(\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_{/\simeq}\right) &=
+\sum_{\substack{1 \leq i \leq n \\1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\alpha_i\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_{/\simeq}
+\end{align*}
+Thus $\{b_i \otimes c_j : i \in I, j \in J\}$ spans $V \otimes W$. To prove linear independence we can observe
+that if $\displaystyle\sum^m_{i = 1}\alpha_i [(v_i,w_i)]_{/\simeq} = 0$
+then either $v_1, \dots v_n$ or $w_1, \dots, w_n$ have to be lineary dependent. It can't occur if
+$v_1, \dots v_n$ and $w_1, \dots, w_n$ are from the basises of $V$ and $W$.\\
+This observation also justifies
+recently cited fact and the example.
+\end{proof}
+\begin{observation}
+If $V$ and $W$ are finite dimentional and $\mathrm{ dim}(V)=n$, \text{$\mathrm{ dim}(W)=m$}, then 
+$\mathrm{dim}(V \otimes W)=nm$.
+\end{observation}
+\begin{proof}
+The proof is imediate from the \hyperref[observation:1]{Observation 1.}. Since if
+$\{b_i\}_{i \in I}$, $\{c_j\}_{j \in J}$ are basises of, respectively, $V$and $W$ and
+$\mathrm{ dim}(V)=n$ and $\mathrm{ dim}(W)=m$, then $\mid \{b_i \otimes c_j : i \in I, j \in J\} \mid = nm$
+\end{proof}
+\begin{observation}
+\label{observation:3}
+$V \otimes W$ is a vector space of elements in the shape of $\ \displaystyle\sum^n_{i = 1}v_i \otimes w_i$
+with operations on them defined such that for all $v,v_1,v_2 \in V$, $w, w_1, w_2 \in W$, $k \in K$ there hold
+\begin{gather*}
+v_1 \otimes w + v_2 \otimes w = (v_1 + v_2) \otimes w, \\
+v \otimes w_1 + v \otimes w_2 = v \otimes (w_1 + w_2), \\
+k (v \otimes w) = (kv) \otimes w = v \otimes (kw).
+\end{gather*}
+\end{observation}
+\begin{proof}
+This observation is just recall of the definition.
+\end{proof}
+\begin{observation}
+For vector spaces $U, V, W$ over the field $K$ there is an natural isomorphism between
+$(U \otimes V) \otimes W$ and $U \otimes (V \otimes W)$ therefore there is no ambiguity in writing
+$U \otimes V \otimes W$ or a product of any greater number of vector spaces in that way. (Also we will
+write "$u \otimes v \otimes w$" for some of their elements.) Form of elements, operations on them and
+structure of that vector spaces are fully analogous to described above (in respect to all
+"coordinates" in terms like $u \otimes v \otimes w$ and so on). So the space $U \otimes V \otimes W$
+has elements of shape $\ \displaystyle\sum^n_{i = 1}u_i \otimes v_i \otimes w_i$
+(each for some $u_1, \dots, u_n \in U$, $v_1, \dots v_n \in V$, $w_1, \dots, w_n \in W$) and for all
+$u, u_1, u_2 \in U$, $v,v_1,v_2 \in V$, $w, w_1, w_2 \in W$, $k \in K$ there hold
+\begin{gather*}
+u_1 \otimes v \otimes w + u_2 \otimes v \otimes w = (u_1+u_2) \otimes v \otimes w, \\
+u \otimes v_1 \otimes w + u \otimes v_2 \otimes w = u \otimes (v_1 + v_2) \otimes w, \\
+u \otimes v \otimes w_1 + u \otimes v \otimes w_2 = u \otimes v \otimes (w_1 + w_2), \\
+k (u \otimes v \otimes w) = (ku) \otimes v \otimes w = u \otimes (kv) \otimes w = u \otimes v \otimes (kw).
+\end{gather*}
+\end{observation}
+\begin{proof}
+Left for the reader.
+\end{proof}
+\begin{observation}\label{observation:5}
+If $V$ is a vector space over $K$, then all elements of $K \otimes V$ ($V \otimes K$) can be expressed in form 
+$1 \otimes v$ ($v \otimes 1$) and there are natural isomophisms $\varphi_L : K \otimes V \rightarrow V$, 
+($\varphi_R : V \otimes K \rightarrow V$) given by
+\begin{align*}
+\varphi_L(k \otimes v) &= kv, \\
+\varphi_R(v \otimes k) &= kv.
+\end{align*}
+\begin{proof}
+An arbitrary element of $K \otimes V$ has form $\displaystyle\sum^n_{i=1}k_i \otimes v_i$ but
+\begin{equation*}
+\sum^n_{i=1}k_i \otimes v_i = \sum^n_{i=1} 1 \otimes k_iv_i = 1 \otimes \sum^n_{i=1}k_iv_i.
+\end{equation*}
+$\varphi_L$ is linear (left for the reader) and is bijection because for all $v, v_1, v_2 \in V$
+\begin{equation*}
+\varphi(1 \otimes v) = v
+\end{equation*}
+and 
+\begin{align*}
+1 \otimes v_1 = 1 \otimes v_2 &\iff 1 \otimes v_1 - 1 \otimes v_2 = 0 \iff \\ 
+1 \otimes (v_1 - v_2) = 0 &\iff v_1 -v_2 = 0 \iff v_1 = v_2.
+\end{align*}
+The proof for $V \otimes K$ and $\varphi_R$ is analogous. In the later sections we will use notations of
+$\varphi_L$ and $\varphi_R$ for those isomorphism for any space.
+\end{proof}
+\end{observation}
+\noindent \textbf{Remark. } Thanks to \hyperref[observation:3]{Observation 3.} there is no ambiguity in writing
+$kv \otimes w$. \\
+I hope that this third observation will also help in understanding what tensor product is and what is not.
+It will be good to keep it in mind when we will be intensively dealing with it in a combinatorical way in the
+following sections.
+\subsection{Hopf algebras}
+Now there will be full definition of a Hopf algebra. Although it is quite long and involves
+definition of ??? operations, I decided to put it in a consistent fragment, due to believe
+that thanks to that it will be a better reference. \\
+If reader will feel lost in this section it is recommended to read it in parralell to the section ???
+where many examples are provided or treat it just as a reference  when formal definition will be needed.
+Another reason of arranging text like that (and possibility of treating this section just as a refference),
+is that for most of the time we will not be using full structure of a Hopf algebra. Nethertheless it is good
+to see the full shape of what we are dealing with. \\
+So now will come full definition nonetheless we will try to explain it piece by piece. \\[8pt]
+\textbf{Remark. }Let $K$ be a field. In following section $k$, if not steted otherwise, will
+denotes an arbitrary element from this field. If not stated otherwise, all vector spaces will be over $K$ and
+all tensor products will be taken over $K$.
+\begin{definition}
+A \textbf{$\textbf{K}$-algebra} is a vector space $\mathcal{H}$ with additional associative, linear operation
+\text{$m:\mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$} called multiplication and linear map
+\text{$u:K\to \mathcal{H}$} called unit such that for all $a \in \mathcal{H}$
+\begin{equation*}
+m(u(1) \otimes a) = m(a \otimes u(1)) = a.
+\end{equation*}
+\end{definition}
+\textbf{Explanation. } Operation $m$ defines on $\mathcal{H}$ a structure of a unitary ring by setting the
+ring multiplication (let it be denoted as "$\cdot$") as $a \cdot b = m(a \otimes b)$. The identity element of
+that ring multiplication is then is then $u(1)$. (We will be calling $u(1)$ also an identity element of
+multiplication $m$ in K-algebra $\mathcal{H}$ or the $1$ in the $\mathcal{H}$,
+sometimes denoted $1_\mathcal{H}$)\\
+\textit{Proof.} The fact, that $m$ is associative means that for all $a_1, a_2, a_3 \in \mathcal{H}$
+\begin{equation*}
+m(m(a_1 \otimes a_2) \otimes a_3) = m(a_1 \otimes m(a_2 \otimes a_3)).
+\end{equation*}
+That implies that
+\begin{equation*}
+(a\cdot b) \cdot c = m(m(a \otimes b) \otimes c) = m(a \otimes m(b \otimes c)) = a \cdot (b \cdot c).
+\end{equation*}
+So "$\cdot$" is proper ring mutiplication. Recalling the definition of $u$ we can write that
+\begin{equation*}
+u(1) \cdot a = a \cdot u(1) = a
+\end{equation*}
+So indeed it is an identity
+element of that ring. As $u$ is linear map it can be seen as natural insertion of a field $K$ into an algebra
+$\mathcal{H}$ that maps $1_K$ to $1_\mathcal{H}$ ($1$ from the $K$ to the identity element of multiplication
+in $\mathcal{H}$) and extends lineary. Given that we can observe
+that for all $a \in \mathcal{H}$, all $k \in K$, $a$ multiplicated by $u(k)$ (no matter if form the left
+or right) is exactly the $ka$ (an element of vector space $\mathcal{H}$).
+So we can think about $u[K]$ as a copy of $K$ in $\mathcal{H}$.
+\\[8pt]
+\textbf{Remark. } Let $U, V, W, Z$ be a vector spaces over field $K$.
+Soon we will start to using notation
+$\varphi \otimes \psi:U \otimes V \to W \otimes Z$ which, for
+$\varphi$, $\psi$ such that $\varphi : U \to W$, $\psi : V \to Z$, means a linear map that
+for all $u \in U$, $v \in V$ satisfies:
+\begin{equation*}
+(\varphi \otimes \psi)(u \otimes v) = \varphi(u) \otimes \psi(v).
+\end{equation*}
+By linearity for element of shape $\displaystyle\sum^n_{i=1} u_i \otimes v_i$ it will take form:
+\begin{equation*}
+(\varphi \otimes \psi)(\sum^n_{i = 1} u \otimes v) = \sum^n_{i = 1}\varphi(u) \otimes \psi(v).
+\end{equation*}
+$I$, if not stated otherwise, will be an identity in the adequate space. \\
+$T$, if not stated otherwise, will
+be the twist map $T:V \otimes W \to W\otimes V$, which is linear map such that for any $v \otimes w
+\in V \otimes W$
+\begin{equation*}
+T(v \otimes w) = w\otimes v.
+\end{equation*}
+Throught this paper we will omit the "$\circ$" symbol for composition of functions where will be no risk 
+of confusion and we will write 
+$\varphi \psi (x)$ instead of $(\varphi \circ \psi)(x)$.
+\begin{definition}
+A \textbf{$\textbf{K}$-coalgebra} is a vector space $\mathcal{H}$ with additional coassociative, linear
+operation
+\text{$\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$} called comultiplication and
+a linear map \text{$\varepsilon : \mathcal{H} \to K$} called counit such that for all
+$a \in \mathcal{H}$
+\begin{align*}
+(\varepsilon \otimes I)\Delta(a) &= 1 \otimes a \mathrm{\ and} \\
+(I \otimes \varepsilon)\Delta(a) &= a \otimes 1.
+\end{align*}
+\end{definition}
+Note that properties of an unit from a $K$-algebra also can be writen in that manner as:
+\begin{align*}
+m(u \otimes I)(1 \otimes a) &= a \mathrm{\ and}\\
+m(I \otimes u)(a \otimes 1) &= a
+\end{align*}
+means exactly what was in the definition of $u$. \\[8pt]
+\textbf{Explanation.} We will introduce a notation called Sweedler notation [Swe69] which will be 
+very usefull 
+for writing coproducts. As for all $a \in \mathcal{H}$ we have 
+\text{$\Delta(a) = \displaystyle\sum^n_{i=1}a_{1,i} \otimes a_{2,i}$}, we will write 
+\begin{equation*}
+\Delta(a) = \displaystyle\sum a_1 \otimes a_2.
+\end{equation*} 
+This notation surpresses the index "$i$". Somewhere there can be also encountered an interjaced 
+notation \text{$\Delta(a) = \displaystyle\sum_{(a)}a_{(1)}\otimes a_{(2)}$}. \\
+In many cases comultiplication can be seen as a sum of possible decomposition of an element into 
+elements "smaller" in some sens. 
+For example, later it will come out that exactly the comultiplication will be the operation that will 
+model the process of cutting the deck of cards into pieces in riffle shuffle. In examples that we will working 
+with (graded, connected Hopf algebras) comultiplication will represent some kind of natural decomposition 
+in the more general way. What does it mean in the strict sense will be presented in Definition 5. when we 
+will be introducing graded Hopf Algebras. \\
+Examples. \\[8pt]
+
+The coassociativity of $\Delta$ means, that $(\Delta \otimes I)\Delta = (I \otimes \Delta)\Delta$.
+In Sweedler notation it can be writen as
+\begin{equation*}
+\forall_{a \in \mathcal{H}}\ \sum\Delta(a_1) \otimes a_2 = \sum a_1 \otimes \Delta(a_2)
+\end{equation*}
+or in more expand form as
+\begin{equation}\label{swe1}
+\forall_{a\in \mathcal{H}}\ \sum\ {a_1}_1 \otimes {a_1}_2 \otimes a_2 = \sum a_1 \otimes {a_2}_1 
+\otimes {a_2}_2.
+\end{equation}
+Because of these equalities, terms from (\ref{swe1}) can be writen as 
+\text{$\displaystyle\sum a_1 \otimes a_2 \otimes a_3$} without ambiguity. \\ We can also define 
+\begin{equation*}
+\Delta_2 \coloneqq (\Delta \otimes I)\Delta
+\end{equation*}
+Now, for all $a \in \mathcal{H}$ there will be an equality
+\begin{equation*}
+\Delta_2(a) = \sum a_1 \otimes a_2 \otimes a_3
+\end{equation*}
+which can be viewed as a sum of possible decompositions of $a$ into three parts. 
+In this point of view we can informally say that coassociativity of $\Delta$ means that $\Delta$ represent
+decomposition such that, when did twice, probabilities of possible outcomes are the same 
+no matter which set of part ($a_1$ or $a_2$) have been tooked in the second iteration. It will be put more 
+precise in the section 3. where we will present connection between Markov chains and Hopf algebras.
+Now we will take it a step futher: \\[8pt]
+\indent Let $C$ will be a coalgebra with comultiplication $\Delta$ and counit $\varepsilon$. 
+We will recurently define the sequence of maps $(\Delta_n)_{n \geq 0}$, such that 
+$\Delta_n : C \to \underbrace{C \otimes \dots \otimes C}_{n \mathrm{\ times}}$ as follows:
+\begin{align*}
+\Delta_1 &\coloneqq \Delta, \\
+\Delta_n &\coloneqq (\Delta \otimes \underbrace{I \otimes \dots \otimes I}_{n \mathrm{\ times}})\Delta_{n-1}.
+\end{align*}
+Which can be seen as composed iterations of $\Delta$. \\
+By induction it can be proved that for all $n \geq 2$, $i \in \{1, \dots, n-1\}$, 
+\text{$m \in \{0, \dots, n-i\}$} we 
+have
+\begin{equation*}
+\Delta_n = (I^m \otimes \Delta_i \otimes I^{n-i-m})\Delta_{n-i},
+\end{equation*}
+where $I^m$ means $\overbrace{I \otimes \dots \otimes I}^{m \mathrm{\ times}}$. \\
+The proof can be found in ~\cite{DNR} (Proposition 1.1.7 and Lemma 1.1.10, sites 5-7).
+This formula is a generalization of a coassociativity. Thanks to that we can write
+\begin{equation*}
+\Delta_n(a) = \sum a_1 \otimes \dots \otimes a_n
+\end{equation*}
+with no ambiguity. \\
+Interpretation is an extension of that described in the previous paragraph for $n = 2$. Now we are just 
+decomposing $a$ to $n$ parts and probabilieties of outcomes do not depend on which factors we are 
+applying $\Delta$ in the next steps. \\[8pt]  
+The counit property writen in Sweedler notation takes form
+\begin{align*}
+\sum\varepsilon(a_1) \otimes a_2 &= 1 \otimes a, \\
+\sum a_1 \otimes \varepsilon(a_2) &= a \otimes 1. 
+\end{align*}
+Applying on both sides isomorphisms $\varphi_L$ and $\varphi_R$ from 
+\hyperref[observation:5]{Observation 5.} respectively we get
+\begin{align*}
+\sum\varepsilon(a_1)a_2 &= a, \\
+\sum a_1\varepsilon(a_2) &= a.
+\end{align*}
+\bibliography{my_bibliography}{}
+\bibliographystyle{alpha}
+
+\end{document}

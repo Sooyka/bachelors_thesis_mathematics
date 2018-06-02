@@ -295,9 +295,15 @@ $\mathcal{H}$ that maps $1_K$ to $1_\mathcal{H}$ ($1$ from the $K$ to the identi
 in $\mathcal{H}$) and extends lineary. Given that we can observe
 that for all $a \in \mathcal{H}$, all $k \in K$, $a$ multiplicated by $u(k)$ (no matter if form the left
 or right) is exactly the $ka$ (an element of vector space $\mathcal{H}$).
-So we can think about $u[K]$ as a copy of $K$ in $\mathcal{H}$.
+So we can think about $u[K]$ as a copy of $K$ in $\mathcal{H}$. \\
+\indent  Because of associativity we can define 
+\begin{equation*}
+m^{[2]} \coloneqq m(m\otimes
+\end{equation}
 \\[8pt]
-\textbf{Remark. } Let $U, V, W, Z$ be a vector spaces over field $K$.
+\textbf{Remark. } Later in the text we will be using "$\cdot$" as a symbol for an algebra multiplication 
+in algebra of our interest. \\
+\indent \textbf{Remark. } Let $U, V, W, Z$ be a vector spaces over field $K$.
 Soon we will start to using notation
 $\varphi \otimes \psi:U \otimes V \to W \otimes Z$ which, for
 $\varphi$, $\psi$ such that $\varphi : U \to W$, $\psi : V \to Z$, means a linear map that
@@ -367,11 +373,11 @@ or in more expand form as
 Because of these equalities, terms from (\ref{swe1}) can be writen as 
 \text{$\displaystyle\sum a_1 \otimes a_2 \otimes a_3$} without ambiguity. \\ We can also define 
 \begin{equation*}
-\Delta_2 \coloneqq (\Delta \otimes I)\Delta
+\Delta^{[2]} \coloneqq (\Delta \otimes I)\Delta
 \end{equation*}
 Now, for all $a \in \mathcal{H}$ there will be an equality
 \begin{equation*}
-\Delta_2(a) = \sum a_1 \otimes a_2 \otimes a_3
+\Delta^{[2]}(a) = \sum a_1 \otimes a_2 \otimes a_3
 \end{equation*}
 which can be viewed as a sum of possible decompositions of $a$ into three parts. 
 In this point of view we can informally say that coassociativity of $\Delta$ means that $\Delta$ represent
@@ -380,24 +386,25 @@ no matter which set of part ($a_1$ or $a_2$) have been tooked in the second iter
 precise in the section 3. where we will present connection between Markov chains and Hopf algebras.
 Now we will take it a step futher: \\[8pt]
 \indent Let $C$ will be a coalgebra with comultiplication $\Delta$ and counit $\varepsilon$. 
-We will recurently define the sequence of maps $(\Delta_n)_{n \geq 0}$, such that 
+We will recurently define the sequence of maps $(\Delta^{[n]})_{n \geq 0}$, such that 
 $\Delta_n : C \to \underbrace{C \otimes \dots \otimes C}_{n \mathrm{\ times}}$ as follows:
 \begin{align*}
-\Delta_1 &\coloneqq \Delta, \\
-\Delta_n &\coloneqq (\Delta \otimes \underbrace{I \otimes \dots \otimes I}_{n \mathrm{\ times}})\Delta_{n-1}.
+\Delta^{[1]} &\coloneqq \Delta, \\
+\Delta^{[n]} &\coloneqq (\Delta \otimes 
+\underbrace{I \otimes \dots \otimes I}_{n \mathrm{\ times}})\Delta_{n-1}.
 \end{align*}
 Which can be seen as composed iterations of $\Delta$. \\
 By induction it can be proved that for all $n \geq 2$, $i \in \{1, \dots, n-1\}$, 
 \text{$m \in \{0, \dots, n-i\}$} we 
 have
 \begin{equation*}
-\Delta_n = (I^m \otimes \Delta_i \otimes I^{n-i-m})\Delta_{n-i},
+\Delta^{[n]} = (I^m \otimes \Delta^{[i]} \otimes I^{n-i-m})\Delta^{[n-i]},
 \end{equation*}
 where $I^m$ means $\overbrace{I \otimes \dots \otimes I}^{m \mathrm{\ times}}$. \\
 The proof can be found in ~\cite{DNR} (Proposition 1.1.7 and Lemma 1.1.10, sites 5-7).
 This formula is a generalization of a coassociativity. Thanks to that we can write
 \begin{equation*}
-\Delta_n(a) = \sum a_1 \otimes \dots \otimes a_n
+\Delta^{[n]}(a) = \sum a_1 \otimes \dots \otimes a_n
 \end{equation*}
 with no ambiguity. \\
 Interpretation is an extension of that described in the previous paragraph for $n = 2$. Now we are just 
@@ -433,16 +440,57 @@ They can be writen also as: for all $g, h \in \mathcal{H}$, all $k \in K$
 \begin{align*}
 \sum (g \cdot h)_1 \otimes (g \cdot h)_2 &= \sum g_1 \cdot h_1 \otimes g_2 \cdot h_2, \\
 \varepsilon(g \cdot h) &= \varepsilon(g)\varepsilon(h), \\
-\sum u(1)_1 \otimes u(1)_2 &= u(1) \otimes u(1), \\
-\varepsilon u(1) &= 1.
+\sum (1_\mathcal{H})_1 \otimes (1_\mathcal{H})_2 &= 1_\mathcal{H} \otimes 1_\mathcal{H}, \\
+\varepsilon (1_\mathcal{H}) &= 1_K.
 \end{align*}
 or as: for all $g, h \in \mathcal{H}$, all $k \in K$
 \begin{align*}
 \Delta(g \cdot h) &= \sum g_1 \cdot h_1 \otimes g_2 \cdot h_2, \\
 \varepsilon(g \cdot h) &= \varepsilon(g)\varepsilon(h), \\
-\Delta u(1) &= u(1) \otimes u(1), \\
-\varepsilon u(1) &= 1.
+\Delta (1_\mathcal{H}) &= 1_\mathcal{H} \otimes 1_\mathcal{H}, \\
+\varepsilon (1_\mathcal{H}) &= 1_K.
 \end{align*}
+
+\textbf{Informal remark. } Note that for the condition 
+$\Delta m = (m\otimes m)(I \otimes T \otimes I)(\Delta \otimes \Delta)$ 
+we need the map $(I \otimes T \otimes I)$, because without it right site will be equal to 
+$(m \otimes m)(\Delta \otimes \Delta)$ which, when applied on vector $g \otimes h$ yields 
+$\displaystyle\sum g_1 \cdot g_2 \otimes h_1 \cdot h_2$ not $\sum g_1 \cdot h_1 \otimes g_2 \cdot h_2$ 
+and we want compultiplication and multiplication to be done "with respect to coordinates".
+
+\textbf{Remark. } It can be prooven by induction that for all ${^1h}, \dots, {^nh} \in \mathcal{H}$ 
+\begin{equation}
+\Delta^{[m]}m^{[n]}({^1h} \otimes \dots \otimes {^nh}) = \sum {^1h}_1 \cdot \dots \cdot {^nh}_1 
+\otimes \dots \otimes {^1h}_m\cdot  \dots \cdot {^nh}_m.
+\end{equation}
+\begin{proof}
+Left to the reader.
+\end{proof}
+
+\begin{definition}
+For a bialgebra $\mathcal{H}$ we define a \textbf{square map} (sometimes called a \textbf{Hopf square map}) 
+$\Psi : \mathcal{H} \to \mathcal{H}$ as $\Psi \coloneqq m\Delta$.
+\end{definition}
+
+\textbf{Comment. } It will be very important function in this paper. It will be it what will set a structure 
+of a Markov chain on a Hopf algebra. In Hopf algebras that we will 
+be using for modeling Markov chains the Hopf square map will preserve some of those algebras 
+(viewed as a vector space) finall dimentional subspaces. Basises of these preserved 
+subspaces can be then treated as spaces of states (aces of spades, haha) 
+of our associated Markov chains. Note, that one Hopf algebra can set a structure of many Markov chains, 
+each one having a basis of algebras finite dimentional subspace preserved by $\Psi$ as its (chains) 
+space of states. 
+Whats more matrix of $\Psi$ (viewed as a trasformation of some fixed, finite-dimentional subspace of algebra) 
+writen in a base $\mathcal{B}$ of that subspace will be exactly a transition matrix 
+$K_{i,j}$ of associated Markov chain on that bases. Finding eigenbasis of $K_{i,j}$ is then expressed as 
+finding eigenvectors of $\Psi$. Later it will be put more carefully and 
+precisely.
+\begin{definition}
+convolution
+\end{definition}
+\begin{definition}
+hopf algebra.
+\end{definition}
 \bibliography{my_bibliography}{}
 \bibliographystyle{alpha}
 

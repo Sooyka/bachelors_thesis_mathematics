@@ -263,6 +263,28 @@ denotes an arbitrary element from this field. If not stated otherwise, all vecto
 all tensor products will be taken over $K$. Note, that when we will want to present a field multiplication 
 from $K$ as a linear map $K \otimes K \to K$ it will be denoted as ${^Km}$. And as it is then an isomorphism 
 let ${^K\Delta} \coloneqq {^Km}^{-1}$.
+\indent \textbf{Remark. } Let $U, V, W, Z$ be a vector spaces over field $K$.
+Soon we will start to using notation
+$\varphi \otimes \psi:U \otimes V \to W \otimes Z$ which, for
+$\varphi$, $\psi$ such that $\varphi : U \to W$, $\psi : V \to Z$, means a linear map that
+for all $u \in U$, $v \in V$ satisfies:
+\begin{equation*}
+(\varphi \otimes \psi)(u \otimes v) = \varphi(u) \otimes \psi(v).
+\end{equation*}
+By linearity for element of shape $\displaystyle\sum^n_{i=1} u_i \otimes v_i$ it will take form:
+\begin{equation*}
+(\varphi \otimes \psi)(\sum^n_{i = 1} u \otimes v) = \sum^n_{i = 1}\varphi(u) \otimes \psi(v).
+\end{equation*}
+$I$, if not stated otherwise, will be an identity in the adequate space. \\
+$T$, if not stated otherwise, will
+be the twist map $T:V \otimes W \to W\otimes V$, which is linear map such that for any $v \otimes w
+\in V \otimes W$
+\begin{equation*}
+T(v \otimes w) = w\otimes v.
+\end{equation*}
+Throught this paper we will omit the "$\circ$" symbol for composition of functions where will be no risk 
+of confusion and we will write 
+$\varphi \psi (x)$ instead of $(\varphi \circ \psi)(x)$.
 \begin{definition}
 A \textbf{$\textbf{K}$-algebra} is a vector space $\mathcal{H}$ with additional 
 associative, linear operation
@@ -299,32 +321,10 @@ So we can think about $u[K]$ as a copy of $K$ in $\mathcal{H}$. \\
 \indent  Because of associativity we can define 
 \begin{equation*}
 m^{[2]} \coloneqq m(m\otimes
-\end{equation}
+\end{equation*}
 \\[8pt]
 \textbf{Remark. } Later in the text we will be using "$\cdot$" as a symbol for an algebra multiplication 
 in algebra of our interest. \\
-\indent \textbf{Remark. } Let $U, V, W, Z$ be a vector spaces over field $K$.
-Soon we will start to using notation
-$\varphi \otimes \psi:U \otimes V \to W \otimes Z$ which, for
-$\varphi$, $\psi$ such that $\varphi : U \to W$, $\psi : V \to Z$, means a linear map that
-for all $u \in U$, $v \in V$ satisfies:
-\begin{equation*}
-(\varphi \otimes \psi)(u \otimes v) = \varphi(u) \otimes \psi(v).
-\end{equation*}
-By linearity for element of shape $\displaystyle\sum^n_{i=1} u_i \otimes v_i$ it will take form:
-\begin{equation*}
-(\varphi \otimes \psi)(\sum^n_{i = 1} u \otimes v) = \sum^n_{i = 1}\varphi(u) \otimes \psi(v).
-\end{equation*}
-$I$, if not stated otherwise, will be an identity in the adequate space. \\
-$T$, if not stated otherwise, will
-be the twist map $T:V \otimes W \to W\otimes V$, which is linear map such that for any $v \otimes w
-\in V \otimes W$
-\begin{equation*}
-T(v \otimes w) = w\otimes v.
-\end{equation*}
-Throught this paper we will omit the "$\circ$" symbol for composition of functions where will be no risk 
-of confusion and we will write 
-$\varphi \psi (x)$ instead of $(\varphi \circ \psi)(x)$.
 \begin{definition}
 A \textbf{$\textbf{K}$-coalgebra} is a vector space $\mathcal{H}$ 
 with additional coassociative, linear operation

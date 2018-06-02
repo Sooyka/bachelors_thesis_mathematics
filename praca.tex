@@ -215,18 +215,19 @@ Left for the reader.
 \end{proof}
 \begin{observation}\label{observation:5}
 If $V$ is a vector space over $K$, then all elements of $K \otimes V$ ($V \otimes K$) can be expressed in form 
-$1 \otimes v$ ($v \otimes 1$) and there are natural isomophisms $\varphi_L : K \otimes V \rightarrow V$, 
-($\varphi_R : V \otimes K \rightarrow V$) given by
+$1 \otimes v$ ($v \otimes 1$) and there are natural isomophisms ${^Lm} : K \otimes V \to V$, 
+(${^Rm} : V \otimes K \to V$) given by
 \begin{align*}
-\varphi_L(k \otimes v) &= kv, \\
-\varphi_R(v \otimes k) &= kv.
+{^Lm}(k \otimes v) &= kv, \\
+{^Rm}(v \otimes k) &= kv.
 \end{align*}
+\end{observation}
 \begin{proof}
 An arbitrary element of $K \otimes V$ has form $\displaystyle\sum^n_{i=1}k_i \otimes v_i$ but
 \begin{equation*}
 \sum^n_{i=1}k_i \otimes v_i = \sum^n_{i=1} 1 \otimes k_iv_i = 1 \otimes \sum^n_{i=1}k_iv_i.
 \end{equation*}
-$\varphi_L$ is linear (left for the reader) and is bijection because for all $v, v_1, v_2 \in V$
+${^Lm}$ is linear (left for the reader) and is bijection because for all $v, v_1, v_2 \in V$
 \begin{equation*}
 \varphi(1 \otimes v) = v
 \end{equation*}
@@ -235,10 +236,13 @@ and
 1 \otimes v_1 = 1 \otimes v_2 &\iff 1 \otimes v_1 - 1 \otimes v_2 = 0 \iff \\ 
 1 \otimes (v_1 - v_2) = 0 &\iff v_1 -v_2 = 0 \iff v_1 = v_2.
 \end{align*}
-The proof for $V \otimes K$ and $\varphi_R$ is analogous. In the later sections we will use notations of
-$\varphi_L$ and $\varphi_R$ for those isomorphism for any space.
+The proof for $V \otimes K$ and ${^Rm}$ is analogous. In the later sections we will use notations of
+${^Lm}$ and ${^Rm}$ for those isomorphism for any space.
 \end{proof}
-\end{observation}
+\textbf{Remark. } In a special case when $V = W = K$ the natural isomorphisms descripted above 
+take form of ${^Km} : K \otimes K \to K$ that for all $k_1, k_2\in K$
+\text{${^Km}(k_1 \otimes k_2) = k_1k_2$}. This isomorphism of $K \otimes K$ and $K$ is just a field 
+multiplication from $K$. \\[8pt]
 \noindent \textbf{Remark. } Thanks to \hyperref[observation:3]{Observation 3.} there is no ambiguity in writing
 $kv \otimes w$. \\
 I hope that this third observation will also help in understanding what tensor product is and what is not.
@@ -256,9 +260,12 @@ to see the full shape of what we are dealing with. \\
 So now will come full definition nonetheless we will try to explain it piece by piece. \\[8pt]
 \textbf{Remark. }Let $K$ be a field. In following section $k$, if not steted otherwise, will
 denotes an arbitrary element from this field. If not stated otherwise, all vector spaces will be over $K$ and
-all tensor products will be taken over $K$.
+all tensor products will be taken over $K$. Note, that when we will want to present a field multiplication 
+from $K$ as a linear map $K \otimes K \to K$ it will be denoted as ${^Km}$. And as it is then an isomorphism 
+let ${^K\Delta} \coloneqq {^Km}^{-1}$.
 \begin{definition}
-A \textbf{$\textbf{K}$-algebra} is a vector space $\mathcal{H}$ with additional associative, linear operation
+A \textbf{$\textbf{K}$-algebra} is a vector space $\mathcal{H}$ with additional 
+associative, linear operation
 \text{$m:\mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$} called multiplication and linear map
 \text{$u:K\to \mathcal{H}$} called unit such that for all $a \in \mathcal{H}$
 \begin{equation*}
@@ -313,8 +320,8 @@ Throught this paper we will omit the "$\circ$" symbol for composition of functio
 of confusion and we will write 
 $\varphi \psi (x)$ instead of $(\varphi \circ \psi)(x)$.
 \begin{definition}
-A \textbf{$\textbf{K}$-coalgebra} is a vector space $\mathcal{H}$ with additional coassociative, linear
-operation
+A \textbf{$\textbf{K}$-coalgebra} is a vector space $\mathcal{H}$ 
+with additional coassociative, linear operation
 \text{$\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$} called comultiplication and
 a linear map \text{$\varepsilon : \mathcal{H} \to K$} called counit such that for all
 $a \in \mathcal{H}$
@@ -401,11 +408,40 @@ The counit property writen in Sweedler notation takes form
 \sum\varepsilon(a_1) \otimes a_2 &= 1 \otimes a, \\
 \sum a_1 \otimes \varepsilon(a_2) &= a \otimes 1. 
 \end{align*}
-Applying on both sides isomorphisms $\varphi_L$ and $\varphi_R$ from 
+Applying on both sides isomorphisms ${^Lm}$ and ${^Rm}$ from 
 \hyperref[observation:5]{Observation 5.} respectively we get
 \begin{align*}
 \sum\varepsilon(a_1)a_2 &= a, \\
 \sum a_1\varepsilon(a_2) &= a.
+\end{align*}
+\begin{definition}
+A \textbf{$\textbf{K}$-bialgebra} is a vector space $\mathcal{H}$ with both an algebra structure 
+$(\mathcal{H}, m, u)$ and a coalgebra structure $(\mathcal{H}, \Delta, \varepsilon)$ such that $m$, $u$ 
+are morfisms of coalgebras and $\Delta$, $\varepsilon$ are morfisms of algebras.
+\end{definition}
+\textbf{Explanation. } In fact for a given vector space $\mathcal{H}$ with both an algebra structure 
+$(\mathcal{H}, m, u)$ and a coalgebra structure $(\mathcal{H}, \Delta, \varepsilon)$, the fact, that 
+$m$ and $u$ are morfisms of coalgebras is equivalent to that $\Delta$ and $\varepsilon$ are morfisms of 
+algebras and both are equivalent to conjuction of following contditions:
+\begin{align*}
+\Delta m &= (m\otimes m)(I \otimes T \otimes I)(\Delta \otimes \Delta), \\
+\varepsilon m &= {^Km}(\varepsilon \otimes \varepsilon), \\
+\Delta u &= (u \otimes u){^K\Delta}, \\
+\varepsilon u &= I.
+\end{align*}
+They can be writen also as: for all $g, h \in \mathcal{H}$, all $k \in K$
+\begin{align*}
+\sum (g \cdot h)_1 \otimes (g \cdot h)_2 &= \sum g_1 \cdot h_1 \otimes g_2 \cdot h_2, \\
+\varepsilon(g \cdot h) &= \varepsilon(g)\varepsilon(h), \\
+\sum u(1)_1 \otimes u(1)_2 &= u(1) \otimes u(1), \\
+\varepsilon u(1) &= 1.
+\end{align*}
+or as: for all $g, h \in \mathcal{H}$, all $k \in K$
+\begin{align*}
+\Delta(g \cdot h) &= \sum g_1 \cdot h_1 \otimes g_2 \cdot h_2, \\
+\varepsilon(g \cdot h) &= \varepsilon(g)\varepsilon(h), \\
+\Delta u(1) &= u(1) \otimes u(1), \\
+\varepsilon u(1) &= 1.
 \end{align*}
 \bibliography{my_bibliography}{}
 \bibliographystyle{alpha}

@@ -42,7 +42,9 @@ Instytut Matematyczny}\\
 {\large Wrocław 2018}\\
 \end{center}
 \newpage
-
+\null
+\thispagestyle{empty}
+\newpage
 \begin{abstract}
 
 In~\cite{Diaconis2014} Persi Diaconis, Amy Pang and Arun Ram described how to use Hopf algebras for
@@ -150,18 +152,18 @@ that $[z]_{/\simeq}$ has representation as $\displaystyle\sum^m_{i = 1}\beta_i [
 $\left(=\displaystyle\sum^m_{i = 1}\beta_i(b_i \otimes c_i)\right)$.
 \begin{align*}
 [z]_{/\simeq} = \left[\sum^n_{i = 1}\alpha_i(v_i,w_i)\right]_{/\simeq} &=
-\sum^n_{i = 1}\alpha_i[(v_i,w_i)]_{/\simeq} = \\
-\sum^n_{i = 1}\alpha_i\left[\left(\sum^{l_1}_{j=1}\gamma_{i,j}b_{i,j},
-\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_{/\simeq} &=
-\sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(b_{i,j},
-\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_{/\simeq} = \\
-\sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(\sum^{l_2}_{k=1}\gamma_{i,k}
-\left(b_{i,j},c_{i,k}\right)\right)\right]_{/\simeq} &=
-\sum^n_{i = 1}\alpha_i\left[\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
-\gamma_{i,j}\gamma_{i,k}(b_{i,j}, c_{i,k})\right]_{/\simeq} = \\
-\sum^n_{i = 1}\alpha_i\left(\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
-\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_{/\simeq}\right) &=
-\sum_{\substack{1 \leq i \leq n \\1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\sum^n_{i = 1}\alpha_i[(v_i,w_i)]_{/\simeq} \\
+&= \sum^n_{i = 1}\alpha_i\left[\left(\sum^{l_1}_{j=1}\gamma_{i,j}b_{i,j},
+\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_{/\simeq} \\
+&= \sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(b_{i,j},
+\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_{/\simeq} \\
+&= \sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(\sum^{l_2}_{k=1}\gamma_{i,k}
+\left(b_{i,j},c_{i,k}\right)\right)\right]_{/\simeq} \\
+&= \sum^n_{i = 1}\alpha_i\left[\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\gamma_{i,j}\gamma_{i,k}(b_{i,j}, c_{i,k})\right]_{/\simeq} \\
+&= \sum^n_{i = 1}\alpha_i\left(\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_{/\simeq}\right) \\
+&= \sum_{\substack{1 \leq i \leq n \\1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
 \alpha_i\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_{/\simeq}
 \end{align*}
 Thus $\{b_i \otimes c_j : i \in I, j \in J\}$ spans $V \otimes W$. To prove linear independence we can observe
@@ -249,12 +251,15 @@ $kv \otimes w$. \\
 I hope that this third observation will also help in understanding what tensor product is and what is not.
 It will be good to keep it in mind when we will be intensively dealing with it in a combinatorical way in the
 following sections.
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \subsection{Hopf algebras}
 Now there will be full definition of a Hopf algebra. Although it is quite long and involves
 definition of ??? operations, I decided to put it in a consistent fragment, due to believe
 that thanks to that it will be a better reference. \\
-If reader will feel lost in this section it is recommended to read it in parralell to the section ???
-where many examples are provided or treat it just as a reference  when formal definition will be needed.
+If reader will feel lost in this section it is recommended to read it in parralell to the section 2.3
+where examples are provided or treat it just as a reference  when formal definition will be needed.
 Another reason of arranging text like that (and possibility of treating this section just as a refference),
 is that for most of the time we will not be using full structure of a Hopf algebra. Nethertheless it is good
 to see the full shape of what we are dealing with. \\
@@ -262,17 +267,17 @@ So now will come full definition nonetheless we will try to explain it piece by 
 \indent \textbf{Remark. }Let $K$ be a field. In following section $k$, if not steted otherwise, will
 denotes an arbitrary element from this field. If not stated otherwise, all vector spaces will be over $K$ and
 all tensor products will be taken over $K$. Note, that when we will want to present a field multiplication
-from $K$ as a linear map $K \otimes K \to K$ it will be denoted as ${^Km}$. And as it is then an isomorphism
-let ${^K\Delta} \coloneqq {^Km}^{-1}$. \\[8pt]
+from $K$ as a linear map $K \otimes K \to K$ it will be denoted as ${^Km}$. As it is then an isomorphism
+let ${^K\Delta} \coloneqq {^Km}^{-1}$. The $1$ from $K$ will be denoted as $1_K$.\\[8pt]
 \indent \textbf{Remark. } Let $U, V, W, Z$ be a vector spaces over field $K$.
-Soon we will start to using notation
+We will use notation
 $\varphi \otimes \psi:U \otimes V \to W \otimes Z$ which, for
 $\varphi$, $\psi$ such that $\varphi : U \to W$, $\psi : V \to Z$, means a linear map that
 for all $u \in U$, $v \in V$ satisfies:
 \begin{equation*}
 (\varphi \otimes \psi)(u \otimes v) = \varphi(u) \otimes \psi(v).
 \end{equation*}
-By linearity for element of shape $\displaystyle\sum^n_{i=1} u_i \otimes v_i$ it will take form:
+Because of linearity, for elements of shape $\displaystyle\sum^n_{i=1} u_i \otimes v_i$ it will take form:
 \begin{equation*}
 (\varphi \otimes \psi)(\sum^n_{i = 1} u \otimes v) = \sum^n_{i = 1}\varphi(u) \otimes \psi(v).
 \end{equation*}
@@ -285,23 +290,27 @@ T(v \otimes w) = w\otimes v.
 \end{equation*}
 For a n-tensor power $\overbrace{V \otimes \dots \otimes V}^{n\ times}$  of a vector space $V$ we will
 sometimes write $V^{\otimes n}$.\\
-Throught this paper we will omit the "$\circ$" symbol for composition of functions where will be no risk
-of confusion and we will write
+Throught this paper, when there will be no risk
+of confusion, we will omit the "$\circ$" symbol of composition of functions and we will write
 $\varphi \psi (x)$ instead of $(\varphi \circ \psi)(x)$.
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+\subsubsection{Algebras}
 \begin{definition}
 A \textbf{$\textbf{K}$-algebra} is a vector space $\mathcal{H}$ with additional
 associative, linear operation
 \text{$m:\mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$} called multiplication and linear map
 \text{$u:K\to \mathcal{H}$} called unit such that for all $a \in \mathcal{H}$
 \begin{equation*}
-m(u(1) \otimes a) = m(a \otimes u(1)) = a.
+m(u(1_K) \otimes a) = m(a \otimes u(1_K)) = a.
 \end{equation*}
 \end{definition}
-\textbf{Explanation. } Operation $m$ defines on $\mathcal{H}$ a structure of a unitary ring by setting the
+\textbf{Explanation. } Operation $m$ defines on $\mathcal{H}$ a structure of an unitary ring by setting the
 ring multiplication (let it be denoted as "$\cdot$") as $a \cdot b = m(a \otimes b)$. The identity element of
-that ring multiplication is then is then $u(1)$. (We will be calling $u(1)$ also an identity element of
-multiplication $m$ in K-algebra $\mathcal{H}$ or the $1$ in the $\mathcal{H}$,
-sometimes denoted $1_\mathcal{H}$)\\
+that ring multiplication is then $u(1)$. (We will be calling $u(1)$ also an identity element of
+multiplication $m$ in K-algebra $\mathcal{H}$ or the $1$ in the $\mathcal{H}$ and 
+denote it as $1_\mathcal{H}$)\\
 \textit{Proof.} The fact, that $m$ is associative means that for all $a_1, a_2, a_3 \in \mathcal{H}$
 \begin{equation*}
 m(m(a_1 \otimes a_2) \otimes a_3) = m(a_1 \otimes m(a_2 \otimes a_3)).
@@ -310,9 +319,10 @@ That implies that
 \begin{equation*}
 (a\cdot b) \cdot c = m(m(a \otimes b) \otimes c) = m(a \otimes m(b \otimes c)) = a \cdot (b \cdot c).
 \end{equation*}
-So "$\cdot$" is proper ring mutiplication. Recalling the definition of $u$ we can write that
+So "$\cdot$" is proper ring mutiplication. Recalling the definition of $u$ we can write that for all 
+$a \in \mathcal{H}$
 \begin{equation*}
-u(1) \cdot a = a \cdot u(1) = a
+u(1_K) \cdot a = a \cdot u(1_K) = a
 \end{equation*}
 So indeed it is an identity
 element of that ring. As $u$ is linear map it can be seen as natural insertion of a field $K$ into an algebra
@@ -320,7 +330,7 @@ $\mathcal{H}$ that maps $1_K$ to $1_\mathcal{H}$ ($1$ from the $K$ to the identi
 in $\mathcal{H}$) and extends lineary. Given that we can observe
 that for all $a \in \mathcal{H}$, all $k \in K$, $a$ multiplicated by $u(k)$ (no matter if form the left
 or right) is exactly the $ka$ (an element of vector space $\mathcal{H}$).
-So we can think about $u[K]$ as a copy of $K$ in $\mathcal{H}$. \\
+So we can think about $u[K]$ as a copy of $K$ in $\mathcal{H}$ that acts on $\mathcal{H}$ just like $K$.\\
 \indent  Because of associativity we can define $m^{[3]} : \mathcal{H}^{\otimes 3} \to \mathcal{H}$ as
 \begin{equation*}
 m^{[3]} \coloneqq m(m\otimes I)
@@ -331,17 +341,25 @@ m^{[3]}(a_1 \otimes a_2 \otimes a_3) = a_1 \cdot a_2 \cdot a_3
 \end{equation*}
 with no ambiguity.
 And futher: \\
-Let $A$ be an algebra with multiplication $m$ and unit $u$. We will recurently define the sequence of maps
+\indent Let $A$ be an algebra with multiplication $m$ and unit $u$. We will recurently define the 
+sequence of maps
 $(m^{[n]})_{n \geq 2}$, such that $m^{[n]} : \underbrace{A \otimes \dots \otimes A}_{n\ times} \to A$
 as follows:
 \begin{align*}
 m^{[2]} &\coloneqq m, \\
 m^{[n]} &\coloneqq m^{[n-1]}(m \otimes \underbrace{I \otimes \dots \otimes I}_{n-2 \mathrm{\ times}})
 \end{align*}
-bla bla\\[8pt]
+which is a multication of all factors together. \\
+Because of that for all $a_1, \dots, a_n \in A$ we can write
+\begin{equation*}
+m^{[n]}(a_1 \otimes \dots \otimes a_n) = a_1 \cdot \ldots \cdot a_n.
+\end{equation*}
 \indent \textbf{Remark. } Later in the text we will still be using "$\cdot$" as a symbol for an algebra
-multiplication
-in a algebra of our interest.
+multiplication in an algebra of our interest.
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+\subsubsection{Coalgebras}
 \begin{definition}
 A \textbf{$\textbf{K}$-coalgebra} is a vector space $\mathcal{H}$
 with additional coassociative, linear operation
@@ -397,9 +415,9 @@ Now, for all $a \in \mathcal{H}$ there will be an equality
 \Delta^{[3]}(a) = \sum a_1 \otimes a_2 \otimes a_3
 \end{equation*}
 which can be viewed as a sum of possible decompositions of $a$ into three parts.
-In this point of view we can informally say that coassociativity of $\Delta$ means that $\Delta$ represent
+In this point of view we can say that coassociativity of $\Delta$ means that $\Delta$ represent
 decomposition such that, when did twice, probabilities of possible outcomes are the same
-no matter which set of part ($a_1$ or $a_2$) have been tooked in the second iteration. It will be put more
+no matter which set of parts ($a_1$ or $a_2$) have been tooked in the second iteration. It will be put more
 precise in the section 3. where we will present connection between Markov chains and Hopf algebras.
 Now we will take it a step futher: \\[8pt]
 \indent Let $C$ be a coalgebra with comultiplication $\Delta$ and counit $\varepsilon$.
@@ -418,15 +436,16 @@ By induction it can be proved that for all $n \geq 3$, $i \in \{1, \dots, n-2\}$
 \Delta^{[i]} \otimes \underbrace{I \otimes \dots \otimes I}_{n-i-1-m \mathrm{\ times}})\Delta^{[n-i]},
 \end{equation*}
 The proof can be found in ~\cite{DNR} (Proposition 1.1.7 and Lemma 1.1.10, sites 5-7). Note, that there
-notatnion is slightly differnet - it is $\Delta_1 \coloneqq \Delta$ not $\Delta^{[2]} \coloneqq \Delta$.
-This formula is a generalization of a coassociativity. Thanks to that we can write
+notatnion is slightly differnet - it is $\Delta_1 \coloneqq \Delta$ not $\Delta^{[2]} \coloneqq \Delta$. \\
+This formula is a generalization of a coassociativity. It means that $\Delta^{[n]}$ is coproduct where 
+$\Delta$ is applied $n-1$ times to any one tensor factor at each stage. Thanks to that we can write
 \begin{equation*}
 \Delta^{[n]}(a) = \sum a_1 \otimes \dots \otimes a_n
 \end{equation*}
 with no ambiguity. \\
 Interpretation is an extension of that described in the previous paragraph for $n = 2$. Now we are just
 decomposing $a$ to $n$ parts and probabilieties of outcomes do not depend on which factors we are
-applying $\Delta$ in the next steps. \\[8pt]
+applying $\Delta$ at each stage.  \\[8pt]
 The counit property writen in Sweedler notation takes form
 \begin{align*}
 \sum\varepsilon(a_1) \otimes a_2 &= 1 \otimes a, \\
@@ -438,6 +457,10 @@ Applying on both sides isomorphisms ${^Lm}$ and ${^Rm}$ from
 \sum\varepsilon(a_1)a_2 &= a, \\
 \sum a_1\varepsilon(a_2) &= a.
 \end{align*}
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+\subsubsection{Bialgebras}
 \begin{definition}
 A \textbf{$\textbf{K}$-bialgebra} is a vector space $\mathcal{H}$ with both an algebra structure
 $(\mathcal{H}, m, u)$ and a coalgebra structure $(\mathcal{H}, \Delta, \varepsilon)$ such that $m$, $u$
@@ -469,21 +492,25 @@ or as: for all $g, h \in \mathcal{H}$, all $k \in K$
 \end{align*}
 \textbf{Informal remark. } Note that for the condition
 $\Delta m = (m\otimes m)(I \otimes T \otimes I)(\Delta \otimes \Delta)$
-we need the map $(I \otimes T \otimes I)$, because without it right site will be equal to
+we need the map $(I \otimes T \otimes I)$, because without it, right site will be equal to
 $(m \otimes m)(\Delta \otimes \Delta)$ which, when applied on vector $g \otimes h$ yields
 $\displaystyle\sum g_1 \cdot g_2 \otimes h_1 \cdot h_2$ not $\sum g_1 \cdot h_1 \otimes g_2 \cdot h_2$
-and we want compultiplication and multiplication to be done "with respect to coordinates". \\
+and we want compultiplication and multiplication to be done componentwise. Definition with
+one $T$ is enough for all powers of $m$ and $\Delta$ as state in following remark:\\
 \textbf{Remark. } It can be prooven by induction that for all ${^1h}, \dots, {^nh} \in \mathcal{H}$
 \begin{equation}
-\Delta^{[m]}m^{[n]}({^1h} \otimes \dots \otimes {^nh}) = \sum {^1h}_1 \cdot \dots \cdot {^nh}_1
-\otimes \dots \otimes {^1h}_m\cdot  \dots \cdot {^nh}_m.
+\Delta^{[m]}m^{[n]}({^1h} \otimes \dots \otimes {^nh}) = \sum {^1h}_1 \cdot \ldots \cdot {^nh}_1
+\otimes \dots \otimes {^1h}_m\cdot  \ldots \cdot {^nh}_m.
 \end{equation}
 \begin{proof}
 Left to the reader.
 \end{proof}
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \begin{definition}
-For a bialgebra $\mathcal{H}$ we define a \textbf{square map} (sometimes called a \textbf{Hopf square map})
-$\Psi : \mathcal{H} \to \mathcal{H}$ as $\Psi \coloneqq m\Delta$.
+For a bialgebra $\mathcal{H}$ we define a \textbf{Hopf-square} map
+$\Psi^{[2]} : \mathcal{H} \to \mathcal{H}$ as $\Psi^{[2]} \coloneqq m\Delta$.
 \end{definition}
 \textbf{Comment. } It will be very important function in this paper. It will be it what will set a structure
 of a Markov chain on a Hopf algebra. In Hopf algebras that we will
@@ -491,19 +518,126 @@ be using for modeling Markov chains the Hopf square map will preserve some of th
 (viewed as a vector space) finall dimentional subspaces. Basises of these preserved
 subspaces can be then treated as spaces of states (aces of spades, haha)
 of our associated Markov chains. Note, that one Hopf algebra can set a structure of many Markov chains,
-each one having a basis of algebras finite dimentional subspace preserved by $\Psi$ as its (chains)
+each one having a basis of algebras finite dimentional subspace preserved by $\Psi^{[2]}$ as its (chains)
 space of states.
-Whats more matrix of $\Psi$ (viewed as a trasformation of some fixed, finite-dimentional subspace of algebra)
+Whats more matrix of $\Psi^{[2]}$ (viewed as a trasformation of some fixed, finite-dimentional
+subspace of algebra)
 writen in a base $\mathcal{B}$ of that subspace will be exactly a transition matrix
 $K_{i,j}$ of associated Markov chain on that bases. Finding eigenbasis of $K_{i,j}$ is then expressed as
-finding eigenvectors of $\Psi$. Later it will be put more carefully and
-precisely.
+finding eigenvectors of $\Psi^{[2]}$. Later it will be put more carefully and precisely. \\
+It will have a natural interpretation as "pulling apart" and then "putting pieces together" for
+exaple split the deck of cards and then shuffling it. \\[4pt]
+We also define higher power maps for $n \geq 2$:
+\begin{equation*}
+\Psi^{[n]} \coloneqq m^{[n]}\Delta^{[n]}.
+\end{equation*}
+Hopf-square in sweedler notation looks like this:
+\begin{equation*}
+\Psi^{[n]}(a) = \sum a_1 \cdot \ldots \cdot a_n.
+\end{equation*}
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \begin{definition}
-convolution
+Let $(C, \Delta, \varepsilon)$ be a coalgebra and $(A, M, u)$ an algebra. We define on the set $Hom(C, A)$
+an algebra structure in with the multiplication, denoted by $*$ is given as follows: if
+$f, g \in Hom(C, A)$, then
+\begin{equation*}
+f*g \coloneqq m(f \otimes g)\Delta
+\end{equation*}
+we call $*$ the \textbf{convolution} product.
+\end{definition}
+It can be also written as: for any $c \in C$, any $f, g \in Hom(C, A)$
+\begin{equation*}
+(f*g)(c) = \sum f(c_1) \cdot g(c_2)
+\end{equation*}
+The multiplication defined above is associative, since for $f, g, h \in Hom(C, A)$ and
+$c \in C$ we have
+\begin{align*}
+((f*g)*h)(c) &= \sum(f*g)(c_1)\cdot h(c_2) \\
+&= \sum f(c_1) \cdot g(c_2) \cdot h(c_3) \\
+&= \sum f(c_1) \cdot (g*h)(c_2) \\
+&= (f*(g*h))(c).
+\end{align*}
+The identity element of the algebra $Hom(C, A)$ is $u\varepsilon \in Hom(C, A)$ since
+\begin{align*}
+(f * u\varepsilon)(c) &= \sum f(c_1) \cdot u\varepsilon(c_2) \\
+&= \sum f(c_1) \cdot \varepsilon(c_2)1_A \\
+&= \sum f(c_1)\varepsilon(c_2) \cdot 1_A \\
+&= \left(\sum f(c_1)\varepsilon(c_2)\right)\cdot 1_A \\
+&= f(c) \cdot 1_A = f(c)
+\end{align*}
+hence $f * u\varepsilon = f$. Similarly, $u\varepsilon * f = f$. \\
+Let us note that if $A = K$, then $*$ is the convolution product defined on the dual algebra of the coalgebra
+$C$. This is why in the case $A$ is an arbitrary algebra we will also call $*$ the convolution product.
+\\[8pt]
+\indent For a bialgebra $\mathcal{H}$ we denote $\mathcal{H}^A$, $\mathcal{H}^C$ as, respectivly,
+the underlying algebra and coalgebra structure. We can define as above algebra structure on
+$Hom(\mathcal{H}^C, \mathcal{H}^A)$. Note, that identity map $I : \mathcal{H} \to \mathcal{H}$ is an
+element of $Hom(\mathcal{H}^C, \mathcal{H}^A)$ but it is not the identity element of its algebra structure
+with convolution product. The $u\varepsilon$ is that identity element.
+\begin{definition}
+Let $\mathcal{H}$ be a bialgebra. A linear map $S \in Hom(\mathcal{H}^C, \mathcal{H}^A)$ is called an 
+\textbf{antipode} of the bialgebra $\mathcal{H}$ if $S$ is the inverse of the identity map 
+$I : \mathcal{H} \to \mathcal{H}$ with respect to the convolution product in 
+$Hom(\mathcal{H}^C, \mathcal{H}^A)$
+\end{definition}
+The fact that $S \in Hom(\mathcal{H}^C, \mathcal{H}^A)$ is an antipode is written as
+\begin{equation*}
+S * I = I * S = u\varepsilon.
+\end{equation*}
+and using sweedler notation as:
+\begin{equation*}
+\forall_{h \in \mathcal{H}} \sum S(h_1) \cdot h_2 = \sum h_1 \cdot S(h_2) = \varepsilon(h)1_\mathcal{H}.
+\end{equation*}
+\subsubsection{Hopf algebras}
+\begin{definition}
+A bialgebra having an antipode is called a \textbf{Hopf algebra}.
 \end{definition}
 \begin{definition}
-hopf algebra.
+A \textbf{graded Hopf algebra} is vector space 
+$\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ with a Hopf algebra structure that is 
+compatible with the grading.
 \end{definition}
+\textbf{Explanation. } Hopf algebra structure is compatible with grading iff for all $i, j \in \mathbb{N}$:
+\begin{align*}
+m[\mathcal{H}_i \otimes \mathcal{H}_j] &\subseteq \mathcal{H}_{i+j} \mathrm{\ and} \\
+\Delta[H_n] &\subseteq \bigoplus^{n}_{i = 0} \mathcal{H}_i \otimes \mathcal{H}_{n-i}.
+\end{align*}
+Hopf square preserve grading
+\begin{definition}
+A graded Hopf algebra $\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ is 
+\textbf{connected} iff $\mathcal{H}_0$ is one-dimentional subspace spanned by $1_\mathcal{H}$.
+\end{definition}
+As an curiosity we will say that any graded, connected bialgebra is a Hopf algebra with antipode
+\begin{equation*}
+S = \sum_{k \geq 0} (u\varepsilon - I)^{*k}.
+\end{equation*}
+This is the end of our algebraic definitions pfuuuu...
+\subsection{Examples}
+\subsubsection{Graded, connected Hopf algebra of polinomials}
+\subsubsection{Graded, connected Hopf algebra of non-commuting variables}
+This is a main example of our interest. \\
+Let K be a field with characteristic 0. 
+Let $\mathcal{X} = \{x_1, \dots, x_N\}$ be a finite set. For every $n \in \mathbb{N}$ let 
+$H_n$ be a vector space having as a basis all words of length $n$ made of elements 
+of $\mathcal{X}$. Let $\mathcal{H} \coloneqq \displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i$.
+Let $m : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ be concatenation of words, 
+that is, for all $k, l \in \mathbb{N}$ 
+for all $x_{i_0}, \dots, x_{i_k}, x_{j_0}, \dots, x_{j_l} \in \mathcal{X}$
+\begin{equation*}
+m(x_{i_0}\dots x_{i_k} \otimes x_{j_0}\dots x_{j_l}) \coloneqq 
+x_{i_0}\ldots x_{i_k}x_{j_0}\ldots x_{j_l}.
+\end{equation*}
+Let $\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$ be defined for all elements from 
+$\mathcal{X}$ as
+\begin{equation*}
+\Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i.
+\end{equation*}
+\textbf{Lemma. } Then $\mathcal{H}$ is the a graded, connected Hopf algebra that is cocomutative.
+\section{Explanation of connection between Hopf algebras and Markov chains}
+Let take bla bla from eample ble ble. \\
+Now we will show how free associative algebra from example 2.3.2 set the structure for inverse riffle shuffle.
 \bibliography{my_bibliography}{}
 \bibliographystyle{alpha}
 \end{document}

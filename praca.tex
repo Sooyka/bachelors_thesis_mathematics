@@ -172,7 +172,7 @@ This observation also justifies
 recently cited fact and the example.
 \end{proof}
 \begin{observation}
-If $V$ and $W$ are finite dimentional and $\mathrm{ dim}(V)=n$, \text{$\mathrm{ dim}(W)=m$}, then 
+If $V$ and $W$ are finite dimentional and $\mathrm{ dim}(V)=n$, \text{$\mathrm{ dim}(W)=m$}, then
 $\mathrm{dim}(V \otimes W)=nm$.
 \end{observation}
 \begin{proof}
@@ -211,11 +211,11 @@ k (u \otimes v \otimes w) = (ku) \otimes v \otimes w = u \otimes (kv) \otimes w 
 \end{gather*}
 \end{observation}
 \begin{proof}
-Left for the reader.
+Left to the reader.
 \end{proof}
 \begin{observation}\label{observation:5}
-If $V$ is a vector space over $K$, then all elements of $K \otimes V$ ($V \otimes K$) can be expressed in form 
-$1 \otimes v$ ($v \otimes 1$) and there are natural isomophisms ${^Lm} : K \otimes V \to V$, 
+If $V$ is a vector space over $K$, then all elements of $K \otimes V$ ($V \otimes K$) can be expressed in form
+$1 \otimes v$ ($v \otimes 1$) and there are natural isomophisms ${^Lm} : K \otimes V \to V$,
 (${^Rm} : V \otimes K \to V$) given by
 \begin{align*}
 {^Lm}(k \otimes v) &= kv, \\
@@ -231,19 +231,20 @@ ${^Lm}$ is linear (left for the reader) and is bijection because for all $v, v_1
 \begin{equation*}
 \varphi(1 \otimes v) = v
 \end{equation*}
-and 
+and
 \begin{align*}
-1 \otimes v_1 = 1 \otimes v_2 &\iff 1 \otimes v_1 - 1 \otimes v_2 = 0 \iff \\ 
+1 \otimes v_1 = 1 \otimes v_2 &\iff 1 \otimes v_1 - 1 \otimes v_2 = 0 \iff \\
 1 \otimes (v_1 - v_2) = 0 &\iff v_1 -v_2 = 0 \iff v_1 = v_2.
 \end{align*}
 The proof for $V \otimes K$ and ${^Rm}$ is analogous. In the later sections we will use notations of
 ${^Lm}$ and ${^Rm}$ for those isomorphism for any space.
 \end{proof}
-\textbf{Remark. } In a special case when $V = W = K$ the natural isomorphisms descripted above 
+\textbf{Remark. } In a special case when $V = W = K$ the natural isomorphisms descripted above
 take form of ${^Km} : K \otimes K \to K$ that for all $k_1, k_2\in K$
-\text{${^Km}(k_1 \otimes k_2) = k_1k_2$}. This isomorphism of $K \otimes K$ and $K$ is just a field 
+\text{${^Km}(k_1 \otimes k_2) = k_1k_2$}. This isomorphism of $K \otimes K$ and $K$ is just a field
 multiplication from $K$. \\[8pt]
-\noindent \textbf{Remark. } Thanks to \hyperref[observation:3]{Observation 3.} there is no ambiguity in writing
+\noindent \textbf{Remark. } Thanks to \hyperref[observation:3]{Observation 3.} there is no ambiguity in
+writing
 $kv \otimes w$. \\
 I hope that this third observation will also help in understanding what tensor product is and what is not.
 It will be good to keep it in mind when we will be intensively dealing with it in a combinatorical way in the
@@ -258,11 +259,11 @@ Another reason of arranging text like that (and possibility of treating this sec
 is that for most of the time we will not be using full structure of a Hopf algebra. Nethertheless it is good
 to see the full shape of what we are dealing with. \\
 So now will come full definition nonetheless we will try to explain it piece by piece. \\[8pt]
-\textbf{Remark. }Let $K$ be a field. In following section $k$, if not steted otherwise, will
+\indent \textbf{Remark. }Let $K$ be a field. In following section $k$, if not steted otherwise, will
 denotes an arbitrary element from this field. If not stated otherwise, all vector spaces will be over $K$ and
-all tensor products will be taken over $K$. Note, that when we will want to present a field multiplication 
-from $K$ as a linear map $K \otimes K \to K$ it will be denoted as ${^Km}$. And as it is then an isomorphism 
-let ${^K\Delta} \coloneqq {^Km}^{-1}$.
+all tensor products will be taken over $K$. Note, that when we will want to present a field multiplication
+from $K$ as a linear map $K \otimes K \to K$ it will be denoted as ${^Km}$. And as it is then an isomorphism
+let ${^K\Delta} \coloneqq {^Km}^{-1}$. \\[8pt]
 \indent \textbf{Remark. } Let $U, V, W, Z$ be a vector spaces over field $K$.
 Soon we will start to using notation
 $\varphi \otimes \psi:U \otimes V \to W \otimes Z$ which, for
@@ -282,11 +283,13 @@ be the twist map $T:V \otimes W \to W\otimes V$, which is linear map such that f
 \begin{equation*}
 T(v \otimes w) = w\otimes v.
 \end{equation*}
-Throught this paper we will omit the "$\circ$" symbol for composition of functions where will be no risk 
-of confusion and we will write 
+For a n-tensor power $\overbrace{V \otimes \dots \otimes V}^{n\ times}$  of a vector space $V$ we will
+sometimes write $V^{\otimes n}$.\\
+Throught this paper we will omit the "$\circ$" symbol for composition of functions where will be no risk
+of confusion and we will write
 $\varphi \psi (x)$ instead of $(\varphi \circ \psi)(x)$.
 \begin{definition}
-A \textbf{$\textbf{K}$-algebra} is a vector space $\mathcal{H}$ with additional 
+A \textbf{$\textbf{K}$-algebra} is a vector space $\mathcal{H}$ with additional
 associative, linear operation
 \text{$m:\mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$} called multiplication and linear map
 \text{$u:K\to \mathcal{H}$} called unit such that for all $a \in \mathcal{H}$
@@ -318,15 +321,29 @@ in $\mathcal{H}$) and extends lineary. Given that we can observe
 that for all $a \in \mathcal{H}$, all $k \in K$, $a$ multiplicated by $u(k)$ (no matter if form the left
 or right) is exactly the $ka$ (an element of vector space $\mathcal{H}$).
 So we can think about $u[K]$ as a copy of $K$ in $\mathcal{H}$. \\
-\indent  Because of associativity we can define 
+\indent  Because of associativity we can define $m^{[3]} : \mathcal{H}^{\otimes 3} \to \mathcal{H}$ as
 \begin{equation*}
-m^{[2]} \coloneqq m(m\otimes
+m^{[3]} \coloneqq m(m\otimes I)
 \end{equation*}
-\\[8pt]
-\textbf{Remark. } Later in the text we will be using "$\cdot$" as a symbol for an algebra multiplication 
-in algebra of our interest. \\
+and for all $a_1, a_2, a_3 \in \mathcal{H}$ write
+\begin{equation*}
+m^{[3]}(a_1 \otimes a_2 \otimes a_3) = a_1 \cdot a_2 \cdot a_3
+\end{equation*}
+with no ambiguity.
+And futher: \\
+Let $A$ be an algebra with multiplication $m$ and unit $u$. We will recurently define the sequence of maps
+$(m^{[n]})_{n \geq 2}$, such that $m^{[n]} : \underbrace{A \otimes \dots \otimes A}_{n\ times} \to A$
+as follows:
+\begin{align*}
+m^{[2]} &\coloneqq m, \\
+m^{[n]} &\coloneqq m^{[n-1]}(m \otimes \underbrace{I \otimes \dots \otimes I}_{n-2 \mathrm{\ times}})
+\end{align*}
+bla bla\\[8pt]
+\indent \textbf{Remark. } Later in the text we will still be using "$\cdot$" as a symbol for an algebra
+multiplication
+in a algebra of our interest.
 \begin{definition}
-A \textbf{$\textbf{K}$-coalgebra} is a vector space $\mathcal{H}$ 
+A \textbf{$\textbf{K}$-coalgebra} is a vector space $\mathcal{H}$
 with additional coassociative, linear operation
 \text{$\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$} called comultiplication and
 a linear map \text{$\varepsilon : \mathcal{H} \to K$} called counit such that for all
@@ -342,24 +359,23 @@ m(u \otimes I)(1 \otimes a) &= a \mathrm{\ and}\\
 m(I \otimes u)(a \otimes 1) &= a
 \end{align*}
 means exactly what was in the definition of $u$. \\[8pt]
-\textbf{Explanation.} We will introduce a notation called Sweedler notation [Swe69] which will be 
-very usefull 
-for writing coproducts. As for all $a \in \mathcal{H}$ we have 
-\text{$\Delta(a) = \displaystyle\sum^n_{i=1}a_{1,i} \otimes a_{2,i}$}, we will write 
+\textbf{Explanation.} We will introduce a notation called Sweedler notation [Swe69] which will be
+very usefull
+for writing coproducts. As for all $a \in \mathcal{H}$ we have
+\text{$\Delta(a) = \displaystyle\sum^n_{i=1}a_{1,i} \otimes a_{2,i}$}, we will write
 \begin{equation*}
 \Delta(a) = \displaystyle\sum a_1 \otimes a_2.
-\end{equation*} 
-This notation surpresses the index "$i$". Somewhere there can be also encountered an interjaced 
+\end{equation*}
+This notation surpresses the index "$i$". Somewhere there can be also encountered an interjaced
 notation \text{$\Delta(a) = \displaystyle\sum_{(a)}a_{(1)}\otimes a_{(2)}$}. \\
-In many cases comultiplication can be seen as a sum of possible decomposition of an element into 
-elements "smaller" in some sens. 
-For example, later it will come out that exactly the comultiplication will be the operation that will 
-model the process of cutting the deck of cards into pieces in riffle shuffle. In examples that we will working 
-with (graded, connected Hopf algebras) comultiplication will represent some kind of natural decomposition 
-in the more general way. What does it mean in the strict sense will be presented in Definition 5. when we 
+In many cases comultiplication can be seen as a sum of possible decomposition of an element into
+elements "smaller" in some sens.
+For example, later it will come out that exactly the comultiplication will be the operation that will
+model the process of cutting the deck of cards into pieces in riffle shuffle. In examples that we will working
+with (graded, connected Hopf algebras) comultiplication will represent some kind of natural decomposition
+in the more general way. What does it mean in the strict sense will be presented in Definition 5. when we
 will be introducing graded Hopf Algebras. \\
 Examples. \\[8pt]
-
 The coassociativity of $\Delta$ means, that $(\Delta \otimes I)\Delta = (I \otimes \Delta)\Delta$.
 In Sweedler notation it can be writen as
 \begin{equation*}
@@ -367,68 +383,69 @@ In Sweedler notation it can be writen as
 \end{equation*}
 or in more expand form as
 \begin{equation}\label{swe1}
-\forall_{a\in \mathcal{H}}\ \sum\ {a_1}_1 \otimes {a_1}_2 \otimes a_2 = \sum a_1 \otimes {a_2}_1 
+\forall_{a\in \mathcal{H}}\ \sum\ {a_1}_1 \otimes {a_1}_2 \otimes a_2 = \sum a_1 \otimes {a_2}_1
 \otimes {a_2}_2.
 \end{equation}
-Because of these equalities, terms from (\ref{swe1}) can be writen as 
-\text{$\displaystyle\sum a_1 \otimes a_2 \otimes a_3$} without ambiguity. \\ We can also define 
+Because of these equalities, terms from (\ref{swe1}) can be writen as
+\text{$\displaystyle\sum a_1 \otimes a_2 \otimes a_3$} without ambiguity. \\
+We can also define
 \begin{equation*}
-\Delta^{[2]} \coloneqq (\Delta \otimes I)\Delta
+\Delta^{[3]} \coloneqq (\Delta \otimes I)\Delta
 \end{equation*}
 Now, for all $a \in \mathcal{H}$ there will be an equality
 \begin{equation*}
-\Delta^{[2]}(a) = \sum a_1 \otimes a_2 \otimes a_3
+\Delta^{[3]}(a) = \sum a_1 \otimes a_2 \otimes a_3
 \end{equation*}
-which can be viewed as a sum of possible decompositions of $a$ into three parts. 
+which can be viewed as a sum of possible decompositions of $a$ into three parts.
 In this point of view we can informally say that coassociativity of $\Delta$ means that $\Delta$ represent
-decomposition such that, when did twice, probabilities of possible outcomes are the same 
-no matter which set of part ($a_1$ or $a_2$) have been tooked in the second iteration. It will be put more 
+decomposition such that, when did twice, probabilities of possible outcomes are the same
+no matter which set of part ($a_1$ or $a_2$) have been tooked in the second iteration. It will be put more
 precise in the section 3. where we will present connection between Markov chains and Hopf algebras.
 Now we will take it a step futher: \\[8pt]
-\indent Let $C$ will be a coalgebra with comultiplication $\Delta$ and counit $\varepsilon$. 
-We will recurently define the sequence of maps $(\Delta^{[n]})_{n \geq 0}$, such that 
-$\Delta_n : C \to \underbrace{C \otimes \dots \otimes C}_{n \mathrm{\ times}}$ as follows:
+\indent Let $C$ be a coalgebra with comultiplication $\Delta$ and counit $\varepsilon$.
+We will recurently define the sequence of maps $(\Delta^{[n]})_{n \geq 2}$, such that
+$\Delta^{[n]} : C \to \underbrace{C \otimes \dots \otimes C}_{n \mathrm{\ times}}$ as follows:
 \begin{align*}
-\Delta^{[1]} &\coloneqq \Delta, \\
-\Delta^{[n]} &\coloneqq (\Delta \otimes 
-\underbrace{I \otimes \dots \otimes I}_{n \mathrm{\ times}})\Delta_{n-1}.
+\Delta^{[2]} &\coloneqq \Delta, \\
+\Delta^{[n]} &\coloneqq (\Delta \otimes
+\underbrace{I \otimes \dots \otimes I}_{n - 2 \mathrm{\ times}})\Delta_{n-1}.
 \end{align*}
 Which can be seen as composed iterations of $\Delta$. \\
-By induction it can be proved that for all $n \geq 2$, $i \in \{1, \dots, n-1\}$, 
-\text{$m \in \{0, \dots, n-i\}$} we 
-have
+By induction it can be proved that for all $n \geq 3$, $i \in \{1, \dots, n-2\}$,
+\text{$m \in \{0, \dots, n-i-1\}$} we have
 \begin{equation*}
-\Delta^{[n]} = (I^m \otimes \Delta^{[i]} \otimes I^{n-i-m})\Delta^{[n-i]},
+\Delta^{[n]} = (\underbrace{I \otimes \dots \otimes I}_{m\ \mathrm{times}} \otimes
+\Delta^{[i]} \otimes \underbrace{I \otimes \dots \otimes I}_{n-i-1-m \mathrm{\ times}})\Delta^{[n-i]},
 \end{equation*}
-where $I^m$ means $\overbrace{I \otimes \dots \otimes I}^{m \mathrm{\ times}}$. \\
-The proof can be found in ~\cite{DNR} (Proposition 1.1.7 and Lemma 1.1.10, sites 5-7).
+The proof can be found in ~\cite{DNR} (Proposition 1.1.7 and Lemma 1.1.10, sites 5-7). Note, that there
+notatnion is slightly differnet - it is $\Delta_1 \coloneqq \Delta$ not $\Delta^{[2]} \coloneqq \Delta$.
 This formula is a generalization of a coassociativity. Thanks to that we can write
 \begin{equation*}
 \Delta^{[n]}(a) = \sum a_1 \otimes \dots \otimes a_n
 \end{equation*}
 with no ambiguity. \\
-Interpretation is an extension of that described in the previous paragraph for $n = 2$. Now we are just 
-decomposing $a$ to $n$ parts and probabilieties of outcomes do not depend on which factors we are 
-applying $\Delta$ in the next steps. \\[8pt]  
+Interpretation is an extension of that described in the previous paragraph for $n = 2$. Now we are just
+decomposing $a$ to $n$ parts and probabilieties of outcomes do not depend on which factors we are
+applying $\Delta$ in the next steps. \\[8pt]
 The counit property writen in Sweedler notation takes form
 \begin{align*}
 \sum\varepsilon(a_1) \otimes a_2 &= 1 \otimes a, \\
-\sum a_1 \otimes \varepsilon(a_2) &= a \otimes 1. 
+\sum a_1 \otimes \varepsilon(a_2) &= a \otimes 1.
 \end{align*}
-Applying on both sides isomorphisms ${^Lm}$ and ${^Rm}$ from 
+Applying on both sides isomorphisms ${^Lm}$ and ${^Rm}$ from
 \hyperref[observation:5]{Observation 5.} respectively we get
 \begin{align*}
 \sum\varepsilon(a_1)a_2 &= a, \\
 \sum a_1\varepsilon(a_2) &= a.
 \end{align*}
 \begin{definition}
-A \textbf{$\textbf{K}$-bialgebra} is a vector space $\mathcal{H}$ with both an algebra structure 
-$(\mathcal{H}, m, u)$ and a coalgebra structure $(\mathcal{H}, \Delta, \varepsilon)$ such that $m$, $u$ 
+A \textbf{$\textbf{K}$-bialgebra} is a vector space $\mathcal{H}$ with both an algebra structure
+$(\mathcal{H}, m, u)$ and a coalgebra structure $(\mathcal{H}, \Delta, \varepsilon)$ such that $m$, $u$
 are morfisms of coalgebras and $\Delta$, $\varepsilon$ are morfisms of algebras.
 \end{definition}
-\textbf{Explanation. } In fact for a given vector space $\mathcal{H}$ with both an algebra structure 
-$(\mathcal{H}, m, u)$ and a coalgebra structure $(\mathcal{H}, \Delta, \varepsilon)$, the fact, that 
-$m$ and $u$ are morfisms of coalgebras is equivalent to that $\Delta$ and $\varepsilon$ are morfisms of 
+\textbf{Explanation. } In fact for a given vector space $\mathcal{H}$ with both an algebra structure
+$(\mathcal{H}, m, u)$ and a coalgebra structure $(\mathcal{H}, \Delta, \varepsilon)$, the fact, that
+$m$ and $u$ are morfisms of coalgebras is equivalent to that $\Delta$ and $\varepsilon$ are morfisms of
 algebras and both are equivalent to conjuction of following contditions:
 \begin{align*}
 \Delta m &= (m\otimes m)(I \otimes T \otimes I)(\Delta \otimes \Delta), \\
@@ -450,40 +467,36 @@ or as: for all $g, h \in \mathcal{H}$, all $k \in K$
 \Delta (1_\mathcal{H}) &= 1_\mathcal{H} \otimes 1_\mathcal{H}, \\
 \varepsilon (1_\mathcal{H}) &= 1_K.
 \end{align*}
-
-\textbf{Informal remark. } Note that for the condition 
-$\Delta m = (m\otimes m)(I \otimes T \otimes I)(\Delta \otimes \Delta)$ 
-we need the map $(I \otimes T \otimes I)$, because without it right site will be equal to 
-$(m \otimes m)(\Delta \otimes \Delta)$ which, when applied on vector $g \otimes h$ yields 
-$\displaystyle\sum g_1 \cdot g_2 \otimes h_1 \cdot h_2$ not $\sum g_1 \cdot h_1 \otimes g_2 \cdot h_2$ 
-and we want compultiplication and multiplication to be done "with respect to coordinates".
-
-\textbf{Remark. } It can be prooven by induction that for all ${^1h}, \dots, {^nh} \in \mathcal{H}$ 
+\textbf{Informal remark. } Note that for the condition
+$\Delta m = (m\otimes m)(I \otimes T \otimes I)(\Delta \otimes \Delta)$
+we need the map $(I \otimes T \otimes I)$, because without it right site will be equal to
+$(m \otimes m)(\Delta \otimes \Delta)$ which, when applied on vector $g \otimes h$ yields
+$\displaystyle\sum g_1 \cdot g_2 \otimes h_1 \cdot h_2$ not $\sum g_1 \cdot h_1 \otimes g_2 \cdot h_2$
+and we want compultiplication and multiplication to be done "with respect to coordinates". \\
+\textbf{Remark. } It can be prooven by induction that for all ${^1h}, \dots, {^nh} \in \mathcal{H}$
 \begin{equation}
-\Delta^{[m]}m^{[n]}({^1h} \otimes \dots \otimes {^nh}) = \sum {^1h}_1 \cdot \dots \cdot {^nh}_1 
+\Delta^{[m]}m^{[n]}({^1h} \otimes \dots \otimes {^nh}) = \sum {^1h}_1 \cdot \dots \cdot {^nh}_1
 \otimes \dots \otimes {^1h}_m\cdot  \dots \cdot {^nh}_m.
 \end{equation}
 \begin{proof}
 Left to the reader.
 \end{proof}
-
 \begin{definition}
-For a bialgebra $\mathcal{H}$ we define a \textbf{square map} (sometimes called a \textbf{Hopf square map}) 
+For a bialgebra $\mathcal{H}$ we define a \textbf{square map} (sometimes called a \textbf{Hopf square map})
 $\Psi : \mathcal{H} \to \mathcal{H}$ as $\Psi \coloneqq m\Delta$.
 \end{definition}
-
-\textbf{Comment. } It will be very important function in this paper. It will be it what will set a structure 
-of a Markov chain on a Hopf algebra. In Hopf algebras that we will 
-be using for modeling Markov chains the Hopf square map will preserve some of those algebras 
-(viewed as a vector space) finall dimentional subspaces. Basises of these preserved 
-subspaces can be then treated as spaces of states (aces of spades, haha) 
-of our associated Markov chains. Note, that one Hopf algebra can set a structure of many Markov chains, 
-each one having a basis of algebras finite dimentional subspace preserved by $\Psi$ as its (chains) 
-space of states. 
-Whats more matrix of $\Psi$ (viewed as a trasformation of some fixed, finite-dimentional subspace of algebra) 
-writen in a base $\mathcal{B}$ of that subspace will be exactly a transition matrix 
-$K_{i,j}$ of associated Markov chain on that bases. Finding eigenbasis of $K_{i,j}$ is then expressed as 
-finding eigenvectors of $\Psi$. Later it will be put more carefully and 
+\textbf{Comment. } It will be very important function in this paper. It will be it what will set a structure
+of a Markov chain on a Hopf algebra. In Hopf algebras that we will
+be using for modeling Markov chains the Hopf square map will preserve some of those algebras
+(viewed as a vector space) finall dimentional subspaces. Basises of these preserved
+subspaces can be then treated as spaces of states (aces of spades, haha)
+of our associated Markov chains. Note, that one Hopf algebra can set a structure of many Markov chains,
+each one having a basis of algebras finite dimentional subspace preserved by $\Psi$ as its (chains)
+space of states.
+Whats more matrix of $\Psi$ (viewed as a trasformation of some fixed, finite-dimentional subspace of algebra)
+writen in a base $\mathcal{B}$ of that subspace will be exactly a transition matrix
+$K_{i,j}$ of associated Markov chain on that bases. Finding eigenbasis of $K_{i,j}$ is then expressed as
+finding eigenvectors of $\Psi$. Later it will be put more carefully and
 precisely.
 \begin{definition}
 convolution
@@ -493,5 +506,4 @@ hopf algebra.
 \end{definition}
 \bibliography{my_bibliography}{}
 \bibliographystyle{alpha}
-
 \end{document}

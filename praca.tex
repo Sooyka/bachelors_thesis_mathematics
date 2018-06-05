@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{}
+\documentclass[a4paper, 12pt]{report}
 \usepackage{polski}
 \usepackage[polish,english]{babel}
 \usepackage[utf8]{inputenc}
@@ -55,16 +55,17 @@ study Markov chains. As it involves ideas from quite different branches of mathe
 grasp a concept if someone is not familliar with them.
 The point of this paper is to describe some of their results in a more step-by-step, simplified way,
 so that they could be accesible for third year students who have passed probability
-and abstract algebra courses. I will focus on the example of shuffling cards by inverse riffle shuffle method.
-Structure will be as follows: firstly there will be introduction to both Hopf algebras and Markov chains,
-then there will be explanation how to describe a Markov chain with a Hopf algebra, finally I will describe
-how to find left eigenbasis and right eigenbasis of Markov chain associated with riffle shuffling
+and abstract algebra courses. I will focus on the example of shuffling cards by inverse riffle shuffle 
+method. Structure will be as follows: firstly there will be introduction to both Hopf algebras and Markov 
+chains, then there will be explanation how to describe a Markov chain with a Hopf algebra, finally I will 
+describe how to find left eigenbasis and right eigenbasis of Markov chain associated with riffle shuffling
 using Hopf algebras.
 
 
 \end{abstract}
 
-\chapter{Markov chains}
+\chapter{Definitions}
+\section{Markov chains}
 Finite Markov chain is a random process on the finite set of states such that
 the probability of being in some state in the moment $n+1$ depends only on in which state one was
 in the moment $n$. Now we will put this more formally.\\
@@ -90,8 +91,8 @@ Now the $K^n_{i,j}$ is the chance of moving from $s_i$ to $s_j$ in $n$ steps. \\
 Markov chains can be also viewed as random walks on the directed, labeled graphs, where states are vertices
 and edge's label is the probability of moving from one vertex to another. \\
 Card shuffling can be viewed as a Markov chain on all possible arragments of the cards
-in the deck with $K(x,y)$ equal to probability of going from arragment $x$ to arragment $y$ in one shuffle. \\
-More extensive indroduction can be found in~\cite{LePeWi}. \\
+in the deck with $K(x,y)$ equal to probability of going from arragment $x$ to arragment $y$ in one shuffle. 
+\\ More extensive indroduction can be found in~\cite{LePeWi}. \\
 Cośtam cośtam stationary distirution. \\
 %\textbf{\Huge BAM!}\normalsize
 \todo{BAM!}
@@ -110,9 +111,9 @@ Cośtam cośtam stationary distirution. \\
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\chapter{Hopf algebras}
+\section{Hopf algebras}
 %
-\section{Tensor products}
+\subsection{Tensor products}
 %
 First we will introduce tensor produkt of the vector spaces. Let $V, W$ be vector spaces over the field $K$.
 Let $Z$ be a vector space with basis $V \times W$. Note, that we are taking entire $V \times W$ as a basis
@@ -186,8 +187,8 @@ $\left(=\displaystyle\sum^m_{i = 1}\beta_i(b_i \otimes c_i)\right)$.
 &= \sum_{\substack{1 \leq i \leq n \\1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
 \alpha_i\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_{/\simeq}
 \end{align*}
-Thus $\{b_i \otimes c_j : i \in I, j \in J\}$ spans $V \otimes W$. To prove linear independence we can observe
-that if $\displaystyle\sum^m_{i = 1}\alpha_i [(v_i,w_i)]_{/\simeq} = 0$
+Thus $\{b_i \otimes c_j : i \in I, j \in J\}$ spans $V \otimes W$. To prove linear independence we can 
+observe that if $\displaystyle\sum^m_{i = 1}\alpha_i [(v_i,w_i)]_{/\simeq} = 0$
 then either $v_1, \dots v_n$ or $w_1, \dots, w_n$ have to be lineary dependent. It can't occur if
 $v_1, \dots v_n$ and $w_1, \dots, w_n$ are from the basises of $V$ and $W$.\\
 This observation also justifies
@@ -205,7 +206,8 @@ $\mathrm{ dim}(V)=n$ and $\mathrm{ dim}(W)=m$, then $\mid \{b_i \otimes c_j : i 
 \begin{observation}
 \label{observation:3}
 $V \otimes W$ is a vector space of elements in the shape of $\ \displaystyle\sum^n_{i = 1}v_i \otimes w_i$
-with operations on them defined such that for all $v,v_1,v_2 \in V$, $w, w_1, w_2 \in W$, $k \in K$ there hold
+with operations on them defined such that for all $v,v_1,v_2 \in V$, $w, w_1, w_2 \in W$, $k \in K$ there 
+hold
 \begin{gather*}
 v_1 \otimes w + v_2 \otimes w = (v_1 + v_2) \otimes w, \\
 v \otimes w_1 + v \otimes w_2 = v \otimes (w_1 + w_2), \\
@@ -236,8 +238,8 @@ k (u \otimes v \otimes w) = (ku) \otimes v \otimes w = u \otimes (kv) \otimes w 
 Left to the reader.
 \end{proof}
 \begin{observation}\label{observation:5}
-If $V$ is a vector space over $K$, then all elements of $K \otimes V$ ($V \otimes K$) can be expressed in form
-$1 \otimes v$ ($v \otimes 1$) and there are natural isomophisms ${^Lm} : K \otimes V \to V$,
+If $V$ is a vector space over $K$, then all elements of $K \otimes V$ ($V \otimes K$) can be expressed in 
+form $1 \otimes v$ ($v \otimes 1$) and there are natural isomophisms ${^Lm} : K \otimes V \to V$,
 (${^Rm} : V \otimes K \to V$) given by
 \begin{align*}
 {^Lm}(k \otimes v) &= kv, \\
@@ -269,8 +271,8 @@ multiplication from $K$. \\[8pt]
 writing
 $kv \otimes w$. \\
 I hope that this third observation will also help in understanding what tensor product is and what is not.
-It will be good to keep it in mind when we will be intensively dealing with it in a combinatorical way in the
-following sections.
+It will be good to keep it in mind when we will be intensively dealing with it in a combinatorical way in 
+the following sections.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -286,7 +288,7 @@ following sections.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\section{Hopf algebras}
+\subsection{Hopf algebras}
 Now there will be full definition of a Hopf algebra. Although it is quite long and involves
 definition of ??? operations, I decided to put it in a consistent fragment, due to believe
 that thanks to that it will be a better reference. \\
@@ -297,10 +299,10 @@ is that for most of the time we will not be using full structure of a Hopf algeb
 to see the full shape of what we are dealing with. \\
 So now will come full definition nonetheless we will try to explain it piece by piece. \\[8pt]
 \indent \textbf{Remark. }Let $K$ be a field. In following section $k$, if not steted otherwise, will
-denotes an arbitrary element from this field. If not stated otherwise, all vector spaces will be over $K$ and
-all tensor products will be taken over $K$. Note, that when we will want to present a field multiplication
-from $K$ as a linear map $K \otimes K \to K$ it will be denoted as ${^Km}$. As it is then an isomorphism
-let ${^K\Delta} \coloneqq {^Km}^{-1}$. The $1$ from $K$ will be denoted as $1_K$.\\[8pt]
+denotes an arbitrary element from this field. If not stated otherwise, all vector spaces will be over $K$ 
+and all tensor products will be taken over $K$. Note, that when we will want to present a field 
+multiplication from $K$ as a linear map $K \otimes K \to K$ it will be denoted as ${^Km}$. As it is then an 
+isomorphism let ${^K\Delta} \coloneqq {^Km}^{-1}$. The $1$ from $K$ will be denoted as $1_K$.\\[8pt]
 \indent \textbf{Remark. } Let $U, V, W, Z$ be a vector spaces over field $K$.
 We will use notation
 $\varphi \otimes \psi:U \otimes V \to W \otimes Z$ which, for
@@ -340,7 +342,7 @@ $\varphi \psi (x)$ instead of $(\varphi \circ \psi)(x)$.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsection{Algebras}
+\subsubsection{Algebras}
 \begin{definition}
 A \textbf{$\textbf{K}$-algebra} is a vector space $\mathcal{H}$ with additional
 associative, linear operation
@@ -351,8 +353,8 @@ m(u(1_K) \otimes a) = m(a \otimes u(1_K)) = a.
 \end{equation*}
 \end{definition}
 \textbf{Explanation. } Operation $m$ defines on $\mathcal{H}$ a structure of an unitary ring by setting the
-ring multiplication (let it be denoted as "$\cdot$") as $a \cdot b = m(a \otimes b)$. The identity element of
-that ring multiplication is then $u(1)$. (We will be calling $u(1)$ also an identity element of
+ring multiplication (let it be denoted as "$\cdot$") as $a \cdot b = m(a \otimes b)$. The identity element 
+of that ring multiplication is then $u(1)$. (We will be calling $u(1)$ also an identity element of
 multiplication $m$ in K-algebra $\mathcal{H}$ or the $1$ in the $\mathcal{H}$ and 
 denote it as $1_\mathcal{H}$)\\
 \textit{Proof.} The fact, that $m$ is associative means that for all $a_1, a_2, a_3 \in \mathcal{H}$
@@ -369,9 +371,9 @@ $a \in \mathcal{H}$
 u(1_K) \cdot a = a \cdot u(1_K) = a
 \end{equation*}
 So indeed it is an identity
-element of that ring. As $u$ is linear map it can be seen as natural insertion of a field $K$ into an algebra
-$\mathcal{H}$ that maps $1_K$ to $1_\mathcal{H}$ ($1$ from the $K$ to the identity element of multiplication
-in $\mathcal{H}$) and extends lineary. Given that we can observe
+element of that ring. As $u$ is linear map it can be seen as natural insertion of a field $K$ into an 
+algebra $\mathcal{H}$ that maps $1_K$ to $1_\mathcal{H}$ ($1$ from the $K$ to the identity element of 
+multiplication in $\mathcal{H}$) and extends lineary. Given that we can observe
 that for all $a \in \mathcal{H}$, all $k \in K$, $a$ multiplicated by $u(k)$ (no matter if form the left
 or right) is exactly the $ka$ (an element of vector space $\mathcal{H}$).
 So we can think about $u[K]$ as a copy of $K$ in $\mathcal{H}$ that acts on $\mathcal{H}$ just like $K$.\\
@@ -416,7 +418,7 @@ multiplication in an algebra of our interest.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsection{Coalgebras}
+\subsubsection{Coalgebras}
 \begin{definition}
 A \textbf{$\textbf{K}$-coalgebra} is a vector space $\mathcal{H}$
 with additional coassociative, linear operation
@@ -446,10 +448,10 @@ notation \text{$\Delta(a) = \displaystyle\sum_{(a)}a_{(1)}\otimes a_{(2)}$}. \\
 In many cases comultiplication can be seen as a sum of possible decomposition of an element into
 elements "smaller" in some sens.
 For example, later it will come out that exactly the comultiplication will be the operation that will
-model the process of cutting the deck of cards into pieces in riffle shuffle. In examples that we will working
-with (graded, connected Hopf algebras) comultiplication will represent some kind of natural decomposition
-in the more general way. What does it mean in the strict sense will be presented in Definition 5. when we
-will be introducing graded Hopf Algebras. \\
+model the process of cutting the deck of cards into pieces in riffle shuffle. In examples that we will 
+working with (graded, connected Hopf algebras) comultiplication will represent some kind of natural 
+decomposition in the more general way. What does it mean in the strict sense will be presented in 
+Definition 5. when we will be introducing graded Hopf Algebras. \\
 Examples. \\[8pt]
 The coassociativity of $\Delta$ means, that $(\Delta \otimes I)\Delta = (I \otimes \Delta)\Delta$.
 In Sweedler notation it can be writen as
@@ -530,7 +532,7 @@ Applying on both sides isomorphisms ${^Lm}$ and ${^Rm}$ from
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsection{Bialgebras}
+\subsubsection{Bialgebras}
 \begin{definition}
 A \textbf{$\textbf{K}$-bialgebra} is a vector space $\mathcal{H}$ with both an algebra structure
 $(\mathcal{H}, m, u)$ and a coalgebra structure $(\mathcal{H}, \Delta, \varepsilon)$ such that $m$, $u$
@@ -560,7 +562,7 @@ or as: for all $g, h \in \mathcal{H}$, all $k \in K$
 \Delta (1_\mathcal{H}) &= 1_\mathcal{H} \otimes 1_\mathcal{H}, \\
 \varepsilon (1_\mathcal{H}) &= 1_K.
 \end{align*}
-\textbf{Informal remark. } Note that for the condition
+\textbf{Remark. } Note that for the condition
 $\Delta m = (m\otimes m)(I \otimes T \otimes I)(\Delta \otimes \Delta)$
 we need the map $(I \otimes T \otimes I)$, because without it, right site will be equal to
 $(m \otimes m)(\Delta \otimes \Delta)$ which, when applied on vector $g \otimes h$ yields
@@ -620,6 +622,7 @@ Hopf-square in sweedler notation looks like this:
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
+\subsubsection{Convolution}
 \begin{definition}
 Let $(C, \Delta, \varepsilon)$ be a coalgebra and $(A, M, u)$ an algebra. We define on the set $Hom(C, A)$
 an algebra structure in with the multiplication, denoted by $*$ is given as follows: if
@@ -650,9 +653,9 @@ The identity element of the algebra $Hom(C, A)$ is $u\varepsilon \in Hom(C, A)$ 
 &= f(c) \cdot 1_A = f(c)
 \end{align*}
 hence $f * u\varepsilon = f$. Similarly, $u\varepsilon * f = f$. \\
-Let us note that if $A = K$, then $*$ is the convolution product defined on the dual algebra of the coalgebra
-$C$. This is why in the case $A$ is an arbitrary algebra we will also call $*$ the convolution product.
-\\[8pt]
+Let us note that if $A = K$, then $*$ is the convolution product defined on the dual algebra of the 
+coalgebra $C$. This is why in the case $A$ is an arbitrary algebra we will also call $*$ the convolution 
+product. \\[8pt]
 \indent For a bialgebra $\mathcal{H}$ we denote $\mathcal{H}^A$, $\mathcal{H}^C$ as, respectivly,
 the underlying algebra and coalgebra structure. We can define as above algebra structure on
 $Hom(\mathcal{H}^C, \mathcal{H}^A)$. Note, that identity map $I : \mathcal{H} \to \mathcal{H}$ is an
@@ -687,7 +690,7 @@ and using sweedler notation as:
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsection{Hopf algebras}
+\subsubsection{Hopf algebras}
 \begin{definition}
 A bialgebra having an antipode is called a \textbf{Hopf algebra}.
 \end{definition}
@@ -727,10 +730,10 @@ This is the end of our algebraic definitions pfuuuu...
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\section{Examples}
-\subsection{Graded, connected Hopf algebra of polinomials}
+\subsection{Examples}
+\subsubsection{Graded, connected Hopf algebra of polinomials}
 \todo{BAM! DO ROBOTY!}
-\subsection{Graded, connected Hopf algebra of non-commuting variables}
+\subsubsection{Graded, connected Hopf algebra of non-commuting variables}
 This is a main example of our interest. \\
 Let K be a field with characteristic 0. 
 Let $\mathcal{X} = \{x_1, \dots, x_N\}$ be a finite set. For every $n \in \mathbb{N}$ let 
@@ -783,8 +786,6 @@ $\Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i$ then
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \chapter{Explanation of connection between Hopf algebras and Markov chains}
-Let take bla bla from eample ble ble. \\
-Now we will show how free associative algebra from example 2.3.2 set the structure for inverse riffle shuffle.
 \todo{}
 \begin{itemize}
 \item dopisać comutative i cocomutative
@@ -794,6 +795,7 @@ Now we will show how free associative algebra from example 2.3.2 set the structu
 \item wprowadzić dualną do noncommuting - ważne
 \item w rozdziale 3 wyjaśnić 
 \item non-commuting - Hopf square zachowuje skończone podprzestrzenie.
+\item wprowadzić te podprzestrzenie
 \item do łańcuch ów markowa dopisacć dokładniejsy opis gilbert shannon reeds - jakie sa prawdopodobieństwa 
 oraz że forward można rozumieć na dwa równoważne sposoby. To, że są do siebie odwrotne (dualne) będzie 
 wyprowadzone przy uzyciu algebry).
@@ -801,11 +803,21 @@ wyprowadzone przy uzyciu algebry).
 \item dodać oznaczenia
 \item nie dowodzić dualności!, będzie w 3.
 \end{itemize}
-We will be working of an examples of riffle shuffle and inverse riffle shuffle cards shuffling as 
-our Markov chains. \\
-How we will put them in the algebraic way? \\
-First we will do this with inverse riffle shuffle, the forward riffle shuffle will then apear in a natural 
-way. \\
+Let take a non-commuting variables algebra from its example. Let take $\mathcal{H}_s$ for some 
+$s \in \mathcal{X}^*$. Then $\Psi^{[2]}$ sets the Markov chain of inverse riffle shuffle the deck of cards 
+containnig cards labeled by $x$s appearing in $s$. Chains state space is then the basis of $\mathcal{H}_s$. 
+Chains transition matrix is equal to transition matrix of $\Psi^{[2]}$ writen in $S_s$.  \\
+\begin{proof}
+For the forward riffle shuffle we want to every possible permutation have probability 1 exept of identity 
+with probability $n-1$. Reachable permutations are the same because of form of actions (just the samE)
+we litterally cut that deck and put in on the top. coefficients holds, because numbers of the number of 
+occurences holds. Therefore its indeed the inverse riffle shuffling.
+\end{proof}
+
+Here we will provide a more specific probabilistic interpretation of spaces and actions in $\mathcal{H}$.
+We will do so by introduce algebraic structure on inverse riffle shuffle step-by-step. What we will end 
+up with will be eventually exactly the non-commuting algebra. \\[4pt]
+
 Let $\mathcal{X} = \{x_1, \dots x_N\}$ be our set of all possible types of cards. \\
 We will denote a stack of $k$ cards containing (from top to bottom) $x_{i_1}, \dots, x_{i_k}$ simply as 
 $x_{i_1}\dots x_{i_k}$. \\
@@ -820,18 +832,18 @@ interpreted as a state where we have a stack $s_i$ with probability $\frac{k_i}{
 equvalently as a probabilistic measure on $\mathcal{X}^*$ with value $\frac{k_i}{\sum^n_{i=1} k_i}$ on $s_i$ 
 for every $i \in \{1, \dots, n\}$ and $0$ elesewhere. \\
 In that undestanding the "+" can be readed as "or". \\
-We want also desribe a situation when: we have multiple stacks of cards on a table (some of them maybe empty), 
-there are only finitely many options how 
+We want also desribe a situation when: we have multiple stacks of cards on a table (some of them maybe 
+empty), there are only finitely many options how 
 these stacks can exactly look like and we know a probability of every option.\\ 
 It is very natural situation during shuffling as when we for example split a stack of cards at some 
 random point (with known probabilities of where the split can be) 
 we for shure have two stacks of cards (as soon as we agree that one of them can be empty), 
-there are only finetely many options how exactly arragment looks like and we know a probability of eachone. \\
-We will now focus on case when we have two decks on a table. \\
+there are only finetely many options how exactly arragment looks like and we know a probability of eachone. 
+\\ We will now focus on case when we have two decks on a table. \\
 We want to deal with that matter in similar way as we done for setting "probabilistic options" to one deck 
 of cards. We will span a vector space with all possible arregements of two decks as a basis. 
-That vector space will be $\mathcal{H} \otimes \mathcal{H}$. Now we will try to give some intuitions why it is 
-a resonable choise.  \\
+That vector space will be $\mathcal{H} \otimes \mathcal{H}$. Now we will try to give some explanation why in 
+fact this is quite intuitive.  \\
 For $s_1, s_2 \in \mathcal{X}^*$ lets denote $(s_1, s_2)$ as having $s_1$ on the left stack and $s_2$ 
 on the right stack. \\ 
 Let's make an observation that for all $s, s_1, s_2 \in \mathcal{X}^*$ situation of having arragement 
@@ -922,8 +934,15 @@ uniform distribution on "where" ($n+1$ options for a deck of size $n$) and then 
 two piles together in the way that \text{\textit{everyone-had-seen-at-some-point-in-the-life}} 
 (\textit{trrrrrrrr}) with 
 the same probability of every possible "\textit{trrrrrrrr}". \\
-For all $s_1, s_2, s \in \mathcal{X}^*$ let us denote the fact that concatenation of $s_1$ and $s_2$ gives $s$ 
-as $concat(s_1, s_2, s)$.
+Let us denote $\mathcal{H}$ as a dual to $\mathcal{H}$ what we want to do is to see how induced 
+ulitiplication and comultiplication look like. \\
+"here it come". \\
+It is forward fiffle sfufle, we can check it 
+that corresponds to that , that to that
+fold product is exactly that and that, so the coeficient matches and that is ok. \\
+And then it is exactly an riffle shuffle as it is bla bla. \\
+For all $s_1, s_2, s \in \mathcal{X}^*$ let us denote the fact that concatenation of $s_1$ and $s_2$ gives 
+$s$ as $concat(s_1, s_2, s)$.
 Let $\Delta_F : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$ be an linear map for decomposition 
 of the deck for forward riffle shuffle, then for all $s \in \mathcal{X}^*$
 \begin{equation*}
@@ -946,7 +965,8 @@ We can define multiplication and comultiplication of $\mathcal{H}^*$ in the natu
 bla bla
 ble ble
 
-We ckech, and what? That are exactly $m_F$ and $\Delta_F$ matrixes of $(F_i)_{i \geq 0}$ and $(I_i)_{i \geq 0}$ 
+We ckech, and what? That are exactly $m_F$ and $\Delta_F$ matrixes of $(F_i)_{i \geq 0}$ and $(I_i)_{i 
+\geq 0}$ 
 are transpositions of each other.\\
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -977,7 +997,7 @@ bla bla\\[8pt]
 Now we can make some futher observations about sfuffling.\\
 ble ble\\
 
-\chapter{Summation}
+\section{Summation}
 a ! \large! \Large! \huge! \Huge! \normalsize
 
 \section{Summarize}

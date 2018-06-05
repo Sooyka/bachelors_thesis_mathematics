@@ -666,11 +666,13 @@ Now we will show how free associative algebra from example 2.3.2 set the structu
 \item do łańcuch ów markowa dopisacć dokładniejsy opis gilbert shannon reeds - jakie sa prawdopodobieństwa 
 oraz że forward można rozumieć na dwa równoważne sposoby. To, że są do siebie odwrotne (dualne) będzie 
 wyprowadzone przy uzyciu algebry).
+\item finer grading
 \end{itemize}
 We will be working of an examples of riffle shuffle and inverse riffle shuffle cards shuffling as 
 our Markov chains. \\
 How we will put them in the algebraic way? \\
-First we will do this with inverse riffle shuffle, th forward riffle shuffle will then apear in natural way. \\
+First we will do this with inverse riffle shuffle, the forward riffle shuffle will then apear in a natural 
+way. \\
 Let $\mathcal{X} = \{x_1, \dots x_N\}$ be our set of all possible types of cards. \\
 We will denote a stack of $k$ cards containing (from top to bottom) $x_{i_1}, \dots, x_{i_k}$ simply as 
 $x_{i_1}\dots x_{i_k}$. \\
@@ -736,7 +738,25 @@ What we just define here is exactly an algebra of non-commuting variables from e
 Facts about its algebraic nature are proven in that section. \\
 We can observe now that Hopf-square map $\Psi^{[2]} = m\Delta$ for $\Delta$, $m$ defined as above 
 describes one iteration of the inverse riffle shuffle. For every $s \in /mathcal{X}^*$, $\Psi^{[2]}(s)$ is 
-a sum of possible arregements of stack with coresponding probabilities. Ta- daaaam! \\
+a sum of possible arregements of stack with coresponding probabilities. \\ Ta- daaaam! \\[4pt]
+But where are that Markov chain? Where are these "subspaces preserved by $\Psi$"? \\
+For an fixed deck of $n$ cards $\nu = (\nu_1, \dots, \nu_n) \in \mathcal{X}^n$ the Markov chain of shuffling 
+that deck is set by $\Psi^{[2]}$ restricted to the subspace spanned by $S_\nu$ = "all $s \in \mathcal{X}^*$ 
+that are some rearagement of $\nu$", more formally: spanned by $S_\nu$, where:
+\begin{equation*}
+S_\nu = \{ s = x_{i_1}\dots x_{i_n} \in \mathcal{X}^* \mid
+\exists_{\sigma \in S_n} x_{\sigma(i_1)}\dots x_{\sigma(i_n)} = \nu_1\dots \nu_n. \}.
+\end{equation*}
+($\sigma \in S_n$ is a permutation, $S_n$ is a symmetric group of $n$ (group of 
+all permutations of $n$ elements))\\
+Then the state space of that chain is $S_\nu$. The transition matrix of that chain is exactly a matrix of 
+$\Psi^{[2]}$ truncated to $\mathrm{Lin}(S_\nu)$ (which, as we can observe is finite-dimentional and 
+preserved by $\Psi^{[2]}$). \\[4pt]
+For forward riffle shuffle we will be working with the same space $\mathcal{H}$ (as we still 
+are dealing with the same set of types of cards) but with differnt actions (as operations of "pulling apart" 
+and "putting together" look now different). \\
+We will proove that indeed forward riffle shuffle and inverse riffle shuffle are the same shuffling method 
+but once aplicated "forward" and once "backward". What we mean is that for all moving from 
 \bibliography{my_bibliography}{}
 \bibliographystyle{alpha}
 \end{document}

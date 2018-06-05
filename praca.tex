@@ -634,7 +634,24 @@ $\mathcal{X}$ as
 \begin{equation*}
 \Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i.
 \end{equation*}
+and extends lineary and multiplically \\
 \textbf{Lemma. } Then $\mathcal{H}$ is the a graded, connected Hopf algebra that is cocomutative.
+\begin{proof}
+Associativity of $m$ and coassociativity of $\Delta$ are obvious. Actions fit together, 
+because we define them so. Algebra is graded and connnected because it is.
+\end{proof}
+We can see $\Delta(x_{i_0}\dots x_{i_k})$ how looks like:
+\begin{align*}
+\Delta(x_{i_0}\dots x_{i_k}) &= \Delta m^{[k]}(x_{i_0} \otimes \dots \otimes x_{i_k}) \\ 
+&= (m^{[k]} \otimes m^{[k]}) \left(\sum (x_{i_0})_1 \otimes \dots \otimes (x_{i_k})_1 \otimes 
+(x_{i_0})_2 \otimes \dots \otimes (x_{i_k})_2\right) \\ 
+&= \sum (x_{i_0})_1 \dots (x_{i_k})_1 \otimes 
+(x_{i_0})_2 \dots (x_{i_k})_2 \\ 
+&= \sum_{S \subseteq \{ i_0, \dots i_k \} } \prod_{j \in S} x_j \otimes \prod_{j \notin S} x_j.
+\end{align*}
+where $S$ is a multiset, because some of the $i_0, \dot i_k$ can be the same.
+Form of that coproduct is like that because when for all $x_i \in \mathcal{X}$ we have 
+$\Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i$ then 
 \section{Explanation of connection between Hopf algebras and Markov chains}
 Let take bla bla from eample ble ble. \\
 Now we will show how free associative algebra from example 2.3.2 set the structure for inverse riffle shuffle.
@@ -645,7 +662,81 @@ Now we will show how free associative algebra from example 2.3.2 set the structu
 \item pokazać jak wygląda coproduct w noncommuting - ważne
 \item wprowadzić dualną do noncommuting - ważne
 \item w rozdziale 3 wyjaśnić 
+\item non-commuting - Hopf square zachowuje skończone podprzestrzenie.
+\item do łańcuch ów markowa dopisacć dokładniejsy opis gilbert shannon reeds - jakie sa prawdopodobieństwa 
+oraz że forward można rozumieć na dwa równoważne sposoby. To, że są do siebie odwrotne (dualne) będzie 
+wyprowadzone przy uzyciu algebry).
 \end{itemize}
+We will be working of an examples of riffle shuffle and inverse riffle shuffle cards shuffling as 
+our Markov chains. \\
+How we will put them in the algebraic way? \\
+First we will do this with inverse riffle shuffle, th forward riffle shuffle will then apear in natural way. \\
+Let $\mathcal{X} = \{x_1, \dots x_N\}$ be our set of all possible types of cards. \\
+We will denote a stack of $k$ cards containing (from top to bottom) $x_{i_1}, \dots, x_{i_k}$ simply as 
+$x_{i_1}\dots x_{i_k}$. \\
+Imagine, that you have stack of cards $x_{i_1}\dots x_{i_k}$ after shuffling it
+you can get one of finitely many stack of cards each with certain probability. We want to denote it somehow. 
+For that reason we spann a vector space $\mathcal{H}$ over some field $K$ of characteristic 0 
+with basis $\mathcal{X}^*$ (finite words over $\mathcal{X}$, which means "all possible stacks 
+of cards of types from $\mathcal{X}$ inlcluding an empty stack"). \\
+For all $s_1, \dots, s_n \in \mathcal{X}^*$, all $k_1, \dots, k_n \in K$ a non-zero vector 
+$\displaystyle\sum^{n}_{i = 1} k_is_i$ is for all $i \in \{1, \dots, n\}$ 
+interpreted as a state where we have a stack $s_i$ with probability $\frac{k_i}{\sum^n_{i=1} k_i}$ or 
+equvalently as a probabilistic measure on $\mathcal{X}^*$ with value $\frac{k_i}{\sum^n_{i=1} k_i}$ on $s_i$ 
+for every $i \in \{1, \dots, n\}$ and $0$ elesewhere. \\
+In that undestanding the "+" can be readed as "or". \\
+We want also desribe a situation when we have multiple stacks of cards on a table, we percive it as a certain 
+amount of stacks (some of them maybe empty), there are only finitely many options how 
+these stacks can exactly look like and we know a probability of every option of what is on our table.\\ 
+It is very natural situation during shuffling as when we for example split a stack of cards at some 
+random point (with known probabilities of where the split can be) 
+we for shure have two stacks of cards (as soon as we agree that one of them can be empty), 
+there are only finetely many options how exactly arragment looks like and we know a probability of eachone. \\
+We will now focus on case when we have two decks on a table. At some point it will start to looks familiar.\\
+We want to deal with that matter in similar way as we done for setting "probabilistic options" to one deck 
+of cards. We will span a vector space with all possible arregements of two decks as a basis. Now we will think 
+about how addition and scalar multiplication should look like there. \\
+For $s_1, s_2 \in \mathcal{X}^*$ lets denote $(s_1, s_2)$ as having $s_1$ on the left stack and $s_2$ 
+on the right stack. \\ 
+Let's make an observation that for all $s, s_1, s_2 \in \mathcal{X}^*$ situation of having arragement 
+$(s_1, s)$ with probability $p$ and having arragement $(s_2, s)$ with probability $1-p$ is 
+the same situation as having $s_1$ with probability $p$ or having $s_2$ with probability $1 - p$ on the left 
+stack and for sure having $s$ on the right stack. Making connection with our previously introduced notation 
+so we want to $p(s_1, s) + (1-p)(s_2, s) = (ps_1 + (1-p)s_2, s)$ (and annalogly to the second coordinate).\\
+What is more note that having for sure $s_1$ on the left and $s_2$ on the right with probability $p$ (and 
+with probability $(1 - p)$ some else arragement, let's call it $z$) gives the same probabilty distribution 
+on possible arragments of two decks as having $s_1$ on the left with probability $p$, having $s_2$ on the 
+right for sure and with probability $1-p$ having $z$).\\
+This leads us to conclusion, that we also want to $p(s_1,s_2) = (ps_1, s_2)$ (and annalogly to the second 
+coordinaate). \\
+At this point we can start to think that it is convinient to interprete a space of probabilistic 
+measures on possible arragements of two stacks of cards as a $\mathcal{H} \otimes \mathcal{H}$. \\[4pt]
+int the Gilbert-Shannon-Reeds model of inverse riffle shuffling there are two steps. Firstly we are 
+decomposing the deck by take cards from the top of deck deck - one after another and puting them to the left 
+or to the right each with probability $frac{1}{2}$. Secondly putting left stack on the right stack. \\
+That pulling apart causes a split into two stacks, each of them can be any subset of original stack 
+(with preservation of order) with equal probability of each option. \\
+For $s_1, s \in \mathcal{X}^*$ let denote that $s_1$ is subsequence of $s$ (a subset with preservation of 
+order) as $s_1 \prec s_2$. Let we denote a stack arisen from removing form $s$ its subsequence $s_1$ as 
+$s/s_1$. \\
+Let denote that pulling apart as a $\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$, then for all 
+$s \in \mathcal{X}^*$ it will give
+\begin{equation*}
+\Delta(s) = \sum_{\substack{s_1 \prec s \\ s_2 = s/s_1}}
+s_1 \otimes s_2.
+\end{equation*}
+For putting two piles back together by placing left on the top let us write a linear map 
+$m : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ that is concatenation, which means, that 
+for all $s_1, s_2 \in \mathcal{X}^*$
+\begin{equation*}
+m(s_1 \otimes s_2) = s_1s_2.
+\end{equation*}
+What we just define here is exactly an algebra of non-commuting variables from example 
+2.3.2.\\
+Facts about its algebraic nature are proven in that section. \\
+We can observe now that Hopf-square map $\Psi^{[2]} = m\Delta$ for $\Delta$, $m$ defined as above 
+describes one iteration of the inverse riffle shuffle. For every $s \in /mathcal{X}^*$, $\Psi^{[2]}(s)$ is 
+a sum of possible arregements of stack with coresponding probabilities. Ta- daaaam! \\
 \bibliography{my_bibliography}{}
 \bibliographystyle{alpha}
 \end{document}

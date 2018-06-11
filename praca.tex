@@ -718,7 +718,7 @@ m[\mathcal{H}_i \otimes \mathcal{H}_j] &\subseteq \mathcal{H}_{i+j} \mathrm{\ an
 \Delta[H_n] &\subseteq \bigoplus^{n}_{i = 0} \mathcal{H}_i \otimes \mathcal{H}_{n-i}.
 \end{align*}
 \indent Now decomposition can be viewed as representing an element by the sum of pairs of lower-degree 
-elements. \\
+("smaller") elements. \\
 \indent We can observe that
 \begin{align*}
 \Psi^{[2]}[\mathcal{H}_n] &= m\Delta[\mathcal{H}_n] \subseteq m[\bigoplus^n_{i = 0} \mathcal{H}_i \otimes 
@@ -731,13 +731,16 @@ hence Hopf square $\Psi^{[2]}$ preserves grading
 A graded bialgebra $\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ is 
 \textbf{connected} iff $\mathcal{H}_0$ is one-dimentional subspace spanned by $1_\mathcal{H}$.
 \end{definition}
+\noindent \textbf{Explanation. } Equivalently we can say that a graded bialgebra 
+$\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ is 
+connected iff $\mathcal{H}_0 = u[K]$ for $u$ - unit in $\mathcal{H}$ treated as a $K$-algebra.
 \begin{theorem}
 Any graded, connected bialgebra is a Hopf algebra with antipode:
 \begin{equation*}
 S = \sum_{k \geq 0} (u\varepsilon - I)^{*k}.
 \end{equation*}
 \end{theorem}
-\todo{MOŻE DAĆ JEDNAK TEN DOWÓD.}
+\todo{MOŻE DAĆ JEDNAK TEN DOWÓD.} b
 This is the end of our algebraic definitions pfuuuu...
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -757,53 +760,138 @@ This is the end of our algebraic definitions pfuuuu...
 \section{Examples}
 \subsubsection{Graded, connected Hopf algebra of polinomials}
 Let $P$ be a vector space of polinomials with one variable over an field $K$ with natural grading by degree 
-(note, that standard polinomial multiplication is compatible with that grading as for polinomials with 
-degrees $i$, $j$, their product has degree $i + j$). 
+Note, that standard polinomial multiplication is compatible with that grading as for polinomials with 
+degrees $i$, $j$, their product has degree $i + j$. Connection comes from that the identity of multiplication 
+is a polinomial of degree $0$ ($1_p = X^0$).  \\
 $P$ can be enriched with coalgebra structure with comultiplication $\Delta$ such that for all 
 $n \in \mathbb{N}$:
 \begin{equation*}
 \Delta(X^n) = \sum^n_{i = 0} X^i \otimes X^{n-i}.
 \end{equation*}
 it extends lineary for the rest of $P$. \\
-counit is then  
-We can now check, that $P$ with that structure is a graded, connected Hopf algebra.
+Counit is then $0$ for all elements with positive degree (degree $>0$). Here comes the proof: \\
+Since for all $n \in \mathcal{N}$
+\begin{align*}
+(1_P \otimes \varepsilon )\Delta(X^n) &= X^n \otimes 1_K &\mathrm{and} \\
+(1_P \otimes \varepsilon )\Delta(X^n) &= \sum^n_{i = 0} X^i \otimes \varepsilon(X^{n-i}) &\mathrm{and} \\
+\sum^n_{i = 0} X^i \otimes \varepsilon(X^{n-i}) &= X^n \otimes \varepsilon(1_P) &+ 
+\sum^{n-1}_{i=0} X^i \otimes \varepsilon(X^{n-i}) \\ &= 
+X^n \otimes 1_K &+ \sum^{n-1}_{i=0} X^i \otimes \varepsilon(X^{n-i}) 
+\end{align*}
+we have that for all $n \in \mathbb{N}$
+\begin{equation*}
+\sum^{n-1}_{i=0} X^i \otimes \varepsilon(X^{n-i}) = 0
+\end{equation*}
+but we also have that
+\begin{equation*}
+\sum^{n-1}_{i=0} X^i \otimes \varepsilon(X^{n-i}) = \sum^{n-1}_{i=0} \varepsilon(X^{n-i})X^i \otimes 1_K = 
+\left( \sum^{n-1}_{i=0} \varepsilon(X^{n-i})X^i \right)\otimes 1_K
+\end{equation*}
+Because $X_0, \dots, X_{n-1}$ are lineary independent we have that \text{$\forall_{0 \leq i \leq n-1}\  
+\varepsilon(X^{n - i}) = 0$}. Keeping in mind that $n$ was arbitrary we have that for all $n \geq 1$ 
+$\varepsilon(X^n) = 0$ and then by linearity of $\varepsilon$, that for every polinomial $p \in P$ with 
+positive degree we have that $\varepsilon(p) = 0$. \\
+We can now check, that $P$ with that structure is a graded, connected Hopf algebra that is both commutative 
+and cocommutative. \\
+It is an bialebra, because: 
+\begin{align*}
+a
+\end{align*}
 \todo{BAM! DO ROBOTY!}
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \subsubsection{Graded, connected Hopf algebra of non-commuting variables}
-This is a main example of our interest. \\
+This is a main example of our interest. It will be used to describe inverse and forward riffle shuffling.\\
 Let K be a field with characteristic 0. 
 Let $\mathcal{X} = \{x_1, \dots, x_N\}$ be a finite set. For every $n \in \mathbb{N}$ let 
-$H_n$ be a vector space having as a basis all words of length $n$ made of elements 
-of $\mathcal{X}$. Let $\mathcal{H} \coloneqq \displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i$.
+$\mathcal{H}_n$ be a vector space having as a basis all words of length $n$ made of elements 
+of $\mathcal{X}$. (The basis of $\mathcal{H}_0$ is a singleton of a empty word). 
+Let $\mathcal{H} \coloneqq \displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i$. Hence 
+the basis of $\mathcal{H}$ is $\mathcal{X}^*$ - all finite words over an alphabet $\mathcal{X}$.
 Let $m : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ be concatenation of words, 
-that is, for all $k, l \in \mathbb{N}$ 
-for all $x_{i_0}, \dots, x_{i_k}, x_{j_0}, \dots, x_{j_l} \in \mathcal{X}$
+that is, for all $s_1, s_2 \in \mathcal{X}^*$
 \begin{equation*}
-m(x_{i_0}\dots x_{i_k} \otimes x_{j_0}\dots x_{j_l}) \coloneqq 
-x_{i_0}\ldots x_{i_k}x_{j_0}\ldots x_{j_l}.
+m(s_1 \otimes s_2) \coloneqq s_1s_2.
 \end{equation*}
 Let $\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$ be defined for all elements from 
 $\mathcal{X}$ as
 \begin{equation*}
 \Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i.
 \end{equation*}
-and extends lineary and multiplically \\
+and extends lineary and multiplically .\\
 \textbf{Lemma. } Then $\mathcal{H}$ is the a graded, connected Hopf algebra that is cocomutative.
 \begin{proof}
 Associativity of $m$ and coassociativity of $\Delta$ are obvious. Actions fit together, 
-because we define them so. Algebra is graded and connnected because it is.
+because we define them so. Algebra is graded straight from definition and connnected because an empty word 
+is an identity element in respect of concatenation multiplication. Cocomutativity can be check immediatly.
 \end{proof}
-We can see $\Delta(x_{i_0}\dots x_{i_k})$ how looks like:
-\begin{align*}
+\noindent Let $s = x_{i_0}\dots x_{i_k} \in \mathcal{X}^*$. What is not obvioues is 
+how $\Delta(x_{i_0}\dots x_{i_k})$ looks like:
+\begin{align}
 \Delta(x_{i_0}\dots x_{i_k}) &= \Delta m^{[k]}(x_{i_0} \otimes \dots \otimes x_{i_k}) \\ 
 &= (m^{[k]} \otimes m^{[k]}) \left(\sum (x_{i_0})_1 \otimes \dots \otimes (x_{i_k})_1 \otimes 
 (x_{i_0})_2 \otimes \dots \otimes (x_{i_k})_2\right) \\ 
 &= \sum (x_{i_0})_1 \dots (x_{i_k})_1 \otimes 
-(x_{i_0})_2 \dots (x_{i_k})_2 \\ 
-&= \sum_{S \subseteq \{ i_0, \dots i_k \} } \prod_{j \in S} x_j \otimes \prod_{j \notin S} x_j.
+(x_{i_0})_2 \dots (x_{i_k})_2.
+\end{align}
+It can be unclear what this sum really is. It is taken over all possible combinations of all "possible 
+values" of $(x_{i_j})_1$ and $(x_{i_j})_2$ for $ 0 \leq j \leq k$. We can recall that for all 
+$x_i \in \mathcal{X}$ we 
+have $\Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i$. Writing that in sweedler 
+notation gives
+\begin{equation*}
+\sum(x_i)_1 \otimes (x_i)_2 = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i.
+\end{equation*}
+hence "possible values" of $(x_i)_1$ (and $(x_i)_2$) are $x_i$ and $1_\mathcal{H}$.
+The sum we are discussing is then sum over all possible partitions into to distinct subsequences of $s$, 
+because for each component of that sum, for each $x_{i_j}$ we decide if we are taking it into the left 
+subsequence ($x_{i_j}$ as a "value" of $(x_{i_j})_1$ and $1_\mathcal{H}$ as a "value" of $(x_{i_j})_2$) or 
+into the right subsequence ($1_\mathcal{H}$ as a "value" of $(x_{i_j})_1$ and $x_{i_j}$ as a "value" of 
+$(x_{i_j})_2$).
+\\ For denoting it lets denote $s_1 \prec s$ for "$s_1$ is a subsequence of $s$". And let for $s_1, s$ 
+such that $s_1 \prec s$ denote $s_2 = s / s_1$ for $s_2 \prec s$ such that it is created by removing 
+$s_1$ from $s$. We can now write sum from (2.5) as:
+\begin{equation*}
+\sum (x_{i_0})_1 \dots (x_{i_k})_1 \otimes (x_{i_0})_2 \dots (x_{i_k})_2 =
+\sum_{\substack{s_1 \prec s \\ s_2 = s / s_1}} s_1 \otimes s_2.
+\end{equation*}
+Equvalently (and that expression can be found in ~\cite{Diaconis2014}) it can be written as
+\begin{equation*}
+\sum_{S \subseteq \{ i_0, \dots i_k \} } \prod_{j \in S} x_j \otimes \prod_{j \notin S} x_j.
+\end{equation*}
+where $S$ is a multiset, because some of the $i_0, \dot i_k$ can be the same. \\[8pt]
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+Now we will describe how a dual algebra to $\mathcal{H}$ looks like. \\
+Let $\mathcal{H}^*$ be the dual vector space to $\mathcal{H}$. (A space of linear functions from 
+$\mathcal{H}$ to $K$). We define multiplication 
+$\Delta^* : \mathcal{H}^* \otimes \mathcal{H}^* \to \mathcal{H}^*$ and comultiplication 
+$m^* : \mathcal{H}^* \to \mathcal{H}^* \otimes \mathcal{H}^*$ as 
+(for all $h_1^*, h_2^*, h^* \in \mathcal{H}^*$):
+\begin{align*}
+\Delta^*(h_1^* \otimes h_2^*) = (h_1^* \otimes h_2^*)\Delta, \\
+m^*(h^*) = h^*m.
 \end{align*}
-where $S$ is a multiset, because some of the $i_0, \dot i_k$ can be the same.
-Form of that coproduct is like that because when for all $x_i \in \mathcal{X}$ we have 
-$\Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i$ then 
+Please note, that at first it can be not clear that $h^*m \in \mathcal{H}^* \otimes \mathcal{H}^*$. 
+For sure $h^* \in (\mathcal{H} \otimes \mathcal{H})^*$ but in general case we have 
+$ \mathcal{H}^* \otimes \mathcal{H}^* \subseteq (\mathcal{H} \otimes \mathcal{H})^*$ (with inclusion given by 
+canonical injection) but not necessarily 
+$ \mathcal{H}^* \otimes \mathcal{H}^* = (\mathcal{H} \otimes \mathcal{H})^*$.
+Although we are in graded bialgebra $\mathcal{H}$ and because of that we know that 
+$h^*m \in \displaystyle\left(\bigoplus^\infty_{n=0}\mathcal{H}_n \otimes \mathcal{H}_n\right)^* = 
+\displaystyle\bigoplus^\infty_{n = 0} (\mathcal{H}_n \otimes \mathcal{H}_n)^*$. Futher, for all 
+$n \in \mathbb{N}$ since $\mathcal{H}_n$ is finite-dimentional we have that
+$(\mathcal{H}_n \otimes \mathcal{H}_n)^* = \mathcal{H}_n^* \otimes \mathcal{H}_n^*$. 
+Hence 
+\begin{equation*}
+h^*m \in \displaystyle\bigoplus^\infty_{n = 0} \mathcal{H}_n^* \otimes \mathcal{H}^*_n = 
+\mathcal{H}^* \otimes \mathcal{H}^*.
+\end{equation*}
 \todo{COŚTAM}
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1020,13 +1108,7 @@ Now we can make some futher observations about sfuffling.\\
 ble ble\\
 
 \section{Summation}
-a ! \large! \Large! \huge! \Huge! \normalsize
 
-\section{Summarize}
-$\displaystyle\sum\ \bigoplus\ +\ \oplus$
-
-\section{Productise}
-$\displaystyle\prod\ \bigotimes\ \bigodot\ \times\ *$
 
 \bibliography{my_bibliography}{}
 \bibliographystyle{alpha}

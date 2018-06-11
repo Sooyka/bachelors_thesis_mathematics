@@ -16,7 +16,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{theorem}{Theorem}
 
-\newcommand{\todo}[1]{\hfill \break \textbf{\Huge TO DO: #1}\normalsize}
+\newcommand{\todo}[1]{\hfill \break \textbf{\Huge TO DO: #1 \hfill \break}\normalsize}
 
 \title{Explanation of connection between Hopf algebras and Markov chains}
 \author{Bartosz Sójka}
@@ -48,6 +48,8 @@ Instytut Matematyczny}\\
 \null
 \thispagestyle{empty}
 \newpage
+\tableofcontents
+
 \begin{abstract}
 
 In~\cite{Diaconis2014} Persi Diaconis, Amy Pang and Arun Ram described how to use Hopf algebras for
@@ -63,9 +65,25 @@ using Hopf algebras.
 
 
 \end{abstract}
-
-\chapter{Definitions}
-\section{Markov chains}
+\todo{}
+\begin{itemize}
+\item dopisać comutative i cocomutative
+\item dopisać przykład polinomial i ciała do coalgebry
+\item dopisąć grupowy do Hopfa
+\item pokazać jak wygląda coproduct w noncommuting - ważne
+\item wprowadzić dualną do noncommuting - ważne
+\item w rozdziale 3 wyjaśnić 
+\item non-commuting - Hopf square zachowuje skończone podprzestrzenie.
+\item wprowadzić te podprzestrzenie
+\item do łańcuch ów markowa dopisacć dokładniejsy opis gilbert shannon reeds - jakie sa prawdopodobieństwa 
+oraz że forward można rozumieć na dwa równoważne sposoby. To, że są do siebie odwrotne (dualne) będzie 
+wyprowadzone przy uzyciu algebry).
+\item finer grading
+\item dodać oznaczenia
+\item nie dowodzić dualności!, będzie w 3.
+\end{itemize}
+\chapter{Markov chains}
+\setcounter{page}{5}
 Finite Markov chain is a random process on the finite set of states such that
 the probability of being in some state in the moment $n+1$ depends only on in which state one was
 in the moment $n$. Now we will put this more formally.\\
@@ -111,8 +129,18 @@ Cośtam cośtam stationary distirution. \\
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\section{Hopf algebras}
+\chapter{Hopf algebras}
 %
+Now there will be full definition of a Hopf algebra. Although it is quite long and involves
+definition of ??? operations, I decided to put it in a consistent fragment, due to believe
+that thanks to that it will be a better reference. \\
+If reader will feel lost in this section it is recommended to read it in parralell to the section 2.3
+where examples are provided or treat it just as a reference  when formal definition will be needed.
+Another reason of arranging text like that (and possibility of treating this section just as a refference),
+is that for most of the time we will not be using full structure of a Hopf algebra. Nethertheless it is good
+to see the full shape of what we are dealing with. \\
+So now will come full definition nonetheless we will try to explain it piece by piece. \\[8pt]
+\section{Preliminaries}
 \subsection{Tensor products}
 %
 First we will introduce tensor produkt of the vector spaces. Let $V, W$ be vector spaces over the field $K$.
@@ -140,11 +168,11 @@ z_1 \simeq z_2 &\implies kz_1 \simeq kz_2,
 we treat $Z/_\simeq$ as a vector space with operations
 %
 \begin{align*}
-[z_1]_{/\simeq} + [z_2]_{/\simeq} &\coloneqq [z_1 + z_2]_{/\simeq}, \\
-k[z_1]_{/\simeq} &\coloneqq [kz_1]_{/\simeq}.
+[z_1]_\simeq + [z_2]_\simeq &\coloneqq [z_1 + z_2]_\simeq, \\
+k[z_1]_\simeq &\coloneqq [kz_1]_\simeq.
 \end{align*}
 %
-We denote equivalece class $[(v,w)]_{/\simeq}$ as $v \otimes w$.
+We denote equivalece class $[(v,w)]_\simeq$ as $v \otimes w$.
 The tensor product $V \otimes W \coloneqq Z/_\simeq$.
 Note, that in $V \otimes W$ there are vectors that can not be writen as $v \otimes w$ for any $v$, $w$.
 However every $z \in V \otimes W$ can be writen in as $z =\displaystyle\sum^n_{i = 1}v_i \otimes w_i$
@@ -154,11 +182,11 @@ for some $v_1, \dots, v_n \in V$, $w_1, \dots, w_n \in W$.
 For example take $v_1,\dots, v_n, w_1, \dots, w_n$ such that they are lineary independent
 in corresponding spaces.
 Then take $\displaystyle\sum^n_{i=1}(v_i,w_i)$. There are no $v, w$
-such that $ [(v,w)]_{/\simeq} = \left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_{/\simeq}$.
-Thus for the element $\left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_{/\simeq}$ of $V\otimes W$
-there are no $v, w$ such that $v \otimes w = \left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_{/\simeq}$.
-However, since $\left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_{/\simeq} =
-\displaystyle\sum^n_{i=1}[(v_i,w_i)]_{/\simeq}$ it can be writen as
+such that $ [(v,w)]_\simeq = \left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_\simeq$.
+Thus for the element $\left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_\simeq$ of $V\otimes W$
+there are no $v, w$ such that $v \otimes w = \left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_\simeq$.
+However, since $\left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_\simeq =
+\displaystyle\sum^n_{i=1}[(v_i,w_i)]_\simeq$ it can be writen as
 $\displaystyle\sum^n_{i=1}v_i \otimes w_i$. \\
 Now we will make some futher observations on how $V \otimes W$ looks like.
 \begin{observation}
@@ -168,27 +196,27 @@ then $\{b_i \otimes c_j : i \in I, j \in J\}$ is the basis of $V \otimes W$.
 \end{observation}
 \begin{proof}
 Let $z = \displaystyle\sum^n_{i = 1}\alpha_i(v_i,w_i)$ be an arbitraly non-zero element of $Z$. We will show
-that $[z]_{/\simeq}$ has representation as $\displaystyle\sum^m_{i = 1}\beta_i [(b_i,c_i)]_{/\simeq}$
+that $[z]_\simeq$ has representation as $\displaystyle\sum^m_{i = 1}\beta_i [(b_i,c_i)]_\simeq$
 $\left(=\displaystyle\sum^m_{i = 1}\beta_i(b_i \otimes c_i)\right)$.
 
 \begin{align*}
-[z]_{/\simeq} = \left[\sum^n_{i = 1}\alpha_i(v_i,w_i)\right]_{/\simeq} &=
-\sum^n_{i = 1}\alpha_i[(v_i,w_i)]_{/\simeq} \\
+[z]_\simeq = \left[\sum^n_{i = 1}\alpha_i(v_i,w_i)\right]_\simeq &=
+\sum^n_{i = 1}\alpha_i[(v_i,w_i)]_\simeq \\
 &= \sum^n_{i = 1}\alpha_i\left[\left(\sum^{l_1}_{j=1}\gamma_{i,j}b_{i,j},
-\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_{/\simeq} \\
+\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_\simeq \\
 &= \sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(b_{i,j},
-\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_{/\simeq} \\
+\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_\simeq \\
 &= \sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(\sum^{l_2}_{k=1}\gamma_{i,k}
-\left(b_{i,j},c_{i,k}\right)\right)\right]_{/\simeq} \\
+\left(b_{i,j},c_{i,k}\right)\right)\right]_\simeq \\
 &= \sum^n_{i = 1}\alpha_i\left[\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
-\gamma_{i,j}\gamma_{i,k}(b_{i,j}, c_{i,k})\right]_{/\simeq} \\
+\gamma_{i,j}\gamma_{i,k}(b_{i,j}, c_{i,k})\right]_\simeq \\
 &= \sum^n_{i = 1}\alpha_i\left(\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
-\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_{/\simeq}\right) \\
+\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_\simeq\right) \\
 &= \sum_{\substack{1 \leq i \leq n \\1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
-\alpha_i\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_{/\simeq}
+\alpha_i\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_\simeq
 \end{align*}
 Thus $\{b_i \otimes c_j : i \in I, j \in J\}$ spans $V \otimes W$. To prove linear independence we can 
-observe that if $\displaystyle\sum^m_{i = 1}\alpha_i [(v_i,w_i)]_{/\simeq} = 0$
+observe that if $\displaystyle\sum^m_{i = 1}\alpha_i [(v_i,w_i)]_\simeq = 0$
 then either $v_1, \dots v_n$ or $w_1, \dots, w_n$ have to be lineary dependent. It can't occur if
 $v_1, \dots v_n$ and $w_1, \dots, w_n$ are from the basises of $V$ and $W$.\\
 This observation also justifies
@@ -288,16 +316,7 @@ the following sections.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsection{Hopf algebras}
-Now there will be full definition of a Hopf algebra. Although it is quite long and involves
-definition of ??? operations, I decided to put it in a consistent fragment, due to believe
-that thanks to that it will be a better reference. \\
-If reader will feel lost in this section it is recommended to read it in parralell to the section 2.3
-where examples are provided or treat it just as a reference  when formal definition will be needed.
-Another reason of arranging text like that (and possibility of treating this section just as a refference),
-is that for most of the time we will not be using full structure of a Hopf algebra. Nethertheless it is good
-to see the full shape of what we are dealing with. \\
-So now will come full definition nonetheless we will try to explain it piece by piece. \\[8pt]
+\subsection{Notational remarks}
 \indent \textbf{Remark. }Let $K$ be a field. In following section $k$, if not steted otherwise, will
 denotes an arbitrary element from this field. If not stated otherwise, all vector spaces will be over $K$ 
 and all tensor products will be taken over $K$. Note, that when we will want to present a field 
@@ -342,7 +361,7 @@ $\varphi \psi (x)$ instead of $(\varphi \circ \psi)(x)$.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsubsection{Algebras}
+\section{Algebras}
 \begin{definition}
 A \textbf{$\textbf{K}$-algebra} is a vector space $\mathcal{H}$ with additional
 associative, linear operation
@@ -400,9 +419,12 @@ Because of that for all $a_1, \dots, a_n \in A$ we can write
 \begin{equation*}
 m^{[n]}(a_1 \otimes \dots \otimes a_n) = a_1 \cdot \ldots \cdot a_n.
 \end{equation*}
+\textbf{Remark. } An algebra $A$ is said to be commutative iff for all $a_1, a_2 \in A$
+\begin{equation*}
+m(a_1 \otimes a_2 ) = m(a_2 \otimes a_1).
+\end{equation*}
 \indent \textbf{Remark. } Later in the text we will still be using "$\cdot$" as a symbol for an algebra
 multiplication in an algebra of our interest.
-\todo{BANG! COMUTATIVITY}
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -418,7 +440,7 @@ multiplication in an algebra of our interest.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsubsection{Coalgebras}
+\section{Coalgebras}
 \begin{definition}
 A \textbf{$\textbf{K}$-coalgebra} is a vector space $\mathcal{H}$
 with additional coassociative, linear operation
@@ -451,7 +473,7 @@ For example, later it will come out that exactly the comultiplication will be th
 model the process of cutting the deck of cards into pieces in riffle shuffle. In examples that we will 
 working with (graded, connected Hopf algebras) comultiplication will represent some kind of natural 
 decomposition in the more general way. What does it mean in the strict sense will be presented in 
-Definition 5. when we will be introducing graded Hopf Algebras. \\
+Definition 8. when we will be introducing graded bialgebras. \\
 Examples. \\[8pt]
 The coassociativity of $\Delta$ means, that $(\Delta \otimes I)\Delta = (I \otimes \Delta)\Delta$.
 In Sweedler notation it can be writen as
@@ -516,7 +538,10 @@ Applying on both sides isomorphisms ${^Lm}$ and ${^Rm}$ from
 \sum\varepsilon(a_1)a_2 &= a, \\
 \sum a_1\varepsilon(a_2) &= a.
 \end{align*}
-\todo{BAM! COCOMUTATIVITY}
+\textbf{Remark. } A coalgebra $C$ is said to be cocommutative iff for all $c \in C$
+\begin{equation*}
+\sum c_1 \otimes c_2 = \sum c_2 \otimes c_1.
+\end{equation*}
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -532,7 +557,7 @@ Applying on both sides isomorphisms ${^Lm}$ and ${^Rm}$ from
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsubsection{Bialgebras}
+\section{Bialgebras}
 \begin{definition}
 A \textbf{$\textbf{K}$-bialgebra} is a vector space $\mathcal{H}$ with both an algebra structure
 $(\mathcal{H}, m, u)$ and a coalgebra structure $(\mathcal{H}, \Delta, \varepsilon)$ such that $m$, $u$
@@ -577,18 +602,6 @@ one $T$ is enough for all powers of $m$ and $\Delta$ as state in following remar
 \begin{proof}
 Left to the reader.
 \end{proof}
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -690,30 +703,41 @@ and using sweedler notation as:
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsubsection{Hopf algebras}
+\section{Hopf algebras}
 \begin{definition}
 A bialgebra having an antipode is called a \textbf{Hopf algebra}.
 \end{definition}
 \begin{definition}
-A \textbf{graded Hopf algebra} is vector space 
-$\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ with a Hopf algebra structure that is 
+A \textbf{graded bialgebra} is vector space 
+$\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ with a bialgebra structure that is 
 compatible with the grading.
 \end{definition}
-\textbf{Explanation. } Hopf algebra structure is compatible with grading iff for all $i, j \in \mathbb{N}$:
+\textbf{Explanation. } A bialgebra structure is compatible with grading iff for all $i, j \in \mathbb{N}$:
 \begin{align*}
 m[\mathcal{H}_i \otimes \mathcal{H}_j] &\subseteq \mathcal{H}_{i+j} \mathrm{\ and} \\
 \Delta[H_n] &\subseteq \bigoplus^{n}_{i = 0} \mathcal{H}_i \otimes \mathcal{H}_{n-i}.
 \end{align*}
-Hopf square preserve grading
-\todo{BAM! IS DECOMPOSITION INTO SOME SMALLER - WILL BE SMALLER DECKS OF CARDS}
+\indent Now decomposition can be viewed as representing an element by the sum of pairs of lower-degree 
+elements. \\
+\indent We can observe that
+\begin{align*}
+\Psi^{[2]}[\mathcal{H}_n] &= m\Delta[\mathcal{H}_n] \subseteq m[\bigoplus^n_{i = 0} \mathcal{H}_i \otimes 
+\mathcal{H}_{n - i}] \\ &= \bigoplus^n_{i = 0} m[\mathcal{H}_i \otimes \mathcal{H}_{n - i}] \subseteq 
+\bigoplus^n_{i = 0} \mathcal{H}_n = \mathcal{H}_n,
+\end{align*}
+hence Hopf square $\Psi^{[2]}$ preserves grading 
+(in the sence that $\Psi^{[2]}[\mathcal{H}_n] \subseteq \mathcal{H}_n$).
 \begin{definition}
-A graded Hopf algebra $\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ is 
+A graded bialgebra $\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ is 
 \textbf{connected} iff $\mathcal{H}_0$ is one-dimentional subspace spanned by $1_\mathcal{H}$.
 \end{definition}
-As an curiosity we will say that any graded, connected bialgebra is a Hopf algebra with antipode
+\begin{theorem}
+Any graded, connected bialgebra is a Hopf algebra with antipode:
 \begin{equation*}
 S = \sum_{k \geq 0} (u\varepsilon - I)^{*k}.
 \end{equation*}
+\end{theorem}
+\todo{MOŻE DAĆ JEDNAK TEN DOWÓD.}
 This is the end of our algebraic definitions pfuuuu...
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -730,8 +754,19 @@ This is the end of our algebraic definitions pfuuuu...
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsection{Examples}
+\section{Examples}
 \subsubsection{Graded, connected Hopf algebra of polinomials}
+Let $P$ be a vector space of polinomials with one variable over an field $K$ with natural grading by degree 
+(note, that standard polinomial multiplication is compatible with that grading as for polinomials with 
+degrees $i$, $j$, their product has degree $i + j$). 
+$P$ can be enriched with coalgebra structure with comultiplication $\Delta$ such that for all 
+$n \in \mathbb{N}$:
+\begin{equation*}
+\Delta(X^n) = \sum^n_{i = 0} X^i \otimes X^{n-i}.
+\end{equation*}
+it extends lineary for the rest of $P$. \\
+counit is then  
+We can now check, that $P$ with that structure is a graded, connected Hopf algebra.
 \todo{BAM! DO ROBOTY!}
 \subsubsection{Graded, connected Hopf algebra of non-commuting variables}
 This is a main example of our interest. \\
@@ -785,24 +820,7 @@ $\Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i$ then
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\chapter{Explanation of connection between Hopf algebras and Markov chains}
-\todo{}
-\begin{itemize}
-\item dopisać comutative i cocomutative
-\item dopisać przykład polinomial i ciała do coalgebry
-\item dopisąć grupowy do Hopfa
-\item pokazać jak wygląda coproduct w noncommuting - ważne
-\item wprowadzić dualną do noncommuting - ważne
-\item w rozdziale 3 wyjaśnić 
-\item non-commuting - Hopf square zachowuje skończone podprzestrzenie.
-\item wprowadzić te podprzestrzenie
-\item do łańcuch ów markowa dopisacć dokładniejsy opis gilbert shannon reeds - jakie sa prawdopodobieństwa 
-oraz że forward można rozumieć na dwa równoważne sposoby. To, że są do siebie odwrotne (dualne) będzie 
-wyprowadzone przy uzyciu algebry).
-\item finer grading
-\item dodać oznaczenia
-\item nie dowodzić dualności!, będzie w 3.
-\end{itemize}
+\chapter{Connection}
 Let take a non-commuting variables algebra from its example. Let take $\mathcal{H}_s$ for some 
 $s \in \mathcal{X}^*$. Then $\Psi^{[2]}$ sets the Markov chain of inverse riffle shuffle the deck of cards 
 containnig cards labeled by $x$s appearing in $s$. Chains state space is then the basis of $\mathcal{H}_s$. 
@@ -816,20 +834,24 @@ occurences holds. Therefore its indeed the inverse riffle shuffling.
 
 Here we will provide a more specific probabilistic interpretation of spaces and actions in $\mathcal{H}$.
 We will do so by introduce algebraic structure on inverse riffle shuffle step-by-step. What we will end 
-up with will be eventually exactly the non-commuting algebra. \\[4pt]
+up with will be eventually exactly the non-commuting algebra. Note, that what is written below are only 
+some of observations how structures of free-assiociative algebra and inverse riffle shuffle Markov chain 
+works togrther. It will not be proof that these structures are litterally the same nor that these arguments 
+apply  in general to all Hopf algebras and Markov chains.\\[4pt]
 
 Let $\mathcal{X} = \{x_1, \dots x_N\}$ be our set of all possible types of cards. \\
 We will denote a stack of $k$ cards containing (from top to bottom) $x_{i_1}, \dots, x_{i_k}$ simply as 
 $x_{i_1}\dots x_{i_k}$. \\
 Imagine, that you have stack of cards $x_{i_1}\dots x_{i_k}$. After shuffling it
 you can get one of finitely many stack of cards each with certain probability. We want to denote it somehow. 
-For that reason we spann a vector space $\mathcal{H}$ over some field $K$ of characteristic 0 
+For that reason we spann a vector space $\mathcal{H}$, over $\mathbb{Q}$ (but can be $\mathbb{R}$ if someone 
+likes), 
 with basis $\mathcal{X}^*$ (finite words over $\mathcal{X}$, which means "all possible stacks 
 of cards of types from $\mathcal{X}$ inlcluding an empty stack"). \\
-For all $s_1, \dots, s_n \in \mathcal{X}^*$, all $k_1, \dots, k_n \in K$ a non-zero vector 
-$\displaystyle\sum^{n}_{i = 1} k_is_i$ is for all $i \in \{1, \dots, n\}$ 
-interpreted as a state where we have a stack $s_i$ with probability $\frac{k_i}{\sum^n_{i=1} k_i}$ or 
-equvalently as a probabilistic measure on $\mathcal{X}^*$ with value $\frac{k_i}{\sum^n_{i=1} k_i}$ on $s_i$ 
+For all $s_1, \dots, s_n \in \mathcal{X}^*$, all $0 \leq q_1, \dots, q_n \in K$ a non-zero vector 
+$\displaystyle\sum^{n}_{i = 1} q_is_i$ is for all $i \in \{1, \dots, n\}$ 
+interpreted as a state where we have a stack $s_i$ with probability $\frac{q_i}{\sum^n_{i=1} q_i}$ or 
+equvalently as a probabilistic measure on $\mathcal{X}^*$ with value $\frac{q_i}{\sum^n_{i=1} q_i}$ on $s_i$ 
 for every $i \in \{1, \dots, n\}$ and $0$ elesewhere. \\
 In that undestanding the "+" can be readed as "or". \\
 We want also desribe a situation when: we have multiple stacks of cards on a table (some of them maybe 

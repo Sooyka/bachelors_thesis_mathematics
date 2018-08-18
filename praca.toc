@@ -2,18 +2,18 @@
 \contentsline {chapter}{\numberline {1}Markov chains}{5}{chapter.1}
 \contentsline {chapter}{\numberline {2}Hopf algebras}{7}{chapter.2}
 \contentsline {section}{\numberline {2.1}Preliminaries}{7}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Tensor products}{7}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Notational remarks}{11}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.1}Notational remarks}{7}{subsection.2.1.1}
+\contentsline {subsubsection}{Dual spaces and graded dual spaces }{8}{section*.2}
+\contentsline {subsection}{\numberline {2.1.2}Tensor products}{8}{subsection.2.1.2}
 \contentsline {section}{\numberline {2.2}Algebras}{12}{section.2.2}
 \contentsline {section}{\numberline {2.3}Coalgebras}{13}{section.2.3}
 \contentsline {section}{\numberline {2.4}Bialgebras}{16}{section.2.4}
-\contentsline {subsubsection}{Convolution}{17}{section*.2}
-\contentsline {section}{\numberline {2.5}Hopf algebras}{18}{section.2.5}
-\contentsline {section}{\numberline {2.6}Examples}{19}{section.2.6}
-\contentsline {subsubsection}{Graded, connected Hopf algebra of polinomials}{19}{section*.3}
-\contentsline {subsubsection}{Graded, connected Hopf algebra of non-commuting variables}{20}{section*.4}
-\contentsline {chapter}{\numberline {3}Connection}{21}{chapter.3}
-\contentsline {chapter}{\numberline {4}Left and right eigenbasis}{26}{chapter.4}
-\contentsline {section}{\numberline {4.1}Summation}{26}{section.4.1}
-\contentsline {section}{\numberline {4.2}Summarize}{26}{section.4.2}
-\contentsline {section}{\numberline {4.3}Productise}{26}{section.4.3}
+\contentsline {subsubsection}{Convolution}{17}{section*.3}
+\contentsline {section}{\numberline {2.5}Hopf algebras}{19}{section.2.5}
+\contentsline {section}{\numberline {2.6}Examples}{20}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Graded, connected Hopf algebra of polinomials}{20}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Graded, connected Hopf algebra of non-commuting variables}{21}{subsection.2.6.2}
+\contentsline {subsubsection}{A graded dual}{22}{section*.4}
+\contentsline {chapter}{\numberline {3}Connection}{23}{chapter.3}
+\contentsline {chapter}{\numberline {4}Left and right eigenbasis}{28}{chapter.4}
+\contentsline {section}{\numberline {4.1}Summation}{28}{section.4.1}

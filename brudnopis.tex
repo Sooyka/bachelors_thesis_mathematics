@@ -266,4 +266,78 @@ Earlier it was said that comultiplication can be sometimes viewed as a sum
 of possible divisions into smaller objects. It happends naturally when we are working with graded bialgebras. 
 Like in example of polinomials, where natural grading is by degree. \\
 
+\subsubsection{Graded, connected Hopf algebra of non-commuting variables}
+This is a main example of our interest. \\
+Let K be a field with characteristic 0. 
+Let $\mathcal{X} = \{x_1, \dots, x_N\}$ be a finite set. For every $n \in \mathbb{N}$ let 
+$H_n$ be a vector space having as a basis all words of length $n$ made of elements 
+of $\mathcal{X}$. Let $\mathcal{H} \coloneqq \displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i$.
+Let $m : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ be concatenation of words, 
+that is, for all $k, l \in \mathbb{N}$ 
+for all $x_{i_0}, \dots, x_{i_k}, x_{j_0}, \dots, x_{j_l} \in \mathcal{X}$
+\begin{equation*}
+m(x_{i_0}\dots x_{i_k} \otimes x_{j_0}\dots x_{j_l}) \coloneqq 
+x_{i_0}\ldots x_{i_k}x_{j_0}\ldots x_{j_l}.
+\end{equation*}
+Let $\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$ be defined for all elements from 
+$\mathcal{X}$ as
+\begin{equation*}
+\Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i.
+\end{equation*}
+and extends lineary and multiplically \\
+\textbf{Lemma. } Then $\mathcal{H}$ is the a graded, connected Hopf algebra that is cocomutative.
+\begin{proof}
+Associativity of $m$ and coassociativity of $\Delta$ are obvious. Actions fit together, 
+because we define them so. Algebra is graded and connnected because it is.
+\end{proof}
+We can see $\Delta(x_{i_0}\dots x_{i_k})$ how looks like:
+\begin{align*}
+\Delta(x_{i_0}\dots x_{i_k}) &= \Delta m^{[k]}(x_{i_0} \otimes \dots \otimes x_{i_k}) \\ 
+&= (m^{[k]} \otimes m^{[k]}) \left(\sum (x_{i_0})_1 \otimes \dots \otimes (x_{i_k})_1 \otimes 
+(x_{i_0})_2 \otimes \dots \otimes (x_{i_k})_2\right) \\ 
+&= \sum (x_{i_0})_1 \dots (x_{i_k})_1 \otimes 
+(x_{i_0})_2 \dots (x_{i_k})_2 \\ 
+&= \sum_{S \subseteq \{ i_0, \dots i_k \} } \prod_{j \in S} x_j \otimes \prod_{j \notin S} x_j.
+\end{align*}
+where $S$ is a multiset, because some of the $i_0, \dot i_k$ can be the same.
+Form of that coproduct is like that because when for all $x_i \in \mathcal{X}$ we have 
+$\Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i$ then \\[8pt]
+
+a ! \large! \Large! \huge! \Huge! \normalsize
+
+\section{Summarize}
+$\displaystyle\sum\ \bigoplus\ +\ \oplus$
+
+\section{Productise}
+$\displaystyle\prod\ \bigotimes\ \bigodot\ \times\ *$
+\hfill \break
+To jest źle: \\
+Please note, that at first it can be not clear that $h^*m \in \mathcal{H}^* \otimes \mathcal{H}^*$. 
+For sure $h^* \in (\mathcal{H} \otimes \mathcal{H})^*$ but in general case we have 
+$ \mathcal{H}^* \otimes \mathcal{H}^* \subseteq (\mathcal{H} \otimes \mathcal{H})^*$ (with inclusion given by 
+canonical injection) but not necessarily 
+$ \mathcal{H}^* \otimes \mathcal{H}^* = (\mathcal{H} \otimes \mathcal{H})^*$.
+Although we are in graded bialgebra $\mathcal{H}$ and because of that we know that 
+$h^*m \in \displaystyle\left(\bigoplus^\infty_{n=0}\mathcal{H}_n \otimes \mathcal{H}_n\right)^* = 
+\displaystyle\bigoplus^\infty_{n = 0} (\mathcal{H}_n \otimes \mathcal{H}_n)^*$. Futher, for all 
+$n \in \mathbb{N}$ since $\mathcal{H}_n$ is finite-dimentional we have that
+$(\mathcal{H}_n \otimes \mathcal{H}_n)^* = \mathcal{H}_n^* \otimes \mathcal{H}_n^*$. 
+Hence 
+\begin{equation*}
+h^*m \in \displaystyle\bigoplus^\infty_{n = 0} \mathcal{H}_n^* \otimes \mathcal{H}^*_n = 
+\mathcal{H}^* \otimes \mathcal{H}^*.
+\end{equation*}
+
+Now we will describe how a dual algebra to $\mathcal{H}$ looks like. \\
+Let $\mathcal{H}^*$ be the dual vector space to $\mathcal{H}$. (A space of linear functions from 
+$\mathcal{H}$ to $K$). We define multiplication 
+$\Delta^* : \mathcal{H}^* \otimes \mathcal{H}^* \to \mathcal{H}^*$ and comultiplication 
+$m^* : \mathcal{H}^* \to \mathcal{H}^* \otimes \mathcal{H}^*$ as 
+(for all $h_1^*, h_2^*, h^* \in \mathcal{H}^*$):
+\begin{align*}
+\Delta^*(h_1^* \otimes h_2^*) = (h_1^* \otimes h_2^*)\Delta, \\
+m^*(h^*) = h^*m.
+\end{align*}
+
+
 \end{document}

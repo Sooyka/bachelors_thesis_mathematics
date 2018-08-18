@@ -1,10 +1,11 @@
 \documentclass[a4paper, 12pt]{report}
 \usepackage{polski}
+\usepackage{amssymb}
 \usepackage[polish,english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{mathtools}
-\usepackage{amsfonts}
 \usepackage{amsthm}
+\usepackage{amsfonts}
 \usepackage[pdftex,
             pdfauthor={Bartosz Sójka},
             pdftitle={Praca licencjacka},
@@ -17,6 +18,7 @@
 \newtheorem{theorem}{Theorem}
 
 \newcommand{\todo}[1]{\hfill \break \textbf{\Huge TO DO: #1 \hfill \break}\normalsize}
+\newcommand{\gdd}[1]{#1^{\mathrm{gd}*}}
 
 \title{Explanation of connection between Hopf algebras and Markov chains}
 \author{Bartosz Sójka}
@@ -34,7 +36,7 @@ Instytut Matematyczny}\\
 %\maketitle
 \textbf{\textit{\large Bartosz Sójka}\\
 \vspace{0.5cm}
-{\Large Explanation of connection between Hopf algebras and Markov chains}}\\
+{\Large Explanation ąćęłóśńźż of connection between Hopf algebras and Markov chains}}\\
 \end{center}
 \vspace{3cm}
 {\large \hspace*{6.5cm}Praca licencjacka\\
@@ -139,8 +141,66 @@ where examples are provided or treat it just as a reference  when formal definit
 Another reason of arranging text like that (and possibility of treating this section just as a refference),
 is that for most of the time we will not be using full structure of a Hopf algebra. Nethertheless it is good
 to see the full shape of what we are dealing with. \\
-So now will come full definition nonetheless we will try to explain it piece by piece. \\[8pt]
+So now will come full definition but we will try to explain it piece by piece. \\[8pt]
 \section{Preliminaries}
+
+\subsection{Notational remarks}
+\indent \textbf{Remark. }Let $K$ be a field. In following section $k$, if not steted otherwise, will
+denotes an arbitrary element from this field. If not stated otherwise, all vector spaces will be over $K$ 
+and all tensor products will be taken over $K$. Note, that when we will want to present a field 
+multiplication from $K$ as a linear map $K \otimes K \to K$ it will be denoted as ${^Km}$. As it is then an 
+isomorphism let ${^K\Delta} \coloneqq {^Km}^{-1}$. The $1$ from $K$ will be denoted as $1_K$.\\[8pt]
+\textbf{Remark. } Let $U, V, W, Z$ be a vector spaces over field $K$.
+We will use notation
+$\varphi \otimes \psi:U \otimes V \to W \otimes Z$ which, for
+$\varphi$, $\psi$ such that $\varphi : U \to W$, $\psi : V \to Z$, means a linear map that
+for all $u \in U$, $v \in V$ satisfies:
+\begin{equation*}
+(\varphi \otimes \psi)(u \otimes v) = \varphi(u) \otimes \psi(v).
+\end{equation*}
+Because of linearity, for elements of shape $\displaystyle\sum^n_{i=1} u_i \otimes v_i$ it will take form:
+\begin{equation*}
+(\varphi \otimes \psi)(\sum^n_{i = 1} u \otimes v) = \sum^n_{i = 1}\varphi(u) \otimes \psi(v).
+\end{equation*}
+$I$, if not stated otherwise, will be an identity in the adequate space. \\
+$T$, if not stated otherwise, will
+be the twist map $T:V \otimes W \to W\otimes V$, which is linear map such that for any $v \otimes w
+\in V \otimes W$
+\begin{equation*}
+T(v \otimes w) = w\otimes v.
+\end{equation*}
+For a n-tensor power $\overbrace{V \otimes \dots \otimes V}^{n\ times}$  of a vector space $V$ we will
+sometimes write $V^{\otimes n}$.\\
+Throught this paper, when there will be no risk
+of confusion, we will omit the "$\circ$" symbol of composition of functions and we will write
+$\varphi \psi (x)$ instead of $(\varphi \circ \psi)(x)$.
+\subsubsection{Dual spaces and graded dual spaces }
+We will use standard notation for dual spaces: \\ 
+For a vector space $V$ over a field $K$ we will write $V^*$ for a vector space dual to $V$ - 
+a vector space of all linear functions from $V$ to $K$. 
+\begin{definition}\label{graded dual} For a vector space $V = \displaystyle\bigoplus^\infty_{n = 0} V_n$ we 
+define its 
+\textbf{graded dual space} $V^{\mathrm{gd}*}$ as
+\begin{equation*}
+V^{\mathrm{gd}*} \coloneqq \displaystyle\bigoplus^\infty_{n = 0} V_n^*.
+\end{equation*}
+\end{definition}
+\noindent Note that then $V^{\mathrm{gd}*}$ is a subspace of $V^*$ (proper for .
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \subsection{Tensor products}
 %
 First we will introduce tensor produkt of the vector spaces. Let $V, W$ be vector spaces over the field $K$.
@@ -316,51 +376,7 @@ the following sections.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsection{Notational remarks}
-\indent \textbf{Remark. }Let $K$ be a field. In following section $k$, if not steted otherwise, will
-denotes an arbitrary element from this field. If not stated otherwise, all vector spaces will be over $K$ 
-and all tensor products will be taken over $K$. Note, that when we will want to present a field 
-multiplication from $K$ as a linear map $K \otimes K \to K$ it will be denoted as ${^Km}$. As it is then an 
-isomorphism let ${^K\Delta} \coloneqq {^Km}^{-1}$. The $1$ from $K$ will be denoted as $1_K$.\\[8pt]
-\indent \textbf{Remark. } Let $U, V, W, Z$ be a vector spaces over field $K$.
-We will use notation
-$\varphi \otimes \psi:U \otimes V \to W \otimes Z$ which, for
-$\varphi$, $\psi$ such that $\varphi : U \to W$, $\psi : V \to Z$, means a linear map that
-for all $u \in U$, $v \in V$ satisfies:
-\begin{equation*}
-(\varphi \otimes \psi)(u \otimes v) = \varphi(u) \otimes \psi(v).
-\end{equation*}
-Because of linearity, for elements of shape $\displaystyle\sum^n_{i=1} u_i \otimes v_i$ it will take form:
-\begin{equation*}
-(\varphi \otimes \psi)(\sum^n_{i = 1} u \otimes v) = \sum^n_{i = 1}\varphi(u) \otimes \psi(v).
-\end{equation*}
-$I$, if not stated otherwise, will be an identity in the adequate space. \\
-$T$, if not stated otherwise, will
-be the twist map $T:V \otimes W \to W\otimes V$, which is linear map such that for any $v \otimes w
-\in V \otimes W$
-\begin{equation*}
-T(v \otimes w) = w\otimes v.
-\end{equation*}
-For a n-tensor power $\overbrace{V \otimes \dots \otimes V}^{n\ times}$  of a vector space $V$ we will
-sometimes write $V^{\otimes n}$.\\
-Throught this paper, when there will be no risk
-of confusion, we will omit the "$\circ$" symbol of composition of functions and we will write
-$\varphi \psi (x)$ instead of $(\varphi \circ \psi)(x)$.
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 \section{Algebras}
 \begin{definition}
 A \textbf{$\textbf{K}$-algebra} is a vector space $\mathcal{H}$ with additional
@@ -559,7 +575,7 @@ Applying on both sides isomorphisms ${^Lm}$ and ${^Rm}$ from
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \section{Bialgebras}
 \begin{definition}
-A \textbf{$\textbf{K}$-bialgebra} is a vector space $\mathcal{H}$ with both an algebra structure
+A \textbf{$\textbf{K}$-bialgebra} is vector space $\mathcal{H}$ with both an algebra structure
 $(\mathcal{H}, m, u)$ and a coalgebra structure $(\mathcal{H}, \Delta, \varepsilon)$ such that $m$, $u$
 are morfisms of coalgebras and $\Delta$, $\varepsilon$ are morfisms of algebras.
 \end{definition}
@@ -708,7 +724,7 @@ and using sweedler notation as:
 A bialgebra having an antipode is called a \textbf{Hopf algebra}.
 \end{definition}
 \begin{definition}
-A \textbf{graded bialgebra} is vector space 
+A \textbf{graded bialgebra} is a graded vector space 
 $\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ with a bialgebra structure that is 
 compatible with the grading.
 \end{definition}
@@ -758,7 +774,7 @@ This is the end of our algebraic definitions pfuuuu...
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \section{Examples}
-\subsubsection{Graded, connected Hopf algebra of polinomials}
+\subsection{Graded, connected Hopf algebra of polinomials}
 Let $P$ be a vector space of polinomials with one variable over an field $K$ with natural grading by degree 
 Note, that standard polinomial multiplication is compatible with that grading as for polinomials with 
 degrees $i$, $j$, their product has degree $i + j$. Connection comes from that the identity of multiplication 
@@ -804,7 +820,7 @@ a
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsubsection{Graded, connected Hopf algebra of non-commuting variables}
+\subsection{Graded, connected Hopf algebra of non-commuting variables}
 This is a main example of our interest. It will be used to describe inverse and forward riffle shuffling.\\
 Let K be a field with characteristic 0. 
 Let $\mathcal{X} = \{x_1, \dots, x_N\}$ be a finite set. For every $n \in \mathbb{N}$ let 
@@ -863,35 +879,23 @@ Equvalently (and that expression can be found in ~\cite{Diaconis2014}) it can be
 \begin{equation*}
 \sum_{S \subseteq \{ i_0, \dots i_k \} } \prod_{j \in S} x_j \otimes \prod_{j \notin S} x_j.
 \end{equation*}
-where $S$ is a multiset, because some of the $i_0, \dot i_k$ can be the same. \\[8pt]
+where $S$ is a multiset, because some of the $i_0, \dot i_k$ can be the same.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-Now we will describe how a dual algebra to $\mathcal{H}$ looks like. \\
-Let $\mathcal{H}^*$ be the dual vector space to $\mathcal{H}$. (A space of linear functions from 
-$\mathcal{H}$ to $K$). We define multiplication 
-$\Delta^* : \mathcal{H}^* \otimes \mathcal{H}^* \to \mathcal{H}^*$ and comultiplication 
-$m^* : \mathcal{H}^* \to \mathcal{H}^* \otimes \mathcal{H}^*$ as 
-(for all $h_1^*, h_2^*, h^* \in \mathcal{H}^*$):
+\subsubsection{A graded dual}
+\indent Now we will describe an hopf algebra structure on $\mathcal{H}^{\mathrm{gd}*}$ \hyperref[graded dual]
+{(definition $\gdd{V}$ for a given $V$ can be found in 2.1.1)}. \\
+We define multiplication 
+$\Delta^* : \mathcal{H}^{\mathrm{gd}*} \otimes \gdd{\mathcal{H}} \to \gdd{\mathcal{H}}$ and 
+comultiplication 
+\text{$m^* : \gdd{\mathcal{H}} \to \gdd{\mathcal{H}} \otimes \gdd{\mathcal{H}}$} as 
+(for all $h_1^*, h_2^*, h^* \in \gdd{\mathcal{H}}$):
 \begin{align*}
 \Delta^*(h_1^* \otimes h_2^*) = (h_1^* \otimes h_2^*)\Delta, \\
 m^*(h^*) = h^*m.
 \end{align*}
-Please note, that at first it can be not clear that $h^*m \in \mathcal{H}^* \otimes \mathcal{H}^*$. 
-For sure $h^* \in (\mathcal{H} \otimes \mathcal{H})^*$ but in general case we have 
-$ \mathcal{H}^* \otimes \mathcal{H}^* \subseteq (\mathcal{H} \otimes \mathcal{H})^*$ (with inclusion given by 
-canonical injection) but not necessarily 
-$ \mathcal{H}^* \otimes \mathcal{H}^* = (\mathcal{H} \otimes \mathcal{H})^*$.
-Although we are in graded bialgebra $\mathcal{H}$ and because of that we know that 
-$h^*m \in \displaystyle\left(\bigoplus^\infty_{n=0}\mathcal{H}_n \otimes \mathcal{H}_n\right)^* = 
-\displaystyle\bigoplus^\infty_{n = 0} (\mathcal{H}_n \otimes \mathcal{H}_n)^*$. Futher, for all 
-$n \in \mathbb{N}$ since $\mathcal{H}_n$ is finite-dimentional we have that
-$(\mathcal{H}_n \otimes \mathcal{H}_n)^* = \mathcal{H}_n^* \otimes \mathcal{H}_n^*$. 
-Hence 
-\begin{equation*}
-h^*m \in \displaystyle\bigoplus^\infty_{n = 0} \mathcal{H}_n^* \otimes \mathcal{H}^*_n = 
-\mathcal{H}^* \otimes \mathcal{H}^*.
-\end{equation*}
+
 \todo{COŚTAM}
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -915,7 +919,7 @@ containnig cards labeled by $x$s appearing in $s$. Chains state space is then th
 Chains transition matrix is equal to transition matrix of $\Psi^{[2]}$ writen in $S_s$.  \\
 \begin{proof}
 For the forward riffle shuffle we want to every possible permutation have probability 1 exept of identity 
-with probability $n-1$. Reachable permutations are the same because of form of actions (just the samE)
+with probability $n-1$. Reachable permutations are the same because of form of actions (just the same)
 we litterally cut that deck and put in on the top. coefficients holds, because numbers of the number of 
 occurences holds. Therefore its indeed the inverse riffle shuffling.
 \end{proof}

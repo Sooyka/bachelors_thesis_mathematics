@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.5.26)  14 JUN 2018 00:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.5.26)  22 AUG 2018 22:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -655,22 +655,22 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 (./praca.aux)
 \openout1 = `praca.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
  (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -723,7 +723,7 @@ e
 \Gin@req@width=\dimen133
 )
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 27.
+Package hyperref Info: Link coloring OFF on input line 28.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -733,21 +733,21 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count125
 )
-LaTeX Info: Redefining \ref on input line 27.
-LaTeX Info: Redefining \pageref on input line 27.
-LaTeX Info: Redefining \nameref on input line 27.
+LaTeX Info: Redefining \ref on input line 28.
+LaTeX Info: Redefining \pageref on input line 28.
+LaTeX Info: Redefining \nameref on input line 28.
 
 (./praca.out) (./praca.out)
 \@outlinefile=\write3
 \openout3 = `praca.out'.
 
 
-Overfull \hbox (30.4833pt too wide) in paragraph at lines 42--45
+Overfull \hbox (30.4833pt too wide) in paragraph at lines 43--46
 | \OT4/cmr/m/n/14.4 prof. dr. hab. Dar-iusza Bu-raczewskiego 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--45
+Underfull \hbox (badness 10000) in paragraph at lines 43--46
 
  []
 
@@ -800,32 +800,32 @@ ri-
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.69 \end{abstract}
+l.70 \end{abstract}
                     [1]
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 72.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 73.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 73.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.87 \chapter
+l.88 \chapter
              {Markov chains} [1]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--134
+Underfull \hbox (badness 10000) in paragraph at lines 103--135
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--134
+Underfull \hbox (badness 10000) in paragraph at lines 103--135
 
  []
 
@@ -834,21 +834,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--134
 ] [6]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--145
+Underfull \hbox (badness 10000) in paragraph at lines 137--146
 
  []
 
 [7
 
 ] [8]
-Overfull \hbox (16.13663pt too wide) in paragraph at lines 233--252
+Overfull \hbox (16.13663pt too wide) in paragraph at lines 226--245
 \OT4/cmr/m/n/12 there are no $\OML/plm/m/it/12 v; w$ \OT4/cmr/m/n/12 such that 
 $\OML/plm/m/it/12 v \OMS/plsy/m/n/12 
  \OML/plm/m/it/12 w \OT4/cmr/m/n/12 = [][]$. How-ever, since $[][] =
  []
 
 [9]
-Overfull \hbox (30.71663pt too wide) in paragraph at lines 286--288
+Overfull \hbox (30.71663pt too wide) in paragraph at lines 279--281
 []\OT4/cmr/bx/n/12 Observation 2. \OT4/cmr/m/it/12 If $\OML/plm/m/it/12 V$ \OT4
 /cmr/m/it/12 and $\OML/plm/m/it/12 W$ \OT4/cmr/m/it/12 are fi-nite di-men-tiona
 l and $[]\OT4/cmr/m/n/12 (\OML/plm/m/it/12 V\OT4/cmr/m/n/12 ) = \OML/plm/m/it/1
@@ -856,78 +856,96 @@ l and $[]\OT4/cmr/m/n/12 (\OML/plm/m/it/12 V\OT4/cmr/m/n/12 ) = \OML/plm/m/it/1
  []
 
 [10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
-Overfull \hbox (23.26453pt too wide) in paragraph at lines 805--813
+Overfull \hbox (23.26453pt too wide) in paragraph at lines 798--806
 \OT4/cmr/m/n/12 Because $\OML/plm/m/it/12 X[]; [] ; X[]$ \OT4/cmr/m/n/12 are li
 n-eary in-de-pen-dent we have that [].
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 815--823
+Underfull \hbox (badness 10000) in paragraph at lines 808--816
 
  []
 
 
-Overfull \hbox (14.57452pt too wide) in paragraph at lines 823--823
+Overfull \hbox (14.57452pt too wide) in paragraph at lines 816--816
 []\OT4/cmr/bx/n/14.4 Graded, con-nected Hopf al-ge-bra of non-commuting
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 899--915
+Underfull \hbox (badness 10000) in paragraph at lines 880--884
 
  []
+
+
+LaTeX Warning: Hyper reference `graded dual' on page 22 undefined on input line
+ 890.
 
 [22]
+Underfull \hbox (badness 10000) in paragraph at lines 902--918
+
+ []
+
+[23]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 916--921
+Underfull \hbox (badness 10000) in paragraph at lines 919--924
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 927--933
+Underfull \hbox (badness 10000) in paragraph at lines 930--936
 
  []
 
-[23
+[24
 
-] [24] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1082--1100
+] [25] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 1085--1088
 
  []
 
-[26] [27]
+[27] [28]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1108--1110
+Underfull \hbox (badness 10000) in paragraph at lines 1128--1130
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1111--1113
+Underfull \hbox (badness 10000) in paragraph at lines 1138--1143
 
  []
 
-(./praca.bbl [28
 
-])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1119.
- [29
+Underfull \hbox (badness 10000) in paragraph at lines 1138--1143
+
+ []
+
+[29
+
+] (./praca.bbl [30])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1149.
+ [31
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1119.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1149.
  (./praca.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1119.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1119.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1149.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1149.
 
 Package rerunfilecheck Info: File `praca.out' has not changed.
-(rerunfilecheck)             Checksum: 8D76AD328E979F36C2387901D803F413;947.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1119.
+(rerunfilecheck)             Checksum: 6CBDD32A099C773FA3632F8A9772AB08;1116.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1149.
  ) 
 Here is how much of TeX's memory you used:
- 7698 strings out of 494910
- 108487 string characters out of 6180156
- 209295 words of memory out of 5000000
- 10802 multiletter control sequences out of 15000+600000
+ 7705 strings out of 494910
+ 108555 string characters out of 6180156
+ 208281 words of memory out of 5000000
+ 10805 multiletter control sequences out of 15000+600000
  15886 words of font info for 45 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
  42i,15n,30p,257b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -948,10 +966,10 @@ are/texlive/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/pl/plsy6.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/pl/plsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/pl
 ti12.pfb>
-Output written on praca.pdf (30 pages, 191497 bytes).
+Output written on praca.pdf (32 pages, 194897 bytes).
 PDF statistics:
- 336 PDF objects out of 1000 (max. 8388607)
- 286 compressed objects within 3 object streams
- 76 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 355 PDF objects out of 1000 (max. 8388607)
+ 302 compressed objects within 4 object streams
+ 80 named destinations out of 1000 (max. 500000)
+ 137 words of extra memory for PDF output out of 10000 (max. 10000000)
 

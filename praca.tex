@@ -18,6 +18,7 @@
 \newtheorem{theorem}{Theorem}
 
 \newcommand{\todo}[1]{\hfill \break \textbf{\Huge TO DO: #1 \hfill \break}\normalsize}
+\newcommand{\smalltodo}[1]{\textbf{\ To do}}
 \newcommand{\gdd}[1]{#1^{\mathrm{gd}*}}
 
 \title{Explanation of connection between Hopf algebras and Markov chains}
@@ -174,18 +175,10 @@ sometimes write $V^{\otimes n}$.\\
 Throught this paper, when there will be no risk
 of confusion, we will omit the "$\circ$" symbol of composition of functions and we will write
 $\varphi \psi (x)$ instead of $(\varphi \circ \psi)(x)$.
-\subsubsection{Dual spaces and graded dual spaces }
+\subsubsection{Dual spaces}
 We will use standard notation for dual spaces: \\ 
 For a vector space $V$ over a field $K$ we will write $V^*$ for a vector space dual to $V$ - 
 a vector space of all linear functions from $V$ to $K$. 
-\begin{definition}\label{graded dual} For a vector space $V = \displaystyle\bigoplus^\infty_{n = 0} V_n$ we 
-define its 
-\textbf{graded dual space} $V^{\mathrm{gd}*}$ as
-\begin{equation*}
-V^{\mathrm{gd}*} \coloneqq \displaystyle\bigoplus^\infty_{n = 0} V_n^*.
-\end{equation*}
-\end{definition}
-\noindent Note that then $V^{\mathrm{gd}*}$ is a subspace of $V^*$ (proper for .
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -820,12 +813,12 @@ a
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsection{Graded, connected Hopf algebra of non-commuting variables}
+\subsection{Graded, connected Hopf algebra of non-commuting variables (free associative Hopf algebra)}
 This is a main example of our interest. It will be used to describe inverse and forward riffle shuffling.\\
 Let K be a field with characteristic 0. 
 Let $\mathcal{X} = \{x_1, \dots, x_N\}$ be a finite set. For every $n \in \mathbb{N}$ let 
 $\mathcal{H}_n$ be a vector space having as a basis all words of length $n$ made of elements 
-of $\mathcal{X}$. (The basis of $\mathcal{H}_0$ is a singleton of a empty word). 
+of $\mathcal{X}$. (The basis of $\mathcal{H}_0$ is a singleton of an empty word). 
 Let $\mathcal{H} \coloneqq \displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i$. Hence 
 the basis of $\mathcal{H}$ is $\mathcal{X}^*$ - all finite words over an alphabet $\mathcal{X}$.
 Let $m : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ be concatenation of words, 
@@ -845,7 +838,7 @@ Associativity of $m$ and coassociativity of $\Delta$ are obvious. Actions fit to
 because we define them so. Algebra is graded straight from definition and connnected because an empty word 
 is an identity element in respect of concatenation multiplication. Cocomutativity can be check immediatly.
 \end{proof}
-\noindent Let $s = x_{i_0}\dots x_{i_k} \in \mathcal{X}^*$. What is not obvioues is 
+\noindent Let $s = x_{i_0}\dots x_{i_k} \in \mathcal{X}^*$. What is not so obvioues is 
 how $\Delta(x_{i_0}\dots x_{i_k})$ looks like:
 \begin{align}
 \Delta(x_{i_0}\dots x_{i_k}) &= \Delta m^{[k]}(x_{i_0} \otimes \dots \otimes x_{i_k}) \\ 
@@ -883,7 +876,16 @@ where $S$ is a multiset, because some of the $i_0, \dot i_k$ can be the same.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsubsection{A graded dual}
+\subsubsection{Some futher remarks about structure}
+Structure detail described in this paragraph will be important in chapter about eigenbasises. 
+[GR89] shows that symmetrized sums of certain primitive elements form basis of a free associative algebra. 
+It will turn out that this will be left eigenbasis of $m\Delta$. Now we will introduce methods for 
+construction of that basis. Explanation why this is an eigenbasis will came in Chapter 4. \\
+
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+\subsubsection{Alternative structure \smalltodo{a}}
 \indent Now we will describe an hopf algebra structure on $\mathcal{H}^{\mathrm{gd}*}$ \hyperref[graded dual]
 {(definition $\gdd{V}$ for a given $V$ can be found in 2.1.1)}. \\
 We define multiplication 
@@ -895,6 +897,7 @@ comultiplication
 \Delta^*(h_1^* \otimes h_2^*) = (h_1^* \otimes h_2^*)\Delta, \\
 m^*(h^*) = h^*m.
 \end{align*}
+
 
 \todo{COŚTAM}
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1082,6 +1085,23 @@ ble ble
 We ckech, and what? That are exactly $m_F$ and $\Delta_F$ matrixes of $(F_i)_{i \geq 0}$ and $(I_i)_{i 
 \geq 0}$ 
 are transpositions of each other.\\
+
+
+Cocommutative Hopf algebra of non-comuuting variables is a model for inverse riffle shuffling and commutative 
+Hopf algebra of non-cocomutative variables is a model for forward riffle shuffling. It goes as follows.
+Let $\mathcal{X}$ be the finite set of all possible types of cards. Let $\nu$ be a tuple of 
+elements from $\mathcal{X}$ that represents our actual deck of cards (the same type of card can occour
+multiple times, the order in $\nu$ schould be the order in which we think cards are ordered). Now we can 
+take a look at a subspace $\mathcal{H}_\nu$ of vector space $\mathcal{H}$ builded over $\mathcal{X}$ as 
+described in 2.6.2. $\mathcal{H}_\nu$ will be the subspaces spanned by words that for every type of cards 
+consits exactly the same number of cards of that type as $\nu$. So the basis of $\mathcal{H}_\nu$ will be set 
+of words for every arregement of our deck of cards. Let name this basis $\mathcal{B}_\nu$. Note that then 
+$\mathcal{H}_\nu$ is finite dimentional. As was previously described, there are two ways of equiping 
+$\mathcal{H}$ with Hopf algebra structure. One will corresponde with inverse version of riffle shuffle and 
+another with the forward one. With given arrangement of cards $s \in \mathcal{B}_\nu$ applying $m\Delta$ on 
+$s$ yields the sum of possible outcomes after one inverse riffle shuffle while appliying $\Delta^*m^*$ 
+yields the same for forward riffle shuffle. In both cases coefficients (after normalization) are 
+probabilities of corresponding outcomes. 
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1098,16 +1118,26 @@ are transpositions of each other.\\
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \chapter{Left and right eigenbasis}
-Now we will recall two theorems from~\cite{Diaconis2014}.
+
+Reasons we bother with finding the eigenbasis are desribed in 1.?.?. For a given deck $\nu$ 
+We will find find left and right eigenbasises for inverse and forward riffle shuffling. Note, that because 
+$m\Delta$ and $\Delta^*m^*$ are dual to each other left eigenbasis for inverse riffle-shuffle is right 
+eigenbasis for forward riffle-shuffle and right eigenbasis for inverse is left eigenbasis for forward.
+
+\section{Left eigenbasis}
+Construction of left eigenbasis begins with observation that primitive elements
+\todo{primitive bla bla}
+\section{Reference to Diaconis work}
+Now we will recall two theorems from~\cite{Diaconis2014} describing eigenbasises.
 \begin{theorem}
-bla bla eigenbasis
+bla bla eigenbasismn   
 \end{theorem}
 \begin{theorem}
 bla bla dual eigen basis
 \end{theorem}
 To prove them we will need an simetrization lemma \\
 bla bla\\[8pt]
-
+\todo{Remark of no primitive generators in other algebras}
 Now we can make some futher observations about sfuffling.\\
 ble ble\\
 

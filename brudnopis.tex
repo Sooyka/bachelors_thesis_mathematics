@@ -345,5 +345,37 @@ It will turn out that this will be left eigenbasis of $m\Delta$. Now we will int
 construction of that basis. Explanation why this is an eigenbasis will came in Chapter 4. This whole 
 paragraph is exactly the same as in ~\cite{Diaconis2014} I put it here because it is quite short and \\
 
+\begin{align*}
+\Psi^{[i]}(h) = m^{[i]}\Delta^{[i]}(h) &= \\
+m^{[i]}(\sum h_1 \otimes \dots \otimes h_i) &= \\
+m^{[i]}(\underbrace{\overbrace{h \otimes 1_\mathcal{H} \otimes \dots \otimes 1_\mathcal{H}}^{i\ 
+\mathrm{factors}} + 
+\overbrace{1_\mathcal{H} \otimes h \otimes \dots \otimes 1_\mathcal{H}}^{i\ \mathrm{factors}} +
+\dots + 
+\overbrace{1_\mathcal{H} \otimes 1_\mathcal{H} \otimes \dots \otimes h}^{i\ \mathrm{factors}}}_{i\ 
+\mathrm{summands}} ) &= \\
+\underbrace{m^{[i]}(\overbrace{h \otimes 1_\mathcal{H} \otimes \dots \otimes 1_\mathcal{H}}^{i\ 
+\mathrm{factors}}) + 
+m^{[i]}(\overbrace{1_\mathcal{H} \otimes h \otimes \dots \otimes 1_\mathcal{H}}^{i\ \mathrm{factors}}) +
+\dots + 
+m^{[i]}(\overbrace{1_\mathcal{H} \otimes 1_\mathcal{H} \otimes \dots \otimes h}^{i\ \mathrm{factors}})}_{i\ 
+\mathrm{summands}} &=
+\end{align*}
+
+For simplifying the notation we will write a symbol for algebra multiplication also for componentwise 
+multiplication, so for all ${^1h}, \dots, {^nh} \in \mathcal{H}$:
+\begin{equation}
+\Delta ^{[m]}m^{[n]}({^1h}\otimes \dots\otimes {^nh}) =  \eqqcolon \sum
+\end{equation}
+
+\begin{proof}
+\begin{align*}
+\Psi^{[a]}(\sum_{\sigma \in S_k} x_{\sigma(1)}\cdot\ldots\cdot x_{\sigma(k)}) &= \\
+m^{[a]}\Delta^{[a]}(\sum_{\sigma \in S_k} x_{\sigma(1)}\cdot\ldots\cdot x_{\sigma(k)}) &= \\ 
+m^{[a]}(\sum_{\sigma \in S_k} \Delta^{[a]}(x_{\sigma(1)}\cdot\ldots\cdot x_{\sigma(k)})) &= \\
+m^{[a]}(\sum_{\sigma \in S_k} (x_{\sigma(1)}\otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_{\sigma(1)}) \cdot 
+\ldots \cdot (x_{\sigma(k)} \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_{\sigma(k)}) &=
+\end{align*}
+\end{proof}
 
 \end{document}

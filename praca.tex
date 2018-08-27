@@ -6,6 +6,7 @@
 \usepackage{mathtools}
 \usepackage{amsthm}
 \usepackage{amsfonts}
+\usepackage{empheq}
 \usepackage[pdftex,
             pdfauthor={Bartosz Sójka},
             pdftitle={Praca licencjacka},
@@ -611,6 +612,13 @@ one $T$ is enough for all powers of $m$ and $\Delta$ as state in following remar
 \begin{proof}
 Left to the reader.
 \end{proof}
+For simplifying the notation we will write a symbol for algebra multiplication also for componentwise 
+multiplication, \\ so for all ${^1h}_1, \dots, {^1h}_m, \dots, {^nh}_1, \dots , {^nh}_m \in \mathcal{H}$:
+\begin{equation}
+({^1h}_1\otimes \dots \otimes {^1h}_m)\cdot \ldots \cdot ({^nh}_1 \otimes \dots \otimes {^nh}_m) \coloneqq 
+{^1h}_1 \cdot \ldots \cdot {^nh}_1 \otimes \dots \otimes {^1h}_m\cdot  \ldots \cdot {^nh}_m.
+\end{equation}
+
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1140,27 +1148,49 @@ probabilities of corresponding outcomes.
 \chapter{Left and right eigenbasis}
 
 Reasons we bother with finding the eigenbasis are desribed in 1.?.?. For a given deck $\nu$ 
-We will find find left and right eigenbasises of $\mathcal{H}_\nu$ for inverse and forward riffle shuffling. 
+we will find find left and right eigenbasises of $\mathcal{H}_\nu$ for inverse and forward riffle shuffling. 
 Note, that because 
 $m\Delta$ and $\Delta^*m^*$ are dual to each other left eigenbasis for inverse riffle-shuffle is right 
 eigenbasis for forward riffle-shuffle and right eigenbasis for inverse is left eigenbasis for forward.
 
 \section{Left eigenbasis}
-Construction of left eigenbasis begins with observation that primitive elements are eigenvectors of 
-$\Psi^{[i]}$ for evry $i \in \mathbb{N}$. 
+Construction of left eigenbasis begins with general observation that for every Hopf algebra 
+primitive elements are eigenvectors of $\Psi^{[a]}$ for every $a \in \mathbb{N}$. 
 \begin{observation}
-For evry primitive element $h \in \mathcal{H}$, for every $i \in \mathbb{N}$ it holds that $h$ is an 
-eigenvector of $\Psi^{[i]}$ with an eigenvalue 
+For every primitive element $h \in \mathcal{H}$, for every $a \in \mathbb{N}$ it holds that $h$ is an 
+eigenvector of $\Psi^{[a]}$ with an eigenvalue $a$.
 \end{observation}
 \begin{proof}
 Let $h \in \mathcal{H}$ be a primitive element.
 \begin{align*}
-\Psi^{[i]}(h) = m^{[i]}\Delta^{[i]}(h) &= \\
-m(\sum h_1 \otimes \dots \otimes h_i) &= \\
-\sum x
+\Psi^{[a]}(h) = m^{[a]}\Delta^{[a]}(h) &= \\
+m^{[a]}(\sum h_1 \otimes \dots \otimes h_i) &= \\
+m^{[a]}(\underbrace{\overbrace{h \otimes 1_\mathcal{H} \otimes \dots \otimes 1_\mathcal{H}}^{i\ 
+\mathrm{factors}} + 
+\overbrace{1_\mathcal{H} \otimes h \otimes \dots \otimes 1_\mathcal{H}}^{a\ \mathrm{factors}} +
+\dots + 
+\overbrace{1_\mathcal{H} \otimes 1_\mathcal{H} \otimes \dots \otimes h}^{a\ \mathrm{factors}}}_{a\ 
+\mathrm{summands}} ) &= \\
+\underbrace{m^{[a]}(\overbrace{h \otimes 1_\mathcal{H} \otimes \dots \otimes 1_\mathcal{H}}^{a\ 
+\mathrm{factors}}) + 
+m^{[a]}(\overbrace{1_\mathcal{H} \otimes h \otimes \dots \otimes 1_\mathcal{H}}^{a\ \mathrm{factors}}) +
+\dots + 
+m^{[a]}(\overbrace{1_\mathcal{H} \otimes 1_\mathcal{H} \otimes \dots \otimes h}^{a\ \mathrm{factors}})}_{a\ 
+\mathrm{summands}} &= \\
+\underbrace{h + \dots + h}_{a\ \mathrm{summands}} &= \\
+ah 
 \end{align*}
 
 \end{proof}
+Next observation is presented in ~\cite{Diaconis2014} and it is called the symmeterization lemma.
+\begin{theorem}
+(Symmetrization lemma). Let $x_1, \dots, x_n$ be primitive elements of any Hopf alebra $\mathcal{H}$, then 
+$\displaystyle\sum_{\sigma \in S_k} x_{\sigma(1)}\cdot\ldots\cdot x_{\sigma(k)}$ is an eigenvector of 
+$\Psi^{[a]}$ with eigenvalue $a^k$.
+\end{theorem}
+
+
+
 \todo{primitive bla bla}
 \section{Reference to Diaconis work}
 Now we will recall two theorems from~\cite{Diaconis2014} describing eigenbasises.

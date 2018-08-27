@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.16)  24 AUG 2018 15:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.16)  27 AUG 2018 23:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -737,27 +737,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 342--347
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 349.
-[6] [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 349.
+[6]
+Overfull \hbox (23.52057pt too wide) in paragraph at lines 363--363
+[] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 381.
+[7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 381.
  (/Users/bartoszsojka/Studia/praca_licencjacka/.texpadtmp/brudnopis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 349.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 349.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 381.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 381.
 Package rerunfilecheck Info: File `brudnopis.out' has not changed.
 (rerunfilecheck)             Checksum: B46F0D764E4EA8842223DBB13E1C2481;191.
 
+
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 349.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 381.
  ) 
 Here is how much of TeX's memory you used:
- 7229 strings out of 493089
- 105250 string characters out of 6134841
+ 7230 strings out of 493089
+ 105262 string characters out of 6134841
  208681 words of memory out of 5000000
  10592 multiletter control sequences out of 15000+600000
  12086 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,15n,28p,263b,344s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,22n,28p,263b,344s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/local/t
 exlive/2015/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/usr/local/texlive/2015/tex
 mf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/local/texlive/2015/texmf-dist/fonts/e
@@ -779,10 +785,10 @@ type1/public/pl/plsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publ
 ic/pl/plsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/pl/plsy7
 .pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/pl/plti10.pfb>
 Output written on /Users/bartoszsojka/Studia/praca_licencjacka/.texpadtmp/brudn
-opis.pdf (7 pages, 113459 bytes).
+opis.pdf (7 pages, 117470 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
- 15 named destinations out of 1000 (max. 500000)
+ 135 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
+ 16 named destinations out of 1000 (max. 500000)
  25 words of extra memory for PDF output out of 10000 (max. 10000000)
 

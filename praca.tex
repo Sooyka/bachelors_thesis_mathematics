@@ -197,7 +197,7 @@ a vector space of all linear functions from $V$ to $K$.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \subsection{Tensor products}
 %
-First we will introduce tensor produkt of the vector spaces. Let $V, W$ be vector spaces over the field $K$.
+First we will introduce tensor product of the vector spaces. Let $V, W$ be vector spaces over the field $K$.
 Let $Z$ be a vector space with basis $V \times W$. Note, that we are taking entire $V \times W$ as a basis
 of $Z$ not just a basis of $V \times W$. Consequently every non-zero element of $Z$ has unique
 representation in the form
@@ -890,7 +890,7 @@ In paragraph 2.3 ~\cite{Diaconis2014} describes some aspects of the structure of
 They will be important in chapter about eigenbasises. Here we will present a shortened version for lookup. \\ 
 GR89 shows that symmetrized sums of certain primitive elements form basis of a free associative algebra. 
 It will turn out that this will be left eigenbasis of $m\Delta$. 
-Here will be introduced methods for 
+Here will be introduced concepts usefull for 
 construction of that basis. Explanation why this is an eigenbasis will came in Chapter 4.
 \begin{definition}
 A word in ordered alphabet is \textbf{Lyndon} if it is strictly smaller (in lexicographical order) than its 
@@ -900,12 +900,30 @@ cyclic rearrangments.
 A \textbf{Lyndon factorization} of word $w$ is a tuple of words $(l_1, l_2, \dots, l_k)$ such that 
 $w = l_1l_2\dots l_k$, each $l_i$ is a Lyndon word and $l_1 \geq l_2 \geq \dots \geq l_k$. 
 \end{definition}
-\textbf{Fact. [Lot97, Th. 5.1.5]} Every word $w$ has unique Lyndon factorisation. 
+\noindent\textbf{Fact. [Lot97, Th. 5.1.5]} Every word $w$ has unique Lyndon factorisation. 
 \begin{definition}
 For a Lyndon word $l$ that has at least two letters a \textbf{standard factorisation} of $l$ is a pair of 
 words $(l_1, l_2)$ such that $l = l_1l_2$, both $l_i$ are non-trivial (not empty) Lyndon words and $l_2$ 
-is the longest right Lyndon factor of $l$.
+is the longest right Lyndon factor of $l$. A \textbf{standard factorisation} of a single letter word is that 
+letter.
 \end{definition}
+\noindent\textbf{Fact.} Each Lyndon word $l$ has a standard factorization.
+\begin{definition}
+For a Lyndon word $l$ a \textbf{standard bracketing} $\boldsymbol{\lambda(l)}$ of $l$ is defined recursively 
+as 
+$\lambda(a) \coloneqq a$ for a letter and $\lambda(l) \coloneqq [\lambda(l_1), \lambda(l_2)]$, where $(l_1, 
+l_2)$ 
+is a standard factorisation of $l$. $[x, y] = xy - yx$ for every words $x, y$. 
+\end{definition}
+\begin{definition}
+The \textbf{symmetrized product} of word $w$ is 
+\begin{equation*}
+\mathrm{sym}(w) = \sum_{\sigma \in S_k} \lambda(l_{\sigma(1)})\dots\lambda(l_{\sigma(k)}),
+\end{equation*}
+where $(l_1, \dots, l_k)$ is a Lyndon factorization of $w$.
+\end{definition}
+[GR89, Th. 5.2] shows that $\{\mathrm{sym}(w) : w \in \mathcal{X^*}\}$ form a basis for free associative 
+algebra.
 
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////

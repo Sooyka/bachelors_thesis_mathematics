@@ -1,0 +1,343 @@
+\documentclass[a4paper]{article}
+\usepackage{polski}
+\usepackage[polish,english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[pdftex,
+            pdfauthor={Bartosz Sójka},
+            pdftitle={Praca licencjacka brudnopis},
+            pdfsubject={Explanation of connection between Hopf algebras and Makov chains}]{hyperref}
+
+%\setlength\parindent{0pt}
+
+\newtheorem{observation}{Observation}
+\newtheorem{definition}{Definition}
+
+\title{Explanation of connection between Hopf algebras and Markov chains}
+\author{Bartosz Sójka}
+\date{May 2018}
+
+\begin{document}
+\begin{align}
+[z]_{/\simeq} = \left[\sum^n_{i = 1}\alpha_i(v_i,w_i)\right]_{/\simeq} &=
+\displaystyle\sum^n_{i = 1}\alpha_i[(v_i,w_i)]_{/\simeq} = \\
+\displaystyle\sum^n_{i = 1}\alpha_i\left[\left(\sum^{l_1}_{j=1}\gamma_{i,j}b_{i,j},
+\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_{/\simeq} &=
+\displaystyle\sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(b_{i,j},
+\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_{/\simeq} = \\
+\displaystyle\sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(\sum^{l_2}_{k=1}\gamma_{i,k}
+\left(b_{i,j},c_{i,k}\right)\right)\right]_{/\simeq} &=
+\displaystyle\sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\gamma_{i,j}\gamma_{i,k}(b_{i,j}, c_{i,k})\right]_{/\simeq}
+\end{align}
+
+\begin{equation}
+\sum^n_{\substack{1 \leq i \leq n \\1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\alpha_i\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_{/\simeq})_{/\simeq}
+\end{equation}
+
+Then take $\displaystyle\sum^n_{i=1}(v_i,w_i)$. There are no $v, w$
+such that $ [(v,w)]_{/\simeq} = [(v_1,w_1) +\dots + (v_n,w_n)]_{/\simeq}$.
+Thus for the element $[(v_1,w_1) + \dots + (v_n,w_n)]_{/\simeq}$ of $V\otimes W$ there are no $v, w$
+such that $v \otimes w = [(v_1,w_1) + \dots + (v_n,w_n)]_{/\simeq}$. However, since
+$[(v_1,w_1) + \dots + (v_n,w_n)]_{/\simeq} = [(v_1,w_1)]_{/\simeq} + \dots + [(v_n,w_n)]_{/\simeq}$
+it can be writen as $v_1 \otimes w_1 + \dots + v_n \otimes w_n$. \\
+Now we will make some futher observations on how $V \otimes W$ looks like.
+
+
+ is a vector space created from
+ of elemets of form $\{v \otimes w : v \in V, w \in W\}$
+such that for all $v,v_1,v_2 \in V$, $w, w_1, w_2 \in W$, $k \in K$ there hold
+\begin{gather*}
+v \otimes w_1 + v \otimes w_2 = v \otimes (w_1 + w_2) \\
+v_1 \otimes w + v_2 \otimes w = (v_1 + v_2) \otimes w \\
+k (v \otimes w) = (kv) \otimes w = v \otimes (kw)
+\end{gather*}
+with basises $\{v_i\}_{i \in I}$, $\{w_j\}_{j \in J}$
+with basis and operations defined
+
+
+As algebra we will understand a vector space $\mathcal{H}$ with additional linear operation
+\text{$m:\mathcal{H} \otimes \mathcal{H} \rightarrow \mathcal{H}$} called multiplication.
+Natural example are polinomials. Trivial example is multimlication within a field.
+Now we will introduce an important example of algebra of noncommutative variables. Later it will rise
+to Hopf algebra we will be using for describing inverse riffle shuffle.
+
+
+
+In fact this is the purpose of map $u$ to insert the copy of the field $K$ into a $K$-algebra.
+
+("$1a$" means $a$ from $\mathcal{H}$ multiplicated by $1$ from the field $K$.)
+
+
+means exactly what was in the definition of $u$.
+Which mean that "counit does the same thing to comultiplication as unit to the multiplication" ;)
+
+Since
+\begin{align*}
+(\Delta \otimes I)\Delta(c) &= (\Delta \otimes I)\left(\sum c_1 \otimes c_2 \right) =
+\sum\Delta(c_1) \otimes c_2, \\
+(I \otimes \Delta)\Delta(c) &= (I \otimes \Delta)\left(\sum c_1 \otimes c_2 \right) =
+\sum c_1 \otimes \Delta(c_2).
+\end{align*}
+
+%\gebin{equation*}
+
+$(\mathcal{H}, m, u)$
+
+$(\mathcal{H}, \Delta, \varepsilon)$
+
+
+    The canonical isomorphism between $K \otimes K$ and $K$ for all
+$k_1, k_2 \in K$ taking a form $k_1 \otimes k_2 \xmapsto{\cong} k_1k_2$ will be writen as $\varphi_K$.
+
+ and because of that we will omit it and identify $K \otimes K$ with $K$
+(and, because of associativity of a field multiplication we will identify any power $K^{\otimes n}$ with $K$).
+\\[8pt]
+
+Note, that later, when there will be no risk of confusion,
+we will be still using "$\cdot$" as multiplication on algebra setted by "$m$" from that algebra.
+
+\textbf{Explanation. } In fact for a given vector space $\mathcal{H}$ with both an algebra structure
+$(\mathcal{H}, m, u)$ and a coalgebra structure $(\mathcal{H}, \Delta, \varepsilon)$, $m$ and $u$
+are morfisms of coalgebras iff $\Delta$ and $\varepsilon$ are morfisms of algebras and these are equivalent
+to conjuction of contditions that
+
+preceisly.
+
+
+where $I^m$ means $\overbrace{I \otimes \dots \otimes I}^{m \mathrm{\ times}}$. \\
+
+\begin{align*}
+[z]_{/\simeq} = \left[\sum^n_{i = 1}\alpha_i(v_i,w_i)\right]_{/\simeq} &=
+\sum^n_{i = 1}\alpha_i[(v_i,w_i)]_{/\simeq} = \\
+\sum^n_{i = 1}\alpha_i\left[\left(\sum^{l_1}_{j=1}\gamma_{i,j}b_{i,j},
+\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_{/\simeq} &=
+\sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(b_{i,j},
+\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_{/\simeq} = \\
+\sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(\sum^{l_2}_{k=1}\gamma_{i,k}
+\left(b_{i,j},c_{i,k}\right)\right)\right]_{/\simeq} &=
+\sum^n_{i = 1}\alpha_i\left[\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\gamma_{i,j}\gamma_{i,k}(b_{i,j}, c_{i,k})\right]_{/\simeq} = \\
+\sum^n_{i = 1}\alpha_i\left(\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_{/\simeq}\right) &=
+\sum_{\substack{1 \leq i \leq n \\1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\alpha_i\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_{/\simeq}
+\end{align*}
+
+\begin{align*}
+[z]_{/\simeq} = \left[\sum^n_{i = 1}\alpha_i(v_i,w_i)\right]_{/\simeq} &=
+\sum^n_{i = 1}\alpha_i[(v_i,w_i)]_{/\simeq} \\
+&= \sum^n_{i = 1}\alpha_i\left[\left(\sum^{l_1}_{j=1}\gamma_{i,j}b_{i,j},
+\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_{/\simeq} \\
+&= \sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(b_{i,j},
+\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_{/\simeq} \\
+&= \sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(\sum^{l_2}_{k=1}\gamma_{i,k}
+\left(b_{i,j},c_{i,k}\right)\right)\right]_{/\simeq} \\
+&= \sum^n_{i = 1}\alpha_i\left[\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\gamma_{i,j}\gamma_{i,k}(b_{i,j}, c_{i,k})\right]_{/\simeq} \\
+&= \sum^n_{i = 1}\alpha_i\left(\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_{/\simeq}\right) \\
+&= \sum_{\substack{1 \leq i \leq n \\1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\alpha_i\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_{/\simeq}
+\end{align*}
+
+\begin{align*}
+(u\varepsilon *f)(c) &= \sum u\varepsilon(c_1) \cdot f(c_2) \\
+&= \sum \varepsilon(c_1)1_A \cdot f(c_2) \\
+&= \sum 1_A \cdot \varepsilon(c_1)f(c_2) \\
+&= 1_A \cdot \sum \varepsilon(c_1)f(c_2) \\
+&= 1_A \cdot f(c) = f(c)
+\end{align*}
+
+\begin{align*}
+(f * u\varepsilon)(c) &= \sum f(c_1) \cdot u\varepsilon(c_2) \\
+&= \sum f(c_1) \cdot \varepsilon(c_2)1_A \\
+&= \sum f(c_1)\varepsilon(c_2) \cdot 1_A \\
+&= \left(\sum f(c_1)\varepsilon(c_2)\right)\cdot 1_A \\
+&= f(c) \cdot 1_A = f(c)
+\end{align*}
+
+
+Hence the name. \\
+
+"with respect to coordinates" \\
+
+in next steps \\
+
+That means that for bialgebra $\mathcal{H}$, a linear map $S \in Hom(\mathcal{H}^C, \mathcal{H}^A)$ 
+is an antipode iff it satisfies
+
+\begin{align*}
+\Delta(x_{i_0}\dots x_{i_k}) &= \Delta m^{[k]}(x_{i_0} \otimes \dots \otimes x_{i_k}) \\ 
+&= (m^{[k]} \otimes m^{[k]}) \left(\sum (x_{i_0})_1 \otimes \dots \otimes (x_{i_k})_1 \otimes 
+(x_{i_0})_2 \otimes \dots \otimes (x_{i_k})_2\right) \\ 
+&= \sum (x_{i_0})_1 \dots (x_{i_k})_1 \otimes 
+(x_{i_0})_2 \dots (x_{i_k})_2 \\ 
+&= \sum_{S \subseteq \{i_0, \dots i_k\}} \prod_{j \in S} x_j \otimes \prod_{j \notin S} x_j.
+\end{align*}
+
+Let $\nu = (\nu_1, \dots \nu_N) \in \mathbb{N}^N$ be our deck of $N$ cards (we just pick $N$ cards from 
+$\mathcal{X}$ in gene
+
+Let $\nu = (\nu_1, \dots \nu_N) \in \mathbb{N}^N$ be our deck of $N$ cards (we just pick $N$ cards from 
+$\mathcal{X}$ in general case they can repeat
+
+ comes with certain probability.
+ 
+ we dont know how exactly these stacks looks 
+like but
+
+if we have two stacks (we will refer to them as ($L$)eft and ($R$)ight).
+
+and we have with probability $p$ $s_1$ on $L$ and $s$ on $R$ and with probability $1-p$ $s_2$ on $L$ and 
+$s$ on $R$ is exactly the same situation as having 
+
+Note that for all $k_1, \dots, k_n \in K$, such that at least one of them is non-zero, 
+an expression $\displaystyle \sum^{n}_{i = 0}k_i ($
+
+anallogly
+
+Let denote that pulling apart as a $\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$, which for all 
+$x_{i_0}, \dots, x_{i_n}$ gives
+\begin{equation*}
+\Delta(x_{i_0}\cdots x_{i_n}) = \sum_{\substack{S \subseteq 
+\{ i_0, \dots i_n \} \\ S = \{i_{j_1}, \dots, i_{j_l}\} \\ S^c = \{i_{k_1}, \cdots, i_{k_{n-l}} \}}}
+x_{i_{j_1}}\cdots x_{i_{j_l}} \otimes x_{i_{k_1}} \cdots x_{i_{k_{n-l}}}.
+\end{equation*}
+For putting two piles back together by placing left on the top let us write a linear map 
+$m : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ that is concatenation, which means, that 
+for all $x_{i_1}, \dots, x_{i_k}, x_{j_1}, \dots, x_{j_l} \in \mathcal{X}$
+\begin{equation*}
+m(x_{i_1}\dots x_{i_k} \otimes x_{j_1}\dots x_{j_l}) = x_{i_1}\ldots x_{i_k}x_{j_1}\ldots x_{j_l}.
+\end{equation*}
+
+Let denote that pulling apart as a $\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$, then for all 
+$s \in \mathcal{X}^*$ it will give
+\begin{equation*}
+\Delta(s) = \sum_{\substack{s_1 \prec s \\ s_2 = s/s_1}}
+s_1 \otimes s_2.
+\end{equation*}
+For putting two piles back together by placing left on the top let us write a linear map 
+$m : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ that is concatenation, which means, that 
+for all $s_1, s_2 \in \mathcal{X}^*$
+\begin{equation*}
+m(s_1 \otimes s_2) = s_1s_2.
+\end{equation*}
+ all $s = x_{i_1}\dots x_{i_n} \in \mathcal{X}^*$ 
+that meet the condition: 
+
+\begin{equation*}
+\mathbb{P}{F_{n+1} = s_2 \mid F_n = s_1 } = \mathbb{I_{n+1} = s_1 \mid I_n = s_2}.
+\end{equation*} 
+
+, we percive it as a certain 
+amount of stacks 
+
+$\backslash\backslash$ 
+Indeed it turned out that a vector space of
+
+At this point we can start to think that it is convinient to interprete a space of possible arragements 
+of two stacks of cards as a $\mathcal{H} \otimes \mathcal{H}$. \\[4pt]
+
+So we need a vector space with basis made of pairs of basis vectors from $\mathcal{H}$ with actions on them 
+that are linear to both coordinates. A tensor product $\mathcal{H} \otimes \mathcal{H}$ 
+is the less-degenerated vector space with that properties.\\[4pt]
+
+We will now show, that what we just had defined indeed give the same results as standard model of inverse 
+riffle shuffling.
+In inverse riffle shuffling  
+
+Which also equvalent to that matrixes of $(F_i)_{i \geq 0}$ and $(I_i)_{i \geq 0}$ are transpositions of 
+each other.
+
+a $\backslash$ big! $\backslash$ huge! $\backslash$ giant!
+
+We will be working of an examples of riffle shuffle and inverse riffle shuffle cards shuffling as 
+our Markov chains. \\
+How we will put them in the algebraic way? \\
+First we will do this with inverse riffle shuffle, the forward riffle shuffle will then apear in a natural 
+way. \\
+
+ 
+Earlier it was said that comultiplication can be sometimes viewed as a sum 
+of possible divisions into smaller objects. It happends naturally when we are working with graded bialgebras. 
+Like in example of polinomials, where natural grading is by degree. \\
+
+\subsubsection{Graded, connected Hopf algebra of non-commuting variables}
+This is a main example of our interest. \\
+Let K be a field with characteristic 0. 
+Let $\mathcal{X} = \{x_1, \dots, x_N\}$ be a finite set. For every $n \in \mathbb{N}$ let 
+$H_n$ be a vector space having as a basis all words of length $n$ made of elements 
+of $\mathcal{X}$. Let $\mathcal{H} \coloneqq \displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i$.
+Let $m : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ be concatenation of words, 
+that is, for all $k, l \in \mathbb{N}$ 
+for all $x_{i_0}, \dots, x_{i_k}, x_{j_0}, \dots, x_{j_l} \in \mathcal{X}$
+\begin{equation*}
+m(x_{i_0}\dots x_{i_k} \otimes x_{j_0}\dots x_{j_l}) \coloneqq 
+x_{i_0}\ldots x_{i_k}x_{j_0}\ldots x_{j_l}.
+\end{equation*}
+Let $\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$ be defined for all elements from 
+$\mathcal{X}$ as
+\begin{equation*}
+\Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i.
+\end{equation*}
+and extends lineary and multiplically \\
+\textbf{Lemma. } Then $\mathcal{H}$ is the a graded, connected Hopf algebra that is cocomutative.
+\begin{proof}
+Associativity of $m$ and coassociativity of $\Delta$ are obvious. Actions fit together, 
+because we define them so. Algebra is graded and connnected because it is.
+\end{proof}
+We can see $\Delta(x_{i_0}\dots x_{i_k})$ how looks like:
+\begin{align*}
+\Delta(x_{i_0}\dots x_{i_k}) &= \Delta m^{[k]}(x_{i_0} \otimes \dots \otimes x_{i_k}) \\ 
+&= (m^{[k]} \otimes m^{[k]}) \left(\sum (x_{i_0})_1 \otimes \dots \otimes (x_{i_k})_1 \otimes 
+(x_{i_0})_2 \otimes \dots \otimes (x_{i_k})_2\right) \\ 
+&= \sum (x_{i_0})_1 \dots (x_{i_k})_1 \otimes 
+(x_{i_0})_2 \dots (x_{i_k})_2 \\ 
+&= \sum_{S \subseteq \{ i_0, \dots i_k \} } \prod_{j \in S} x_j \otimes \prod_{j \notin S} x_j.
+\end{align*}
+where $S$ is a multiset, because some of the $i_0, \dot i_k$ can be the same.
+Form of that coproduct is like that because when for all $x_i \in \mathcal{X}$ we have 
+$\Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i$ then \\[8pt]
+
+a ! \large! \Large! \huge! \Huge! \normalsize
+
+\section{Summarize}
+$\displaystyle\sum\ \bigoplus\ +\ \oplus$
+
+\section{Productise}
+$\displaystyle\prod\ \bigotimes\ \bigodot\ \times\ *$
+\hfill \break
+To jest źle: \\
+Please note, that at first it can be not clear that $h^*m \in \mathcal{H}^* \otimes \mathcal{H}^*$. 
+For sure $h^* \in (\mathcal{H} \otimes \mathcal{H})^*$ but in general case we have 
+$ \mathcal{H}^* \otimes \mathcal{H}^* \subseteq (\mathcal{H} \otimes \mathcal{H})^*$ (with inclusion given by 
+canonical injection) but not necessarily 
+$ \mathcal{H}^* \otimes \mathcal{H}^* = (\mathcal{H} \otimes \mathcal{H})^*$.
+Although we are in graded bialgebra $\mathcal{H}$ and because of that we know that 
+$h^*m \in \displaystyle\left(\bigoplus^\infty_{n=0}\mathcal{H}_n \otimes \mathcal{H}_n\right)^* = 
+\displaystyle\bigoplus^\infty_{n = 0} (\mathcal{H}_n \otimes \mathcal{H}_n)^*$. Futher, for all 
+$n \in \mathbb{N}$ since $\mathcal{H}_n$ is finite-dimentional we have that
+$(\mathcal{H}_n \otimes \mathcal{H}_n)^* = \mathcal{H}_n^* \otimes \mathcal{H}_n^*$. 
+Hence 
+\begin{equation*}
+h^*m \in \displaystyle\bigoplus^\infty_{n = 0} \mathcal{H}_n^* \otimes \mathcal{H}^*_n = 
+\mathcal{H}^* \otimes \mathcal{H}^*.
+\end{equation*}
+
+Now we will describe how a dual algebra to $\mathcal{H}$ looks like. \\
+Let $\mathcal{H}^*$ be the dual vector space to $\mathcal{H}$. (A space of linear functions from 
+$\mathcal{H}$ to $K$). We define multiplication 
+$\Delta^* : \mathcal{H}^* \otimes \mathcal{H}^* \to \mathcal{H}^*$ and comultiplication 
+$m^* : \mathcal{H}^* \to \mathcal{H}^* \otimes \mathcal{H}^*$ as 
+(for all $h_1^*, h_2^*, h^* \in \mathcal{H}^*$):
+\begin{align*}
+\Delta^*(h_1^* \otimes h_2^*) = (h_1^* \otimes h_2^*)\Delta, \\
+m^*(h^*) = h^*m.
+\end{align*}
+
+
+\end{document}

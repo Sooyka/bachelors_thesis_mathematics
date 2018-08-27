@@ -877,14 +877,25 @@ where $S$ is a multiset, because some of the $i_0, \dots, i_k$ can be the same.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \subsubsection{Some futher remarks about structure}
-Structure detail described in this paragraph will be important in chapter about eigenbasises. 
-[GR89] shows that symmetrized sums of certain primitive elements form basis of a free associative algebra. 
-It will turn out that this will be left eigenbasis of $m\Delta$. Now we will introduce methods for 
-construction of that basis. Explanation why this is an eigenbasis will came in Chapter 4. \\
-
+In paragraph 2.3 ~\cite{Diaconis2014} describes some aspects of the structure of free associative algebra.
+They will be important in chapter about eigenbasises. Here we will present a shortened version for lookup. \\ 
+GR89 shows that symmetrized sums of certain primitive elements form basis of a free associative algebra. 
+It will turn out that this will be left eigenbasis of $m\Delta$. 
+Here will be introduced methods for 
+construction of that basis. Explanation why this is an eigenbasis will came in Chapter 4.
 \begin{definition}
 A word in ordered alphabet is \textbf{Lyndon} if it is strictly smaller (in lexicographical order) than its 
 cyclic rearrangments. 
+\end{definition}
+\begin{definition}
+A \textbf{Lyndon factorization} of word $w$ is a tuple of words $(l_1, l_2, \dots, l_k)$ such that 
+$w = l_1l_2\dots l_k$, each $l_i$ is a Lyndon word and $l_1 \geq l_2 \geq \dots \geq l_k$. 
+\end{definition}
+\textbf{Fact. [Lot97, Th. 5.1.5]} Every word $w$ has unique Lyndon factorisation. 
+\begin{definition}
+For a Lyndon word $l$ that has at least two letters a \textbf{standard factorisation} of $l$ is a pair of 
+words $(l_1, l_2)$ such that $l = l_1l_2$, both $l_i$ are non-trivial (not empty) Lyndon words and $l_2$ 
+is the longest right Lyndon factor of $l$.
 \end{definition}
 
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////

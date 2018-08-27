@@ -111,7 +111,7 @@ any row is equal to 1 since it is the sum of probabilities of moving somewhere f
 Now the $K^n_{i,j}$ is the chance of moving from $s_i$ to $s_j$ in $n$ steps. \\
 Markov chains can be also viewed as random walks on the directed, labeled graphs, where states are vertices
 and edge's label is the probability of moving from one vertex to another. \\
-Card shuffling can be viewed as a Markov chain on all possible arragements of the cards
+Card shuffling can be viewed as a Markov chain on all possible arragments of the cards
 in the deck with $K(x,y)$ equal to probability of going from arragment $x$ to arragment $y$ in one shuffle. 
 \\ More extensive indroduction can be found in~\cite{LePeWi}. \\
 Cośtam cośtam stationary distirution. \\
@@ -872,19 +872,30 @@ Equvalently (and that expression can be found in ~\cite{Diaconis2014}) it can be
 \begin{equation*}
 \sum_{S \subseteq \{ i_0, \dots i_k \} } \prod_{j \in S} x_j \otimes \prod_{j \notin S} x_j.
 \end{equation*}
-where $S$ is a multiset, because some of the $i_0, \dots, i_k$ can be the same.
+where $S$ is a multiset, because some of the $i_0, \dot i_k$ can be the same.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \subsubsection{Some futher remarks about structure}
-Structure detail described in this paragraph will be important in chapter about eigenbasises. 
-[GR89] shows that symmetrized sums of certain primitive elements form basis of a free associative algebra. 
-It will turn out that this will be left eigenbasis of $m\Delta$. Now we will introduce methods for 
-construction of that basis. Explanation why this is an eigenbasis will came in Chapter 4. \\
-
+In paragraph 2.3 ~\cite{Diaconis2014} describes some aspects of the structure of free associative algebra.
+They will be important in chapter about eigenbasises. Here we will present a shortened version for lookup. \\ 
+GR89 shows that symmetrized sums of certain primitive elements form basis of a free associative algebra. 
+It will turn out that this will be left eigenbasis of $m\Delta$. 
+Here will be introduced methods for 
+construction of that basis. Explanation why this is an eigenbasis will came in Chapter 4.
 \begin{definition}
 A word in ordered alphabet is \textbf{Lyndon} if it is strictly smaller (in lexicographical order) than its 
 cyclic rearrangments. 
+\end{definition}
+\begin{definition}
+A \textbf{Lyndon factorization} of word $w$ is a tuple of words $(l_1, l_2, \dots, l_k)$ such that 
+$w = l_1l_2\dots l_k$, each $l_i$ is a Lyndon word and $l_1 \geq l_2 \geq \dots \geq l_k$. 
+\end{definition}
+\textbf{Fact. [Lot97, Th. 5.1.5]} Every word $w$ has unique Lyndon factorisation. 
+\begin{definition}
+For a Lyndon word $l$ that has at least two letters a \textbf{standard factorisation} of $l$ is a pair of 
+words $(l_1, l_2)$ such that $l = l_1l_2$, both $l_i$ are non-trivial (not empty) Lyndon words and $l_2$ 
+is the longest right Lyndon factor of $l$.
 \end{definition}
 
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -943,8 +954,7 @@ Let $\mathcal{X} = \{x_1, \dots x_N\}$ be our set of all possible types of cards
 We will denote a stack of $k$ cards containing (from top to bottom) $x_{i_1}, \dots, x_{i_k}$ simply as 
 $x_{i_1}\dots x_{i_k}$. \\
 Imagine, that you have stack of cards $x_{i_1}\dots x_{i_k}$. After shuffling it
-you can get one of finitely many stack of cards each with certain probability. We want to have some
-representation of it in our structure. 
+you can get one of finitely many stack of cards each with certain probability. We want to denote it somehow. 
 For that reason we spann a vector space $\mathcal{H}$, over $\mathbb{Q}$ (but can be $\mathbb{R}$ if someone 
 likes), 
 with basis $\mathcal{X}^*$ (finite words over $\mathcal{X}$, which means "all possible stacks 
@@ -961,7 +971,7 @@ these stacks can exactly look like and we know a probability of every option.\\
 It is very natural situation during shuffling as when we for example split a stack of cards at some 
 random point (with known probabilities of where the split can be) 
 we for shure have two stacks of cards (as soon as we agree that one of them can be empty), 
-there are only finetely many options how exactly arragment looks like and we know a probability of each one. 
+there are only finetely many options how exactly arragment looks like and we know a probability of eachone. 
 \\ We will now focus on case when we have two decks on a table. \\
 We want to deal with that matter in similar way as we done for setting "probabilistic options" to one deck 
 of cards. We will span a vector space with all possible arregements of two decks as a basis. 
@@ -974,11 +984,10 @@ $(s_1, s)$ with probability $p$ and having arragement $(s_2, s)$ with probabilit
 the same situation as having $s_1$ with probability $p$ or having $s_2$ with probability $1 - p$ on the left 
 stack and for sure having $s$ on the right stack. Making connection with our previously introduced notation 
 so we want to $p(s_1, s) + (1-p)(s_2, s) = (ps_1 + (1-p)s_2, s)$ (and annalogly to the second coordinate).\\
-What is more, having for sure $s_1$ on the left and $s_2$ on the right with probability $p$ (and 
-with probability $(1 - p)$ some else arragement, let's call it $(z_1, z_2)$) gives the same probabilty 
-distribution 
-on possible arragments of two decks as, having $s_1$ on the left and having $s_2$ on the 
-right, with probability $p$ and with probability $1-p$ having $(z_1,z_2)$).\\
+What is more note that having for sure $s_1$ on the left and $s_2$ on the right with probability $p$ (and 
+with probability $(1 - p)$ some else arragement, let's call it $z$) gives the same probabilty distribution 
+on possible arragments of two decks as having $s_1$ on the left with probability $p$, having $s_2$ on the 
+right for sure and with probability $1-p$ having $z$).\\
 This leads us to conclusion, that we also want to $p(s_1,s_2) = (ps_1, s_2)$ (and annalogly to the second 
 coordinaate). \\
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1009,11 +1018,10 @@ What we just define here is exactly an algebra of non-commuting variables from e
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-Facts about its algebraic nature are presented in that section. \\
+Facts about its algebraic nature are proven in that section. \\
 We can observe now that Hopf-square map $\Psi^{[2]} = m\Delta$ for $\Delta$, $m$ defined as above 
-describes one iteration of the inverse riffle shuffle. For every $s \in \mathcal{X}^*$, $\Psi^{[2]}(s)$ is 
-a sum of possible arregements of stack with coresponding probabilities (without normalisation)). 
-\\ Ta- daaaam! \\[4pt]
+describes one iteration of the inverse riffle shuffle. For every $s \in /mathcal{X}^*$, $\Psi^{[2]}(s)$ is 
+a sum of possible arregements of stack with coresponding probabilities. \\ Ta- daaaam! \\[4pt]
 But where are that Markov chain? Where are these "subspaces preserved by $\Psi$"? \\
 For an fixed deck of $n$ cards $\nu = (\nu_1, \dots, \nu_n) \in \mathcal{X}^n$ the Markov chain of shuffling 
 that deck is set by $\Psi^{[2]}$ restricted to the subspace spanned by $S_\nu$ = "all $s \in \mathcal{X}^*$ 
@@ -1045,7 +1053,7 @@ $\Psi^{[2]}$ truncated to $\mathcal{H}_\nu \coloneqq \mathrm{Lin}(S_\nu)$
 For forward riffle shuffle we will be working with the same space $\mathcal{H}$ (as we still 
 are dealing with the same set of types of cards) but with differnt actions (as operations of "pulling apart" 
 and "putting together" look now different). \\
-We will proove that indeed forward riffle shuffle $(F_i)_{i \geq 0}$ and inversed riffle shuffle 
+We will proove that indeed forward riffle shuffle ($(F_i)_{i \geq 0}$ and inversed riffle shuffle 
 $(I_i)_{i \geq 0}$ are the same shuffling method 
 but once aplicated "forward" and once "backward". What we mean is that for fixed deck of $n$ cards 
 $\nu = (\nu_1, \dots, \nu_n) \in \mathcal{X}^n$, for all $s_1, s_2 \in \mathcal{H}_\nu$, all $n \geq 0$:
@@ -1128,27 +1136,12 @@ probabilities of corresponding outcomes.
 \chapter{Left and right eigenbasis}
 
 Reasons we bother with finding the eigenbasis are desribed in 1.?.?. For a given deck $\nu$ 
-We will find find left and right eigenbasises of $\mathcal{H}_\nu$ for inverse and forward riffle shuffling. 
-Note, that because 
+We will find find left and right eigenbasises for inverse and forward riffle shuffling. Note, that because 
 $m\Delta$ and $\Delta^*m^*$ are dual to each other left eigenbasis for inverse riffle-shuffle is right 
 eigenbasis for forward riffle-shuffle and right eigenbasis for inverse is left eigenbasis for forward.
 
 \section{Left eigenbasis}
-Construction of left eigenbasis begins with observation that primitive elements are eigenvectors of 
-$\Psi^{[i]}$ for evry $i \in \mathbb{N}$. 
-\begin{observation}
-For evry primitive element $h \in \mathcal{H}$, for every $i \in \mathbb{N}$ it holds that $h$ is an 
-eigenvector of $\Psi^{[i]}$ with an eigenvalue 
-\end{observation}
-\begin{proof}
-Let $h \in \mathcal{H}$ be a primitive element.
-\begin{align*}
-\Psi^{[i]}(h) = m^{[i]}\Delta^{[i]}(h) &= \\
-m(\sum h_1 \otimes \dots \otimes h_i) &= \\
-\sum x
-\end{align*}
-
-\end{proof}
+Construction of left eigenbasis begins with observation that primitive elements
 \todo{primitive bla bla}
 \section{Reference to Diaconis work}
 Now we will recall two theorems from~\cite{Diaconis2014} describing eigenbasises.

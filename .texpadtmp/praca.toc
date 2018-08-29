@@ -14,9 +14,9 @@
 \contentsline {subsection}{\numberline {2.6.1}Graded, connected Hopf algebra of polinomials}{20}{subsection.2.6.1}
 \contentsline {subsection}{\numberline {2.6.2}Graded, connected Hopf algebra of non-commuting variables (free associative Hopf algebra)}{21}{subsection.2.6.2}
 \contentsline {subsubsection}{Some futher remarks about structure}{23}{section*.4}
-\contentsline {subsubsection}{Alternative structure \textbf {\ To do}}{23}{section*.5}
+\contentsline {subsubsection}{Alternative structure \textbf {\ To do}}{24}{section*.5}
 \contentsline {chapter}{\numberline {3}Connection}{25}{chapter.3}
 \contentsline {chapter}{\numberline {4}Left and right eigenbasis}{30}{chapter.4}
 \contentsline {section}{\numberline {4.1}Left eigenbasis}{30}{section.4.1}
-\contentsline {section}{\numberline {4.2}Reference to Diaconis work}{31}{section.4.2}
-\contentsline {section}{\numberline {4.3}Summation}{31}{section.4.3}
+\contentsline {section}{\numberline {4.2}Reference to Diaconis work}{32}{section.4.2}
+\contentsline {section}{\numberline {4.3}Summation}{32}{section.4.3}

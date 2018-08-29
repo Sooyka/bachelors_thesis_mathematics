@@ -17,6 +17,7 @@
 \newtheorem{observation}{Observation}
 \newtheorem{definition}{Definition}
 \newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
 
 \newcommand{\todo}[1]{\hfill \break \textbf{\Huge TO DO: #1 \hfill \break}\normalsize}
 \newcommand{\smalltodo}[1]{\textbf{\ To do}}
@@ -117,7 +118,7 @@ in the deck with $K(x,y)$ equal to probability of going from arragment $x$ to ar
 \\ More extensive indroduction can be found in~\cite{LePeWi}. \\
 Cośtam cośtam stationary distirution. \\
 %\textbf{\Huge BAM!}\normalsize
-\todo{BAM!}
+\todo{BAM! Gilbert-Shannon-Reeds model of riffle shuffle}
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -913,12 +914,12 @@ For a Lyndon word $l$ a \textbf{standard bracketing} $\boldsymbol{\lambda(l)}$ o
 as 
 $\lambda(a) \coloneqq a$ for a letter and $\lambda(l) \coloneqq [\lambda(l_1), \lambda(l_2)]$, where $(l_1, 
 l_2)$ 
-is a standard factorisation of $l$. $[x, y] = xy - yx$ for every words $x, y$. 
+is a standard factorisation of $l$. $[x, y] = x\cdot y - y\cdot x$ for every words $x, y$. 
 \end{definition}
 \begin{definition}
 The \textbf{symmetrized product} of word $w$ is 
 \begin{equation*}
-\mathrm{sym}(w) = \sum_{\sigma \in S_k} \lambda(l_{\sigma(1)})\dots\lambda(l_{\sigma(k)}),
+\mathrm{sym}(w) = \sum_{\sigma \in S_k} \lambda(l_{\sigma(1)})\cdot\ldots\cdot\lambda(l_{\sigma(k)}),
 \end{equation*}
 where $(l_1, \dots, l_k)$ is a Lyndon factorization of $w$.
 \end{definition}
@@ -959,10 +960,11 @@ m^*(h^*) = h^*m.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \chapter{Connection}
-Let take a non-commuting variables algebra from its example. Let take $\mathcal{H}_s$ for some 
-$s \in \mathcal{X}^*$. Then $\Psi^{[2]}$ sets the Markov chain of inverse riffle shuffle the deck of cards 
-containnig cards labeled by $x$s appearing in $s$. Chains state space is then the basis of $\mathcal{H}_s$. 
-Chains transition matrix is equal to transition matrix of $\Psi^{[2]}$ writen in $S_s$.  \\
+Let take a non-commuting variables algebra from its example. Let take $\mathcal{H}_\nu$ for some 
+$\nu \in \mathcal{X}^*$. Then $\Psi^{[2]}$ sets the Markov chain of inverse riffle shuffle the deck of cards 
+containnig cards labeled by $x$s appearing in $\nu$. Chains state space is then the basis of 
+$\mathcal{H}_\nu$. Let call it $S_\nu$ 
+Chains transition matrix is equal to transition matrix of $\Psi^{[2]}$ writen in $S_\nu$.  \\
 \begin{proof}
 For the forward riffle shuffle we want to every possible permutation have probability 1 exept of identity 
 with probability $n-1$. Reachable permutations are the same because of form of actions (just the same)
@@ -1180,24 +1182,24 @@ eigenvector of $\Psi^{[a]}$ with an eigenvalue $a$.
 \end{observation}
 \begin{proof}
 Let $h \in \mathcal{H}$ be a primitive element.
-\begin{align*}
-\Psi^{[a]}(h) = m^{[a]}\Delta^{[a]}(h) &= \\
-m^{[a]}(\sum h_1 \otimes \dots \otimes h_i) &= \\
+\begin{gather*}
+\Psi^{[a]}(h) = \\ m^{[a]}\Delta^{[a]}(h) = \\
+m^{[a]}(\sum h_1 \otimes \dots \otimes h_i) = \\
 m^{[a]}(\underbrace{\overbrace{h \otimes 1_\mathcal{H} \otimes \dots \otimes 1_\mathcal{H}}^{i\ 
 \mathrm{factors}} + 
 \overbrace{1_\mathcal{H} \otimes h \otimes \dots \otimes 1_\mathcal{H}}^{a\ \mathrm{factors}} +
 \dots + 
 \overbrace{1_\mathcal{H} \otimes 1_\mathcal{H} \otimes \dots \otimes h}^{a\ \mathrm{factors}}}_{a\ 
-\mathrm{summands}} ) &= \\
+\mathrm{summands}} ) = \\
 \underbrace{m^{[a]}(\overbrace{h \otimes 1_\mathcal{H} \otimes \dots \otimes 1_\mathcal{H}}^{a\ 
 \mathrm{factors}}) + 
 m^{[a]}(\overbrace{1_\mathcal{H} \otimes h \otimes \dots \otimes 1_\mathcal{H}}^{a\ \mathrm{factors}}) +
 \dots + 
 m^{[a]}(\overbrace{1_\mathcal{H} \otimes 1_\mathcal{H} \otimes \dots \otimes h}^{a\ \mathrm{factors}})}_{a\ 
-\mathrm{summands}} &= \\
-\underbrace{h + \dots + h}_{a\ \mathrm{summands}} &= \\
+\mathrm{summands}} = \\
+\underbrace{h + \dots + h}_{a\ \mathrm{summands}} = \\
 ah 
-\end{align*}
+\end{gather*}
 
 \end{proof}
 Next observation is presented in ~\cite{Diaconis2014} and it is called the symmeterization lemma.
@@ -1207,6 +1209,61 @@ $\displaystyle\sum_{\sigma \in S_k} x_{\sigma(1)}\cdot\ldots\cdot x_{\sigma(k)}$
 $\Psi^{[a]}$ with eigenvalue $a^k$.
 \end{theorem}
 
+Now for basis introduced at the end of \textbf{2.6.2} to be eigenbasis we only need to check that for every Lyndon 
+word $l$, element $\lambda(l)$ is primitive. 
+
+\begin{lemma}
+For every $x$, $y$ that are primitive, $[x, y]$ is primitive.
+\end{lemma}
+
+\begin{proof}
+Let $x$, $y$ be primitive elements of a bialgebra $\mathcal{H}$.
+\begin{align*}
+\Delta([&x, y]) = \\ \Delta(x\cdot y &- y\cdot x) =\\ \Delta (x\cdot y) &- \Delta(y\cdot x) =\\ 
+\Delta m(x \otimes y) &- \Delta m(y \otimes x) =\\ 
+\sum (x_1 \otimes x_2) \cdot (y_1 \otimes y_2) &- \sum (y_1 \otimes y_2) \cdot (x_1 \otimes x_2) = \\
+(x \otimes 1_\mathcal{H}) \cdot (y \otimes 1_\mathcal{H}) + (x \otimes 1_\mathcal{H}) \cdot (1_\mathcal{H} 
+\otimes y) 
+&+ (1_\mathcal{H} \otimes x) \cdot (y \otimes 1_\mathcal{H}) + (1_\mathcal{H} \otimes x) \cdot 
+(1_\mathcal{H} \otimes y) + \\
+- \Big((y \otimes 1_\mathcal{H}) \cdot (x \otimes 1_\mathcal{H}) + (y \otimes 1_\mathcal{H}) \cdot 
+(1_\mathcal{H} \otimes x) 
+&+ (1_\mathcal{H} \otimes y) \cdot (x \otimes 1_\mathcal{H}) + (1_\mathcal{H} \otimes y) \cdot 
+(1_\mathcal{H} \otimes x) \Big) = \\
+x \cdot y \otimes 1_\mathcal{H} + x \otimes y + y \otimes x + 1_\mathcal{H} \otimes x \cdot y 
+&- \Big( y \cdot x \otimes 1_\mathcal{H} + y \otimes x + x \otimes y + 1_\mathcal{H} \otimes y \cdot x 
+\Big) = \\
+(x \cdot y - y \cdot x) \otimes 1_\mathcal{H} &+ 1_\mathcal{H} \otimes (x \cdot y - y \cdot x) = \\
+[x, y] \otimes 1_\mathcal{H} &+ 1_\mathcal{H} \otimes [x, y].
+\end{align*}
+
+\end{proof}
+
+Because of Lemma 1. and that single-letter word is a primitive element we have that $\lambda(l)$ is primitive 
+for every Lyndon word $l$. Hence
+\begin{equation*}
+\mathcal{E} \coloneqq\left\{\mathrm{sym}(w) : w \in \mathcal{X}^*\right\}
+\end{equation*}
+is a left eigenbasis of $\mathcal{H}$ with respect to $\Psi^{[a]}$ for every $a$. What is more:
+
+\begin{theorem}
+Let $\mathcal{H}$ be a free associative Hopf algebra of words over the alphabet $\mathcal{X}$. 
+Let $\nu \in \mathcal{X}^*$. Then $\mathcal{E}_\nu \coloneqq \{\mathrm{sym}(w) : w \in \mathcal{B}_\nu\}$ is 
+an eigenbasis of 
+$\mathcal{H}_\nu$ with respect to $\Psi^{[a]}$ for every $a$.
+\end{theorem}
+
+\begin{proof}\ \\ 
+We will need a following lemma: \\
+\noindent \textbf{Lemma.} $w \in \mathcal{H}_\nu$ iff $\mathrm{sym}(w) \in \mathcal{H}_\nu$ \\
+\begin{proof}
+We will show that 
+\end{proof}
+$\mathcal{E}_\nu \subseteq\mathcal{E}$, 
+so $\mathcal{E}_\nu$ is linear independent. $w \in \mathcal{H}_\nu$ iff 
+$\mathrm{sym}(w) \in \mathcal{H}_\nu$ so $\mathcal{E} \cap \mathcal{H}_\nu = \mathcal{E}_\nu$, so 
+$\mathcal{E}_\nu$ spanns the $\mathcal{H}_\nu$
+\end{proof}
 
 
 \todo{primitive bla bla}

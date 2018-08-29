@@ -22,6 +22,7 @@
 \newcommand{\todo}[1]{\hfill \break \textbf{\Huge TO DO: #1 \hfill \break}\normalsize}
 \newcommand{\smalltodo}[1]{\textbf{\ To do}}
 \newcommand{\gdd}[1]{#1^{\mathrm{gd}*}}
+\newcommand{\SimeqSym}{\simeq_\mathrm{sym}}
 
 \title{Explanation of connection between Hopf algebras and Markov chains}
 \author{Bartosz Sójka}
@@ -822,7 +823,8 @@ a
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsection{Graded, connected Hopf algebra of non-commuting variables (free associative Hopf algebra)}
+\subsection{Graded, connected Hopf algebra of non-commuting variables}
+\subsubsection{Free associative Hopf algebra}
 This is a main example of our interest. It will be used to describe inverse and forward riffle shuffling.\\
 Let K be a field with characteristic 0. 
 Let $\mathcal{X} = \{x_1, \dots, x_N\}$ be a finite set. For every $n \in \mathbb{N}$ let 
@@ -924,8 +926,19 @@ The \textbf{symmetrized product} of word $w$ is
 where $(l_1, \dots, l_k)$ is a Lyndon factorization of $w$.
 \end{definition}
 [GR89, Th. 5.2] shows that $\{\mathrm{sym}(w) : w \in \mathcal{X^*}\}$ form a basis for free associative 
-algebra.
-
+algebra. \\
+Let $|w|$ be the length of word $w$. For a word $w = a_1\dots a_{|w|}$ and permutation 
+$\sigma \in S_{|w|}$ let $\sigma(w) \coloneqq a_{\sigma(1)}\dots a_{\sigma(|w|)}$. \\ 
+Let $\simeq_\mathrm{sym}$ be 
+a relation on $\mathcal{X}^* \times \mathcal{X}^*$ such that for all $w, v \in \mathcal{X}^*$ 
+\begin{equation*}
+w \simeq_\mathrm{sym} v \iff \exists_{\sigma \in S_{|w|}}\ \sigma(w) = v
+\end{equation*}
+\textbf{Observation.} $\simeq_\mathrm{sym}$ is an equivalence relation on $\mathcal{X}^*$.
+\begin{proof}
+Obvious.
+\end{proof}
+Now we can provide a much finer grading 
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -941,6 +954,7 @@ comultiplication
 \Delta^*(h_1^* \otimes h_2^*) = (h_1^* \otimes h_2^*)\Delta, \\
 m^*(h^*) = h^*m.
 \end{align*}
+
 
 
 \todo{COŚTAM}
@@ -960,17 +974,31 @@ m^*(h^*) = h^*m.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \chapter{Connection}
+
+Cocommutative Hopf algebra of non-comuuting variables is a model for inverse riffle shuffling and commutative 
+Hopf algebra of non-cocomutative variables is a model for forward riffle shuffling. It goes as follows.
+Let $\mathcal{X}$ be the finite set of all possible types of cards. Let $\nu$ be a tuple of 
+elements from $\mathcal{X}$ that represents our actual deck of cards (the same type of card can occour
+multiple times, the order in $\nu$ schould be the order in which we think cards are ordered). Now we can 
+take a look at a subspace $\mathcal{H}_\nu$ of vector space $\mathcal{H}$ builded over $\mathcal{X}$ as 
+described in 2.6.2. $\mathcal{H}_\nu$ will be the subspaces spanned by words that for every type of cards 
+consits exactly the same number of cards of that type as $\nu$. So the basis of $\mathcal{H}_\nu$ will be set 
+of words for every arregement of our deck of cards. Let name this basis $\mathcal{B}_\nu$. Note that then 
+$\mathcal{H}_\nu$ is finite dimentional. As was previously described, there are two ways of equiping 
+$\mathcal{H}$ with Hopf algebra structure. One will corresponde with inverse version of riffle shuffle and 
+another with the forward one. With given arrangement of cards $s \in \mathcal{B}_\nu$ applying $m\Delta$ on 
+$s$ yields the sum of possible outcomes after one inverse riffle shuffle while appliying $\Delta^*m^*$ 
+yields the same for forward riffle shuffle. In both cases coefficients (after normalization) are 
+probabilities of corresponding outcomes. \\[4pt]
+
+\todo{How it sets?}
+
 Let take a non-commuting variables algebra from its example. Let take $\mathcal{H}_\nu$ for some 
 $\nu \in \mathcal{X}^*$. Then $\Psi^{[2]}$ sets the Markov chain of inverse riffle shuffle the deck of cards 
 containnig cards labeled by $x$s appearing in $\nu$. Chains state space is then the basis of 
 $\mathcal{H}_\nu$. Let call it $S_\nu$ 
 Chains transition matrix is equal to transition matrix of $\Psi^{[2]}$ writen in $S_\nu$.  \\
-\begin{proof}
-For the forward riffle shuffle we want to every possible permutation have probability 1 exept of identity 
-with probability $n-1$. Reachable permutations are the same because of form of actions (just the same)
-we litterally cut that deck and put in on the top. coefficients holds, because numbers of the number of 
-occurences holds. Therefore its indeed the inverse riffle shuffling.
-\end{proof}
+
 
 Here we will provide a more specific probabilistic interpretation of spaces and actions in $\mathcal{H}$.
 We will do so by introduce algebraic structure on inverse riffle shuffle step-by-step. What we will end 
@@ -994,7 +1022,7 @@ $\displaystyle\sum^{n}_{i = 1} q_is_i$ is for all $i \in \{1, \dots, n\}$
 interpreted as a state where we have a stack $s_i$ with probability $\frac{q_i}{\sum^n_{i=1} q_i}$ or 
 equvalently as a probabilistic measure on $\mathcal{X}^*$ with value $\frac{q_i}{\sum^n_{i=1} q_i}$ on $s_i$ 
 for every $i \in \{1, \dots, n\}$ and $0$ elesewhere. \\
-In that undestanding the "+" can be readed as "or". \\
+In that understanding the "+" can be readed as "or". \\
 We want also desribe a situation when: we have multiple stacks of cards on a table (some of them maybe 
 empty), there are only finitely many options how 
 these stacks can exactly look like and we know a probability of every option.\\ 
@@ -1025,7 +1053,7 @@ coordinaate). \\
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 In the Gilbert-Shannon-Reeds model of inverse riffle shuffling there are two steps. Firstly we are 
-decomposing the deck by take cards from the top of deck deck - one after another and puting them to the left 
+decomposing the deck by take cards from the top of deck - one after another and puting them to the left 
 or to the right each with probability $\frac{1}{2}$. Secondly putting left stack on the right stack. \\
 That pulling apart causes a split into two stacks, each of them can be any subset of original stack 
 (with preservation of order) with equal probability of each option. \\
@@ -1135,21 +1163,7 @@ We ckech, and what? That are exactly $m_F$ and $\Delta_F$ matrixes of $(F_i)_{i 
 are transpositions of each other.\\
 
 
-Cocommutative Hopf algebra of non-comuuting variables is a model for inverse riffle shuffling and commutative 
-Hopf algebra of non-cocomutative variables is a model for forward riffle shuffling. It goes as follows.
-Let $\mathcal{X}$ be the finite set of all possible types of cards. Let $\nu$ be a tuple of 
-elements from $\mathcal{X}$ that represents our actual deck of cards (the same type of card can occour
-multiple times, the order in $\nu$ schould be the order in which we think cards are ordered). Now we can 
-take a look at a subspace $\mathcal{H}_\nu$ of vector space $\mathcal{H}$ builded over $\mathcal{X}$ as 
-described in 2.6.2. $\mathcal{H}_\nu$ will be the subspaces spanned by words that for every type of cards 
-consits exactly the same number of cards of that type as $\nu$. So the basis of $\mathcal{H}_\nu$ will be set 
-of words for every arregement of our deck of cards. Let name this basis $\mathcal{B}_\nu$. Note that then 
-$\mathcal{H}_\nu$ is finite dimentional. As was previously described, there are two ways of equiping 
-$\mathcal{H}$ with Hopf algebra structure. One will corresponde with inverse version of riffle shuffle and 
-another with the forward one. With given arrangement of cards $s \in \mathcal{B}_\nu$ applying $m\Delta$ on 
-$s$ yields the sum of possible outcomes after one inverse riffle shuffle while appliying $\Delta^*m^*$ 
-yields the same for forward riffle shuffle. In both cases coefficients (after normalization) are 
-probabilities of corresponding outcomes. 
+
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1165,7 +1179,7 @@ probabilities of corresponding outcomes.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\chapter{Left and right eigenbasis}
+\chapter{Left and right eigenbasises}
 
 Reasons we bother with finding the eigenbasis are desribed in 1.?.?. For a given deck $\nu$ 
 we will find find left and right eigenbasises of $\mathcal{H}_\nu$ for inverse and forward riffle shuffling. 
@@ -1267,7 +1281,8 @@ $\mathcal{E}_\nu$ spanns the $\mathcal{H}_\nu$
 
 
 \todo{primitive bla bla}
-\section{Reference to Diaconis work}
+\section{Right eigenbasis}
+\section{Reference to~\cite{Diaconis2014}}
 Now we will recall two theorems from~\cite{Diaconis2014} describing eigenbasises.
 \begin{theorem}
 bla bla eigenbasismn   
@@ -1281,7 +1296,7 @@ bla bla\\[8pt]
 Now we can make some futher observations about sfuffling.\\
 ble ble\\
 
-\section{Summation}
+\chapter{Summation}
 
 
 \bibliography{my_bibliography}{}

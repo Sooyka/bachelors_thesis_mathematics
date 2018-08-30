@@ -73,7 +73,7 @@ using Hopf algebras.
 \end{abstract}
 \todo{}
 \begin{itemize}
-\item dopisać comutative i cocomutative
+\item dopisać commutative i cocommutative
 \item dopisać przykład polinomial i ciała do coalgebry
 \item dopisąć grupowy do Hopfa
 \item pokazać jak wygląda coproduct w noncommuting - ważne
@@ -843,7 +843,12 @@ $\mathcal{X}$ as
 \Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i.
 \end{equation*}
 and extends lineary and multiplically .\\
-\textbf{Lemma. } Then $\mathcal{H}$ is the a graded, connected Hopf algebra that is cocomutative.
+The unit is then $u : K \to \mathcal{H}$ such that
+\begin{equation*}
+u(1_K) = \varepsilon
+\end{equation*}
+where $\varepsilon$ is an empty word. And indeed $1_\mathcal{H} = \varepsilon$.
+\textbf{Lemma. } Then $\mathcal{H}$ is the a graded, connected Hopf algebra that is cocommutative.
 \begin{proof}
 Associativity of $m$ and coassociativity of $\Delta$ are obvious. Actions fit together, 
 because we define them so. Algebra is graded straight from definition and connnected because an empty word 
@@ -973,24 +978,85 @@ This will be the grading we will be using for our probabilistic interpretation. 
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \subsubsection{Alternative structure \smalltodo{a}}
-\indent Now we will describe an alternative Hopf algebra structure on $\mathcal{H}$ - a vector space spanned 
-by finite words over fixed alphabet $\mathcal{X}$. We will denote Hopf algebra with this structure builded on 
-$\mathcal{H}$
-as $\mathcal{H}^{\mathrm{gd}*}$. (in~\cite{Diaconis2014} it is denoted as $\mathcal{H}^*$).  It will be the 
+\indent Now we will describe an alternative graded and connected Hopf algebra structure on $\mathcal{H}$ - a
+vector space spanned 
+by finite words over fixed alphabet $\mathcal{X}$. It will describe the structure of forward riffle shuffle.
+We will denote that alternative Hopf algebra structure
+builded on $\mathcal{H}$ as $\mathcal{H}^*$ and call it a graded dual of $\mathcal{H}^*$ (for reasons that
+will came later). 
+(Note that $\mathcal{H}$ is isomorphic to $\mathcal{H}^*$ as a vector space and $\mathcal{H}^*$ in this
+sense is not the vector space dual to $\mathcal{H}$). \\
+We define multiplication $\Delta^* : \mathcal{H}^* \otimes \mathcal{H}^* \to \mathcal{H}^*$ as
+for all $s_1, s_2 \in \mathcal{X}^*$:
+\begin{equation*}
+\Delta^*(s_1 \otimes s_2) = \sum\{s : s_1 \prec s \mathrm{\ and\ } s_2 = s/s_1\}.
+\end{equation*}
+which is the sum of all possible interlaces of $s_1$ and $s_2$ \\
+and comultiplication $m^* : \mathcal{H}^* \to \mathcal{H}^* \otimes \mathcal{H}^*$ as for all $s \in 
+\mathcal{X}^*$:
+\begin{equation*}
+m^*(s) = \sum\{ s_1 \otimes s_2 : s=s_1s_2 \}
+\end{equation*} 
+which is the sum of all possible divisions of $s$ into its prefix and sufix. \\
+and both extended lineary. \\
+\textbf{Lemma. } Then $\mathcal{H}^*$ is the a graded, connected Hopf algebra that is commutative.
+\begin{proof}
+Associativity of $\Delta^*$ and coassociativity of $m^*$ are obvious.
+Now we will prove that actions fits together which means that
+\begin{equation*}
+m^*\Delta^* = (\Delta^*\otimes \Delta^*)(I \otimes T \otimes I)(m^* \otimes m^*)
+\end{equation*}
+Let $g, h \in \mathcal{X}^*$,
+\begin{gather*}
+\sum g_1 \cdot h_1 \otimes g_2 \cdot h_2 = \\
+\sum \{g_1 \cdot h_1 \otimes g_2 \cdot h_2 : g_1g_2=g \mathrm{\ and\ } h_1h_2 = h\} =\\
+\sum \{ \sum\{k : g_1 \prec k \mathrm{\ and\ } h_1 = k/g_1\} \otimes 
+\sum\{k : g_2 \prec k \mathrm{\ and\ } h_2 = k/g_2\} : g_1g_2=g \mathrm{\ and\ } h_1h_2 = h\} = \\
+\sum\{ \sum\{ m_1 \otimes m_2 : k=m_1m_2 \} : g \prec k \mathrm{\ and\ } h = k/g\} = \\
+\sum\{m^*(k) : g \prec k \mathrm{\ and\ } h = k/g\} = \\
+m^*\left(\sum\{k : g \prec k \mathrm{\ and\ } h = k/g\}\right) = \\
+m^*\Delta^*(g \otimes h)
+\end{gather*}
+Other properties of bialgebra are easy to check.
+Algebra is connected because an empty word 
+is still an identity element in respect of multiplication. Commutativity is clear.
+\end{proof}
+In the shuffling interpretation $\Delta^*$ will be an operation of dividing a stack of cards at some random 
+point and putting the top pile on the left creating two stacks. $m^*$ will be operation of combining two 
+stacks together with the same probability of every possible interlace of to stacks.
+
+Now we will see that there is another method of introducing that structure
+It will turn out to be the 
 structure of $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$ with actions induced by actions from 
-$\mathcal{H}$. It will turn out that it describes the structure of forward riffle shuffle.  
-$\mathcal{H}^{\mathrm{gd}*} \simeq \displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$, because of that 
-we will call it a graded dual of $\mathcal{H}$. \\
-\indent We define multiplication 
+Hopf algebra $\mathcal{H}$ (let $\gdd{\mathcal{H}} \coloneqq \displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$): \\
+multiplication 
+$\Delta^* : \mathcal{H}^{\mathrm{gd}*} \otimes \gdd{\mathcal{H}} \to \gdd{\mathcal{H}}$ and \\
+comultiplication 
+\text{$m^* : \gdd{\mathcal{H}} \to \gdd{\mathcal{H}} \otimes \gdd{\mathcal{H}}$} \\
+such that for all $h_1^*, h_2^*, h^* \in \gdd{\mathcal{H}}$:
+\begin{align*}
+\Delta^*(h_1^* \otimes h_2^*) &= (h_1^* \otimes h_2^*)\Delta, \\
+m^*(h^*) &= h^*m.
+\end{align*} 
+so firstly we will introduce that structure on  
+$\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$. But since $\mathcal{H} = 
+\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i$ and $\displaystyle\bigoplus^{\infty}_{i = 0}
+\mathcal{H}_i \simeq \displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$ as a linear spaces, it will
+work on $\mathcal{H}$ the same. We will denote a Hopf algebra with this structure 
+as $\mathcal{H}^*$ and call it a graded dual to $\mathcal{H}$. (but it will NOT be isomorphic to 
+$\mathcal{H}^*$ - vector space dual to $\mathcal{H}$). (in~\cite{Diaconis2014} that Hopf algebra is also 
+denoted as $\mathcal{H}^*$).  \\
+It will turn out that it describes the structure of forward riffle shuffle. \\
+\indent Let denote $\gdd{\mathcal{H}}$ for $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$.
+We define multiplication 
 $\Delta^* : \mathcal{H}^{\mathrm{gd}*} \otimes \gdd{\mathcal{H}} \to \gdd{\mathcal{H}}$ and 
 comultiplication 
-\text{$m^* : \gdd{\mathcal{H}} \to \gdd{\mathcal{H}} \otimes \gdd{\mathcal{H}}$} in $\gdd{\mathcal{H}}$ as 
+\text{$m^* : \gdd{\mathcal{H}} \to \gdd{\mathcal{H}} \otimes \gdd{\mathcal{H}}$} as 
 (for all $h_1^*, h_2^*, h^* \in \gdd{\mathcal{H}}$):
 \begin{align*}
-\Delta^*(h_1^* \otimes h_2^*) = (h_1^* \otimes h_2^*)\Delta, \\
-m^*(h^*) = h^*m.
+\Delta^*(h_1^* \otimes h_2^*) &= (h_1^* \otimes h_2^*)\Delta, \\
+m^*(h^*) &= h^*m.
 \end{align*}
-
 
 
 \todo{COŚTAM}
@@ -1012,7 +1078,7 @@ m^*(h^*) = h^*m.
 \chapter{Connection}
 
 Cocommutative Hopf algebra of non-comuuting variables is a model for inverse riffle shuffling and commutative 
-Hopf algebra of non-cocomutative variables is a model for forward riffle shuffling. It goes as follows.
+Hopf algebra of non-cocommutative variables is a model for forward riffle shuffling. It goes as follows.
 Let $\mathcal{X}$ be the finite set of all possible types of cards. Let $\nu$ be a tuple of 
 elements from $\mathcal{X}$ that represents our actual deck of cards (the same type of card can occour
 multiple times, the order in $\nu$ schould be the order in which we think cards are ordered). Now we can 
@@ -1170,12 +1236,10 @@ It is forward fiffle sfufle, we can check it
 that corresponds to that , that to that
 fold product is exactly that and that, so the coeficient matches and that is ok. \\
 And then it is exactly an riffle shuffle as it is bla bla. \\
-For all $s_1, s_2, s \in \mathcal{X}^*$ let us denote the fact that concatenation of $s_1$ and $s_2$ gives 
-$s$ as $concat(s_1, s_2, s)$.
 Let $\Delta_F : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$ be an linear map for decomposition 
 of the deck for forward riffle shuffle, then for all $s \in \mathcal{X}^*$
 \begin{equation*}
-\Delta_F(s) = \sum_{concat(s_1, s_2, s)} s_1 \otimes s_2.
+\Delta_F(s) = \sum_{s_1s_2=s} s_1 \otimes s_2.
 \end{equation*}
 Let $m_F : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ be a linear map coresponding to 
 \textit{trrrrrrrr}. Then for all $s_1, s_2 \in \mathcal{X}^*$:

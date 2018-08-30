@@ -22,7 +22,7 @@
 \newcommand{\todo}[1]{\hfill \break \textbf{\Huge TO DO: #1 \hfill \break}\normalsize}
 \newcommand{\smalltodo}[1]{\textbf{\ To do}}
 \newcommand{\gdd}[1]{#1^{\mathrm{gd}*}}
-\newcommand{\SimeqSym}{\simeq_\mathrm{sym}}
+\newcommand{\SimeqSym}{{\simeq_\mathrm{sym}}}
 
 \title{Explanation of connection between Hopf algebras and Markov chains}
 \author{Bartosz Sójka}
@@ -119,7 +119,7 @@ in the deck with $K(x,y)$ equal to probability of going from arragment $x$ to ar
 \\ More extensive indroduction can be found in~\cite{LePeWi}. \\
 Cośtam cośtam stationary distirution. \\
 %\textbf{\Huge BAM!}\normalsize
-\todo{BAM! Gilbert-Shannon-Reeds model of riffle shuffle}
+\todo{BAM! Gilbert-Shannon-Reeds model of riffle shuffle with that specific forward}
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -486,7 +486,7 @@ model the process of cutting the deck of cards into pieces in riffle shuffle. In
 working with (graded, connected Hopf algebras) comultiplication will represent some kind of natural 
 decomposition in the more general way. What does it mean in the strict sense will be presented in 
 Definition 8. when we will be introducing graded bialgebras. \\
-Examples. \\[8pt]
+Examples. \smalltodo{}  \\[8pt]
 The coassociativity of $\Delta$ means, that $(\Delta \otimes I)\Delta = (I \otimes \Delta)\Delta$.
 In Sweedler notation it can be writen as
 \begin{equation*}
@@ -866,13 +866,13 @@ notation gives
 \begin{equation*}
 \sum(x_i)_1 \otimes (x_i)_2 = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i.
 \end{equation*}
-hence "possible values" of $(x_i)_1$ (and $(x_i)_2$) are $x_i$ and $1_\mathcal{H}$.
 The sum we are discussing is then sum over all possible partitions into to distinct subsequences of $s$, 
 because for each component of that sum, for each $x_{i_j}$ we decide if we are taking it into the left 
 subsequence ($x_{i_j}$ as a "value" of $(x_{i_j})_1$ and $1_\mathcal{H}$ as a "value" of $(x_{i_j})_2$) or 
 into the right subsequence ($1_\mathcal{H}$ as a "value" of $(x_{i_j})_1$ and $x_{i_j}$ as a "value" of 
 $(x_{i_j})_2$).
-\\ For denoting it lets denote $s_1 \prec s$ for "$s_1$ is a subsequence of $s$". And let for $s_1, s$ 
+\\ For denoting it lets denote $s_1 \prec s$ for "$s_1$ is a subsequence of $s$" (a subsequence don't have 
+to be a consistent fragment). And let for $s_1, s$ 
 such that $s_1 \prec s$ denote $s_2 = s / s_1$ for $s_2 \prec s$ such that it is created by removing 
 $s_1$ from $s$. We can now write sum from (2.5) as:
 \begin{equation*}
@@ -883,7 +883,11 @@ Equvalently (and that expression can be found in ~\cite{Diaconis2014}) it can be
 \begin{equation*}
 \sum_{S \subseteq \{ i_0, \dots i_k \} } \prod_{j \in S} x_j \otimes \prod_{j \notin S} x_j.
 \end{equation*}
-where $S$ is a multiset, because some of the $i_0, \dots, i_k$ can be the same.
+where $S$ is a multiset, because some of the $i_0, \dots, i_k$ can be the same. \\
+\indent This structure will describe inverse riffle shuffling, as $\Delta$ will be an operation of 
+randomly divide a stack of cards into to stacks by putting each card with probability $\frac{1}{2}$ to 
+the left or to the right and $m$ will be an operation of deterministic putting the left stack on the top 
+of the right stack. $\Psi^{[2]}$ will be then apply of one iteration of inverse riffle shuffle.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -938,17 +942,49 @@ w \simeq_\mathrm{sym} v \iff \exists_{\sigma \in S_{|w|}}\ \sigma(w) = v
 \begin{proof}
 Obvious.
 \end{proof}
-Now we can provide a much finer grading 
+\noindent Now we can provide a much finer grading. \\
+To every $\nu \in \mathcal{X}^*$ we associate
+\begin{equation}
+\mathcal{H}_\nu \coloneqq \mathrm{Lin}(\{w \in \mathcal{X}^* : w \SimeqSym \nu\}).
+\end{equation}
+So its the subspace spanned by words that for each letter from $\mathcal{X}$ have the same number of 
+instances of that letter as 
+$\nu$. (Of course for every $w, v \in \mathcal{X}^*$ such that $w \SimeqSym v$ we have 
+$\mathcal{H}_w = \mathcal{H}_v$.) \\
+Now we can write $\mathcal{H}$ as 
+\begin{equation*}
+\mathcal{H} = \bigoplus_{{[\nu]}_\SimeqSym \in \mathcal{X}^*_{/\SimeqSym}} \mathcal{H}_\nu
+\end{equation*}
+Which is equivalent to
+\begin{equation*}
+\mathcal{H} = \bigoplus_{S \in \mathcal{X}^*_{/\SimeqSym}} \mathrm{Lin}(S)
+\end{equation*}
+This grading also is compatible with a bialgebra structure we have introduced in the sense that for all 
+$\nu, \upsilon \in \mathcal{X}^*$
+\begin{align*}
+m[\mathcal{H}_\nu \otimes \mathcal{H}_\upsilon] &\subseteq \mathcal{H}_{\nu\upsilon} \mathrm{\ and} \\
+\Delta[\mathcal{H}_\nu] &\subseteq \bigoplus_{\substack{s_1 \prec \nu \\ s_2 = \nu/ s_1}} 
+\mathcal{H}_{s_1} \otimes \mathcal{H}_{s_2}.
+\end{align*}
+We can observe that 
+\todo{pokrywa całość}
+This will be the grading we will be using for our probabilistic interpretation. It i
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \subsubsection{Alternative structure \smalltodo{a}}
-\indent Now we will describe an hopf algebra structure on $\mathcal{H}^{\mathrm{gd}*}$ \hyperref[graded dual]
-{(definition $\gdd{V}$ for a given $V$ can be found in 2.1.1)}. \\
-We define multiplication 
+\indent Now we will describe an alternative Hopf algebra structure on $\mathcal{H}$ - a vector space spanned 
+by finite words over fixed alphabet $\mathcal{X}$. We will denote Hopf algebra with this structure builded on 
+$\mathcal{H}$
+as $\mathcal{H}^{\mathrm{gd}*}$. (in~\cite{Diaconis2014} it is denoted as $\mathcal{H}^*$).  It will be the 
+structure of $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$ with actions induced by actions from 
+$\mathcal{H}$. It will turn out that it describes the structure of forward riffle shuffle.  
+$\mathcal{H}^{\mathrm{gd}*} \simeq \displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$, because of that 
+we will call it a graded dual of $\mathcal{H}$. \\
+\indent We define multiplication 
 $\Delta^* : \mathcal{H}^{\mathrm{gd}*} \otimes \gdd{\mathcal{H}} \to \gdd{\mathcal{H}}$ and 
 comultiplication 
-\text{$m^* : \gdd{\mathcal{H}} \to \gdd{\mathcal{H}} \otimes \gdd{\mathcal{H}}$} as 
+\text{$m^* : \gdd{\mathcal{H}} \to \gdd{\mathcal{H}} \otimes \gdd{\mathcal{H}}$} in $\gdd{\mathcal{H}}$ as 
 (for all $h_1^*, h_2^*, h^* \in \gdd{\mathcal{H}}$):
 \begin{align*}
 \Delta^*(h_1^* \otimes h_2^*) = (h_1^* \otimes h_2^*)\Delta, \\
@@ -1091,7 +1127,7 @@ S_\nu = \{ s = x_{i_1}\dots x_{i_n} \in \mathcal{X}^* \mid
 \exists_{\sigma \in S_n} x_{\sigma(i_1)}\dots x_{\sigma(i_n)} = \nu_1\dots \nu_n. \}.
 \end{equation*}
 ($\sigma \in S_n$ is a permutation, $S_n$ is a symmetric group of $n$ (group of 
-all permutations of $n$ elements))\\
+all permutations of $n$ elements)). Its equivalent to that $S_\nu = [\nu]_\SimeqSym$.\\
 Then the state space of that chain is $S_\nu$. The transition matrix of that chain is exactly a matrix of 
 $\Psi^{[2]}$ truncated to $\mathcal{H}_\nu \coloneqq \mathrm{Lin}(S_\nu)$ 
 (which, as we can observe is finite-dimentional and preserved by $\Psi^{[2]}$). \\[8pt]
@@ -1144,7 +1180,7 @@ of the deck for forward riffle shuffle, then for all $s \in \mathcal{X}^*$
 Let $m_F : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ be a linear map coresponding to 
 \textit{trrrrrrrr}. Then for all $s_1, s_2 \in \mathcal{X}^*$:
 \begin{equation*}
-m_F (s_1 \otimes s_2) = \sum_{\substack{s_1 \prec s \\ \land s_2 = s/s_1} } s
+m_F (s_1 \otimes s_2) = \sum_{\substack{s_1 \prec s \\ s_2 = s/s_1} } s
 \end{equation*}
 which is sum of all possible entanglements of $s_1$ and $s_2$.\\[8pt]
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1161,7 +1197,7 @@ ble ble
 We ckech, and what? That are exactly $m_F$ and $\Delta_F$ matrixes of $(F_i)_{i \geq 0}$ and $(I_i)_{i 
 \geq 0}$ 
 are transpositions of each other.\\
-
+\todo{Do poprawki, bo żal}
 
 
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1223,7 +1259,8 @@ $\displaystyle\sum_{\sigma \in S_k} x_{\sigma(1)}\cdot\ldots\cdot x_{\sigma(k)}$
 $\Psi^{[a]}$ with eigenvalue $a^k$.
 \end{theorem}
 
-Now for basis introduced at the end of \textbf{2.6.2} to be eigenbasis we only need to check that for every Lyndon 
+Now for basis introduced at the end of \textbf{2.6.2} to be eigenbasis we only need to check that for 
+every Lyndon 
 word $l$, element $\lambda(l)$ is primitive. 
 
 \begin{lemma}
@@ -1270,18 +1307,25 @@ $\mathcal{H}_\nu$ with respect to $\Psi^{[a]}$ for every $a$.
 For the proof, we will need a following lemma: \\
 \noindent \textbf{Lemma.} $w \in \mathcal{H}_\nu$ iff $\mathrm{sym}(w) \in \mathcal{H}_\nu$
 \begin{proof}
+We can observe that for every $x, y \in \mathcal{X}^*$ there holds $xy\ \SimeqSym\ yx$. Because of that 
+for every Lyndon word $l$ we have that $\lambda(l) \in \mathcal{H}_l$. So we have that for every word $w$ 
+with Lyndon factorisation $(l_1,\dots, l_k)$ there holds 
+$\lambda(l_1)\cdot\ldots\cdot\lambda(l_k) \in \mathcal{H}_w$. From that, for every 
+$\sigma \in S_k$, we have that $\lambda(l_{\sigma(1)})\cdot\ldots\cdot\lambda(l_{\sigma(k)}) \in 
+\mathcal{H}_w$.
 
 \end{proof}
 \begin{proof}(of the theorem) \\ 
 $\mathcal{E}_\nu \subseteq\mathcal{E}$, 
 so $\mathcal{E}_\nu$ is linear independent. $w \in \mathcal{H}_\nu$ iff 
-$\mathrm{sym}(w) \in \mathcal{H}_\nu$ so $\mathcal{E} \cap \mathcal{H}_\nu = \mathcal{E}_\nu$, so 2
-$\mathcal{E}_\nu$ spanns the $\mathcal{H}_\nu$
+$\mathrm{sym}(w) \in \mathcal{H}_\nu$ so $\mathcal{E} \cap \mathcal{H}_\nu = \mathcal{E}_\nu$, so 
+$\mathcal{E}_\nu$ spanns the $\mathcal{H}_\nu$.
 \end{proof}
 
 
 \todo{primitive bla bla}
 \section{Right eigenbasis}
+
 \section{Reference to~\cite{Diaconis2014}}
 Now we will recall two theorems from~\cite{Diaconis2014} describing eigenbasises.
 \begin{theorem}

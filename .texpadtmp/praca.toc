@@ -15,10 +15,10 @@
 \contentsline {subsection}{\numberline {2.6.2}Graded, connected Hopf algebra of non-commuting variables}{21}{subsection.2.6.2}
 \contentsline {subsubsection}{Free associative Hopf algebra}{21}{section*.4}
 \contentsline {subsubsection}{Some futher remarks about structure}{23}{section*.5}
-\contentsline {subsubsection}{Alternative structure \textbf {\ To do}}{24}{section*.6}
-\contentsline {chapter}{\numberline {3}Connection}{25}{chapter.3}
-\contentsline {chapter}{\numberline {4}Left and right eigenbasises}{30}{chapter.4}
-\contentsline {section}{\numberline {4.1}Left eigenbasis}{30}{section.4.1}
-\contentsline {section}{\numberline {4.2}Right eigenbasis}{32}{section.4.2}
-\contentsline {section}{\numberline {4.3}Reference to~\cite {Diaconis2014}}{32}{section.4.3}
-\contentsline {chapter}{\numberline {5}Summation}{33}{chapter.5}
+\contentsline {subsubsection}{Alternative structure \textbf {\ To do}}{25}{section*.6}
+\contentsline {chapter}{\numberline {3}Connection}{26}{chapter.3}
+\contentsline {chapter}{\numberline {4}Left and right eigenbasises}{31}{chapter.4}
+\contentsline {section}{\numberline {4.1}Left eigenbasis}{31}{section.4.1}
+\contentsline {section}{\numberline {4.2}Right eigenbasis}{33}{section.4.2}
+\contentsline {section}{\numberline {4.3}Reference to~\cite {Diaconis2014}}{33}{section.4.3}
+\contentsline {chapter}{\numberline {5}Summation}{34}{chapter.5}

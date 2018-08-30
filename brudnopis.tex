@@ -14,7 +14,7 @@
 
 \newtheorem{observation}{Observation}
 \newtheorem{definition}{Definition}
-
+\newcommand{\gdd}[1]{#1^{\mathrm{gd}*}}
 \title{Explanation of connection between Hopf algebras and Markov chains}
 \author{Bartosz Sójka}
 \date{May 2018}
@@ -405,5 +405,18 @@ with probability $n-1$. Reachable permutations are the same because of form of a
 we litterally cut that deck and put in on the top. coefficients holds, because numbers of the number of 
 occurences holds. Therefore its indeed the inverse riffle shuffling.
 \end{proof}
+
+\subsubsection{Alternative structure} 
+\indent Now we will describe an hopf algebra structure on $\mathcal{H}^{\mathrm{gd}*}$ 
+{(definition $\gdd{V}$ for a given $V$ can be found in 2.1.1)}. \\
+We define multiplication 
+$\Delta^* : \mathcal{H}^{\mathrm{gd}*} \otimes \gdd{\mathcal{H}} \to \gdd{\mathcal{H}}$ and 
+comultiplication 
+\text{$m^* : \gdd{\mathcal{H}} \to \gdd{\mathcal{H}} \otimes \gdd{\mathcal{H}}$} as 
+(for all $h_1^*, h_2^*, h^* \in \gdd{\mathcal{H}}$):
+\begin{align*}
+\Delta^*(h_1^* \otimes h_2^*) = (h_1^* \otimes h_2^*)\Delta, \\
+m^*(h^*) = h^*m.
+\end{align*}
 
 \end{document}

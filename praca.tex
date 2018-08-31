@@ -997,7 +997,7 @@ and comultiplication $m^* : \mathcal{H}^* \to \mathcal{H}^* \otimes \mathcal{H}^
 \begin{equation*}
 m^*(s) = \sum\{ s_1 \otimes s_2 : s=s_1s_2 \}
 \end{equation*} 
-which is the sum of all possible divisions of $s$ into its prefix and sufix. \\
+which is the sum of all possible divisions of $s$ into its prefix and suffix. \\
 and both extended lineary. \\
 \textbf{Lemma. } Then $\mathcal{H}^*$ is the a graded, connected Hopf algebra that is commutative.
 \begin{proof}
@@ -1006,24 +1006,39 @@ Now we will prove that actions fits together which means that
 \begin{equation*}
 m^*\Delta^* = (\Delta^*\otimes \Delta^*)(I \otimes T \otimes I)(m^* \otimes m^*)
 \end{equation*}
-Let $g, h \in \mathcal{X}^*$,
-\begin{gather*}
-\sum g_1 \cdot h_1 \otimes g_2 \cdot h_2 = \\
-\sum \{g_1 \cdot h_1 \otimes g_2 \cdot h_2 : g_1g_2=g \mathrm{\ and\ } h_1h_2 = h\} =\\
-\sum \{ \sum\{k : g_1 \prec k \mathrm{\ and\ } h_1 = k/g_1\} \otimes 
-\sum\{k : g_2 \prec k \mathrm{\ and\ } h_2 = k/g_2\} : g_1g_2=g \mathrm{\ and\ } h_1h_2 = h\} = \\
-\sum\{ \sum\{ m_1 \otimes m_2 : k=m_1m_2 \} : g \prec k \mathrm{\ and\ } h = k/g\} = \\
-\sum\{m^*(k) : g \prec k \mathrm{\ and\ } h = k/g\} = \\
-m^*\left(\sum\{k : g \prec k \mathrm{\ and\ } h = k/g\}\right) = \\
-m^*\Delta^*(g \otimes h)
-\end{gather*}
+Let $g, h \in \mathcal{X}^*$, $m^*\Delta^*(g \otimes h)$ and $(\Delta^*\otimes \Delta^*)(I \otimes T \otimes
+I)(m^* \otimes m^*)(g \otimes h)$ are sums of terms of shape $x \otimes y$. We are making every letter in 
+$g$ and $h$ different by giving them specific labels. We will show that then every term has 
+a coefficient one in that sums, then, that these terms are the same. Putting labels down will result in 
+summation of some terms but as they will the same with the labels, they will be the same without them.\\
+%Now we will think about words from $\mathcal{X}^*$ as a decks of cards. 
+\indent Each term in $m^*\Delta^*$ case corresponds to a pair of: possible interlace of $g$ and $h$, and
+then, a possible division of its outcome. We want to show that for every term occourring in that sum, there
+is only one pair of interlace and division that leads to that term. Hence all terms will have a coefficient 
+$1_K$. Indeed - if the interlaces are different it means that at least two letters are in different order. 
+After division they either will be in the different words (which points out difference) or in one word in 
+different order (which points out difference too). If interlaces are the same divisions also must be the same
+to create a specific pair of words. \\
+\indent Each term in $(\Delta^*\otimes \Delta^*)(I \otimes T \otimes I)(m^* \otimes m^*)$ case corresponds to
+a pair of pairs: two divisions - one of $g$ and one of $h$, and then, two interlaces - one interlace of 
+created prefixes of $g$ and $h$ and one interlace of created suffixes of $g$ and $h$.
+There is only one pair of pairs of divisions and interlaces that leads to a specific term. If at least one 
+division is different it will lead to a words containing letters with different labels. If divisions are 
+the same and at least one interlace is different it will lead to word with different order. \\
+\indent Now we will show that terms in $m^*\Delta^*(g \otimes h)$ and $(\Delta^*\otimes \Delta^*)(I \otimes T
+\otimes I)(m^* \otimes m^*)(g \otimes h)$ are the same. \\
+We will do it by showing that for every pair of interlace and division (from $m^*\Delta^*$) there exist 
+one pair of pairs of interlaces and divsions (from $(\Delta^*\otimes \Delta^*)(I \otimes T \otimes I)(m^*
+\otimes m^*)$) that leads to the same term and that for every pair of pairs of interlaces and divsions (from
+$(\Delta^*\otimes \Delta^*)(I \otimes T \otimes I)(m^*\otimes m^*)$) there exist one pair of interlace and division (from $m^*\Delta^*$) that leads to the same term. \\
+
 Other properties of bialgebra are easy to check.
 Algebra is connected because an empty word 
 is still an identity element in respect of multiplication. Commutativity is clear.
 \end{proof}
 In the shuffling interpretation $\Delta^*$ will be an operation of dividing a stack of cards at some random 
 point and putting the top pile on the left creating two stacks. $m^*$ will be operation of combining two 
-stacks together with the same probability of every possible interlace of to stacks.
+stacks together with the same probability of every possible interlace of two stacks.
 
 Now we will see that there is another method of introducing that structure
 It will turn out to be the 

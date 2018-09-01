@@ -63,9 +63,9 @@ study Markov chains. As it involves ideas from quite different branches of mathe
 grasp a concept if someone is not familliar with them.
 The point of this paper is to describe some of their results in a more step-by-step, simplified way,
 so that they could be accesible for third year students who have passed probability
-and abstract algebra courses. I will focus on the example of shuffling cards by inverse riffle shuffle 
-method. Structure will be as follows: firstly there will be introduction to both Hopf algebras and Markov 
-chains, then there will be explanation how to describe a Markov chain with a Hopf algebra, finally I will 
+and abstract algebra courses. I will focus on the example of shuffling cards by inverse riffle shuffle
+method. Structure will be as follows: firstly there will be introduction to both Hopf algebras and Markov
+chains, then there will be explanation how to describe a Markov chain with a Hopf algebra, finally I will
 describe how to find left eigenbasis and right eigenbasis of Markov chain associated with riffle shuffling
 using Hopf algebras.
 
@@ -78,11 +78,11 @@ using Hopf algebras.
 \item dopisąć grupowy do Hopfa
 \item pokazać jak wygląda coproduct w noncommuting - ważne
 \item wprowadzić dualną do noncommuting - ważne
-\item w rozdziale 3 wyjaśnić 
+\item w rozdziale 3 wyjaśnić
 \item non-commuting - Hopf square zachowuje skończone podprzestrzenie.
 \item wprowadzić te podprzestrzenie
-\item do łańcuch ów markowa dopisacć dokładniejsy opis gilbert shannon reeds - jakie sa prawdopodobieństwa 
-oraz że forward można rozumieć na dwa równoważne sposoby. To, że są do siebie odwrotne (dualne) będzie 
+\item do łańcuch ów markowa dopisacć dokładniejsy opis gilbert shannon reeds - jakie sa prawdopodobieństwa
+oraz że forward można rozumieć na dwa równoważne sposoby. To, że są do siebie odwrotne (dualne) będzie
 wyprowadzone przy uzyciu algebry).
 \item finer grading
 \item dodać oznaczenia
@@ -115,10 +115,11 @@ Now the $K^n_{i,j}$ is the chance of moving from $s_i$ to $s_j$ in $n$ steps. \\
 Markov chains can be also viewed as random walks on the directed, labeled graphs, where states are vertices
 and edge's label is the probability of moving from one vertex to another. \\
 Card shuffling can be viewed as a Markov chain on all possible arragements of the cards
-in the deck with $K(x,y)$ equal to probability of going from arragment $x$ to arragment $y$ in one shuffle. 
+in the deck with $K(x,y)$ equal to probability of going from arragment $x$ to arragment $y$ in one shuffle.
 \\ More extensive indroduction can be found in~\cite{LePeWi}. \\
 Cośtam cośtam stationary distirution. \\
 %\textbf{\Huge BAM!}\normalsize
+\section{Gilbert-Shannon-Reeds model of riffle shuffle}
 \todo{BAM! Gilbert-Shannon-Reeds model of riffle shuffle with that specific forward}
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -150,12 +151,12 @@ So now will come full definition but we will try to explain it piece by piece. \
 
 \subsection{Notational remarks}
 \indent \textbf{Remark. }Let $K$ be a field. In following section $k$, if not steted otherwise, will
-denotes an arbitrary element from this field. If not stated otherwise, all vector spaces will be over $K$ 
-and all tensor products will be taken over $K$. Note, that when we will want to present a field 
-multiplication from $K$ as a linear map $K \otimes K \to K$ it will be denoted as ${^Km}$. As it is then an 
+denotes an arbitrary element from this field. If not stated otherwise, all vector spaces will be over $K$
+and all tensor products will be taken over $K$. Note, that when we will want to present a field
+multiplication from $K$ as a linear map $K \otimes K \to K$ it will be denoted as ${^Km}$. As it is then an
 isomorphism let ${^K\Delta} \coloneqq {^Km}^{-1}$. The $1$ from $K$ will be denoted as $1_K$.\\[8pt]
 \textbf{Remark. } Let $U, V, W, Z$ be a vector spaces over field $K$.
-We will use notation
+z5We will use notation
 $\varphi \otimes \psi:U \otimes V \to W \otimes Z$ which, for
 $\varphi$, $\psi$ such that $\varphi : U \to W$, $\psi : V \to Z$, means a linear map that
 for all $u \in U$, $v \in V$ satisfies:
@@ -179,9 +180,9 @@ Throught this paper, when there will be no risk
 of confusion, we will omit the "$\circ$" symbol of composition of functions and we will write
 $\varphi \psi (x)$ instead of $(\varphi \circ \psi)(x)$.
 \subsubsection{Dual spaces}
-We will use standard notation for dual spaces: \\ 
-For a vector space $V$ over a field $K$ we will write $V^*$ for a vector space dual to $V$ - 
-a vector space of all linear functions from $V$ to $K$. 
+We will use standard notation for dual spaces: \\
+For a vector space $V$ over a field $K$ we will write $V^*$ for a vector space dual to $V$ -
+a vector space of all linear functions from $V$ to $K$.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -271,7 +272,7 @@ $\left(=\displaystyle\sum^m_{i = 1}\beta_i(b_i \otimes c_i)\right)$.
 &= \sum_{\substack{1 \leq i \leq n \\1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
 \alpha_i\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_\simeq
 \end{align*}
-Thus $\{b_i \otimes c_j : i \in I, j \in J\}$ spans $V \otimes W$. To prove linear independence we can 
+Thus $\{b_i \otimes c_j : i \in I, j \in J\}$ spans $V \otimes W$. To prove linear independence we can
 observe that if $\displaystyle\sum^m_{i = 1}\alpha_i [(v_i,w_i)]_\simeq = 0$
 then either $v_1, \dots v_n$ or $w_1, \dots, w_n$ have to be lineary dependent. It can't occur if
 $v_1, \dots v_n$ and $w_1, \dots, w_n$ are from the basises of $V$ and $W$.\\
@@ -290,7 +291,7 @@ $\mathrm{ dim}(V)=n$ and $\mathrm{ dim}(W)=m$, then $\mid \{b_i \otimes c_j : i 
 \begin{observation}
 \label{observation:3}
 $V \otimes W$ is a vector space of elements in the shape of $\ \displaystyle\sum^n_{i = 1}v_i \otimes w_i$
-with operations on them defined such that for all $v,v_1,v_2 \in V$, $w, w_1, w_2 \in W$, $k \in K$ there 
+with operations on them defined such that for all $v,v_1,v_2 \in V$, $w, w_1, w_2 \in W$, $k \in K$ there
 hold
 \begin{gather*}
 v_1 \otimes w + v_2 \otimes w = (v_1 + v_2) \otimes w, \\
@@ -322,7 +323,7 @@ k (u \otimes v \otimes w) = (ku) \otimes v \otimes w = u \otimes (kv) \otimes w 
 Left to the reader.
 \end{proof}
 \begin{observation}\label{observation:5}
-If $V$ is a vector space over $K$, then all elements of $K \otimes V$ ($V \otimes K$) can be expressed in 
+If $V$ is a vector space over $K$, then all elements of $K \otimes V$ ($V \otimes K$) can be expressed in
 form $1 \otimes v$ ($v \otimes 1$) and there are natural isomophisms ${^Lm} : K \otimes V \to V$,
 (${^Rm} : V \otimes K \to V$) given by
 \begin{align*}
@@ -355,7 +356,7 @@ multiplication from $K$. \\[8pt]
 writing
 $kv \otimes w$. \\
 I hope that this third observation will also help in understanding what tensor product is and what is not.
-It will be good to keep it in mind when we will be intensively dealing with it in a combinatorical way in 
+It will be good to keep it in mind when we will be intensively dealing with it in a combinatorical way in
 the following sections.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -384,9 +385,9 @@ m(u(1_K) \otimes a) = m(a \otimes u(1_K)) = a.
 \end{equation*}
 \end{definition}
 \textbf{Explanation. } Operation $m$ defines on $\mathcal{H}$ a structure of an unitary ring by setting the
-ring multiplication (let it be denoted as "$\cdot$") as $a \cdot b = m(a \otimes b)$. The identity element 
+ring multiplication (let it be denoted as "$\cdot$") as $a \cdot b = m(a \otimes b)$. The identity element
 of that ring multiplication is then $u(1)$. (We will be calling $u(1)$ also an identity element of
-multiplication $m$ in K-algebra $\mathcal{H}$ or the $1$ in the $\mathcal{H}$ and 
+multiplication $m$ in K-algebra $\mathcal{H}$ or the $1$ in the $\mathcal{H}$ and
 denote it as $1_\mathcal{H}$)\\
 \textit{Proof.} The fact, that $m$ is associative means that for all $a_1, a_2, a_3 \in \mathcal{H}$
 \begin{equation*}
@@ -396,14 +397,14 @@ That implies that
 \begin{equation*}
 (a\cdot b) \cdot c = m(m(a \otimes b) \otimes c) = m(a \otimes m(b \otimes c)) = a \cdot (b \cdot c).
 \end{equation*}
-So "$\cdot$" is proper ring mutiplication. Recalling the definition of $u$ we can write that for all 
+So "$\cdot$" is proper ring mutiplication. Recalling the definition of $u$ we can write that for all
 $a \in \mathcal{H}$
 \begin{equation*}
 u(1_K) \cdot a = a \cdot u(1_K) = a
 \end{equation*}
 So indeed it is an identity
-element of that ring. As $u$ is linear map it can be seen as natural insertion of a field $K$ into an 
-algebra $\mathcal{H}$ that maps $1_K$ to $1_\mathcal{H}$ ($1$ from the $K$ to the identity element of 
+element of that ring. As $u$ is linear map it can be seen as natural insertion of a field $K$ into an
+algebra $\mathcal{H}$ that maps $1_K$ to $1_\mathcal{H}$ ($1$ from the $K$ to the identity element of
 multiplication in $\mathcal{H}$) and extends lineary. Given that we can observe
 that for all $a \in \mathcal{H}$, all $k \in K$, $a$ multiplicated by $u(k)$ (no matter if form the left
 or right) is exactly the $ka$ (an element of vector space $\mathcal{H}$).
@@ -418,7 +419,7 @@ m^{[3]}(a_1 \otimes a_2 \otimes a_3) = a_1 \cdot a_2 \cdot a_3
 \end{equation*}
 with no ambiguity.
 And futher: \\
-\indent Let $A$ be an algebra with multiplication $m$ and unit $u$. We will recurently define the 
+\indent Let $A$ be an algebra with multiplication $m$ and unit $u$. We will recurently define the
 sequence of maps
 $(m^{[n]})_{n \geq 2}$, such that $m^{[n]} : \underbrace{A \otimes \dots \otimes A}_{n\ times} \to A$
 as follows:
@@ -466,8 +467,8 @@ $a \in \mathcal{H}$
 \end{definition}
 Note that properties of an unit from a $K$-algebra also can be writen in that manner as:
 \begin{align*}
-m(u \otimes I)(1 \otimes a) &= a \mathrm{\ and}\\
-m(I \otimes u)(a \otimes 1) &= a
+m(u \otimes I)(1_K \otimes a) &= a \mathrm{\ and}\\
+m(I \otimes u)(a \otimes 1_K) &= a
 \end{align*}
 means exactly what was in the definition of $u$. \\[8pt]
 \textbf{Explanation.} We will introduce a notation called Sweedler notation [Swe69] which will be
@@ -482,9 +483,9 @@ notation \text{$\Delta(a) = \displaystyle\sum_{(a)}a_{(1)}\otimes a_{(2)}$}. \\
 In many cases comultiplication can be seen as a sum of possible decomposition of an element into
 elements "smaller" in some sens.
 For example, later it will come out that exactly the comultiplication will be the operation that will
-model the process of cutting the deck of cards into pieces in riffle shuffle. In examples that we will 
-working with (graded, connected Hopf algebras) comultiplication will represent some kind of natural 
-decomposition in the more general way. What does it mean in the strict sense will be presented in 
+model the process of cutting the deck of cards into pieces in riffle shuffle. In examples that we will
+working with (graded, connected Hopf algebras) comultiplication will represent some kind of natural
+decomposition in the more general way. What does it mean in the strict sense will be presented in
 Definition 8. when we will be introducing graded bialgebras. \\
 Examples. \smalltodo{}  \\[8pt]
 The coassociativity of $\Delta$ means, that $(\Delta \otimes I)\Delta = (I \otimes \Delta)\Delta$.
@@ -530,7 +531,7 @@ By induction it can be proved that for all $n \geq 3$, $i \in \{1, \dots, n-2\}$
 \end{equation*}
 The proof can be found in ~\cite{DNR} (Proposition 1.1.7 and Lemma 1.1.10, sites 5-7). Note, that there
 notatnion is slightly differnet - it is $\Delta_1 \coloneqq \Delta$ not $\Delta^{[2]} \coloneqq \Delta$. \\
-This formula is a generalization of a coassociativity. It means that $\Delta^{[n]}$ is coproduct where 
+This formula is a generalization of a coassociativity. It means that $\Delta^{[n]}$ is coproduct where
 $\Delta$ is applied $n-1$ times to any one tensor factor at each stage. Thanks to that we can write
 \begin{equation*}
 \Delta^{[n]}(a) = \sum a_1 \otimes \dots \otimes a_n
@@ -614,13 +615,18 @@ one $T$ is enough for all powers of $m$ and $\Delta$ as state in following remar
 \begin{proof}
 Left to the reader.
 \end{proof}
-For simplifying the notation we will write a symbol for algebra multiplication also for componentwise 
+For simplifying the notation we will write a symbol for algebra multiplication also for componentwise
 multiplication, \\ so for all ${^1h}_1, \dots, {^1h}_m, \dots, {^nh}_1, \dots , {^nh}_m \in \mathcal{H}$:
 \begin{equation}
-({^1h}_1\otimes \dots \otimes {^1h}_m)\cdot \ldots \cdot ({^nh}_1 \otimes \dots \otimes {^nh}_m) \coloneqq 
+({^1h}_1\otimes \dots \otimes {^1h}_m)\cdot \ldots \cdot ({^nh}_1 \otimes \dots \otimes {^nh}_m) \coloneqq
 {^1h}_1 \cdot \ldots \cdot {^nh}_1 \otimes \dots \otimes {^1h}_m\cdot  \ldots \cdot {^nh}_m.
 \end{equation}
-
+\begin{definition}
+Element $b$ of a bialgebra $\mathcal{B}$ is said to be \textbf{primitive} iff
+\begin{equation*}
+\Delta(b) = 1_\mathcal{B} \otimes b + b \otimes 1_\mathcal{B}
+\end{equation*}
+\end{definitions}
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -685,8 +691,8 @@ The identity element of the algebra $Hom(C, A)$ is $u\varepsilon \in Hom(C, A)$ 
 &= f(c) \cdot 1_A = f(c)
 \end{align*}
 hence $f * u\varepsilon = f$. Similarly, $u\varepsilon * f = f$. \\
-Let us note that if $A = K$, then $*$ is the convolution product defined on the dual algebra of the 
-coalgebra $C$. This is why in the case $A$ is an arbitrary algebra we will also call $*$ the convolution 
+Let us note that if $A = K$, then $*$ is the convolution product defined on the dual algebra of the
+coalgebra $C$. This is why in the case $A$ is an arbitrary algebra we will also call $*$ the convolution
 product. \\[8pt]
 \indent For a bialgebra $\mathcal{H}$ we denote $\mathcal{H}^A$, $\mathcal{H}^C$ as, respectivly,
 the underlying algebra and coalgebra structure. We can define as above algebra structure on
@@ -694,9 +700,9 @@ $Hom(\mathcal{H}^C, \mathcal{H}^A)$. Note, that identity map $I : \mathcal{H} \t
 element of $Hom(\mathcal{H}^C, \mathcal{H}^A)$ but it is not the identity element of its algebra structure
 with convolution product. The $u\varepsilon$ is that identity element.
 \begin{definition}
-Let $\mathcal{H}$ be a bialgebra. A linear map $S \in Hom(\mathcal{H}^C, \mathcal{H}^A)$ is called an 
-\textbf{antipode} of the bialgebra $\mathcal{H}$ if $S$ is the inverse of the identity map 
-$I : \mathcal{H} \to \mathcal{H}$ with respect to the convolution product in 
+Let $\mathcal{H}$ be a bialgebra. A linear map $S \in Hom(\mathcal{H}^C, \mathcal{H}^A)$ is called an
+\textbf{antipode} of the bialgebra $\mathcal{H}$ if $S$ is the inverse of the identity map
+$I : \mathcal{H} \to \mathcal{H}$ with respect to the convolution product in
 $Hom(\mathcal{H}^C, \mathcal{H}^A)$
 \end{definition}
 The fact that $S \in Hom(\mathcal{H}^C, \mathcal{H}^A)$ is an antipode is written as
@@ -727,8 +733,8 @@ and using sweedler notation as:
 A bialgebra having an antipode is called a \textbf{Hopf algebra}.
 \end{definition}
 \begin{definition}
-A \textbf{graded bialgebra} is a graded vector space 
-$\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ with a bialgebra structure that is 
+A \textbf{graded bialgebra} is a graded vector space
+$\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ with a bialgebra structure that is
 compatible with the grading.
 \end{definition}
 \textbf{Explanation. } A bialgebra structure is compatible with grading iff for all $i, j \in \mathbb{N}$:
@@ -736,22 +742,22 @@ compatible with the grading.
 m[\mathcal{H}_i \otimes \mathcal{H}_j] &\subseteq \mathcal{H}_{i+j} \mathrm{\ and} \\
 \Delta[H_n] &\subseteq \bigoplus^{n}_{i = 0} \mathcal{H}_i \otimes \mathcal{H}_{n-i}.
 \end{align*}
-\indent Now decomposition can be viewed as representing an element by the sum of pairs of lower-degree 
+\indent Now decomposition can be viewed as representing an element by the sum of pairs of lower-degree
 ("smaller") elements. \\
 \indent We can observe that
 \begin{align*}
-\Psi^{[2]}[\mathcal{H}_n] &= m\Delta[\mathcal{H}_n] \subseteq m[\bigoplus^n_{i = 0} \mathcal{H}_i \otimes 
-\mathcal{H}_{n - i}] \\ &= \bigoplus^n_{i = 0} m[\mathcal{H}_i \otimes \mathcal{H}_{n - i}] \subseteq 
+\Psi^{[2]}[\mathcal{H}_n] &= m\Delta[\mathcal{H}_n] \subseteq m[\bigoplus^n_{i = 0} \mathcal{H}_i \otimes
+\mathcal{H}_{n - i}] \\ &= \bigoplus^n_{i = 0} m[\mathcal{H}_i \otimes \mathcal{H}_{n - i}] \subseteq
 \bigoplus^n_{i = 0} \mathcal{H}_n = \mathcal{H}_n,
 \end{align*}
-hence Hopf square $\Psi^{[2]}$ preserves grading 
+hence Hopf square $\Psi^{[2]}$ preserves grading
 (in the sence that $\Psi^{[2]}[\mathcal{H}_n] \subseteq \mathcal{H}_n$).
 \begin{definition}
-A graded bialgebra $\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ is 
+A graded bialgebra $\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ is
 \textbf{connected} iff $\mathcal{H}_0$ is one-dimentional subspace spanned by $1_\mathcal{H}$.
 \end{definition}
-\noindent \textbf{Explanation. } Equivalently we can say that a graded bialgebra 
-$\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ is 
+\noindent \textbf{Explanation. } Equivalently we can say that a graded bialgebra
+$\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ is
 connected iff $\mathcal{H}_0 = u[K]$ for $u$ - unit in $\mathcal{H}$ treated as a $K$-algebra.
 \begin{theorem}
 Any graded, connected bialgebra is a Hopf algebra with antipode:
@@ -776,14 +782,14 @@ This is the end of our algebraic definitions pfuuuu...
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsection{Examples}
-\subsubsection{Graded, connected Hopf algebra of polinomials}
-Let $P$ be a vector space of polinomials with one variable over an field $K$ with natural grading by degree 
-Note, that standard polinomial multiplication is compatible with that grading as for polinomials with 
-degrees $i$, $j$, their product has degree $i + j$. Connection comes from that the identity of 
-multiplication 
+\section{Examples}
+\subsection{Graded, connected Hopf algebra of polinomials}
+Let $P$ be a vector space of polinomials with one variable over an field $K$ with natural grading by degree
+Note, that standard polinomial multiplication is compatible with that grading as for polinomials with
+degrees $i$, $j$, their product has degree $i + j$. Connection comes from that the identity of
+multiplication
 is a polinomial of degree $0$ ($1_p = X^0$).  \\
-$P$ can be enriched with coalgebra structure with comultiplication $\Delta$ such that for all 
+$P$ can be enriched with coalgebra structure with comultiplication $\Delta$ such that for all
 $n \in \mathbb{N}$:
 \begin{equation*}
 \Delta(X^n) = \sum^n_{i = 0} X^i \otimes X^{n-i}.
@@ -794,9 +800,9 @@ Since for all $n \in \mathcal{N}$
 \begin{align*}
 (1_P \otimes \varepsilon )\Delta(X^n) &= X^n \otimes 1_K &\mathrm{and} \\
 (1_P \otimes \varepsilon )\Delta(X^n) &= \sum^n_{i = 0} X^i \otimes \varepsilon(X^{n-i}) &\mathrm{and} \\
-\sum^n_{i = 0} X^i \otimes \varepsilon(X^{n-i}) &= X^n \otimes \varepsilon(1_P) &+ 
-\sum^{n-1}_{i=0} X^i \otimes \varepsilon(X^{n-i}) \\ &= 
-X^n \otimes 1_K &+ \sum^{n-1}_{i=0} X^i \otimes \varepsilon(X^{n-i}) 
+\sum^n_{i = 0} X^i \otimes \varepsilon(X^{n-i}) &= X^n \otimes \varepsilon(1_P) &+
+\sum^{n-1}_{i=0} X^i \otimes \varepsilon(X^{n-i}) \\ &=
+X^n \otimes 1_K &+ \sum^{n-1}_{i=0} X^i \otimes \varepsilon(X^{n-i})
 \end{align*}
 we have that for all $n \in \mathbb{N}$
 \begin{equation*}
@@ -804,16 +810,16 @@ we have that for all $n \in \mathbb{N}$
 \end{equation*}
 but we also have that
 \begin{equation*}
-\sum^{n-1}_{i=0} X^i \otimes \varepsilon(X^{n-i}) = \sum^{n-1}_{i=0} \varepsilon(X^{n-i})X^i \otimes 1_K = 
+\sum^{n-1}_{i=0} X^i \otimes \varepsilon(X^{n-i}) = \sum^{n-1}_{i=0} \varepsilon(X^{n-i})X^i \otimes 1_K =
 \left( \sum^{n-1}_{i=0} \varepsilon(X^{n-i})X^i \right)\otimes 1_K
 \end{equation*}
-Because $X_0, \dots, X_{n-1}$ are lineary independent we have that \text{$\forall_{0 \leq i \leq n-1}\  
-\varepsilon(X^{n - i}) = 0$}. Keeping in mind that $n$ was arbitrary we have that for all $n \geq 1$ 
-$\varepsilon(X^n) = 0$ and then by linearity of $\varepsilon$, that for every polinomial $p \in P$ with 
+Because $X_0, \dots, X_{n-1}$ are lineary independent we have that \text{$\forall_{0 \leq i \leq n-1}\
+\varepsilon(X^{n - i}) = 0$}. Keeping in mind that $n$ was arbitrary we have that for all $n \geq 1$
+$\varepsilon(X^n) = 0$ and then by linearity of $\varepsilon$, that for every polinomial $p \in P$ with
 positive degree we have that $\varepsilon(p) = 0$. \\
-We can now check, that $P$ with that structure is a graded, connected Hopf algebra that is both commutative 
+We can now check, that $P$ with that structure is a graded, connected Hopf algebra that is both commutative
 and cocommutative. \\
-It is an bialebra, because: 
+It is an bialebra, because:
 \begin{align*}
 a
 \end{align*}
@@ -827,18 +833,18 @@ a
 \section{Graded, connected Hopf algebra of non-commuting variables}
 \subsection{Free associative Hopf algebra}
 This is a main example of our interest. It will be used to describe inverse and forward riffle shuffling.\\
-Let K be a field with characteristic 0. 
-Let $\mathcal{X} = \{x_1, \dots, x_N\}$ be a finite set. For every $n \in \mathbb{N}$ let 
-$\mathcal{H}_n$ be a vector space having as a basis all words of length $n$ made of elements 
-of $\mathcal{X}$. (The basis of $\mathcal{H}_0$ is a singleton of an empty word). 
-Let $\mathcal{H} \coloneqq \displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i$. Hence 
+Let K be a field with characteristic 0.
+Let $\mathcal{X} = \{x_1, \dots, x_N\}$ be a finite set. For every $n \in \mathbb{N}$ let
+$\mathcal{H}_n$ be a vector space having as a basis all words of length $n$ made of elements
+of $\mathcal{X}$. (The basis of $\mathcal{H}_0$ is a singleton of an empty word).
+Let $\mathcal{H} \coloneqq \displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i$. Hence
 the basis of $\mathcal{H}$ is $\mathcal{X}^*$ - all finite words over an alphabet $\mathcal{X}$.
-Let $m : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ be concatenation of words, 
+Let $m : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ be concatenation of words,
 that is, for all $s_1, s_2 \in \mathcal{X}^*$
 \begin{equation*}
 m(s_1 \otimes s_2) \coloneqq s_1s_2.
 \end{equation*}
-Let $\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$ be defined for all elements from 
+Let $\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$ be defined for all elements from
 $\mathcal{X}$ as
 \begin{equation*}
 \Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i.
@@ -851,35 +857,35 @@ u(1_K) = \varepsilon
 where $\varepsilon$ is an empty word. And indeed $1_\mathcal{H} = \varepsilon$.
 \textbf{Lemma. } Then $\mathcal{H}$ is the a graded, connected Hopf algebra that is cocommutative.
 \begin{proof}
-Associativity of $m$ and coassociativity of $\Delta$ are obvious. Actions fit together, 
-because we define them so. Algebra is graded straight from definition and connnected because an empty word 
+Associativity of $m$ and coassociativity of $\Delta$ are obvious. Actions fit together,
+because we define them so. Algebra is graded straight from definition and connnected because an empty word
 is an identity element in respect of concatenation multiplication. Cocomutativity can be check immediatly.
 \end{proof}
-\noindent Let $s = x_{i_0}\dots x_{i_k} \in \mathcal{X}^*$. What is not so obvioues is 
+\noindent Let $s = x_{i_0}\dots x_{i_k} \in \mathcal{X}^*$. What is not so obvioues is
 how $\Delta(x_{i_0}\dots x_{i_k})$ looks like:
 \begin{align}
-\Delta(x_{i_0}\dots x_{i_k}) &= \Delta m^{[k]}(x_{i_0} \otimes \dots \otimes x_{i_k}) \\ 
-&= (m^{[k]} \otimes m^{[k]}) \left(\sum (x_{i_0})_1 \otimes \dots \otimes (x_{i_k})_1 \otimes 
-(x_{i_0})_2 \otimes \dots \otimes (x_{i_k})_2\right) \\ 
-&= \sum (x_{i_0})_1 \dots (x_{i_k})_1 \otimes 
+\Delta(x_{i_0}\dots x_{i_k}) &= \Delta m^{[k]}(x_{i_0} \otimes \dots \otimes x_{i_k}) \\
+&= (m^{[k]} \otimes m^{[k]}) \left(\sum (x_{i_0})_1 \otimes \dots \otimes (x_{i_k})_1 \otimes
+(x_{i_0})_2 \otimes \dots \otimes (x_{i_k})_2\right) \\
+&= \sum (x_{i_0})_1 \dots (x_{i_k})_1 \otimes
 (x_{i_0})_2 \dots (x_{i_k})_2.
 \end{align}
-It can be unclear what this sum really is. It is taken over all possible combinations of all "possible 
-values" of $(x_{i_j})_1$ and $(x_{i_j})_2$ for $ 0 \leq j \leq k$. We can recall that for all 
-$x_i \in \mathcal{X}$ we 
-have $\Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i$. Writing that in sweedler 
+It can be unclear what this sum really is. It is taken over all possible combinations of all "possible
+values" of $(x_{i_j})_1$ and $(x_{i_j})_2$ for $ 0 \leq j \leq k$. We can recall that for all
+$x_i \in \mathcal{X}$ we
+have $\Delta(x_i) = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i$. Writing that in sweedler
 notation gives
 \begin{equation*}
 \sum(x_i)_1 \otimes (x_i)_2 = x_i \otimes 1_\mathcal{H} + 1_\mathcal{H} \otimes x_i.
 \end{equation*}
-The sum we are discussing is then sum over all possible partitions into to distinct subsequences of $s$, 
-because for each component of that sum, for each $x_{i_j}$ we decide if we are taking it into the left 
-subsequence ($x_{i_j}$ as a "value" of $(x_{i_j})_1$ and $1_\mathcal{H}$ as a "value" of $(x_{i_j})_2$) or 
-into the right subsequence ($1_\mathcal{H}$ as a "value" of $(x_{i_j})_1$ and $x_{i_j}$ as a "value" of 
+The sum we are discussing is then sum over all possible partitions into to distinct subsequences of $s$,
+because for each component of that sum, for each $x_{i_j}$ we decide if we are taking it into the left
+subsequence ($x_{i_j}$ as a "value" of $(x_{i_j})_1$ and $1_\mathcal{H}$ as a "value" of $(x_{i_j})_2$) or
+into the right subsequence ($1_\mathcal{H}$ as a "value" of $(x_{i_j})_1$ and $x_{i_j}$ as a "value" of
 $(x_{i_j})_2$).
-\\ For denoting it lets denote $s_1 \prec s$ for "$s_1$ is a subsequence of $s$" (a subsequence don't have 
-to be a consistent fragment). And let for $s_1, s$ 
-such that $s_1 \prec s$ denote $s_2 = s / s_1$ for $s_2 \prec s$ such that it is created by removing 
+\\ For denoting it lets denote $s_1 \prec s$ for "$s_1$ is a subsequence of $s$" (a subsequence don't have
+to be a consistent fragment). And let for $s_1, s$
+such that $s_1 \prec s$ denote $s_2 = s / s_1$ for $s_2 \prec s$ such that it is created by removing
 $s_1$ from $s$. We can now write sum from (2.5) as:
 \begin{equation*}
 \sum (x_{i_0})_1 \dots (x_{i_k})_1 \otimes (x_{i_0})_2 \dots (x_{i_k})_2 =
@@ -890,9 +896,9 @@ Equvalently (and that expression can be found in ~\cite{Diaconis2014}) it can be
 \sum_{S \subseteq \{ i_0, \dots i_k \} } \prod_{j \in S} x_j \otimes \prod_{j \notin S} x_j.
 \end{equation*}
 where $S$ is a multiset, because some of the $i_0, \dots, i_k$ can be the same. \\
-\indent This structure will describe inverse riffle shuffling, as $\Delta$ will be an operation of 
-randomly divide a stack of cards into to stacks by putting each card with probability $\frac{1}{2}$ to 
-the left or to the right and $m$ will be an operation of deterministic putting the left stack on the top 
+\indent This structure will describe inverse riffle shuffling, as $\Delta$ will be an operation of
+randomly divide a stack of cards into to stacks by putting each card with probability $\frac{1}{2}$ to
+the left or to the right and $m$ will be an operation of deterministic putting the left stack on the top
 of the right stack. $\Psi^{[2]}$ will be then apply of one iteration of inverse riffle shuffle.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -901,47 +907,47 @@ of the right stack. $\Psi^{[2]}$ will be then apply of one iteration of inverse 
 \subsection{Some futher remarks about structure}
 In paragraph 2.3 ~\cite{Diaconis2014} describes some aspects of the structure of free associative algebra.
 They will be important in chapter about eigenbasises. Here we will present a shortened version for lookup.
- \\ 
-GR89 shows that symmetrized sums of certain primitive elements form basis of a free associative algebra. 
-It will turn out that this will be left eigenbasis of $m\Delta$. 
-Here will be introduced concepts usefull for 
+ \\
+GR89 shows that symmetrized sums of certain primitive elements form basis of a free associative algebra.
+It will turn out that this will be left eigenbasis of $m\Delta$.
+Here will be introduced concepts usefull for
 construction of that basis. Explanation why this is an eigenbasis will came in Chapter 4.
 \begin{definition}
-A word in ordered alphabet is \textbf{Lyndon} if it is strictly smaller (in lexicographical order) than its 
-cyclic rearrangments. 
+A word in ordered alphabet is \textbf{Lyndon} if it is strictly smaller (in lexicographical order) than its
+cyclic rearrangments.
 \end{definition}
 \begin{definition}
-A \textbf{Lyndon factorization} of word $w$ is a tuple of words $(l_1, l_2, \dots, l_k)$ such that 
-$w = l_1l_2\dots l_k$, each $l_i$ is a Lyndon word and $l_1 \geq l_2 \geq \dots \geq l_k$. 
+A \textbf{Lyndon factorization} of word $w$ is a tuple of words $(l_1, l_2, \dots, l_k)$ such that
+$w = l_1l_2\dots l_k$, each $l_i$ is a Lyndon word and $l_1 \geq l_2 \geq \dots \geq l_k$.
 \end{definition}
-\noindent\textbf{Fact. [Lot97, Th. 5.1.5]} Every word $w$ has unique Lyndon factorisation. 
+\noindent\textbf{Fact. [Lot97, Th. 5.1.5]} Every word $w$ has unique Lyndon factorisation.
 \begin{definition}
-For a Lyndon word $l$ that has at least two letters a \textbf{standard factorisation} of $l$ is a pair of 
-words $(l_1, l_2)$ such that $l = l_1l_2$, both $l_i$ are non-trivial (not empty) Lyndon words and $l_2$ 
-is the longest right Lyndon factor of $l$. A \textbf{standard factorisation} of a single letter word is that 
+For a Lyndon word $l$ that has at least two letters a \textbf{standard factorisation} of $l$ is a pair of
+words $(l_1, l_2)$ such that $l = l_1l_2$, both $l_i$ are non-trivial (not empty) Lyndon words and $l_2$
+is the longest right Lyndon factor of $l$. A \textbf{standard factorisation} of a single letter word is that
 letter.
 \end{definition}
 \noindent\textbf{Fact.} Each Lyndon word $l$ has a standard factorization.
 \begin{definition}
-For a Lyndon word $l$ a \textbf{standard bracketing} $\boldsymbol{\lambda(l)}$ of $l$ is defined recursively 
-as 
-$\lambda(a) \coloneqq a$ for a letter and $\lambda(l) \coloneqq [\lambda(l_1), \lambda(l_2)]$, where $(l_1, 
-l_2)$ 
-is a standard factorisation of $l$. $[x, y] = x\cdot y - y\cdot x$ for every words $x, y$. 
+For a Lyndon word $l$ a \textbf{standard bracketing} $\boldsymbol{\lambda(l)}$ of $l$ is defined recursively
+as
+$\lambda(a) \coloneqq a$ for a letter and $\lambda(l) \coloneqq [\lambda(l_1), \lambda(l_2)]$, where $(l_1,
+l_2)$
+is a standard factorisation of $l$. $[x, y] = x\cdot y - y\cdot x$ for every words $x, y$.
 \end{definition}
 \begin{definition}
-The \textbf{symmetrized product} of word $w$ is 
+The \textbf{symmetrized product} of word $w$ is
 \begin{equation*}
 \mathrm{sym}(w) = \sum_{\sigma \in S_k} \lambda(l_{\sigma(1)})\cdot\ldots\cdot\lambda(l_{\sigma(k)}),
 \end{equation*}
 where $(l_1, \dots, l_k)$ is a Lyndon factorization of $w$.
 \end{definition}
-[GR89, Th. 5.2] shows that $\{\mathrm{sym}(w) : w \in \mathcal{X^*}\}$ form a basis for free associative 
+[GR89, Th. 5.2] shows that $\{\mathrm{sym}(w) : w \in \mathcal{X^*}\}$ form a basis for free associative
 algebra. \\
-Let $|w|$ be the length of word $w$. For a word $w = a_1\dots a_{|w|}$ and permutation 
-$\sigma \in S_{|w|}$ let $\sigma(w) \coloneqq a_{\sigma(1)}\dots a_{\sigma(|w|)}$. \\ 
-Let $\simeq_\mathrm{sym}$ be 
-a relation on $\mathcal{X}^* \times \mathcal{X}^*$ such that for all $w, v \in \mathcal{X}^*$ 
+Let $|w|$ be the length of word $w$. For a word $w = a_1\dots a_{|w|}$ and permutation
+$\sigma \in S_{|w|}$ let $\sigma(w) \coloneqq a_{\sigma(1)}\dots a_{\sigma(|w|)}$. \\
+Let $\simeq_\mathrm{sym}$ be
+a relation on $\mathcal{X}^* \times \mathcal{X}^*$ such that for all $w, v \in \mathcal{X}^*$
 \begin{equation*}
 w \simeq_\mathrm{sym} v \iff \exists_{\sigma \in S_{|w|}}\ \sigma(w) = v
 \end{equation*}
@@ -954,11 +960,11 @@ To every $\nu \in \mathcal{X}^*$ we associate
 \begin{equation}
 \mathcal{H}_\nu \coloneqq \mathrm{Lin}(\{w \in \mathcal{X}^* : w\ \SimeqSym\ \nu\}).
 \end{equation}
-So its the subspace spanned by words that for each letter from $\mathcal{X}$ have the same number of 
-instances of that letter as 
-$\nu$. (Of course for every $w, v \in \mathcal{X}^*$ such that $w \SimeqSym v$ we have 
+So its the subspace spanned by words that for each letter from $\mathcal{X}$ have the same number of
+instances of that letter as
+$\nu$. (Of course for every $w, v \in \mathcal{X}^*$ such that $w \SimeqSym v$ we have
 $\mathcal{H}_w = \mathcal{H}_v$.) \\
-Now we can write $\mathcal{H}$ as 
+Now we can write $\mathcal{H}$ as
 \begin{equation*}
 \mathcal{H} = \bigoplus_{{[\nu]}_\SimeqSym \in \mathcal{X}^*_{/\SimeqSym}} \mathcal{H}_\nu
 \end{equation*}
@@ -966,14 +972,14 @@ Which is equivalent to
 \begin{equation*}
 \mathcal{H} = \bigoplus_{S \in \mathcal{X}^*_{/\SimeqSym}} \mathrm{Lin}(S)
 \end{equation*}
-This grading also is compatible with a bialgebra structure we have introduced in the sense that for all 
+This grading also is compatible with a bialgebra structure we have introduced in the sense that for all
 $\nu, \upsilon \in \mathcal{X}^*$
 \begin{align*}
 m[\mathcal{H}_\nu \otimes \mathcal{H}_\upsilon] &\subseteq \mathcal{H}_{\nu\upsilon} \mathrm{\ and} \\
-\Delta[\mathcal{H}_\nu] &\subseteq \bigoplus_{\substack{s_1 \prec \nu \\ s_2 = \nu/ s_1}} 
+\Delta[\mathcal{H}_\nu] &\subseteq \bigoplus_{\substack{s_1 \prec \nu \\ s_2 = \nu/ s_1}}
 \mathcal{H}_{s_1} \otimes \mathcal{H}_{s_2}.
 \end{align*}
-We can observe that 
+We can observe that
 \todo{pokrywa całość}
 This will be the grading we will be using for our probabilistic interpretation. It i
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -981,11 +987,11 @@ This will be the grading we will be using for our probabilistic interpretation. 
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \subsection{Alternative structure \smalltodo{a}}
 \indent Now we will describe an alternative graded and connected Hopf algebra structure on $\mathcal{H}$ - a
-vector space spanned 
+vector space spanned
 by finite words over fixed alphabet $\mathcal{X}$. It will describe the structure of forward riffle shuffle.
 We will denote that alternative Hopf algebra structure
 builded on $\mathcal{H}$ as $\mathcal{H}^*$ and call it a graded dual of $\mathcal{H}^*$ (for reasons that
-will came later). 
+will came later).
 (Note that $\mathcal{H}$ is isomorphic to $\mathcal{H}^*$ as a vector space and $\mathcal{H}^*$ in this
 sense is not the vector space dual to $\mathcal{H}$). \\
 We define multiplication $\Delta^* : \mathcal{H}^* \otimes \mathcal{H}^* \to \mathcal{H}^*$ as
@@ -994,11 +1000,11 @@ for all $s_1, s_2 \in \mathcal{X}^*$:
 \Delta^*(s_1 \otimes s_2) = \sum\{s : s_1 \prec s \mathrm{\ and\ } s_2 = s/s_1\}.
 \end{equation*}
 which is the sum of all possible interlaces of $s_1$ and $s_2$ \\
-and comultiplication $m^* : \mathcal{H}^* \to \mathcal{H}^* \otimes \mathcal{H}^*$ as for all $s \in 
+and comultiplication $m^* : \mathcal{H}^* \to \mathcal{H}^* \otimes \mathcal{H}^*$ as for all $s \in
 \mathcal{X}^*$:
 \begin{equation*}
 m^*(s) = \sum\{ s_1 \otimes s_2 : s=s_1s_2 \}
-\end{equation*} 
+\end{equation*}
 which is the sum of all possible divisions of $s$ into its prefix and suffix. \\
 and both extended lineary. \\
 \textbf{Lemma. } Then $\mathcal{H}^*$ is the a graded, connected Hopf algebra that is commutative.
@@ -1009,31 +1015,31 @@ Now we will prove that actions fits together which means that
 m^*\Delta^* = (\Delta^*\otimes \Delta^*)(I \otimes T \otimes I)(m^* \otimes m^*)
 \end{equation*}
 Let $g, h \in \mathcal{X}^*$, $m^*\Delta^*(g \otimes h)$ and $(\Delta^*\otimes \Delta^*)(I \otimes T \otimes
-I)(m^* \otimes m^*)(g \otimes h)$ are sums of terms of shape $x \otimes y$. We are making every letter in 
-$g$ and $h$ different by giving them specific labels. We will show that then every term has 
-a coefficient one in that sums, then, that these terms are the same. Putting labels down will result in 
+I)(m^* \otimes m^*)(g \otimes h)$ are sums of terms of shape $x \otimes y$. We are making every letter in
+$g$ and $h$ different by giving them specific labels. We will show that then every term has
+a coefficient one in that sums, then, that these terms are the same. Putting labels down will result in
 summation of some terms but as they will the same with the labels, they will be the same without them.\\
-%Now we will think about words from $\mathcal{X}^*$ as a decks of cards. 
+%Now we will think about words from $\mathcal{X}^*$ as a decks of cards.
 \indent Each term in $m^*\Delta^*$ case corresponds to a pair of: possible interlace of $g$ and $h$, and
 then, a possible division of its outcome. We want to show that for every term occourring in that sum, there
-is only one pair of interlace and division that leads to that term. Hence all terms will have a coefficient 
-$1_K$. Indeed - if the interlaces are different it means that at least two letters are in different order. 
-After division they either will be in the different words (which points out difference) or in one word in 
+is only one pair of interlace and division that leads to that term. Hence all terms will have a coefficient
+$1_K$. Indeed - if the interlaces are different it means that at least two letters are in different order.
+After division they either will be in the different words (which points out difference) or in one word in
 different order (which points out difference too). If interlaces are the same divisions also must be the same
 to create a specific pair of words. \\
 \indent Each term in $(\Delta^*\otimes \Delta^*)(I \otimes T \otimes I)(m^* \otimes m^*)$ case corresponds to
-a pair of pairs: two divisions - one of $g$ and one of $h$, and then, two interlaces - one interlace of 
+a pair of pairs: two divisions - one of $g$ and one of $h$, and then, two interlaces - one interlace of
 created prefixes of $g$ and $h$ and one interlace of created suffixes of $g$ and $h$.
-There is only one pair of pairs of divisions and interlaces that leads to a specific term. If at least one 
-division is different it will lead to a words containing letters with different labels. If divisions are 
+There is only one pair of pairs of divisions and interlaces that leads to a specific term. If at least one
+division is different it will lead to a words containing letters with different labels. If divisions are
 the same and at least one interlace is different it will lead to word with different order. \\
 \indent Now we will show that terms in $m^*\Delta^*(g \otimes h)$ and $(\Delta^*\otimes \Delta^*)(I \otimes T
 \otimes I)(m^* \otimes m^*)(g \otimes h)$ are the same. \\
-We will do it by showing that for every pair of interlace and division (from $m^*\Delta^*$) there exist 
+We will do it by showing that for every pair of interlace and division (from $m^*\Delta^*$) there exist
 one pair of pairs of interlaces and divsions (from $(\Delta^*\otimes \Delta^*)(I \otimes T \otimes I)(m^*
 \otimes m^*)$) that leads to the same term and that for every pair of pairs of interlaces and divsions (from
 $(\Delta^*\otimes \Delta^*)(I \otimes T \otimes I)(m^*\otimes m^*)$) there exist one pair of interlace and
- division (from 
+ division (from
 $m^*\Delta^*$) that leads to the same term. \\
 The pair of interlace and division from $m^*\Delta^*$ generates divisions of $g$ and $h$ as "that letters
 that went to the prefix" and "that letters that went to the suffix" and interlaces of that prefixes and
@@ -1043,24 +1049,24 @@ Having pair of pairs of divisions and interlaces from $(\Delta^*\otimes \Delta^*
 at once. Then the division can be done such that restricted to word $g$ and word $h$ is the same as one of
 the original pair. \\
 Other properties of bialgebra are easy to check.
-Algebra is connected because an empty word 
+Algebra is connected because an empty word
 is still an identity element in respect of multiplication. Commutativity is clear.
 \end{proof}
-In the shuffling interpretation $\Delta^*$ will be an operation of dividing a stack of cards at some random 
-point and putting the top pile on the left creating two stacks. $m^*$ will be operation of combining two 
+In the shuffling interpretation $\Delta^*$ will be an operation of dividing a stack of cards at some random
+point and putting the top pile on the left creating two stacks. $m^*$ will be operation of combining two
 stacks together with the same probability of every possible interlace of two stacks.
 \subsection{Graded dual}
-Now we will see that there is another method of introducing that structure. 
-The structure of $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$ (where for all $i \in \mathbb{N}$ 
-$\mathcal{H}_i^*$ is a vector space dual to $\mathcal{H}$) with actions induced by actions 
-from Hopf algebra $\mathcal{H}$ turns out to be one discribed above. (Note, that $\mathcal{H} = 
-\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i$ is isomorphic as a linear space 
+Now we will see that there is another method of introducing that structure.
+The structure of $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$ (where for all $i \in \mathbb{N}$
+$\mathcal{H}_i^*$ is a vector space dual to $\mathcal{H}$) with actions induced by actions
+from Hopf algebra $\mathcal{H}$ turns out to be one discribed above. (Note, that $\mathcal{H} =
+\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i$ is isomorphic as a linear space
 to $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$.) \\
 \indent Let denote $\gdd{\mathcal{H}}$ for $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$.
-We define multiplication 
-\text{$\Delta^* : \mathcal{H}^{\mathrm{gd}*} \otimes \gdd{\mathcal{H}} \to \gdd{\mathcal{H}}$} and 
-comultiplication 
-\text{$m^* : \gdd{\mathcal{H}} \to \gdd{\mathcal{H}} \otimes \gdd{\mathcal{H}}$} as 
+We define multiplication
+\text{$\Delta^* : \mathcal{H}^{\mathrm{gd}*} \otimes \gdd{\mathcal{H}} \to \gdd{\mathcal{H}}$} and
+comultiplication
+\text{$m^* : \gdd{\mathcal{H}} \to \gdd{\mathcal{H}} \otimes \gdd{\mathcal{H}}$} as
 (for all $h_1^*, h_2^*, h^* \in \gdd{\mathcal{H}}$):
 \begin{align*}
 \Delta^*(h_1^* \otimes h_2^*) &= (h_1^* \otimes h_2^*)\Delta, \\
@@ -1087,128 +1093,134 @@ m^*(h^*) &= h^*m.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \chapter{Connection}
+\todo{to jest źle, ale będzie fajniej}
+\begin{lemma}
+Let $V$ be an linear space over $\mathbb{R}$ or $\mathbb{Q}$ with basis $\mathcal{B}$.
+Let $\psi : V \to V$ be a linear operation. If for
+all $b \in \mathcal{B}$ the sum $s$ of coefficients of $\psi(b)$ written in $\mathcal{B}$ is the same, then
+$\psi$ sets the Markov chain $(X_0, X_1, \dots)$ on $\mathcal{B}$ by for each $n \geq 1$, each
+$b \in \mathcal{B}$
+defining $\mathbb{P}\{X_n = b_i\}$
+as $ $ with probability of going from $b_1$ to $b_2$ equal to the
+coefficient standing by $b_2$ in $\psi(b_1)$, written in $\mathcal{B}$, divided by $s$.
+\end{lemma}
+\begin{proof}
 
-Cocommutative Hopf algebra of non-comuuting variables is a model for inverse riffle shuffling and 
-commutative 
+\end{proof}
+\smalltodo\
+Cocommutative Hopf algebra of non-comuuting variables is a model for inverse riffle shuffling and commutative
 Hopf algebra of non-cocommutative variables is a model for forward riffle shuffling. It goes as follows.
-Let $\mathcal{X}$ be the finite set of all possible types of cards. Let $\nu$ be a tuple of 
+Let $\mathcal{X}$ be the finite set of all possible types of cards. Let $\nu$ be a tuple of
 elements from $\mathcal{X}$ that represents our actual deck of cards (the same type of card can occour
-multiple times, the order in $\nu$ schould be the order in which we think cards are ordered). Now we can 
-take a look at a subspace $\mathcal{H}_\nu$ of vector space $\mathcal{H}$ builded over $\mathcal{X}$ as 
-described in 2.6.2. $\mathcal{H}_\nu$ will be the subspaces spanned by words that for every type of cards 
-consits exactly the same number of cards of that type as $\nu$. So the basis of $\mathcal{H}_\nu$ will be 
-set 
-of words for every arregement of our deck of cards. Let name this basis $\mathcal{B}_\nu$. Note that then 
-$\mathcal{H}_\nu$ is finite dimentional. As was previously described, there are two ways of equiping 
-$\mathcal{H}$ with Hopf algebra structure. One will corresponde with inverse version of riffle shuffle and 
-another with the forward one. With given arrangement of cards $s \in \mathcal{B}_\nu$ applying $m\Delta$ on 
-$s$ yields the sum of possible outcomes after one inverse riffle shuffle while appliying $\Delta^*m^*$ 
-yields the same for forward riffle shuffle. In both cases coefficients (after normalization) are 
+multiple times, the order in $\nu$ schould be the order in which we think cards are ordered). Now we can
+take a look at a subspace $\mathcal{H}_\nu$ of vector space $\mathcal{H}$ builded over $\mathcal{X}$ as
+described in 2.6.2. $\mathcal{H}_\nu$ will be the subspaces spanned by words that for every type of cards
+consits exactly the same number of cards of that type as $\nu$. So the basis of $\mathcal{H}_\nu$ will be set
+of words for every arregement of our deck of cards. Let name this basis $\mathcal{B}_\nu$. Note that then
+$\mathcal{H}_\nu$ is finite dimentional. As was previously described, there are two ways of equiping
+$\mathcal{H}$ with Hopf algebra structure. One will corresponde with inverse version of riffle shuffle and
+another with the forward one. With given arrangement of cards $s \in \mathcal{B}_\nu$ applying $m\Delta$ on
+$s$ yields the sum of possible outcomes after one inverse riffle shuffle while appliying $\Delta^*m^*$
+yields the same for forward riffle shuffle. In both cases coefficients (after normalization) are
 probabilities of corresponding outcomes. \\[4pt]
 
 \todo{How it sets?}
 
-Let take a non-commuting variables algebra from its example. Let take $\mathcal{H}_\nu$ for some 
-$\nu \in \mathcal{X}^*$. Then $\Psi^{[2]}$ sets the Markov chain of inverse riffle shuffle the deck of cards 
-containnig cards labeled by $x$s appearing in $\nu$. Chains state space is then the basis of 
-$\mathcal{H}_\nu$. Let call it $S_\nu$ 
-Chains transition matrix is equal to transition matrix of $\Psi^{[2]}$ writen in $S_\nu$.  \\
+Let take a non-commuting variables algebra from its example. Let take $\mathcal{H}_\nu$ for some
+$\nu \in \mathcal{X}^*$. Then $\Psi^{[2]}$ sets the Markov chain of inverse riffle shuffle the deck of cards
+containnig cards labeled by $x$s appearing in $\nu$. Chains state space is then the basis of
+$\mathcal{H}_\nu$. Let call it $\mathcal{B}_\nu$
+Chains transition matrix is equal to transition matrix of $\Psi^{[2]}$ writen in $\mathcal{B}_\nu$.  \\
 
-
-Here we will provide a more specific probabilistic interpretation of spaces and actions in $\mathcal{H}$.
-We will do so by introduce algebraic structure on inverse riffle shuffle step-by-step. What we will end 
-up with will be eventually exactly the non-commuting algebra. Note, that what is written below are only 
-some of observations how structures of free-assiociative algebra and inverse riffle shuffle Markov chain 
-works togrther. It will not be proof that these structures are litterally the same nor that these arguments 
-apply  in general to all Hopf algebras and Markov chains.\\[4pt]
+Here will come an intuition why tensor products and Hopf algebras suits for describing probabilistic issues.
 
 Let $\mathcal{X} = \{x_1, \dots x_N\}$ be our set of all possible types of cards. \\
-We will denote a stack of $k$ cards containing (from top to bottom) $x_{i_1}, \dots, x_{i_k}$ simply as 
+We will denote a stack of $k$ cards containing (from top to bottom) $x_{i_1}, \dots, x_{i_k}$ simply as
 $x_{i_1}\dots x_{i_k}$. \\
 Imagine, that you have stack of cards $x_{i_1}\dots x_{i_k}$. After shuffling it
 you can get one of finitely many stack of cards each with certain probability. We want to have some
-representation of it in our structure. 
-For that reason we spann a vector space $\mathcal{H}$, over $\mathbb{Q}$ (but can be $\mathbb{R}$ if someone 
-likes), 
-with basis $\mathcal{X}^*$ (finite words over $\mathcal{X}$, which means "all possible stacks 
+representation of it in our structure.
+For that reason we spann a vector space $\mathcal{H}$, over $\mathbb{Q}$ (but can be $\mathbb{R}$ if someone
+likes),
+with basis $\mathcal{X}^*$ (finite words over $\mathcal{X}$, which means "all possible stacks
 of cards of types from $\mathcal{X}$ inlcluding an empty stack"). \\
-For all $s_1, \dots, s_n \in \mathcal{X}^*$, all $0 \leq q_1, \dots, q_n \in K$ a non-zero vector 
-$\displaystyle\sum^{n}_{i = 1} q_is_i$ is for all $i \in \{1, \dots, n\}$ 
-interpreted as a state where we have a stack $s_i$ with probability $\frac{q_i}{\sum^n_{i=1} q_i}$ or 
-equvalently as a probabilistic measure on $\mathcal{X}^*$ with value $\frac{q_i}{\sum^n_{i=1} q_i}$ on $s_i$ 
+For all $s_1, \dots, s_n \in \mathcal{X}^*$, all $0 \leq q_1, \dots, q_n \in K$ a non-zero vector
+$\displaystyle\sum^{n}_{i = 1} q_is_i$ is for all $i \in \{1, \dots, n\}$
+interpreted as a state where we have a stack $s_i$ with probability $\frac{q_i}{\sum^n_{i=1} q_i}$ or
+equvalently as a probabilistic measure on $\mathcal{X}^*$ with value $\frac{q_i}{\sum^n_{i=1} q_i}$ on $s_i$
 for every $i \in \{1, \dots, n\}$ and $0$ elesewhere. \\
 In that understanding the "+" can be readed as "or". \\
-We want also desribe a situation when: we have multiple stacks of cards on a table (some of them maybe 
-empty), there are only finitely many options how 
-these stacks can exactly look like and we know a probability of every option.\\ 
-It is very natural situation during shuffling as when we for example split a stack of cards at some 
-random point (with known probabilities of where the split can be) 
-we for shure have two stacks of cards (as soon as we agree that one of them can be empty), 
-there are only finetely many options how exactly arragment looks like and we know a probability of each one. 
+We want also desribe a situation when: we have multiple stacks of cards on a table (some of them maybe
+empty), there are only finitely many options how
+these stacks can exactly look like and we know a probability of every option.\\
+It is very natural situation during shuffling as when we for example split a stack of cards at some
+random point (with known probabilities of where the split can be)
+we for shure have two stacks of cards (as soon as we agree that one of them can be empty),
+there are only finetely many options how exactly arragment looks like and we know a probability of each one.
 \\ We will now focus on case when we have two decks on a table. \\
-We want to deal with that matter in similar way as we done for setting "probabilistic options" to one deck 
-of cards. We will span a vector space with all possible arregements of two decks as a basis. 
-That vector space will be $\mathcal{H} \otimes \mathcal{H}$. Now we will try to give some explanation why in 
+We want to deal with that matter in similar way as we done for setting "probabilistic options" to one deck
+of cards. We will span a vector space with all possible arregements of two decks as a basis.
+That vector space will be $\mathcal{H} \otimes \mathcal{H}$. Now we will try to give some explanation why in
 fact this is quite intuitive.  \\
-For $s_1, s_2 \in \mathcal{X}^*$ lets denote $(s_1, s_2)$ as having $s_1$ on the left stack and $s_2$ 
-on the right stack. \\ 
-Let's make an observation that for all $s, s_1, s_2 \in \mathcal{X}^*$ situation of having arragement 
-$(s_1, s)$ with probability $p$ and having arragement $(s_2, s)$ with probability $1-p$ is 
-the same situation as having $s_1$ with probability $p$ or having $s_2$ with probability $1 - p$ on the left 
-stack and for sure having $s$ on the right stack. Making connection with our previously introduced notation 
+For $s_1, s_2 \in \mathcal{X}^*$ lets denote $(s_1, s_2)$ as having $s_1$ on the left stack and $s_2$
+on the right stack. \\
+Let's make an observation that for all $s, s_1, s_2 \in \mathcal{X}^*$ situation of having arragement
+$(s_1, s)$ with probability $p$ and having arragement $(s_2, s)$ with probability $1-p$ is
+the same situation as having $s_1$ with probability $p$ or having $s_2$ with probability $1 - p$ on the left
+stack and for sure having $s$ on the right stack. Making connection with our previously introduced notation
 so we want to $p(s_1, s) + (1-p)(s_2, s) = (ps_1 + (1-p)s_2, s)$ (and annalogly to the second coordinate).\\
-What is more, having for sure $s_1$ on the left and $s_2$ on the right with probability $p$ (and 
-with probability $(1 - p)$ some else arragement, let's call it $(z_1, z_2)$) gives the same probabilty 
-distribution 
-on possible arragments of two decks as, having $s_1$ on the left and having $s_2$ on the 
+What is more, having for sure $s_1$ on the left and $s_2$ on the right with probability $p$ (and
+with probability $(1 - p)$ some else arragement, let's call it $(z_1, z_2)$) gives the same probabilty
+distribution
+on possible arragments of two decks as, having $s_1$ on the left and having $s_2$ on the
 right, with probability $p$ and with probability $1-p$ having $(z_1,z_2)$).\\
-This leads us to conclusion, that we also want to $p(s_1,s_2) = (ps_1, s_2)$ (and annalogly to the second 
+This leads us to conclusion, that we also want to $p(s_1,s_2) = (ps_1, s_2)$ (and annalogly to the second
 coordinaate). \\
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-In the Gilbert-Shannon-Reeds model of inverse riffle shuffling there are two steps. Firstly we are 
-decomposing the deck by take cards from the top of deck - one after another and puting them to the left 
+In the Gilbert-Shannon-Reeds model of inverse riffle shuffling there are two steps. Firstly we are
+decomposing the deck by take cards from the top of deck - one after another and puting them to the left
 or to the right each with probability $\frac{1}{2}$. Secondly putting left stack on the right stack. \\
-That pulling apart causes a split into two stacks, each of them can be any subset of original stack 
+That pulling apart causes a split into two stacks, each of them can be any subset of original stack
 (with preservation of order) with equal probability of each option. \\
-For $s_1, s \in \mathcal{X}^*$ let denote that $s_1$ is subsequence of $s$ (a subset with preservation of 
-order) as $s_1 \prec s_2$. Let we denote a stack arisen from removing form $s$ its subsequence $s_1$ as 
+For $s_1, s \in \mathcal{X}^*$ let denote that $s_1$ is subsequence of $s$ (a subset with preservation of
+order) as $s_1 \prec s_2$. Let we denote a stack arisen from removing form $s$ its subsequence $s_1$ as
 $s/s_1$. \\
-Let denote that pulling apart as a $\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$, then for all 
+Let denote that pulling apart as a $\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$, then for all
 $s \in \mathcal{X}^*$ it will give
 \begin{equation*}
 \Delta(s) = \sum_{\substack{s_1 \prec s \\ \land s_2 = s/s_1}}
 s_1 \otimes s_2.
 \end{equation*}
-For putting two piles back together by placing left on the top let us write a linear map 
-$m : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ that is concatenation, which means, that 
+For putting two piles back together by placing left on the top let us write a linear map
+$m : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ that is concatenation, which means, that
 for all $s_1, s_2 \in \mathcal{X}^*$
 \begin{equation*}
 m(s_1 \otimes s_2) = s_1s_2.
 \end{equation*}
-What we just define here is exactly an algebra of non-commuting variables from example 
+What we just define here is exactly an algebra of non-commuting variables from example
 2.3.2.\\
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 Facts about its algebraic nature are presented in that section. \\
-We can observe now that Hopf-square map $\Psi^{[2]} = m\Delta$ for $\Delta$, $m$ defined as above 
-describes one iteration of the inverse riffle shuffle. For every $s \in \mathcal{X}^*$, $\Psi^{[2]}(s)$ is 
-a sum of possible arregements of stack with coresponding probabilities (without normalisation)). 
+We can observe now that Hopf-square map $\Psi^{[2]} = m\Delta$ for $\Delta$, $m$ defined as above
+describes one iteration of the inverse riffle shuffle. For every $s \in \mathcal{X}^*$, $\Psi^{[2]}(s)$ is
+a sum of possible arregements of stack with coresponding probabilities (without normalisation)).
 \\ Ta- daaaam! \\[4pt]
 But where are that Markov chain? Where are these "subspaces preserved by $\Psi$"? \\
-For an fixed deck of $n$ cards $\nu = (\nu_1, \dots, \nu_n) \in \mathcal{X}^n$ the Markov chain of shuffling 
-that deck is set by $\Psi^{[2]}$ restricted to the subspace spanned by $S_\nu$ = "all $s \in \mathcal{X}^*$ 
+For an fixed deck of $n$ cards $\nu = (\nu_1, \dots, \nu_n) \in \mathcal{X}^n$ the Markov chain of shuffling
+that deck is set by $\Psi^{[2]}$ restricted to the subspace spanned by $S_\nu$ = "all $s \in \mathcal{X}^*$
 that are some rearagement of $\nu$", more formally: spanned by $S_\nu$, where:
 \begin{equation*}
 S_\nu = \{ s = x_{i_1}\dots x_{i_n} \in \mathcal{X}^* \mid
 \exists_{\sigma \in S_n} x_{\sigma(i_1)}\dots x_{\sigma(i_n)} = \nu_1\dots \nu_n. \}.
 \end{equation*}
-($\sigma \in S_n$ is a permutation, $S_n$ is a symmetric group of $n$ (group of 
+($\sigma \in S_n$ is a permutation, $S_n$ is a symmetric group of $n$ (group of
 all permutations of $n$ elements)). Its equivalent to that $S_\nu = [\nu]_\SimeqSym$.\\
-Then the state space of that chain is $S_\nu$. The transition matrix of that chain is exactly a matrix of 
-$\Psi^{[2]}$ truncated to $\mathcal{H}_\nu \coloneqq \mathrm{Lin}(S_\nu)$ 
+Then the state space of that chain is $S_\nu$. The transition matrix of that chain is exactly a matrix of
+$\Psi^{[2]}$ truncated to $\mathcal{H}_\nu \coloneqq \mathrm{Lin}(S_\nu)$
 (which, as we can observe is finite-dimentional and preserved by $\Psi^{[2]}$). \\[8pt]
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1225,36 +1237,36 @@ $\Psi^{[2]}$ truncated to $\mathcal{H}_\nu \coloneqq \mathrm{Lin}(S_\nu)$
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-For forward riffle shuffle we will be working with the same space $\mathcal{H}$ (as we still 
-are dealing with the same set of types of cards) but with differnt actions (as operations of "pulling apart" 
+For forward riffle shuffle we will be working with the same space $\mathcal{H}$ (as we still
+are dealing with the same set of types of cards) but with differnt actions (as operations of "pulling apart"
 and "putting together" look now different). \\
-We will proove that indeed forward riffle shuffle $(F_i)_{i \geq 0}$ and inversed riffle shuffle 
-$(I_i)_{i \geq 0}$ are the same shuffling method 
-but once aplicated "forward" and once "backward". What we mean is that for fixed deck of $n$ cards 
+We will proove that indeed forward riffle shuffle $(F_i)_{i \geq 0}$ and inversed riffle shuffle
+$(I_i)_{i \geq 0}$ are the same shuffling method
+but once aplicated "forward" and once "backward". What we mean is that for fixed deck of $n$ cards
 $\nu = (\nu_1, \dots, \nu_n) \in \mathcal{X}^n$, for all $s_1, s_2 \in \mathcal{H}_\nu$, all $n \geq 0$:
 \begin{equation*}
 \mathbb{P}\{F_{n+1} = s_2 \mid F_n = s_1\} = \mathbb{P}\{I_{n+1} = s_1 \mid I_n = s_2\}.
-\end{equation*} 
-Which means that probability of going from state $s_1$ to state $s_2$ in one step in forward riffle shuffle 
+\end{equation*}
+Which means that probability of going from state $s_1$ to state $s_2$ in one step in forward riffle shuffle
 is qual to probability of going form $s_2$ to $s_1$ in one step in  inverse riffle shuffle. \\
-As remarked in Section 1. forward riffle shuffle can be defined as cutting the deck at some point with 
-uniform distribution on "where" ($n+1$ options for a deck of size $n$) and then putting back 
-two piles together in the way that \text{\textit{everyone-had-seen-at-some-point-in-the-life}} 
-(\textit{trrrrrrrr}) with 
+As remarked in Section 1. forward riffle shuffle can be defined as cutting the deck at some point with
+uniform distribution on "where" ($n+1$ options for a deck of size $n$) and then putting back
+two piles together in the way that \text{\textit{everyone-had-seen-at-some-point-in-the-life}}
+(\textit{trrrrrrrr}) with
 the same probability of every possible "\textit{trrrrrrrr}". \\
-Let us denote $\mathcal{H}$ as a dual to $\mathcal{H}$ what we want to do is to see how induced 
+Let us denote $\mathcal{H}$ as a dual to $\mathcal{H}$ what we want to do is to see how induced
 multiplication and comultiplication look like. \\
 "here it come". \\
-It is forward fiffle sfufle, we can check it 
+It is forward fiffle sfufle, we can check it
 that corresponds to that , that to that
 fold product is exactly that and that, so the coeficient matches and that is ok. \\
 And then it is exactly an riffle shuffle as it is bla bla. \\
-Let $\Delta_F : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$ be an linear map for decomposition 
+Let $\Delta_F : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$ be an linear map for decomposition
 of the deck for forward riffle shuffle, then for all $s \in \mathcal{X}^*$
 \begin{equation*}
 \Delta_F(s) = \sum_{s_1s_2=s} s_1 \otimes s_2.
 \end{equation*}
-Let $m_F : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ be a linear map coresponding to 
+Let $m_F : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ be a linear map coresponding to
 \textit{trrrrrrrr}. Then for all $s_1, s_2 \in \mathcal{X}^*$:
 \begin{equation*}
 m_F (s_1 \otimes s_2) = \sum_{\substack{s_1 \prec s \\ s_2 = s/s_1} } s
@@ -1263,7 +1275,7 @@ which is sum of all possible entanglements of $s_1$ and $s_2$.\\[8pt]
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-Now let us consider a vector space that is dual to $\mathcal{H}$. It is vector space of linear functions on 
+Now let us consider a vector space that is dual to $\mathcal{H}$. It is vector space of linear functions on
 $\mathcal{H}$
 whith basis bla bla
 1$s^* : \mathcal{H} \to K$ such that for all $s \in \mathcal{X }$
@@ -1271,8 +1283,8 @@ We can define multiplication and comultiplication of $\mathcal{H}^*$ in the natu
 bla bla
 ble ble
 
-We ckech, and what? That are exactly $m_F$ and $\Delta_F$ matrixes of $(F_i)_{i \geq 0}$ and $(I_i)_{i 
-\geq 0}$ 
+We ckech, and what? That are exactly $m_F$ and $\Delta_F$ matrixes of $(F_i)_{i \geq 0}$ and $(I_i)_{i
+\geq 0}$
 are transpositions of each other.\\
 \todo{Do poprawki, bo żal}
 
@@ -1294,17 +1306,17 @@ are transpositions of each other.\\
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \chapter{Left and right eigenbasises}
 
-Reasons we bother with finding the eigenbasis are desribed in 1.?.?. For a given deck $\nu$ 
-we will find find left and right eigenbasises of $\mathcal{H}_\nu$ for inverse and forward riffle shuffling. 
-Note, that because 
-$m\Delta$ and $\Delta^*m^*$ are dual to each other left eigenbasis for inverse riffle-shuffle is right 
+Reasons we bother with finding the eigenbasis are desribed in 1.?.?. For a given deck $\nu$
+we will find find left and right eigenbasises of $\mathcal{H}_\nu$ for inverse and forward riffle shuffling.
+Note, that because
+$m\Delta$ and $\Delta^*m^*$ are dual to each other left eigenbasis for inverse riffle-shuffle is right
 eigenbasis for forward riffle-shuffle and right eigenbasis for inverse is left eigenbasis for forward.
 
 \section{Left eigenbasis}
-Construction of left eigenbasis begins with general observation that for every Hopf algebra 
-primitive elements are eigenvectors of $\Psi^{[a]}$ for every $a \in \mathbb{N}$. 
+Construction of left eigenbasis begins with general observation that for every Hopf algebra
+primitive elements are eigenvectors of $\Psi^{[a]}$ for every $a \in \mathbb{N}$.
 \begin{observation}
-For every primitive element $h \in \mathcal{H}$, for every $a \in \mathbb{N}$ it holds that $h$ is an 
+For every primitive element $h \in \mathcal{H}$, for every $a \in \mathbb{N}$ it holds that $h$ is an
 eigenvector of $\Psi^{[a]}$ with an eigenvalue $a$.
 \end{observation}
 \begin{proof}
@@ -1312,33 +1324,33 @@ Let $h \in \mathcal{H}$ be a primitive element.
 \begin{gather*}
 \Psi^{[a]}(h) = \\ m^{[a]}\Delta^{[a]}(h) = \\
 m^{[a]}(\sum h_1 \otimes \dots \otimes h_i) = \\
-m^{[a]}(\underbrace{\overbrace{h \otimes 1_\mathcal{H} \otimes \dots \otimes 1_\mathcal{H}}^{i\ 
-\mathrm{factors}} + 
+m^{[a]}(\underbrace{\overbrace{h \otimes 1_\mathcal{H} \otimes \dots \otimes 1_\mathcal{H}}^{i\
+\mathrm{factors}} +
 \overbrace{1_\mathcal{H} \otimes h \otimes \dots \otimes 1_\mathcal{H}}^{a\ \mathrm{factors}} +
-\dots + 
-\overbrace{1_\mathcal{H} \otimes 1_\mathcal{H} \otimes \dots \otimes h}^{a\ \mathrm{factors}}}_{a\ 
+\dots +
+\overbrace{1_\mathcal{H} \otimes 1_\mathcal{H} \otimes \dots \otimes h}^{a\ \mathrm{factors}}}_{a\
 \mathrm{summands}} ) = \\
-\underbrace{m^{[a]}(\overbrace{h \otimes 1_\mathcal{H} \otimes \dots \otimes 1_\mathcal{H}}^{a\ 
-\mathrm{factors}}) + 
+\underbrace{m^{[a]}(\overbrace{h \otimes 1_\mathcal{H} \otimes \dots \otimes 1_\mathcal{H}}^{a\
+\mathrm{factors}}) +
 m^{[a]}(\overbrace{1_\mathcal{H} \otimes h \otimes \dots \otimes 1_\mathcal{H}}^{a\ \mathrm{factors}}) +
-\dots + 
-m^{[a]}(\overbrace{1_\mathcal{H} \otimes 1_\mathcal{H} \otimes \dots \otimes h}^{a\ \mathrm{factors}})}_{a\ 
+\dots +
+m^{[a]}(\overbrace{1_\mathcal{H} \otimes 1_\mathcal{H} \otimes \dots \otimes h}^{a\ \mathrm{factors}})}_{a\
 \mathrm{summands}} = \\
 \underbrace{h + \dots + h}_{a\ \mathrm{summands}} = \\
-ah 
+ah
 \end{gather*}
 
 \end{proof}
 Next observation is presented in ~\cite{Diaconis2014} and it is called the symmeterization lemma.
 \begin{theorem}
-(Symmetrization lemma). Let $x_1, \dots, x_n$ be primitive elements of any Hopf alebra $\mathcal{H}$, then 
-$\displaystyle\sum_{\sigma \in S_k} x_{\sigma(1)}\cdot\ldots\cdot x_{\sigma(k)}$ is an eigenvector of 
+(Symmetrization lemma). Let $x_1, \dots, x_n$ be primitive elements of any Hopf alebra $\mathcal{H}$, then
+$\displaystyle\sum_{\sigma \in S_k} x_{\sigma(1)}\cdot\ldots\cdot x_{\sigma(k)}$ is an eigenvector of
 $\Psi^{[a]}$ with eigenvalue $a^k$.
 \end{theorem}
 
-Now for basis introduced at the end of \textbf{2.6.2} to be eigenbasis we only need to check that for 
-every Lyndon 
-word $l$, element $\lambda(l)$ is primitive. 
+Now for basis introduced at the end of \textbf{2.6.2} to be eigenbasis we only need to check that for
+every Lyndon
+word $l$, element $\lambda(l)$ is primitive.
 
 \begin{lemma}
 For every $x$, $y$ that are primitive, $[x, y]$ is primitive.
@@ -1347,19 +1359,19 @@ For every $x$, $y$ that are primitive, $[x, y]$ is primitive.
 \begin{proof}
 Let $x$, $y$ be primitive elements of a bialgebra $\mathcal{H}$.
 \begin{align*}
-\Delta([&x, y]) = \\ \Delta(x\cdot y &- y\cdot x) =\\ \Delta (x\cdot y) &- \Delta(y\cdot x) =\\ 
-\Delta m(x \otimes y) &- \Delta m(y \otimes x) =\\ 
+\Delta([&x, y]) = \\ \Delta(x\cdot y &- y\cdot x) =\\ \Delta (x\cdot y) &- \Delta(y\cdot x) =\\
+\Delta m(x \otimes y) &- \Delta m(y \otimes x) =\\
 \sum (x_1 \otimes x_2) \cdot (y_1 \otimes y_2) &- \sum (y_1 \otimes y_2) \cdot (x_1 \otimes x_2) = \\
-(x \otimes 1_\mathcal{H}) \cdot (y \otimes 1_\mathcal{H}) + (x \otimes 1_\mathcal{H}) \cdot (1_\mathcal{H} 
-\otimes y) 
-&+ (1_\mathcal{H} \otimes x) \cdot (y \otimes 1_\mathcal{H}) + (1_\mathcal{H} \otimes x) \cdot 
+(x \otimes 1_\mathcal{H}) \cdot (y \otimes 1_\mathcal{H}) + (x \otimes 1_\mathcal{H}) \cdot (1_\mathcal{H}
+\otimes y)
+&+ (1_\mathcal{H} \otimes x) \cdot (y \otimes 1_\mathcal{H}) + (1_\mathcal{H} \otimes x) \cdot
 (1_\mathcal{H} \otimes y) + \\
-- \Big((y \otimes 1_\mathcal{H}) \cdot (x \otimes 1_\mathcal{H}) + (y \otimes 1_\mathcal{H}) \cdot 
-(1_\mathcal{H} \otimes x) 
-&+ (1_\mathcal{H} \otimes y) \cdot (x \otimes 1_\mathcal{H}) + (1_\mathcal{H} \otimes y) \cdot 
+- \Big((y \otimes 1_\mathcal{H}) \cdot (x \otimes 1_\mathcal{H}) + (y \otimes 1_\mathcal{H}) \cdot
+(1_\mathcal{H} \otimes x)
+&+ (1_\mathcal{H} \otimes y) \cdot (x \otimes 1_\mathcal{H}) + (1_\mathcal{H} \otimes y) \cdot
 (1_\mathcal{H} \otimes x) \Big) = \\
-x \cdot y \otimes 1_\mathcal{H} + x \otimes y + y \otimes x + 1_\mathcal{H} \otimes x \cdot y 
-&- \Big( y \cdot x \otimes 1_\mathcal{H} + y \otimes x + x \otimes y + 1_\mathcal{H} \otimes y \cdot x 
+x \cdot y \otimes 1_\mathcal{H} + x \otimes y + y \otimes x + 1_\mathcal{H} \otimes x \cdot y
+&- \Big( y \cdot x \otimes 1_\mathcal{H} + y \otimes x + x \otimes y + 1_\mathcal{H} \otimes y \cdot x
 \Big) = \\
 (x \cdot y - y \cdot x) \otimes 1_\mathcal{H} &+ 1_\mathcal{H} \otimes (x \cdot y - y \cdot x) = \\
 [x, y] \otimes 1_\mathcal{H} &+ 1_\mathcal{H} \otimes [x, y].
@@ -1367,8 +1379,8 @@ x \cdot y \otimes 1_\mathcal{H} + x \otimes y + y \otimes x + 1_\mathcal{H} \oti
 
 \end{proof}
 
-Because of Lemma 1. and that single-letter word is a primitive element we have that $\lambda(l)$ is 
-primitive 
+Because of Lemma 1. and that single-letter word is a primitive element we have that $\lambda(l)$ is
+primitive
 for every Lyndon word $l$. Hence
 \begin{equation*}
 \mathcal{E} \coloneqq\left\{\mathrm{sym}(w) : w \in \mathcal{X}^*\right\}
@@ -1376,27 +1388,27 @@ for every Lyndon word $l$. Hence
 is a left eigenbasis of $\mathcal{H}$ with respect to $\Psi^{[a]}$ for every $a$. What is more:
 
 \begin{theorem}
-Let $\mathcal{H}$ be a free associative Hopf algebra of words over the alphabet $\mathcal{X}$. 
-Let $\nu \in \mathcal{X}^*$. Then $\mathcal{E}_\nu \coloneqq \{\mathrm{sym}(w) : w \in \mathcal{B}_\nu\}$ is 
-an eigenbasis of 
+Let $\mathcal{H}$ be a free associative Hopf algebra of words over the alphabet $\mathcal{X}$.
+Let $\nu \in \mathcal{X}^*$. Then $\mathcal{E}_\nu \coloneqq \{\mathrm{sym}(w) : w \in \mathcal{B}_\nu\}$ is
+an eigenbasis of
 $\mathcal{H}_\nu$ with respect to $\Psi^{[a]}$ for every $a$.
 \end{theorem}
 
 For the proof, we will need a following lemma: \\
 \noindent \textbf{Lemma.} $w \in \mathcal{H}_\nu$ iff $\mathrm{sym}(w) \in \mathcal{H}_\nu$
 \begin{proof}
-We can observe that for every $x, y \in \mathcal{X}^*$ there holds $xy\ \SimeqSym\ yx$. Because of that 
-for every Lyndon word $l$ we have that $\lambda(l) \in \mathcal{H}_l$. So we have that for every word $w$ 
-with Lyndon factorisation $(l_1,\dots, l_k)$ there holds 
-$\lambda(l_1)\cdot\ldots\cdot\lambda(l_k) \in \mathcal{H}_w$. From that, for every 
-$\sigma \in S_k$, we have that $\lambda(l_{\sigma(1)})\cdot\ldots\cdot\lambda(l_{\sigma(k)}) \in 
+We can observe that for every $x, y \in \mathcal{X}^*$ there holds $xy\ \SimeqSym\ yx$. Because of that
+for every Lyndon word $l$ we have that $\lambda(l) \in \mathcal{H}_l$. So we have that for every word $w$
+with Lyndon factorisation $(l_1,\dots, l_k)$ there holds
+$\lambda(l_1)\cdot\ldots\cdot\lambda(l_k) \in \mathcal{H}_w$. From that, for every
+$\sigma \in S_k$, we have that $\lambda(l_{\sigma(1)})\cdot\ldots\cdot\lambda(l_{\sigma(k)}) \in
 \mathcal{H}_w$.
 
 \end{proof}
-\begin{proof}(of the theorem) \\ 
-$\mathcal{E}_\nu \subseteq\mathcal{E}$, 
-so $\mathcal{E}_\nu$ is linear independent. $w \in \mathcal{H}_\nu$ iff 
-$\mathrm{sym}(w) \in \mathcal{H}_\nu$ so $\mathcal{E} \cap \mathcal{H}_\nu = \mathcal{E}_\nu$, so 
+\begin{proof}(of the theorem) \\
+$\mathcal{E}_\nu \subseteq\mathcal{E}$,
+so $\mathcal{E}_\nu$ is linear independent. $w \in \mathcal{H}_\nu$ iff
+$\mathrm{sym}(w) \in \mathcal{H}_\nu$ so $\mathcal{E} \cap \mathcal{H}_\nu = \mathcal{E}_\nu$, so
 $\mathcal{E}_\nu$ spanns the $\mathcal{H}_\nu$.
 \end{proof}
 
@@ -1407,7 +1419,7 @@ $\mathcal{E}_\nu$ spanns the $\mathcal{H}_\nu$.
 \section{Reference to~\cite{Diaconis2014}}
 Now we will recall two theorems from~\cite{Diaconis2014} describing eigenbasises.
 \begin{theorem}
-bla bla eigenbasismn   
+bla bla eigenbasismn
 \end{theorem}
 \begin{theorem}
 bla bla dual eigen basis

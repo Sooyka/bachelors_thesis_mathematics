@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.8.31)  31 AUG 2018 23:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.8.31)  1 SEP 2018 23:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/bartosz/Studia/Praca_licencjacka/praca
-(/home/bartosz/Studia/Praca_licencjacka/praca.tex
+**praca
+(./praca.tex
 LaTeX2e <2017/01/01> patch level 3
-Babel <3.9r> and hyphenation patterns for 4 language(s) loaded.
+Babel <3.9r> and hyphenation patterns for 6 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -100,8 +100,6 @@ Package babel Info: Making " an active character on input line 83.
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2012/08/20 v3.3p English support from the babel system
-\l@british = a dialect from \language\l@english 
-\l@UKenglish = a dialect from \language\l@english 
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
@@ -774,44 +772,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--49
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./praca.toc
-LaTeX Font Info:    Try loading font information for OML+plm on input line 4.
+LaTeX Font Info:    Try loading font information for OML+plm on input line 3.
 
 (/home/bartosz/texmf/tex/latex/polski/omlplm.fd
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMS+plsy on input line 4.
+LaTeX Font Info:    Try loading font information for OMS+plsy on input line 3.
 
 (/home/bartosz/texmf/tex/latex/polski/omsplsy.fd
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMX+plex on input line 4.
+LaTeX Font Info:    Try loading font information for OMX+plex on input line 3.
 
 (/home/bartosz/texmf/tex/latex/polski/omxplex.fd
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <12> on input line 4.
+(Font)              <12> on input line 3.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <8> on input line 4.
+(Font)              <8> on input line 3.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <6> on input line 4.
-LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+(Font)              <6> on input line 3.
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+)
+
+LaTeX Warning: Citation `Diaconis2014' on page 3 undefined on input line 25.
+
+)
 \tf@toc=\write4
 \openout4 = `praca.toc'.
 
  [3
 
-]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
- been already used, duplicate ignored
+]
+
+LaTeX Warning: Citation `Diaconis2014' on page 1 undefined on input line 61.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.73 \end{abstract}
@@ -834,17 +840,25 @@ l.91 \chapter
              {Markov chains} [1]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--138
+LaTeX Warning: Citation `LePeWi' on page 5 undefined on input line 119.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--122
 
  []
 
 
-Overfull \hbox (8.48007pt too wide) in paragraph at lines 106--138
+Overfull \hbox (16.93573pt too wide) in paragraph at lines 122--122
+[]\OT4/cmr/bx/n/17.28 Gilbert-Shannon-Reeds model of rif-fle shuf-
+ []
+
+
+Overfull \hbox (8.48007pt too wide) in paragraph at lines 123--139
 \OT4/cmr/bx/n/24.88 TO DO: BAM! Gilbert-Shannon-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--138
+Underfull \hbox (badness 10000) in paragraph at lines 123--139
 
  []
 
@@ -853,142 +867,190 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--138
 ] [6]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--149
+Underfull \hbox (badness 10000) in paragraph at lines 141--150
 
  []
 
 [7
 
 ] [8]
-Overfull \hbox (16.13663pt too wide) in paragraph at lines 229--248
+Overfull \hbox (16.13663pt too wide) in paragraph at lines 230--249
 \OT4/cmr/m/n/12 there are no $\OML/plm/m/it/12 v; w$ \OT4/cmr/m/n/12 such that 
 $\OML/plm/m/it/12 v \OMS/plsy/m/n/12 
  \OML/plm/m/it/12 w \OT4/cmr/m/n/12 = [][]$. How-ever, since $[][] =
  []
 
 [9]
-Overfull \hbox (30.71663pt too wide) in paragraph at lines 282--284
+Overfull \hbox (30.71663pt too wide) in paragraph at lines 283--285
 []\OT4/cmr/bx/n/12 Observation 2. \OT4/cmr/m/it/12 If $\OML/plm/m/it/12 V$ \OT4
 /cmr/m/it/12 and $\OML/plm/m/it/12 W$ \OT4/cmr/m/it/12 are fi-nite di-men-tiona
 l and $[]\OT4/cmr/m/n/12 (\OML/plm/m/it/12 V\OT4/cmr/m/n/12 ) = \OML/plm/m/it/1
 2 n$\OT4/cmr/m/it/12 , [],
  []
 
-[10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20]
-Overfull \hbox (23.26453pt too wide) in paragraph at lines 809--817
+[10] [11] [12] [13] [14]
+
+LaTeX Warning: Citation `DNR' on page 15 undefined on input line 532.
+
+[15] [16]
+
+./praca.tex:629: LaTeX Error: \begin{definition} on input line 624 ended by \en
+d{definitions}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.629 \end{definitions}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[17] [18] [19] [20]
+Overfull \hbox (23.26453pt too wide) in paragraph at lines 815--823
 \OT4/cmr/m/n/12 Because $\OML/plm/m/it/12 X[]; [] ; X[]$ \OT4/cmr/m/n/12 are li
 n-eary in-de-pen-dent we have that [].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 819--827
+Underfull \hbox (badness 10000) in paragraph at lines 825--833
 
  []
 
-[21] [22] [23] [24] [25]
-Overfull \hbox (20.5165pt too wide) in paragraph at lines 1053--1065
+[21]
+
+LaTeX Warning: Citation `Diaconis2014' on page 22 undefined on input line 894.
+
+[22]
+
+LaTeX Warning: Citation `Diaconis2014' on page 23 undefined on input line 908.
+
+[23] [24] [25]
+Overfull \hbox (20.5165pt too wide) in paragraph at lines 1059--1071
 []\OT4/cmr/m/n/12 Let de-note $\OMS/plsy/m/n/12 H[]$ \OT4/cmr/m/n/12 for $[] \O
 MS/plsy/m/n/12 H[]$\OT4/cmr/m/n/12 . We de-fine mul-ti-pli-ca-tion []
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 1073--1089
+Underfull \hbox (badness 10000) in paragraph at lines 1079--1095
 
  []
 
 [27]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1091--1108
+Underfull \hbox (badness 10000) in paragraph at lines 1096--1097
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1109--1110
-
+Overfull \hbox (38.99693pt too wide) in paragraph at lines 1110--1126
+\OT4/cmr/m/n/12 model for in-verse rif-fle shuf-fling and com-mu-ta-tive Hopf a
+l-ge-bra of non-cocommutative
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1111--1116
+Underfull \hbox (badness 10000) in paragraph at lines 1110--1126
 
  []
 
 [28
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1118--1124
+Underfull \hbox (badness 10000) in paragraph at lines 1127--1128
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1129--1134
 
  []
 
 [29] [30] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 1274--1278
+Underfull \hbox (badness 10000) in paragraph at lines 1286--1290
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1274--1278
+Underfull \hbox (badness 10000) in paragraph at lines 1286--1290
 
  []
 
 [32]
 Chapter 4.
 
-Overfull \hbox (43.3503pt too wide) in paragraph at lines 1329--1329
+Overfull \hbox (43.3503pt too wide) in paragraph at lines 1341--1341
 [] 
  []
 
 [33
 
 ]
-Overfull \hbox (75.34737pt too wide) in paragraph at lines 1366--1366
+
+LaTeX Warning: Citation `Diaconis2014' on page 34 undefined on input line 1344.
+
+
+
+Overfull \hbox (75.34737pt too wide) in paragraph at lines 1378--1378
 [] 
  []
 
 [34]
-Underfull \hbox (badness 10000) in paragraph at lines 1404--1405
+Underfull \hbox (badness 10000) in paragraph at lines 1416--1417
 
  []
+
+
+LaTeX Warning: Citation `Diaconis2014' on page 35 undefined on input line 1419.
+
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 1407.
+(hyperref)                removing `\@ifnextchar' on input line 1419.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1415--1420
+LaTeX Warning: Citation `Diaconis2014' on page 35 undefined on input line 1420.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1427--1432
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1415--1420
+Underfull \hbox (badness 10000) in paragraph at lines 1427--1432
 
  []
 
 [35]
 Chapter 5.
-(./praca.bbl [36
-
-])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1426.
- [37
+No file praca.bbl.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1438.
+[36
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1426.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1438.
  (./praca.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1426.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1426.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1438.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1438.
 
 Package rerunfilecheck Info: File `praca.out' has not changed.
-(rerunfilecheck)             Checksum: BC9A56610CF2076501B4A89983C2592F;1358.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1426.
+(rerunfilecheck)             Checksum: FEE84ED12004DA3D2BB0DEA72F108963;1542.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1438.
  ) 
 Here is how much of TeX's memory you used:
- 8005 strings out of 494910
- 113918 string characters out of 6180156
- 213372 words of memory out of 5000000
- 11075 multiletter control sequences out of 15000+600000
+ 8001 strings out of 494869
+ 113782 string characters out of 6179141
+ 214423 words of memory out of 5000000
+ 11083 multiletter control sequences out of 15000+600000
  19554 words of font info for 56 fonts, out of 8000000 for 9000
- 34 hyphenation exceptions out of 8191
- 42i,22n,32p,292b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56 hyphenation exceptions out of 8191
+ 42i,22n,32p,253b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texliv
 e/texmf-dist/fonts/enc/dvips/pl/plme.enc}{/usr/share/texlive/texmf-dist/fonts/e
 nc/dvips/pl/plms.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc
@@ -1006,10 +1068,10 @@ l/plr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr6.pfb></usr
 xmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/pl/plsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/
 plsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plti12.pfb>
-Output written on praca.pdf (38 pages, 224208 bytes).
+Output written on praca.pdf (37 pages, 224632 bytes).
 PDF statistics:
- 422 PDF objects out of 1000 (max. 8388607)
- 362 compressed objects within 4 object streams
- 100 named destinations out of 1000 (max. 500000)
- 169 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 416 PDF objects out of 1000 (max. 8388607)
+ 357 compressed objects within 4 object streams
+ 98 named destinations out of 1000 (max. 500000)
+ 185 words of extra memory for PDF output out of 10000 (max. 10000000)
 

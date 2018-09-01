@@ -1,5 +1,0 @@
-[0] Config.pm:354> INFO - This is Biber 2.7 (beta)
-[0] Config.pm:357> INFO - Logfile is 'praca.aux.blg'
-[20] biber:303> INFO - === nie maj 27, 2018, 00:44:35
-[36] Utils.pm:180> ERROR - Cannot find control file 'praca.aux.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
-[36] Biber.pm:114> INFO - ERRORS: 1

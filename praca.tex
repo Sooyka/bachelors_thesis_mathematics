@@ -23,6 +23,8 @@
 \newcommand{\smalltodo}[1]{\textbf{\ To do}}
 \newcommand{\gdd}[1]{#1^{\mathrm{gd}*}}
 \newcommand{\SimeqSym}{{\simeq_\mathrm{sym}}}
+\newcommand{\onedotsn}[1]{{#1}_1, \dots, {#1}_n}
+\newcommand{\ndotsm}[3]{{#1}_{#2}, \dots, {#1}_{#3}}
 
 \title{Explanation of connection between Hopf algebras and Markov chains}
 \author{Bartosz Sójka}
@@ -626,7 +628,7 @@ Element $b$ of a bialgebra $\mathcal{B}$ is said to be \textbf{primitive} iff
 \begin{equation*}
 \Delta(b) = 1_\mathcal{B} \otimes b + b \otimes 1_\mathcal{B}
 \end{equation*}
-\end{definitions}
+\end{definition}
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1093,18 +1095,68 @@ m^*(h^*) &= h^*m.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \chapter{Connection}
-\todo{to jest źle, ale będzie fajniej}
-\begin{lemma}
-Let $V$ be an linear space over $\mathbb{R}$ or $\mathbb{Q}$ with basis $\mathcal{B}$.
-Let $\psi : V \to V$ be a linear operation. If for
-all $b \in \mathcal{B}$ the sum $s$ of coefficients of $\psi(b)$ written in $\mathcal{B}$ is the same, then
-$\psi$ sets the Markov chain $(X_0, X_1, \dots)$ on $\mathcal{B}$ by for each $n \geq 1$, each
-$b \in \mathcal{B}$
-defining $\mathbb{P}\{X_n = b_i\}$
-as $ $ with probability of going from $b_1$ to $b_2$ equal to the
+\textbf{Reminder. } For a vector space $V$ with basis $\mathcal{B}$,
+$b \in \mathcal{B}$ we denote $b^*$
+for a linear functional such that $b^*(b) = 1$ and
+$\forall_{b' \in \mathcal{B}\setminus \{b\}}\ b^*(b') = 0$.
+\begin{theorem}
+Let $V$ be an linear space over a field $K$ that is $\mathbb{R}$ or $\mathbb{Q}$,
+ with basis $\mathcal{B}$.
+Let $\psi : V \to V$ be a linear operation such that for
+all $b \in \mathcal{B}$ the sum $s$ of coefficients of vector $\psi(b)$ written in $\mathcal{B}$ is the same.
+($\exists_{s \in K}\ \forall_{b \in \mathcal{B}}\ \displaystyle\sum_{b_i \in \mathcal{B}}b_i^*\psi(b) = s$).
+Let $x_0 \in V\setminus\{0\}$ and $n_0 \in \mathbb{N}$, $\alpha_1, \dots, \alpha_{n_0} \in K$, $b_1', \dots, b_{n_0}' \in \mathcal{B}$
+be such that $x_0 = \displaystyle\sum_{i = 0}^n \alpha_i b_i'$. Let $s_0 \coloneqq
+\displaystyle\sum_{i = 1}^n \alpha_i$. ($s_0 = \displaystyle\sum_{b \in \mathcal{B}} b^*(x_0)$).
+Let $(X_0, X_1, \dots)$ be a sequence
+of random variables with values in $\mathcal{B}$ such that for every $n \in \mathbb{N}$, every
+$b \in \mathcal{B}$:
+\begin{equation*}
+\mathbb{P}(X_n = b) = \frac{b^*\psi^n(x_0)}{s^ns_0}
+\end{equation*}
+Then $(X_0, X_1, \dots)$ is a Markov chain with state space $\mathcal{B}$
+with, for all $b_1, b_2 \in \mathcal{B}$, a probability of going from $b_1$ to $b_2$ equal to the
 coefficient standing by $b_2$ in $\psi(b_1)$, written in $\mathcal{B}$, divided by $s$.
-\end{lemma}
+\end{theorem}
 \begin{proof}
+First we will briefly show that $(X_0, X_1, \dots)$ are well defined by inductively showing that for all
+$n \in \mathbb{N}$ there holds $\displaystyle\sum_{b \in \mathcal{B}}\mathbb{P}(X_n = b) = 1$. \\
+For $n = 0$ it is straight from definition of $s_0$:
+\begin{equation*}
+    \sum_{b \in \mathcal{B}}\mathbb{P}(X_0 = b) = \sum_{b \in \mathcal{B}}\frac{b^*\psi^0(x_0)}{s^0s_0} =
+    \sum_{b \in \mathcal{B}}\frac{b^*(x_0)}{s_0} = \frac{1}{s_0}\sum_{b \in \mathcal{B}}b^*(x_0) =
+    \frac{s_0}{s_0}=1.
+\end{equation*}
+Suppose that for $n$ there holds $\displaystyle\sum_{b \in \mathcal{B}}\mathbb{P}(X_n = b) = 1$, then:
+\begin{gather*}
+    \sum_{b\in\mathcal{B}}\mathbb{P}(X_{n+1} = b) =
+    \sum_{b\in\mathcal{B}}\frac{b^*\psi^{n+1}(x_0)}{s^{n+1}s_0} =
+    \sum_{b\in\mathcal{B}}\frac{b^*\psi\psi^n(x_0)}{ss^ns_0} =
+    \sum_{b \in\mathcal{B}}\frac{b^*\psi\left(\frac{\psi^n(x_0)}{s^{n}s_0}\right)}{s}.
+\end{gather*}
+Let $\ndotsm{\beta}{1}{m}$ be such that $\frac{\psi^n(x_0)}{s^ns_0} = \displaystyle\sum_{i = 1}^m\beta_ib_i$.
+Then:
+\begin{equation*}
+    \sum_{i = 1}^m \beta_i = \sum_{b \in \mathcal{B}} b^*\left(\sum_{i=0}^m\beta_ib_i\right)=
+    \sum_{b \in \mathcal{B}} b^*\left(\frac{\psi^n(x_0)}{s^ns_0}\right) = \sum_{b \in \mathcal{B}}
+    \frac{b^*\psi^n(x_0)}{s^ns_0} = \sum_{b \in \mathbb{B}}\mathbb{P}(X_n = b) \overset{\mathrm{ind.}}{=}1
+\end{equation*}
+so:
+\begin{gather*}
+    \sum_{b \in\mathcal{B}}\frac{b^*\psi\left(\frac{\psi^n(x_0)}{s^{n}s_0}\right)}{s} =
+    \sum_{b \in\mathcal{B}}\frac{b^*\psi\left(\displaystyle\sum_{i = 1}^m\beta_ib_i\right)}{s} =
+    \frac{1}{s}\sum_{b \in \mathcal{B}}b^*\psi\left(\sum_{i=1}^m\beta_ib_i\right) = \\
+    \frac{1}{s}\sum_{i=1}^m\beta_i\sum_{b \in \mathcal{B}}b^*\psi(b_i) =
+    \frac{1}{s}\sum_{i=1}^m\beta_is = \frac{s}{s}\sum_{i = 0}^m\beta_i = \frac{s}{s}\cdot1=1.
+\end{gather*}
+Now we will show, that $(X_0, X_1, \dots)$ is indeed a Markov chain. We will check the $(1.1)$ property from
+Chapter 1. \\
+Let $\ndotsm{b}{0}{m} \in \mathbb{B}$ be a sequence such that
+\begin{equation*}
+    \mathbb{P}(X_0 = b_0, \dots, X_m = b_m) > 0
+\end{equation*}
+
+For every $n$ we have that $\displaystyle\sum_{b \in \mathcal{B}} b^*\psi^n()$ \\
 
 \end{proof}
 \smalltodo\

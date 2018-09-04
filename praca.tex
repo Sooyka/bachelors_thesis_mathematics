@@ -75,20 +75,7 @@ using Hopf algebras.
 \end{abstract}
 \todo{}
 \begin{itemize}
-\item dopisać commutative i cocommutative
-\item dopisać przykład polinomial i ciała do coalgebry
-\item dopisąć grupowy do Hopfa
-\item pokazać jak wygląda coproduct w noncommuting - ważne
-\item wprowadzić dualną do noncommuting - ważne
-\item w rozdziale 3 wyjaśnić
-\item non-commuting - Hopf square zachowuje skończone podprzestrzenie.
-\item wprowadzić te podprzestrzenie
-\item do łańcuch ów markowa dopisacć dokładniejsy opis gilbert shannon reeds - jakie sa prawdopodobieństwa
-oraz że forward można rozumieć na dwa równoważne sposoby. To, że są do siebie odwrotne (dualne) będzie
-wyprowadzone przy uzyciu algebry).
-\item finer grading
-\item dodać oznaczenia
-\item nie dowodzić dualności!, będzie w 3.
+\item finish
 \end{itemize}
 \chapter{Markov chains}
 \setcounter{page}{5}
@@ -1104,7 +1091,11 @@ m^*(h^*) &= h^*m.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \chapter{Connection}
-\textbf{Reminder. } For a vector space $V$ with basis $\mathcal{B}$,
+\indent In the chapter one we said that with every Markov chain  have corresponding matrix of transition
+probabilities. Thus with a Markov chain one can associate a certain linear transformation given by that
+matrix. The following theorem states dependency in opposite direction - that given linear transfomation
+with some features gives a Markov chain with the basis of transformed vector space as a state space. \\[8pt]
+\indent\textbf{Reminder. } For a vector space $V$ with basis $\mathcal{B}$,
 $b \in \mathcal{B}$ let $b^*$
 denote a linear functional such that $b^*(b) = 1$ and
 $\forall_{b' \in \mathcal{B}\setminus \{b\}}\ b^*(b') = 0$.
@@ -1132,7 +1123,7 @@ in which, for all $b_1, b_2 \in \mathcal{B}$, the probability of going from $b_1
 coefficient standing by $b_2$ in $\psi(b_1)$, written in $\mathcal{B}$, divided by $s$.
 \end{theorem}
 \begin{proof}
-We have defined a measure $\mathbb{P}$ on basic open subsets of $\mathcal{B}^\omega$. Defiinition is valid,
+We have defined a measure $\mathbb{P}$ on basic open subsets of $\mathcal{B}^\omega$. Definition is valid,
 because for all $n \in \mathbb{N}$, all $\ndotsm{b}{0}{n} \in \mathcal{B}$:
 \begin{gather*}
 \sum_{b \in \mathcal{B}}\mathbb{P}(X_0 = b_0, X_1 = b_1, \dots, X_n = b_n, X_{n+1} = b) =
@@ -1143,7 +1134,7 @@ because for all $n \in \mathbb{N}$, all $\ndotsm{b}{0}{n} \in \mathcal{B}$:
 \mathbb{P}(X_0 = b_0, X_1 = b_1, \dots, X_n = b_n)\frac{s}{s}  = \mathbb{P}(X_0 = b_0, X_1 = b_1, \dots,
 X_n = b_n).
 \end{gather*}
-Now we will show that $(X_0, X_1, \dots)$ is indeed a Markov chain. We will check the $(1.1)$ property from
+Now we will show that $(X_0, X_1, \dots)$ is indeed a Markov. We will check the $(1.1)$ property from
 Chapter 1. \\
 Let $\ndotsm{b}{0}{m} \in \mathbb{B}$ be a sequence such that
 \begin{equation*}
@@ -1152,11 +1143,34 @@ Let $\ndotsm{b}{0}{m} \in \mathbb{B}$ be a sequence such that
 We have:
 \begin{gather*}
     \mathbb{P}(X_m = b_m \mid X_0 = b_0, \dots, X_{m-1} = b_{m-1}) =
-    \frac{\mathbb{P}(X_m = b_m)}{\mathbb{P}(X_0 = b_0, \dots, X_{m-1} = b_{m-1})} = \\
-    \frac{\frac{b_m^*\psi^m(x_0)}{s^ms_0}}{a}
+    \frac{\mathbb{P}(X_0 = b_0, X_1 = b_1, \dots, X_{m-1}
+    = b_{m-1}, X_m = b_m)}{\mathbb{P}(X_0 = b_0, \dots, X_{m-1} = b_{m-1})} = \\
+    \frac{\frac{b_0^*\psi(x_0)}{s_0}\displaystyle\prod_{i = 0}^{m-1}\frac{b_{i+1}^*\psi(b_i)}{s}}
+    {\frac{b_0^*\psi(x_0)}{s_0}\displaystyle\prod_{i=0}^{m-2}\frac{b_{i+1}^*\psi(b_i)}{s}} =
+    \frac{b_m^*\psi(b_{m-1})}{s}.
 \end{gather*}
-
-
+And on the other hand:
+\begin{gather*}
+\mathbb{P}(X_m = b_m \mid X_{m-1} = b_{m-1}) = \frac{\mathbb{P}(X_{m-1} = b_{m-1}, X_m = b_m)}
+{\mathbb{P}(X_{m-1} = b_{m-1})} = \\[16pt]
+\frac{\displaystyle\sum_{(c_0, \dots, c_{m-2}) \in \mathcal{B}^{m-1}}
+\mathbb{P}(X_0 = c_0, \dots, X_{m-2} = c_{m-2}, X_{m-1} = b_{m-1}, X_m = b_m)}
+{\displaystyle\sum_{(c_0, \dots, c_{m-2}) \in \mathcal{B}^{m-1}}\mathbb{P}(X_0 = c_0,
+\dots, X_{m-2} = c_{m-2}, X_{m-1} = c_{m-1})} = \\[16pt]
+\frac{\displaystyle\sum_{(c_0, \dots, c_{m-2}) \in \mathcal{B}^{m-1}}\frac{b_0^*\psi(x_0)}{s_0}
+\left(\displaystyle\prod_{i = 0}^{m-3}\frac{c_{i+1}^*\psi(c_i)}{s}\right)\frac{b_{m-1}^*\psi(c_{m-2})}{s}
+\frac{b_m^*\psi(b_{m-1})}{s}}{\displaystyle\sum_{(\ndotsm{c}{0}{m-2}) \in \mathcal{B}^{m-1}}
+\left(\prod_{i= 0}^{m-3}\frac{c_{i+1}^*
+\psi(c_i)}{s}\right)\frac{b_{m-1}^*\psi(c_{m-2})}{s}} = \\[16pt]
+\frac{\frac{b_m^*\psi(b_{m-1})}{s}\displaystyle\sum_{(c_0, \dots, c_{m-2}) \in \mathcal{B}^{m-1}}
+\frac{b_0^*\psi(x_0)}{s_0}
+\left(\displaystyle\prod_{i = 0}^{m-3}\frac{c_{i+1}^*\psi(c_i)}{s}\right)\frac{b_{m-1}^*\psi(c_{m-2})}{s}}
+{\displaystyle\sum_{(\ndotsm{c}{0}{m-2}) \in \mathcal{B}^{m-1}}\left(\prod_{i= 0}^{m-3}\frac{c_{i+1}^*
+\psi(c_i)}{s}\right)\frac{b_{m-1}^*\psi(c_{m-2})}{s}} = \frac{b_m^*\psi(b_{m-1})}{s}
+\end{gather*}
+and the chain indeed has claimed transition probability, because for all $b_1, b_2 \in \mathcal{B}$,
+ $\frac{b_2^*\psi(b_1)}{s}$ is a coefficient
+standing by $b_2$ in $\psi(b_1)$, written in $\mathcal{B}$, divided by $s$.
 \end{proof}
 \smalltodo\
 Cocommutative Hopf algebra of non-commuting variables is a model for inverse riffle shuffling and commutative
@@ -1465,11 +1479,11 @@ so $\mathcal{E}_\nu$ is linearly independent. $w \in \mathcal{H}_\nu$ iff
 $\mathrm{sym}(w) \in \mathcal{H}_\nu$ so $\mathcal{E} \cap \mathcal{H}_\nu = \mathcal{E}_\nu$, so
 $\mathcal{E}_\nu$ spans the $\mathcal{H}_\nu$.
 \end{proof}
-
-
-\todo{primitive bla bla}
 \section{Right eigenbasis}
-
+The right eigenbasis can be obtained as stated in the following theorm:
+\begin{theorem}
+    a
+\end{theorem}
 \section{Reference to~\cite{Diaconis2014}}
 Now we will recall two theorems from~\cite{Diaconis2014} describing eigenbases.
 \begin{theorem}

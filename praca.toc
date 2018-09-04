@@ -19,8 +19,8 @@
 \contentsline {subsection}{\numberline {2.7.3}Alternative structure \textbf {\ To do}}{25}{subsection.2.7.3}
 \contentsline {subsection}{\numberline {2.7.4}Graded dual}{27}{subsection.2.7.4}
 \contentsline {chapter}{\numberline {3}Connection}{28}{chapter.3}
-\contentsline {chapter}{\numberline {4}Left and right eigenbasises}{34}{chapter.4}
-\contentsline {section}{\numberline {4.1}Left eigenbasis}{34}{section.4.1}
-\contentsline {section}{\numberline {4.2}Right eigenbasis}{37}{section.4.2}
-\contentsline {section}{\numberline {4.3}Reference to~\cite {Diaconis2014}}{37}{section.4.3}
-\contentsline {chapter}{\numberline {5}Summation}{38}{chapter.5}
+\contentsline {chapter}{\numberline {4}Left and right eigenbasises}{35}{chapter.4}
+\contentsline {section}{\numberline {4.1}Left eigenbasis}{35}{section.4.1}
+\contentsline {section}{\numberline {4.2}Right eigenbasis}{38}{section.4.2}
+\contentsline {section}{\numberline {4.3}Reference to~\cite {Diaconis2014}}{38}{section.4.3}
+\contentsline {chapter}{\numberline {5}Summation}{39}{chapter.5}

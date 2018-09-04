@@ -16,6 +16,8 @@
 \newtheorem{definition}{Definition}
 \newcommand{\gdd}[1]{#1^{\mathrm{gd}*}}
 \newcommand{\smalltodo}[1]{\textbf{\ To do}}
+\newcommand{\onedotsn}[1]{{#1}_1, \dots, {#1}_n}
+\newcommand{\ndotsm}[3]{{#1}_{#2}, \dots, {#1}_{#3}}
 \title{Explanation of connection between Hopf algebras and Markov chains}
 \author{Bartosz Sójka}
 \date{May 2018}
@@ -509,15 +511,52 @@ up with will be eventually exactly the non-commuting algebra. Note, that what is
 some of observations how structures of free-assiociative algebra and inverse riffle shuffle Markov chain
 works togrther. It will not be proof that these structures are litterally the same nor that these arguments
 apply  in general to all Hopf algebras and Markov chains.\\[4pt]
+\begin{gather*}
 \sum_{b\in\mathcal{B}}\frac{b^*\psi\psi^n \left(
 \displaystyle\sum_{i = 1}^{n_0}\alpha_ib_i\right)}{s^{n+1}s_0} =
 \sum_{b \in \mathcal{B}}\frac{b^*\psi\left(
 \displaystyle\sum_{i = 1}^{n_0}\alpha_i\psi^n(b_i)\right)}{s^{n+1}s_0} = \\
-
 \sum_{b\in\mathcal{B}}\frac{b^*\psi\psi^n \left(
 \displaystyle\sum_{i = 1}^{n_0}\alpha_ib_i\right)}{s^{n+1}s_0} =
 \sum_{b \in \mathcal{B}}\frac{b^*\psi\left(
 \displaystyle\sum_{i = 1}^{n_0}\alpha_i\psi^n(b_i)\right)}{s^{n+1}s_0} = \\
+\end{gather*}
 
+First we will briefly show that $(X_0, X_1, \dots)$ are well defined by inductively showing that for all
+$n \in \mathbb{N}$ there holds $\displaystyle\sum_{b \in \mathcal{B}}\mathbb{P}(X_n = b) = 1$. \\
+For $n = 0$ it is straight from definition of $s_0$:
+\begin{equation*}
+    \sum_{b \in \mathcal{B}}\mathbb{P}(X_0 = b) = \sum_{b \in \mathcal{B}}\frac{b^*\psi^0(x_0)}{s^0s_0} =
+    \sum_{b \in \mathcal{B}}\frac{b^*(x_0)}{s_0} = \frac{1}{s_0}\sum_{b \in \mathcal{B}}b^*(x_0) =
+    \frac{s_0}{s_0}=1.
+\end{equation*}
+Suppose that for $n$ there holds $\displaystyle\sum_{b \in \mathcal{B}}\mathbb{P}(X_n = b) = 1$, then:
+\begin{gather*}
+    \sum_{b\in\mathcal{B}}\mathbb{P}(X_{n+1} = b) =
+    \sum_{b\in\mathcal{B}}\frac{b^*\psi^{n+1}(x_0)}{s^{n+1}s_0} =
+    \sum_{b\in\mathcal{B}}\frac{b^*\psi\psi^n(x_0)}{ss^ns_0} =
+    \sum_{b \in\mathcal{B}}\frac{b^*\psi\left(\frac{\psi^n(x_0)}{s^{n}s_0}\right)}{s}.
+\end{gather*}
+Let $\ndotsm{\beta}{1}{m}$ be such that $\frac{\psi^n(x_0)}{s^ns_0} = \displaystyle\sum_{i = 1}^m\beta_ib_i$.
+Then:
+\begin{equation*}
+    \sum_{i = 1}^m \beta_i = \sum_{b \in \mathcal{B}} b^*\left(\sum_{i=0}^m\beta_ib_i\right)=
+    \sum_{b \in \mathcal{B}} b^*\left(\frac{\psi^n(x_0)}{s^ns_0}\right) = \sum_{b \in \mathcal{B}}
+    \frac{b^*\psi^n(x_0)}{s^ns_0} = \sum_{b \in \mathbb{B}}\mathbb{P}(X_n = b) \overset{\mathrm{ind.}}{=}1
+\end{equation*}
+so:
+\begin{gather*}
+    \sum_{b \in\mathcal{B}}\frac{b^*\psi\left(\frac{\psi^n(x_0)}{s^{n}s_0}\right)}{s} =
+    \sum_{b \in\mathcal{B}}\frac{b^*\psi\left(\displaystyle\sum_{i = 1}^m\beta_ib_i\right)}{s} =
+    \frac{1}{s}\sum_{b \in \mathcal{B}}b^*\psi\left(\sum_{i=1}^m\beta_ib_i\right) = \\
+    \frac{1}{s}\sum_{i=1}^m\beta_i\sum_{b \in \mathcal{B}}b^*\psi(b_i) =
+    \frac{1}{s}\sum_{i=1}^m\beta_is = \frac{s}{s}\sum_{i = 0}^m\beta_i = \frac{s}{s}\cdot1=1.
+\end{gather*}
+
+\begin{gather*}
+    = \\
+    \frac{b_0^*(x_0)}{s_0}\prod_{i=0}^{n-1}\frac{b_{i+1}^*\psi(b_i)}\sum\frac{b^*\psi(b_n)}{s} =
+    \mathbb{P}(x_0 = b_0, X_1 = b_1, \dots, x_n = b_n)\sum_{}
+\end{gather*}
 
 \end{document}

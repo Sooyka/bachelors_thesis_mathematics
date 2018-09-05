@@ -1,23 +1,24 @@
-\BOOKMARK [0][-]{chapter.1}{Markov chains}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Gilbert-Shannon-Reeds model of riffle shuffle}{chapter.1}% 2
-\BOOKMARK [0][-]{chapter.2}{Hopf algebras}{}% 3
-\BOOKMARK [1][-]{section.2.1}{Preliminaries}{chapter.2}% 4
-\BOOKMARK [2][-]{subsection.2.1.1}{Notational remarks}{section.2.1}% 5
-\BOOKMARK [2][-]{subsection.2.1.2}{Tensor products}{section.2.1}% 6
-\BOOKMARK [1][-]{section.2.2}{Algebras}{chapter.2}% 7
-\BOOKMARK [1][-]{section.2.3}{Coalgebras}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.4}{Bialgebras}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.5}{Hopf algebras}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.6}{Examples}{chapter.2}% 11
-\BOOKMARK [2][-]{subsection.2.6.1}{Graded, connected Hopf algebra of polinomials}{section.2.6}% 12
-\BOOKMARK [1][-]{section.2.7}{Graded, connected Hopf algebra of non-commuting variables}{chapter.2}% 13
-\BOOKMARK [2][-]{subsection.2.7.1}{Free associative Hopf algebra}{section.2.7}% 14
-\BOOKMARK [2][-]{subsection.2.7.2}{Some futher remarks about structure}{section.2.7}% 15
-\BOOKMARK [2][-]{subsection.2.7.3}{Alternative structure \040To do}{section.2.7}% 16
-\BOOKMARK [2][-]{subsection.2.7.4}{Graded dual}{section.2.7}% 17
-\BOOKMARK [0][-]{chapter.3}{Connection}{}% 18
-\BOOKMARK [0][-]{chapter.4}{Left and right eigenbasises}{}% 19
-\BOOKMARK [1][-]{section.4.1}{Left eigenbasis}{chapter.4}% 20
-\BOOKMARK [1][-]{section.4.2}{Right eigenbasis}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.3}{Reference to Diaconis2014}{chapter.4}% 22
-\BOOKMARK [0][-]{chapter.5}{Summation}{}% 23
+\BOOKMARK [1][-]{section.1}{Markov chains}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Gilbert-Shannon-Reeds model of riffle shuffle}{section.1}% 2
+\BOOKMARK [1][-]{section.2}{Hopf algebras}{}% 3
+\BOOKMARK [2][-]{subsection.2.1}{Preliminaries}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Notational remarks}{subsection.2.1}% 5
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Tensor products}{subsection.2.1}% 6
+\BOOKMARK [2][-]{subsection.2.2}{Algebras}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.3}{Coalgebras}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.4}{Bialgebras}{section.2}% 9
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Convolution}{subsection.2.4}% 10
+\BOOKMARK [2][-]{subsection.2.5}{Hopf algebras}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.6}{Examples}{section.2}% 12
+\BOOKMARK [3][-]{subsubsection.2.6.1}{Graded, connected Hopf algebra of polinomials}{subsection.2.6}% 13
+\BOOKMARK [2][-]{subsection.2.7}{Graded, connected Hopf algebra of non-commuting variables}{section.2}% 14
+\BOOKMARK [3][-]{subsubsection.2.7.1}{Free associative Hopf algebra}{subsection.2.7}% 15
+\BOOKMARK [3][-]{subsubsection.2.7.2}{Some futher remarks about structure}{subsection.2.7}% 16
+\BOOKMARK [3][-]{subsubsection.2.7.3}{Alternative structure \040To do}{subsection.2.7}% 17
+\BOOKMARK [3][-]{subsubsection.2.7.4}{Graded dual}{subsection.2.7}% 18
+\BOOKMARK [1][-]{section.3}{Connection}{}% 19
+\BOOKMARK [1][-]{section.4}{Left and right eigenbasises}{}% 20
+\BOOKMARK [2][-]{subsection.4.1}{Left eigenbasis}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.2}{Right eigenbasis}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.3}{Reference to Diaconis2014}{section.4}% 23
+\BOOKMARK [1][-]{section.5}{Summation}{}% 24

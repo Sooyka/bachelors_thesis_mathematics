@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{report}
+\documentclass[a4paper, 12pt]{article}
 \usepackage{polski}
 \usepackage{amssymb}
 \usepackage[polish,english]{babel}
@@ -42,7 +42,7 @@ Instytut Matematyczny}\\
 %\maketitle
 \textbf{\textit{\large Bartosz Sójka}\\
 \vspace{0.5cm}
-{\Large Explanation ąćęłóśńźż of connection between Hopf algebras and Markov chains}}\\
+{\Large Explanation of connection between Hopf algebras and Markov chains}}\\
 \end{center}
 \vspace{3cm}
 {\large \hspace*{6.5cm}Praca licencjacka\\
@@ -60,7 +60,7 @@ Instytut Matematyczny}\\
 
 \begin{abstract}
 
-In~\cite{Diaconis2014} Persi Diaconis, Amy Pang and Arun Ram described how to use Hopf algebras to
+ąćęłóśńźż In~\cite{Diaconis2014} Persi Diaconis, Amy Pang and Arun Ram described how to use Hopf algebras to
 study Markov chains. As it involves ideas from quite different branches of mathematics, it could be hard to
 grasp a concept of it if someone is not familliar with them.
 The point of this paper is to describe some of their results in a more step-by-step, simplified way,
@@ -70,14 +70,8 @@ method. Structure will be as follows: first there will be an introduction to bot
 chains, then it will be explained how to describe a Markov chain with a Hopf algebra, finally I will
 describe how to find left eigenbasis and right eigenbasis of Markov chain associated with riffle shuffling
 using Hopf algebras.
-
-
 \end{abstract}
-\todo{}
-\begin{itemize}
-\item finish
-\end{itemize}
-\chapter{Markov chains}
+\section{Markov chains}
 \setcounter{page}{5}
 Finite Markov chain is a random process on a finite set of states such that
 the probability of being in some state in the moment $n+1$ depends only on the state in which one was
@@ -107,10 +101,37 @@ Card shuffling can be viewed as a Markov chain on all possible arrangements of t
 in the deck with $K(x,y)$ equal to probability of going from arrangement $x$ to arrangement $y$ in one
 shuffle.
 \\ More extensive indroduction can be found in~\cite{LePeWi}. \\
-Cośtam cośtam stationary distirution. \\
 %\textbf{\Huge BAM!}\normalsize
-\section{Gilbert-Shannon-Reeds model of riffle shuffle}
-\todo{BAM! Gilbert-Shannon-Reeds model of riffle shuffle with that specific forward}
+\subsection{Gilbert-Shannon-Reeds model of riffle shuffle}
+Gilbert-Shannon-Reeds gave realistic model for forward and inverse riffle shuffle.
+For forward riffle shuffle it states that we are cutting the deck with binomial distribution:
+with probability $\binom{k}{n}/2^n$ for taking $k$ top cards from the deck of $n$ cards
+and then riffle piles together with the same probability of every possible interlace. As riffling piles with
+$k$ cards and $n-k$ cards comes to choosing a $k$ element subset of $n$ element set there is $\binom{k}{n}$
+ways to do that, so then the probability of a particular interlace is equal to $1/\binom{k}{n}$.
+Because of that probability of any pair of particular split and particular interlace is equal to
+$\frac{\binom{k}{n}}{2^n}\frac{1}{\binom{k}{n}} = \frac{1}{2^n}$. To obtain probabilities of outcomes
+we need to check how pairs of splits and interlaces corresponds to outcomes. There are two cases:
+result of identity permutation can be obtained in $n$ ways by cutting the deck and then placing the top back
+as it is an valid example of an interlace too. Any other permutation can by obtained in at most one way.
+It is clear that if splits are the same, if interlaces are different results will be differnt but what is
+more different splits can not lead to the same non-identity result. One of the ways to see that is to think
+of cards before shuffling as they are ordered and see that one shuffling generate two increasing subsequences
+in result pile. If they have different length it means that at least one card is in one and is not
+in the other. If that card will not be placed on the top \smalltodo \\ \\
+For reverse riffle shuffle it states that we are sequentially putting cards from the bottom of the pile to
+the or to the right with probability $\frac{1}{2}$. Then we place left pile on the top of the right pile.
+Again there are $n$ ways (pairs of division and concatenation) of obtaining an identity permutation -
+for every $0 \leq k \leq n$ by putting $k$ cards on the right and then $n-k$ cards on the left.
+Again every other permutation can be obtained it at most one way and, again, every pair of division and
+concatenation have the same probability. To see that every non-identity permutation can be obtained in
+at most one way we can think of dision as of choosing a subsequence of the deck and placing it to the left.
+Now suppouse we have choosen too different subsets. Let $c$ be a card that is in one of them but not in the
+other. If that card is not the most bottom of the choosen subset results will be differnt as in one case
+it will be between some cards from the left pile and in second not. The same goes with not the top one
+from non-choosen set. It gives that for diffrent subsets chooses to give the same result the cards that
+differ them have to be top ones from the non choosen and the most bottom ones from choosen what means
+giving the identity permutation as we then just cut deck into to peaces in different ways.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -126,7 +147,7 @@ Cośtam cośtam stationary distirution. \\
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\chapter{Hopf algebras}
+\section{Hopf algebras}
 %
 Now I will give a full definition of a Hopf algebra. Although it is quite long and involves
 definition of ??? operations, I decided to put it in a consistent fragment, due to belief
@@ -137,9 +158,8 @@ Another reason of arranging text like that (and possibility of treating this sec
 is that for most of the time we will not be using full structure of a Hopf algebra. Nevertheless it is good
 to see the full shape of what we are dealing with. \\
 So now comes the full definition but we will try to explain it piece by piece. \\[8pt]
-\section{Preliminaries}
-
-\subsection{Notational remarks}
+\subsection{Preliminaries}
+\subsubsection{Notational remarks}
 \indent \textbf{Remark. }Let $K$ be a field. In the following section $k$, if not stated otherwise, will
 denote an arbitrary elementof this field. If not stated otherwise, all vector spaces will be over $K$
 and all tensor products will be taken over $K$. Note that when we want to present a field
@@ -168,8 +188,8 @@ For an n-tensor power $\overbrace{V \otimes \dots \otimes V}^{n\ times}$  of a v
 sometimes write $V^{\otimes n}$.\\
 Throughout this paper, when there will be no risk
 of confusion, we will omit the "$\circ$" symbol of composition of functions and we will write
-$\varphi \psi (x)$ instead of $(\varphi \circ \psi)(x)$.
-\subsubsection{Dual spaces}
+$\varphi \psi (x)$ instead of $(\varphi \circ \psi)(x)$. \\
+\textbf{Dual spaces} \\
 We will use standard notation for dual spaces: \\
 For a vector space $V$ over a field $K$ we will write $V^*$ for a vector space dual to $V$ -
 a vector space of all linear functions from $V$ to $K$.
@@ -188,7 +208,7 @@ a vector space of all linear functions from $V$ to $K$.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsection{Tensor products}
+\subsubsection{Tensor products}
 %
 First we will introduce tensor product of the vector spaces. Let $V, W$ be vector spaces over the field $K$.
 Let $Z$ be a vector space with basis $V \times W$. Note that we are taking entire $V \times W$ as a basis
@@ -365,7 +385,7 @@ the following sections.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-\section{Algebras}
+\subsection{Algebras}
 \begin{definition}
 A \textbf{$\textbf{K}$-algebra} is a vector space $\mathcal{H}$ with additional
 associative, linear operation
@@ -444,7 +464,7 @@ multiplication in an algebra of our interest.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\section{Coalgebras}
+\subsection{Coalgebras}
 \begin{definition}
 A \textbf{$\textbf{K}$-coalgebra} is a vector space $\mathcal{H}$
 with additional coassociative, linear operation
@@ -562,7 +582,7 @@ Applying isomorphisms ${^Lm}$ and ${^Rm}$ from
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\section{Bialgebras}
+\subsection{Bialgebras}
 \begin{definition}
 A \textbf{$\textbf{K}$-bialgebra} is vector space $\mathcal{H}$ with both an algebra structure
 $(\mathcal{H}, m, u)$ and a coalgebra structure $(\mathcal{H}, \Delta, \varepsilon)$ such that $m$, $u$
@@ -723,7 +743,7 @@ and using Sweedler notation as:
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\section{Hopf algebras}
+\subsection{Hopf algebras}
 \begin{definition}
 A bialgebra having an antipode is called a \textbf{Hopf algebra}.
 \end{definition}
@@ -760,25 +780,15 @@ Any graded, connected bialgebra is a Hopf algebra with antipode:
 S = \sum_{k \geq 0} (u\varepsilon - I)^{*k}.
 \end{equation*}
 \end{theorem}
-\todo{MOŻE DAĆ JEDNAK TEN DOWÓD.} b
-This is the end of our algebraic definitions pfuuuu...
+\smalltodo\\ dowód?
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\section{Examples}
-\subsection{Graded, connected Hopf algebra of polinomials}
+\subsection{Examples}
+\subsubsection{Graded, connected Hopf algebra of polinomials}
 Let $P$ be a vector space of polynomials of one variable over the field $K$ with natural grading by degree.
 Note that the standard polynomial multiplication is compatible with that grading as for polynomials with
 degrees $i$, $j$, their product has degree $i + j$. Connection comes from that the identity of
@@ -819,14 +829,8 @@ It is a bialebra, because:
 a
 \end{align*}
 \todo{BAM! DO ROBOTY!}
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\section{Graded, connected Hopf algebra of non-commuting variables}
-\subsection{Free associative Hopf algebra}
+\subsection{Graded, connected Hopf algebra of non-commuting variables}
+\subsubsection{Free associative Hopf algebra}
 This is the main example of our interest. It will be used to describe inverse and forward riffle shuffling.\\
 Let K be a field with characteristic 0.
 Let $\mathcal{X} = \{x_1, \dots, x_N\}$ be a finite set. For every $n \in \mathbb{N}$ let
@@ -849,7 +853,7 @@ The unit is then $u : K \to \mathcal{H}$ such that
 \begin{equation*}
 u(1_K) = \varepsilon
 \end{equation*}
-where $\varepsilon$ is an empty word. And indeed $1_\mathcal{H} = \varepsilon$.
+where $\varepsilon$ is an empty word. And indeed $1_\mathcal{H} = \varepsilon$. \\
 \textbf{Lemma. } Then $\mathcal{H}$ is a graded, connected Hopf algebra that is cocommutative.
 \begin{proof}
 Associativity of $m$ and coassociativity of $\Delta$ are obvious. Actions fit together,
@@ -899,7 +903,7 @@ of the right stack. $\Psi^{[2]}$ will be then application of one iteration of in
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-\subsection{Some futher remarks about structure}
+\subsubsection{Some futher remarks about structure}
 In paragraph 2.3 ~\cite{Diaconis2014} describes some aspects of the structure of free associative algebra.
 They will be important in the chapter about eigenbasises. Here we will present a shortened version for
  lookup.
@@ -981,7 +985,7 @@ This will be the grading we will be using for our probabilistic interpretation. 
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsection{Alternative structure \smalltodo{a}}
+\subsubsection{Alternative structure \smalltodo{a}}
 \indent Now we will describe an alternative graded and connected Hopf algebra structure on $\mathcal{H}$ - a
 vector space spanned
 by finite words over the fixed alphabet $\mathcal{X}$. It will describe the structure of forward riffle
@@ -1002,7 +1006,7 @@ and comultiplication $m^* : \mathcal{H}^* \to \mathcal{H}^* \otimes \mathcal{H}^
 \begin{equation*}
 m^*(s) = \sum\{ s_1 \otimes s_2 : s=s_1s_2 \}
 \end{equation*}
-which is the sum of all possible divisions of $s$ into its prefix and suffix. \\
+which is the sum of all possible divisions of $s$ into its prefix and suffix \\
 and both extended linearly. \\
 \textbf{Lemma. } Then $\mathcal{H}^*$ is a graded, connected Hopf algebra that is commutative.
 \begin{proof}
@@ -1053,7 +1057,7 @@ is still an identity element with respect to multiplication. Commutativity is cl
 In the shuffling interpretation $\Delta^*$ will be the operation of dividing a stack of cards at some random
 point and putting the top pile on the left creating two stacks. $m^*$ will be the operation of combining two
 stacks together with the same probability of every possible interlace of two stacks.
-\subsection{Graded dual}
+\subsubsection{Graded dual}
 Now we will see that there is another method of introducing that structure.
 The structure of $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$ (where for all $i \in \mathbb{N}$
 $\mathcal{H}_i^*$ is a vector space dual to $\mathcal{H}$) with actions induced by actions
@@ -1090,7 +1094,7 @@ m^*(h^*) &= h^*m.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\chapter{Connection}
+\section{Connection}
 \indent In the chapter one we said that with every Markov chain  have corresponding matrix of transition
 probabilities. Thus with a Markov chain one can associate a certain linear transformation given by that
 matrix. The following theorem states dependency in opposite direction - that given linear transfomation
@@ -1105,7 +1109,8 @@ Let $V$ be a linear space over field $K$ that is $\mathbb{R}$ or $\mathbb{Q}$,
 Let $\psi : V \to V$ be a linear operation such that for
 all $b \in \mathcal{B}$ coefficients of vector $\psi(b)$ written in $\mathcal{B}$ are $\geq 0$ and their
 sum $s$ is the same.
-($\forall_{b_1, b_2 \in \mathbb{B}}\ b_1^*\psi(b_2) \geq 0 \land \exists_{s \in K}\ \forall_{b \in \mathcal{B}}\ \displaystyle\sum_{b_i \in \mathcal{B}}b_i^*\psi(b) = s$).
+($\forall_{b_1, b_2 \in \mathbb{B}}\ b_1^*\psi(b_2) \geq 0 \land \exists_{s \in K}\ \forall_{b \in
+\mathcal{B}}\ \displaystyle\sum_{b_i \in \mathcal{B}}b_i^*\psi(b) = s$).
 Let $x_0 \in V\setminus\{0\}$ and
 $n_0 \in \mathbb{N}$, $\alpha_1, \dots, \alpha_{n_0} \in K$, $b_1', \dots, b_{n_0}' \in \mathcal{B}$
 be such that $x_0 = \displaystyle\sum_{i = 0}^n \alpha_i b_i'$. Let $s_0 \coloneqq
@@ -1172,9 +1177,11 @@ and the chain indeed has claimed transition probability, because for all $b_1, b
  $\frac{b_2^*\psi(b_1)}{s}$ is a coefficient
 standing by $b_2$ in $\psi(b_1)$, written in $\mathcal{B}$, divided by $s$.
 \end{proof}
-\smalltodo\
-Cocommutative Hopf algebra of non-commuting variables is a model for inverse riffle shuffling and commutative
-Hopf algebra of non-cocommutative variables is a model for forward riffle shuffling. It goes as follows.
+
+Free assocciative, cocommutative Hopf algebra of non-commuting variables (from 2.7.1) is a model for inverse
+riffle shuffling and its graded dual: commutative
+Hopf algebra of non-cocommutative variables (from 2.7.3) is a model for forward riffle shuffling.
+It goes as follows.
 Let $\mathcal{X}$ be the finite set of all possible types of cards. Let $\nu$ be a tuple of
 elements from $\mathcal{X}$ that represents our actual deck of cards (the same type of card can occur
 multiple times, the order in $\nu$ should be the order in which we think cards are ordered). Now we can
@@ -1198,163 +1205,7 @@ containing cards labeled by $x$s appearing in $\nu$. Chains state space is then 
 $\mathcal{H}_\nu$. Let's call it $\mathcal{B}_\nu$
 Chains transition matrix is equal to transition matrix of $\Psi^{[2]}$ written in $\mathcal{B}_\nu$.  \\
 
-Here will come an intuition why tensor products and Hopf algebras suits for describing probabilistic issues.
 
-Let $\mathcal{X} = \{x_1, \dots x_N\}$ be our set of all possible types of cards. \\
-We will denote a stack of $k$ cards containing (from top to bottom) $x_{i_1}, \dots, x_{i_k}$ simply as
-$x_{i_1}\dots x_{i_k}$. \\
-Imagine, that you have stack of cards $x_{i_1}\dots x_{i_k}$. After shuffling it
-you can get one of finitely many stack of cards each with certain probability. We want to have some
-representation of it in our structure.
-For that reason we span a vector space $\mathcal{H}$, over $\mathbb{Q}$ (but can be $\mathbb{R}$ if someone
-likes),
-with basis $\mathcal{X}^*$ (finite words over $\mathcal{X}$, which means "all possible stacks
-of cards of types from $\mathcal{X}$ including an empty stack"). \\
-For all $s_1, \dots, s_n \in \mathcal{X}^*$, all $0 \leq q_1, \dots, q_n \in K$ a non-zero vector
-$\displaystyle\sum^{n}_{i = 1} q_is_i$ is for all $i \in \{1, \dots, n\}$
-interpreted as a state where we have a stack $s_i$ with probability $\frac{q_i}{\sum^n_{i=1} q_i}$ or
-equivalently as a probabilistic measure on $\mathcal{X}^*$ with value $\frac{q_i}{\sum^n_{i=1} q_i}$ on $s_i$
-for every $i \in \{1, \dots, n\}$ and $0$ elsewhere. \\
-In that understanding the "+" can be read as "or". \\
-We want also desribe a situation when: we have multiple stacks of cards on a table (some of them maybe
-empty), there are only finitely many options how
-these stacks can exactly look like and we know a probability of every option.\\
-It is very natural situation during shuffling as when we for example split a stack of cards at some
-random point (with known probabilities of where the split can be)
-we for sure have two stacks of cards (as soon as we agree that one of them can be empty),
-there are only finetely many options how exactly arrangement looks like and we know a probability of each
-one.
-\\ We will now focus on case when we have two decks on a table. \\
-We want to deal with that matter in similar way as we done for setting "probabilistic options" to one deck
-of cards. We will span a vector space with all possible arrangements of two decks as a basis.
-That vector space will be $\mathcal{H} \otimes \mathcal{H}$. Now we will try to give some explanation why in
-fact this is quite intuitive.  \\
-For $s_1, s_2 \in \mathcal{X}^*$ let's denote $(s_1, s_2)$ as having $s_1$ on the left stack and $s_2$
-on the right stack. \\
-Let's make an observation that for all $s, s_1, s_2 \in \mathcal{X}^*$ situation of having arrangement
-$(s_1, s)$ with probability $p$ and having arrangement $(s_2, s)$ with probability $1-p$ is
-the same situation as having $s_1$ with probability $p$ or having $s_2$ with probability $1 - p$ on the left
-stack and for sure having $s$ on the right stack. Making connection with our previously introduced notation
-so we want to $p(s_1, s) + (1-p)(s_2, s) = (ps_1 + (1-p)s_2, s)$ (and analogously to the second
-coordinate).\\
-What is more, having for sure $s_1$ on the left and $s_2$ on the right with probability $p$ (and
-with probability $(1 - p)$ some else arragement, let's call it $(z_1, z_2)$) gives the same probability
-distribution
-on possible arrangments of two decks as, having $s_1$ on the left and having $s_2$ on the
-right, with probability $p$ and with probability $1-p$ having $(z_1,z_2)$).\\
-This leads us to conclusion, that we also want to $p(s_1,s_2) = (ps_1, s_2)$ (and analogously to the second
-coordinaate). \\
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-In the Gilbert-Shannon-Reeds model of inverse riffle shuffling there are two steps. First we are
-decomposing the deck by take cards from the top of deck - one after another and putting them to the left
-or to the right each with probability $\frac{1}{2}$. Secondly putting left stack on the right stack. \\
-That pulling apart causes a split into two stacks, each of them can be any subset of original stack
-(with preservation of order) with equal probability of each option. \\
-For $s_1, s \in \mathcal{X}^*$ let denote that $s_1$ is subsequence of $s$ (a subset with preservation of
-order) as $s_1 \prec s_2$. Let's denote a stack arisen from removing form $s$ its subsequence $s_1$ as
-$s/s_1$. \\
-Let denote that pulling apart as a $\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$, then for all
-$s \in \mathcal{X}^*$ it will give
-\begin{equation*}
-\Delta(s) = \sum_{\substack{s_1 \prec s \\ \land s_2 = s/s_1}}
-s_1 \otimes s_2.
-\end{equation*}
-For putting two piles back together by placing left on the top let us write a linear map
-$m : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ that is concatenation, which means, that
-for all $s_1, s_2 \in \mathcal{X}^*$
-\begin{equation*}
-m(s_1 \otimes s_2) = s_1s_2.
-\end{equation*}
-What we just define here is exactly an algebra of non-commuting variables from example
-2.3.2.\\
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-Facts about its algebraic nature are presented in that section. \\
-We can observe now that Hopf-square map $\Psi^{[2]} = m\Delta$ for $\Delta$, $m$ defined as above
-describes one iteration of the inverse riffle shuffle. For every $s \in \mathcal{X}^*$, $\Psi^{[2]}(s)$ is
-a sum of possible arrangements of stack with corresponding probabilities (without normalisation)).
-\\ Ta- daaaam! \\[4pt]
-But where are that Markov chain? Where are these "subspaces preserved by $\Psi$"? \\
-For a fixed deck of $n$ cards $\nu = (\nu_1, \dots, \nu_n) \in \mathcal{X}^n$ the Markov chain of shuffling
-that deck is set by $\Psi^{[2]}$ restricted to the subspace spanned by $S_\nu$ = "all $s \in \mathcal{X}^*$
-that are some rearangement of $\nu$", more formally: spanned by $S_\nu$, where:
-\begin{equation*}
-S_\nu = \{ s = x_{i_1}\dots x_{i_n} \in \mathcal{X}^* \mid
-\exists_{\sigma \in S_n} x_{\sigma(i_1)}\dots x_{\sigma(i_n)} = \nu_1\dots \nu_n. \}.
-\end{equation*}
-($\sigma \in S_n$ is a permutation, $S_n$ is a symmetric group of $n$ (group of
-all permutations of $n$ elements)). Its equivalent to that $S_\nu = [\nu]_\SimeqSym$.\\
-Then the state space of that chain is $S_\nu$. The transition matrix of that chain is exactly a matrix of
-$\Psi^{[2]}$ truncated to $\mathcal{H}_\nu \coloneqq \mathrm{Lin}(S_\nu)$
-(which, as we can observe is finite-dimensional and preserved by $\Psi^{[2]}$). \\[8pt]
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-For forward riffle shuffle we will be working with the same space $\mathcal{H}$ (as we still
-are dealing with the same set of types of cards) but with differnt actions (as operations of "pulling apart"
-and "putting together" look now different). \\
-We will proove that indeed forward riffle shuffle $(F_i)_{i \geq 0}$ and inversed riffle shuffle
-$(I_i)_{i \geq 0}$ are the same shuffling method
-but once aplicated "forward" and once "backward". What we mean is that for fixed deck of $n$ cards
-$\nu = (\nu_1, \dots, \nu_n) \in \mathcal{X}^n$, for all $s_1, s_2 \in \mathcal{H}_\nu$, all $n \geq 0$:
-\begin{equation*}
-\mathbb{P}\{F_{n+1} = s_2 \mid F_n = s_1\} = \mathbb{P}\{I_{n+1} = s_1 \mid I_n = s_2\}.
-\end{equation*}
-Which means that probability of going from state $s_1$ to state $s_2$ in one step in forward riffle shuffle
-is qual to probability of going form $s_2$ to $s_1$ in one step in  inverse riffle shuffle. \\
-As remarked in Section 1. forward riffle shuffle can be defined as cutting the deck at some point with
-uniform distribution on "where" ($n+1$ options for a deck of size $n$) and then putting back
-two piles together in the way that \text{\textit{everyone-had-seen-at-some-point-in-the-life}}
-(\textit{trrrrrrrr}) with
-the same probability of every possible "\textit{trrrrrrrr}". \\
-Let us denote $\mathcal{H}$ as a dual to $\mathcal{H}$ what we want to do is to see how induced
-multiplication and comultiplication look like. \\
-"here it come". \\
-It is forward fiffle sfufle, we can check it
-that corresponds to that , that to that
-fold product is exactly that and that, so the coeficient matches and that is ok. \\
-And then it is exactly an riffle shuffle as it is bla bla. \\
-Let $\Delta_F : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$ be an linear map for decomposition
-of the deck for forward riffle shuffle, then for all $s \in \mathcal{X}^*$
-\begin{equation*}
-\Delta_F(s) = \sum_{s_1s_2=s} s_1 \otimes s_2.
-\end{equation*}
-Let $m_F : \mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$ be a linear map coresponding to
-\textit{trrrrrrrr}. Then for all $s_1, s_2 \in \mathcal{X}^*$:
-\begin{equation*}
-m_F (s_1 \otimes s_2) = \sum_{\substack{s_1 \prec s \\ s_2 = s/s_1} } s
-\end{equation*}
-which is sum of all possible entanglements of $s_1$ and $s_2$.\\[8pt]
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
-Now let us consider a vector space that is dual to $\mathcal{H}$. It is vector space of linear functions on
-$\mathcal{H}$
-whith basis bla bla
-1$s^* : \mathcal{H} \to K$ such that for all $s \in \mathcal{X }$
-We can define multiplication and comultiplication of $\mathcal{H}^*$ in the natural way.
-bla bla
-ble ble
-
-We ckech, and what? That are exactly $m_F$ and $\Delta_F$ matrixes of $(F_i)_{i \geq 0}$ and $(I_i)_{i
-\geq 0}$
-are transpositions of each other.\\
-\todo{Do poprawki, bo żal}
 
 
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1372,7 +1223,7 @@ are transpositions of each other.\\
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\chapter{Left and right eigenbasises}
+\section{Left and right eigenbasises}
 
 The reasons we bother with finding the eigenbasis are desribed in 1.?.?. For a given deck $\nu$
 we will find left and right eigenbasises of $\mathcal{H}_\nu$ for inverse and forward riffle shuffling.
@@ -1380,7 +1231,7 @@ Note that because
 $m\Delta$ and $\Delta^*m^*$ are dual to each other left eigenbasis for inverse riffle-shuffle is right
 eigenbasis for forward riffle-shuffle and right eigenbasis for inverse is left eigenbasis for forward.
 
-\section{Left eigenbasis}
+\subsection{Left eigenbasis}
 Construction of left eigenbasis begins with a general observation that for every Hopf algebra,
 primitive elements are eigenvectors of $\Psi^{[a]}$ for every $a \in \mathbb{N}$.
 \begin{observation}
@@ -1479,28 +1330,22 @@ so $\mathcal{E}_\nu$ is linearly independent. $w \in \mathcal{H}_\nu$ iff
 $\mathrm{sym}(w) \in \mathcal{H}_\nu$ so $\mathcal{E} \cap \mathcal{H}_\nu = \mathcal{E}_\nu$, so
 $\mathcal{E}_\nu$ spans the $\mathcal{H}_\nu$.
 \end{proof}
-\section{Right eigenbasis}
-The right eigenbasis can be obtained as stated in the following theorm:
-\begin{theorem}
-    a
-\end{theorem}
-\section{Reference to~\cite{Diaconis2014}}
-Now we will recall two theorems from~\cite{Diaconis2014} describing eigenbases.
-\begin{theorem}
-bla bla eigenbasismn
-\end{theorem}
-\begin{theorem}
-bla bla dual eigen basis
-\end{theorem}
-To prove them we will need a simmetrization lemma \\
-bla bla\\[8pt]
-\todo{Remark of no primitive generators in other algebras}
-Now we can make some further observations about shuffling.\\
-ble ble\\
+\subsection{Right eigenbasis}
+The right eigenbasis can be obtained as written in~\cite{Diaconis2014}: \\
+For each Lyndon word $b$, let $f_b$ be the eigenvector of ${\Psi^*}^{[a]}$ of eigenvalue $a$ such that
+$f_b(\mathrm{sym}(b))=1$ ans $f_b(\mathrm{sym}(g_{b'}) = 0$ for all other Lyndon $b'$. For each basis
+element $b$ of $\mathcal{H}$ with Lyndon factorization $b=b_1\dots b_k$, let
+\begin{equation*}
+    f_b \coloneqq \frac{1}{A'(b)}f_{b_1}\cdot\ldots\cdot f_{b_k},
+\end{equation*}
+where the normalisation constant $A'(b)$ is calculated as follows: for each Lyndon basis element $b'$, let
+$a'_{b'}(b)$ be the number of times $b'$ accurs in the Lyndon factorisation of $b$, and set $A'(b) =
+\prod_{b'}a'_{b'}(b)!$. Then $f_b$ is an eigenvector of ${\Psi^*}^{[a]}$ od eigenvalue $a^k$, and $\{f_b\}$
+is the dual basis to $\{g_b\}$. \\
+The proof can be found there.
+\subsection{Reference to~\cite{Diaconis2014}}
 
-\chapter{Summation}
-
-
+\section{Summation}
 \bibliography{my_bibliography}{}
 \bibliographystyle{alpha}
 \end{document}

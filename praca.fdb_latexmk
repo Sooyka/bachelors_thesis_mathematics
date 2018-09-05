@@ -1,15 +1,15 @@
 # Fdb version 3
-["bibtex praca"] 1536182489 "praca.aux" "praca.bbl" "praca" 1536182489
+["bibtex praca"] 1536187160 "praca.aux" "praca.bbl" "praca" 1536187186
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
   "my_bibliography.bib" 1535132985 1670 51a8f4191e6314bd1d9f137ed82c3b38 ""
-  "praca.aux" 1536182489 3915 31fcd3e17546dea61dbc50b614191765 ""
+  "praca.aux" 1536187186 3966 389496056302592afed2b3c86c88ffc1 ""
   "praca.bcf" 0 -1 0 ""
   (generated)
   "praca.bbl"
   "praca.blg"
-["pdflatex"] 1536182489 "praca.tex" "/home/bartosz/Studia/Praca_licencjacka/praca.pdf" "praca" 1536182489
+["pdflatex"] 1536187185 "praca.tex" "/home/bartosz/Studia/Praca_licencjacka/praca.pdf" "praca" 1536187186
   "/etc/texmf/web2c/texmf.cnf" 1492723455 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/bartosz/Studia/Praca_licencjacka/praca.aux" 1536182489 3915 31fcd3e17546dea61dbc50b614191765 ""
+  "/home/bartosz/Studia/Praca_licencjacka/praca.aux" 1536187186 3966 389496056302592afed2b3c86c88ffc1 ""
   "/home/bartosz/texmf/tex/latex/polski/omlplm.fd" 1494024529 1553 7e55eec7e7ffbbc85187034f06b5977a ""
   "/home/bartosz/texmf/tex/latex/polski/omsplsy.fd" 1494024529 1472 cdbddbc0209f1dca4b38ccca913f65d7 ""
   "/home/bartosz/texmf/tex/latex/polski/omxplex.fd" 1494024529 1283 a1205ac8611390c6de04f8d76756c3c4 ""
@@ -119,16 +119,16 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1488610416 31340 0f53f8665296bf8fe6c697f9505e31d8 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1535748359 133835 269d64aa98dc76c5aa0c695331094f94 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1535750571 906930 c16e2dbb3f42156fb33dc4fbc14fe8b8 ""
-  "praca.aux" 1536182489 3915 31fcd3e17546dea61dbc50b614191765 ""
-  "praca.bbl" 1536182489 666 6725d21dd07ec91272f3962a739940ee "bibtex praca"
-  "praca.out" 1536182489 1688 a1aa956f9484f1e36b9de3837b29902a ""
-  "praca.tex" 1536182487 82171 46cbaaa5b1dbf175ecdbbead948b0695 ""
-  "praca.toc" 1536182489 2138 ebe3816f5c23f0cbf5d2aaa04cd4b549 ""
+  "praca.aux" 1536187186 3966 389496056302592afed2b3c86c88ffc1 ""
+  "praca.bbl" 1536187161 666 6725d21dd07ec91272f3962a739940ee "bibtex praca"
+  "praca.out" 1536187186 1688 a1aa956f9484f1e36b9de3837b29902a ""
+  "praca.tex" 1536187185 82751 316de75447d73b08d2e83d935ca910ff ""
+  "praca.toc" 1536187186 2138 5d05df915b632f7cbd62e71f73c72977 ""
   (generated)
-  "praca.pdf"
-  "praca.toc"
   "praca.aux"
-  "/home/bartosz/Studia/Praca_licencjacka/praca.log"
-  "praca.log"
-  "/home/bartosz/Studia/Praca_licencjacka/praca.pdf"
   "praca.out"
+  "praca.toc"
+  "/home/bartosz/Studia/Praca_licencjacka/praca.log"
+  "/home/bartosz/Studia/Praca_licencjacka/praca.pdf"
+  "praca.log"
+  "praca.pdf"

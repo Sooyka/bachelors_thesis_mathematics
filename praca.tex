@@ -118,7 +118,9 @@ It is clear that if splits are the same, if interlaces are different results wil
 more different splits can not lead to the same non-identity result. One of the ways to see that is to think
 of cards before shuffling as they are ordered and see that one shuffling generate two increasing subsequences
 in result pile. If they have different length it means that at least one card is in one and is not
-in the other. If that card will not be placed on the top \smalltodo \\ \\
+in the other. If that card will not be placed on the highest possible place then it is placed below some
+card from the bottom pile wich do not occur in the second case. This means tgat all card that differs splits
+have to be put on the their top-most position to generate the same permutation, what gives an identity.
 For reverse riffle shuffle it states that we are sequentially putting cards from the bottom of the pile to
 the or to the right with probability $\frac{1}{2}$. Then we place left pile on the top of the right pile.
 Again there are $n$ ways (pairs of division and concatenation) of obtaining an identity permutation -
@@ -131,7 +133,9 @@ other. If that card is not the most bottom of the choosen subset results will be
 it will be between some cards from the left pile and in second not. The same goes with not the top one
 from non-choosen set. It gives that for diffrent subsets chooses to give the same result the cards that
 differ them have to be top ones from the non choosen and the most bottom ones from choosen what means
-giving the identity permutation as we then just cut deck into to peaces in different ways.
+giving the identity permutation as we then just cut deck into to peaces in different ways. \\
+Conclusion is that in this model both for forward and inverse riffle shuffle probability of obtaining
+an identity permutation is equal to $n/2^n$ and for any other $1/2^n$.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -149,10 +153,11 @@ giving the identity permutation as we then just cut deck into to peaces in diffe
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \section{Hopf algebras}
 %
-Now I will give a full definition of a Hopf algebra. Although it is quite long and involves
-definition of ??? operations, I decided to put it in a consistent fragment, due to belief
+Now I will give a full definition of a Hopf algebra. Although it is quite long
+I decided to put it in a consistent fragment, due to belief
 that thanks to that it will be a better reference. \\
-If the reader feels lost in this section, it is recommended to read it in parallel to the section 2.3
+This section can be treated just as a refference if reader will feel lost in sections \ref{three} and
+\ref{four}. If the reader feels lost in this section, it is recommended to read it in parallel to the section \ref{three}
 where examples are provided or treat it just as a reference when formal definition will be needed.
 Another reason of arranging text like that (and possibility of treating this section just as a reference),
 is that for most of the time we will not be using full structure of a Hopf algebra. Nevertheless it is good
@@ -1094,7 +1099,7 @@ m^*(h^*) &= h^*m.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\section{Connection}
+\section{Connection}\label{three}
 \indent In the chapter one we said that with every Markov chain  have corresponding matrix of transition
 probabilities. Thus with a Markov chain one can associate a certain linear transformation given by that
 matrix. The following theorem states dependency in opposite direction - that given linear transfomation

@@ -19,7 +19,7 @@
 \contentsline {subsubsection}{\numberline {2.7.4}Graded dual}{26}{subsubsection.2.7.4}
 \contentsline {section}{\numberline {3}Connection}{27}{section.3}
 \contentsline {section}{\numberline {4}Left and right eigenbasises}{30}{section.4}
-\contentsline {subsection}{\numberline {4.1}Left eigenbasis}{30}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.1}Left eigenbasis}{31}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Right eigenbasis}{33}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Reference to~\cite {Diaconis2014}}{33}{subsection.4.3}
 \contentsline {section}{\numberline {5}Summation}{33}{section.5}

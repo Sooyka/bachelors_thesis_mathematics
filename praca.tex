@@ -60,7 +60,7 @@ Instytut Matematyczny}\\
 
 \begin{abstract}
 
-ąćęłóśńźż In~\cite{Diaconis2014} Persi Diaconis, Amy Pang and Arun Ram described how to use Hopf algebras to
+In~\cite{Diaconis2014} Persi Diaconis, Amy Pang and Arun Ram described how to use Hopf algebras to
 study Markov chains. As it involves ideas from quite different branches of mathematics, it could be hard to
 grasp a concept of it if someone is not familliar with them.
 The point of this paper is to describe some of their results in a more step-by-step, simplified way,
@@ -135,7 +135,11 @@ from non-choosen set. It gives that for diffrent subsets chooses to give the sam
 differ them have to be top ones from the non choosen and the most bottom ones from choosen what means
 giving the identity permutation as we then just cut deck into to peaces in different ways. \\
 Conclusion is that in this model both for forward and inverse riffle shuffle probability of obtaining
-an identity permutation is equal to $n/2^n$ and for any other $1/2^n$.
+an identity permutation is equal to $n/2^n$ and for any other possible $1/2^n$. \\
+We can also consider forward and inverse $a$-shuffles. An $a$-shuffle is a shuffle where decomposition
+is made in $a$-decks, so standard shuffle is a $2$-shuffle. In the forward case  In inverse case we are putting cards with
+probability $1/a$ on one of $a$ places and then putting piles together. Analisis of $a$ shuffels can be done
+with Hopf algebras.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -152,17 +156,13 @@ an identity permutation is equal to $n/2^n$ and for any other $1/2^n$.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \section{Hopf algebras}
-%
-Now I will give a full definition of a Hopf algebra. Although it is quite long
-I decided to put it in a consistent fragment, due to belief
-that thanks to that it will be a better reference. \\
-This section can be treated just as a refference if reader will feel lost in sections \ref{three} and
-\ref{four}. If the reader feels lost in this section, it is recommended to read it in parallel to the section \ref{three}
-where examples are provided or treat it just as a reference when formal definition will be needed.
-Another reason of arranging text like that (and possibility of treating this section just as a reference),
-is that for most of the time we will not be using full structure of a Hopf algebra. Nevertheless it is good
+Now I will give a full definition of a Hopf algebra.
+Reader can as well skip this section and treat it like a refference when formal definition or explanation
+will be needed. Although it is quite long I decided to put it in a consistent fragment, due to belief
+that thanks to that it will better serve that purpose.
+Another reason is that for most of the time we will not be using full structure of a Hopf algebra,
+nevertheless it is good
 to see the full shape of what we are dealing with. \\
-So now comes the full definition but we will try to explain it piece by piece. \\[8pt]
 \subsection{Preliminaries}
 \subsubsection{Notational remarks}
 \indent \textbf{Remark. }Let $K$ be a field. In the following section $k$, if not stated otherwise, will
@@ -676,6 +676,7 @@ Hopf-square in Sweedler notation looks like this:
 \begin{equation*}
 \Psi^{[n]}(a) = \sum a_1 \cdot \ldots \cdot a_n.
 \end{equation*}
+For $\Psi^{[2]}$ we will sometimes simply write $\Psi$.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -834,7 +835,7 @@ It is a bialebra, because:
 a
 \end{align*}
 \todo{BAM! DO ROBOTY!}
-\subsection{Graded, connected Hopf algebra of non-commuting variables}
+\subsection{Graded, connected Hopf algebra of non-commuting variables}\label{gcha}
 \subsubsection{Free associative Hopf algebra}
 This is the main example of our interest. It will be used to describe inverse and forward riffle shuffling.\\
 Let K be a field with characteristic 0.
@@ -1108,7 +1109,7 @@ with some features gives a Markov chain with the basis of transformed vector spa
 $b \in \mathcal{B}$ let $b^*$
 denote a linear functional such that $b^*(b) = 1$ and
 $\forall_{b' \in \mathcal{B}\setminus \{b\}}\ b^*(b') = 0$.
-\begin{theorem}
+\begin{theorem}\label{theorem}
 Let $V$ be a linear space over field $K$ that is $\mathbb{R}$ or $\mathbb{Q}$,
  with basis $\mathcal{B}$.
 Let $\psi : V \to V$ be a linear operation such that for
@@ -1189,19 +1190,35 @@ Hopf algebra of non-cocommutative variables (from 2.7.3) is a model for forward 
 It goes as follows.
 Let $\mathcal{X}$ be the finite set of all possible types of cards. Let $\nu$ be a tuple of
 elements from $\mathcal{X}$ that represents our actual deck of cards (the same type of card can occur
-multiple times, the order in $\nu$ should be the order in which we think cards are ordered). Now we can
-take a look at a subspace $\mathcal{H}_\nu$ of vector space $\mathcal{H}$ built over $\mathcal{X}$ as
-described in 2.6.2. $\mathcal{H}_\nu$ will be the subspaces spanned by words that for every type of cards
-consists of exactly the same number of cards of that type as $\nu$. So the basis of $\mathcal{H}_\nu$ will
-be the set
-of words for every arrangement of our deck of cards. Let's name this basis $\mathcal{B}_\nu$. Note that then
-$\mathcal{H}_\nu$ is finite dimensional. As was previously described, there are two ways of equipping
-$\mathcal{H}$ with Hopf algebra structure. One will correspond to inverse version of riffle shuffle and
-another one to the forward one. With given arrangement of cards $s \in \mathcal{B}_\nu$ applying $m\Delta$ to
-$s$ yields the sum of possible outcomes after one inverse riffle shuffle while applying $\Delta^*m^*$
-yields the same for forward riffle shuffle. In both cases coefficients (after normalization) are
-probabilities of corresponding outcomes. \\[4pt]
+multiple times, the order in $\nu$ should be the order in which we think cards are ordered), the hight of
+the deck is then $|\nu|$. Now we can take a look at a subspace $\mathcal{H}_\nu$ of vector space
+$\mathcal{H}$ built over $\mathcal{X}$ as described in 2.6.2. $\mathcal{H}_\nu$ will be the subspaces
+spanned by words that for every type of cards consists of exactly the same number of cards of that type as
+$\nu$. So the basis of $\mathcal{H}_\nu$ will be the set of words for every arrangement of our deck of cards.
+Let's name this basis $\mathcal{B}_\nu$. Note that then $\mathcal{H}_\nu$ is finite dimensional.
+As was previously described, there are two ways of equipping $\mathcal{H}$ with Hopf algebra structure.
+One will correspond to inverse version of riffle shuffle and another one to the forward one. With given
+arrangement of cards $s \in \mathcal{B}_\nu$ applying $\Psi = m\Delta$ to $s$ yields the sum of possible outcomes
+after one inverse riffle shuffle while applying $\Psi^*\Delta^*m^*$ yields the same for forward riffle shuffle.
+In both cases coefficients (after normalization) are probabilities of corresponding outcomes. \\[4pt]
 
+As stated in section \ref{gcha} for all $\nu \in \mathcal{X}^*$ for all $b \in \mathcal{B}_\nu$,
+we have that coefficients standing by elements of $\mathcal{B}_\nu$
+in $\Psi(b)$ written in $\mathcal{B}_\nu$ sums up to $2^{|\nu|}$ so is constant in any particular
+$\mathcal{H}_\nu$. What is more, for all $b$ the coefficient standing by $b$ in $\Psi(b)$ is equal to
+$|\nu|$ and every other non-zero coefficient in $\Psi(b)$ written in $\mathcal{B}$ is equal to $1$.
+The same stands for $\Psi^*$. Because of that, for all $\nu \in \mathcal{X}^*$ we have that
+$\mathcal{H}_\nu$ with $\Psi$ and $\mathcal{H}_\nu$ with $\Psi^*$ are satisfying assumptions of
+theorem \ref{theorem}, so they sets Markov chains on $\mathcal{B}_\nu$. As stated in the theorem,
+for all $b \in \mathcal{B}_\nu$ the probability of going from $b$ to $b$ will be in this case equal to
+$|\nu|/2^{|\nu|})$ and probability to any other accessible $b' \in \mathcal{B}_\nu$ will be $1/2^\nu$. \\
+Analisis of $\mathcal{H}$ and $\mathcal{H}^*$ (see \ref{ghca}) gives that accessible states are exactly
+the same as in, accordingly inverse and forward riffle shuffle. It is done once again below in slightly
+different way. So generated Markov chains are exactly the one for inverse and forward riffle shuffle.
+Futher analisis gives that for any $a \in \mathbb{N}$ coefficients of $\Psi^{[a]}(b)$ and ${\Psi^*}^{[a]}(b)$
+matches with transition probabilities from $b$ to corresponding outcomes. The sum of coefficients also
+depends only on $|\nu|$ for a choosen $\nu$. So $\Psi^{[a]}$ and ${\Psi^*}^{[a]}$ set Markov chains as well
+and that chains are the chains of inverse $a$-shuffling and froward $a$-shuffling respectively.
 \todo{How does it set?}
 
 Let's take a non-commuting variables algebra from its example. Let's take $\mathcal{H}_\nu$ for some

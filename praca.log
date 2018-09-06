@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.8.31)  6 SEP 2018 00:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.8.31)  6 SEP 2018 13:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -754,120 +754,128 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--105
  []
 
 [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 156--165
+Underfull \hbox (badness 10000) in paragraph at lines 158--165
 
  []
 
 [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17]
-Overfull \hbox (5.4657pt too wide) in paragraph at lines 710--721
+Overfull \hbox (5.4657pt too wide) in paragraph at lines 711--722
 \OT4/cmr/m/n/12 bra and coal-ge-bra struc-ture. We can de-fine al-ge-bra struc-ture on $\OML/plm/m/it/12 Hom\OT4/cmr/m/n/12 (\OMS/plsy/m/n/12 H[]\OML/plm/m/it/12 ; \OMS/plsy/m/n/12 H[]\OT4/cmr/m/n/12 )$
  []
 
 
-Overfull \hbox (8.46678pt too wide) in paragraph at lines 710--721
+Overfull \hbox (8.46678pt too wide) in paragraph at lines 711--722
 \OT4/cmr/m/n/12 as above. Note that the iden-tity map $\OML/plm/m/it/12 I \OT4/cmr/m/n/12 : \OMS/plsy/m/n/12 H ! H$ \OT4/cmr/m/n/12 is an el-e-ment of $\OML/plm/m/it/12 Hom\OT4/cmr/m/n/12 (\OMS/plsy/m/n/12 H[]\OML/plm/m/it/12 ; \OMS/plsy/m/n/12 H[]\OT4/cmr/m/n/12 )$
  []
 
 [18] [19] [20]
-Overfull \hbox (26.52838pt too wide) in paragraph at lines 824--832
+Overfull \hbox (26.52838pt too wide) in paragraph at lines 825--833
 \OT4/cmr/m/n/12 Because $\OML/plm/m/it/12 X[]; [] ; X[]$ \OT4/cmr/m/n/12 are lin-early in-de-pen-dent we have that [].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 834--836
+Underfull \hbox (badness 10000) in paragraph at lines 835--837
 
  []
 
 
-Overfull \hbox (1.97455pt too wide) in paragraph at lines 836--836
+Overfull \hbox (1.97455pt too wide) in paragraph at lines 837--837
 []\OT4/cmr/bx/n/14.4 Graded, con-nected Hopf al-ge-bra of non-commuting
  []
 
 [21] [22] [23] [24] [25]
-Overfull \hbox (3.87083pt too wide) in paragraph at lines 1065--1077
+Overfull \hbox (3.87083pt too wide) in paragraph at lines 1066--1078
 []\OT4/cmr/m/n/12 Let $\OMS/plsy/m/n/12 H[]$ \OT4/cmr/m/n/12 de-note $[] \OMS/plsy/m/n/12 H[]$\OT4/cmr/m/n/12 . We de-fine mul-ti-pli-ca-tion []
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 1085--1101
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1102
 
  []
 
 
-Overfull \hbox (34.87556pt too wide) in paragraph at lines 1145--1145
+Overfull \hbox (34.87556pt too wide) in paragraph at lines 1146--1146
 [] 
  []
 
 [27]
-Overfull \hbox (96.75122pt too wide) in paragraph at lines 1160--1160
+Overfull \hbox (96.75122pt too wide) in paragraph at lines 1161--1161
 [] 
  []
 
 
-Overfull \hbox (4.5848pt too wide) in paragraph at lines 1179--1179
+Overfull \hbox (4.5848pt too wide) in paragraph at lines 1180--1180
 [] 
  []
 
 [28]
-Overfull \hbox (0.73924pt too wide) in paragraph at lines 1179--1183
+Overfull \hbox (0.73924pt too wide) in paragraph at lines 1180--1184
 \OT4/cmr/m/n/12 and the chain in-deed has claimed tran-si-tion prob-a-bil-ity, be-cause for all $\OML/plm/m/it/12 b[]; b[] \OMS/plsy/m/n/12 2
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1185--1203
+Underfull \hbox (badness 10000) in paragraph at lines 1186--1203
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1204--1205
+
+LaTeX Warning: Reference `ghca' on page 30 undefined on input line 1214.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1204--1222
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1206--1211
+Underfull \hbox (badness 10000) in paragraph at lines 1223--1228
 
- []
-
-
-Overfull \hbox (43.3503pt too wide) in paragraph at lines 1264--1264
-[] 
  []
 
 [30]
-Overfull \hbox (75.34737pt too wide) in paragraph at lines 1301--1301
+Overfull \hbox (43.3503pt too wide) in paragraph at lines 1281--1281
+[] 
+ []
+
+
+Overfull \hbox (75.34737pt too wide) in paragraph at lines 1318--1318
 [] 
  []
 
 [31] [32]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 1350.
+(hyperref)                removing `\@ifnextchar' on input line 1367.
 
 (/home/bartosz/Studia/Praca_licencjacka/praca.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1355.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1372.
  [33]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1355.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1372.
  (/home/bartosz/Studia/Praca_licencjacka/praca.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1355.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1355.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1372.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1372.
 Package rerunfilecheck Info: File `praca.out' has not changed.
 (rerunfilecheck)             Checksum: A1AA956F9484F1E36B9DE3837B29902A;1688.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1355.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1372.
  ) 
 Here is how much of TeX's memory you used:
- 7977 strings out of 494869
- 114164 string characters out of 6179141
- 216179 words of memory out of 5000000
- 11059 multiletter control sequences out of 15000+600000
+ 7980 strings out of 494869
+ 114185 string characters out of 6179141
+ 217291 words of memory out of 5000000
+ 11062 multiletter control sequences out of 15000+600000
  19803 words of font info for 56 fonts, out of 8000000 for 9000
  56 hyphenation exceptions out of 8191
  42i,22n,32p,257b,453s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plme.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plit.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /pl/plr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plti12.pfb>
-Output written on /home/bartosz/Studia/Praca_licencjacka/praca.pdf (32 pages, 232496 bytes).
+Output written on /home/bartosz/Studia/Praca_licencjacka/praca.pdf (32 pages, 233410 bytes).
 PDF statistics:
- 413 PDF objects out of 1000 (max. 8388607)
- 358 compressed objects within 4 object streams
+ 414 PDF objects out of 1000 (max. 8388607)
+ 359 compressed objects within 4 object streams
  96 named destinations out of 1000 (max. 500000)
  193 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,15 +1,15 @@
 # Fdb version 3
-["bibtex praca"] 1536187160 "praca.aux" "praca.bbl" "praca" 1536187186
+["bibtex praca"] 1536233991 "praca.aux" "praca.bbl" "praca" 1536233992
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
   "my_bibliography.bib" 1535132985 1670 51a8f4191e6314bd1d9f137ed82c3b38 ""
-  "praca.aux" 1536187186 3966 389496056302592afed2b3c86c88ffc1 ""
+  "praca.aux" 1536233992 4113 ec7251b8d4b8a6da888013f382449d25 ""
   "praca.bcf" 0 -1 0 ""
   (generated)
-  "praca.bbl"
   "praca.blg"
-["pdflatex"] 1536187185 "praca.tex" "/home/bartosz/Studia/Praca_licencjacka/praca.pdf" "praca" 1536187186
+  "praca.bbl"
+["pdflatex"] 1536233991 "praca.tex" "/home/bartosz/Studia/Praca_licencjacka/praca.pdf" "praca" 1536233992
   "/etc/texmf/web2c/texmf.cnf" 1492723455 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/bartosz/Studia/Praca_licencjacka/praca.aux" 1536187186 3966 389496056302592afed2b3c86c88ffc1 ""
+  "/home/bartosz/Studia/Praca_licencjacka/praca.aux" 1536233992 4113 ec7251b8d4b8a6da888013f382449d25 ""
   "/home/bartosz/texmf/tex/latex/polski/omlplm.fd" 1494024529 1553 7e55eec7e7ffbbc85187034f06b5977a ""
   "/home/bartosz/texmf/tex/latex/polski/omsplsy.fd" 1494024529 1472 cdbddbc0209f1dca4b38ccca913f65d7 ""
   "/home/bartosz/texmf/tex/latex/polski/omxplex.fd" 1494024529 1283 a1205ac8611390c6de04f8d76756c3c4 ""
@@ -119,16 +119,16 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1488610416 31340 0f53f8665296bf8fe6c697f9505e31d8 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1535748359 133835 269d64aa98dc76c5aa0c695331094f94 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1535750571 906930 c16e2dbb3f42156fb33dc4fbc14fe8b8 ""
-  "praca.aux" 1536187186 3966 389496056302592afed2b3c86c88ffc1 ""
-  "praca.bbl" 1536187161 666 6725d21dd07ec91272f3962a739940ee "bibtex praca"
-  "praca.out" 1536187186 1688 a1aa956f9484f1e36b9de3837b29902a ""
-  "praca.tex" 1536187185 82751 316de75447d73b08d2e83d935ca910ff ""
-  "praca.toc" 1536187186 2138 5d05df915b632f7cbd62e71f73c72977 ""
+  "praca.aux" 1536233992 4113 ec7251b8d4b8a6da888013f382449d25 ""
+  "praca.bbl" 1536233991 666 6725d21dd07ec91272f3962a739940ee "bibtex praca"
+  "praca.out" 1536233992 1688 a1aa956f9484f1e36b9de3837b29902a ""
+  "praca.tex" 1536233823 84554 4db167161a0c71c1b41fdfbf89552212 ""
+  "praca.toc" 1536233992 2138 21bd61dce0a9e26b572490a0626af706 ""
   (generated)
-  "praca.aux"
-  "praca.out"
-  "praca.toc"
   "/home/bartosz/Studia/Praca_licencjacka/praca.log"
+  "praca.aux"
   "/home/bartosz/Studia/Praca_licencjacka/praca.pdf"
-  "praca.log"
   "praca.pdf"
+  "praca.toc"
+  "praca.out"
+  "praca.log"

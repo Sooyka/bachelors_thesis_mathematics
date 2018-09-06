@@ -101,6 +101,7 @@ Card shuffling can be viewed as a Markov chain on all possible arrangements of t
 in the deck with $K(x,y)$ equal to probability of going from arrangement $x$ to arrangement $y$ in one
 shuffle.
 \\ More extensive indroduction can be found in~\cite{LePeWi}. \\
+\todo{Stationary distribution, eigenbasises}
 %\textbf{\Huge BAM!}\normalsize
 \subsection{Gilbert-Shannon-Reeds model of riffle shuffle}
 Gilbert-Shannon-Reeds gave realistic model for forward and inverse riffle shuffle.
@@ -137,9 +138,10 @@ giving the identity permutation as we then just cut deck into to peaces in diffe
 Conclusion is that in this model both for forward and inverse riffle shuffle probability of obtaining
 an identity permutation is equal to $n/2^n$ and for any other possible $1/2^n$. \\
 We can also consider forward and inverse $a$-shuffles. An $a$-shuffle is a shuffle where decomposition
-is made in $a$-decks, so standard shuffle is a $2$-shuffle. In the forward case  In inverse case we are putting cards with
-probability $1/a$ on one of $a$ places and then putting piles together. Analisis of $a$ shuffels can be done
-with Hopf algebras.
+is made in $a$-decks, so standard shuffle is a $2$-shuffle. In the forward case we are spliting the deck
+into $a$ piles and then riffling them together with the same probability of every scenario.
+In inverse case we are putting cards with probability $1/a$ on one of $a$ places and then putting piles
+together. More specific analisis of $a$ shuffels can be done with Hopf algebras.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -502,8 +504,12 @@ For example, later it will come out that comultiplication is exactly the operati
 models the process of cutting the deck of cards into pieces in riffle shuffle. In examples that we will
 work with (graded, connected Hopf algebras), comultiplication will represent some kind of natural
 decomposition in the more general way. What it means in the strict sense will be presented in
-Definition 8. when we will be introducing graded bialgebras. \\
+definition \ref{bialgebras} when we will be introducing graded bialgebras. \\
 Examples. \smalltodo{}  \\[8pt]
+For a linear space of polinomials we can define comultiplication as:
+\[
+    \Delta(X^n) = \sum_{i=0}^n \binom{n}{i} X^i \otimes X^{n-i}
+\]
 The coassociativity of $\Delta$ means that $(\Delta \otimes I)\Delta = (I \otimes \Delta)\Delta$.
 In Sweedler notation it can be written as
 \begin{equation*}
@@ -527,8 +533,8 @@ Now, for all $a \in \mathcal{H}$ there will be an equality
 which can be viewed as a sum of possible decompositions of $a$ into three parts.
 In this point of view we can say that coassociativity of $\Delta$ means that $\Delta$ represents
 decomposition such that, when done twice, probabilities of possible outcomes are the same
-no matter which set of parts ($a_1$ or $a_2$) was been taken in the second iteration. It will be put more
-precise in the section 3. where we will present connection between Markov chains and Hopf algebras.
+no matter which set of parts ($a_1$ or $a_2$) was been taken in the second iteration. It can become more
+clear with an introduction of the examples that are presented in \ref{polinomials} and later. \\
 Now we will take it a step futher: \\[8pt]
 \indent Let $C$ be a coalgebra with comultiplication $\Delta$ and counit $\varepsilon$.
 We will recurrently define a sequence of maps $(\Delta^{[n]})_{n \geq 2}$, such that
@@ -753,7 +759,7 @@ and using Sweedler notation as:
 \begin{definition}
 A bialgebra having an antipode is called a \textbf{Hopf algebra}.
 \end{definition}
-\begin{definition}
+\begin{definition}\label{bialgebras}
 A \textbf{graded bialgebra} is a graded vector space
 $\mathcal{H} = \displaystyle\bigoplus^{\infty}_{i=0}\mathcal{H}_i$ with a bialgebra structure that is
 compatible with the grading.
@@ -786,14 +792,16 @@ Any graded, connected bialgebra is a Hopf algebra with antipode:
 S = \sum_{k \geq 0} (u\varepsilon - I)^{*k}.
 \end{equation*}
 \end{theorem}
-\smalltodo\\ dowód?
+\begin{proof}
+    Left to a curious reader.
+\end{proof}
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsection{Examples}
+\subsection{Examples}\label{polinomials}
 \subsubsection{Graded, connected Hopf algebra of polinomials}
 Let $P$ be a vector space of polynomials of one variable over the field $K$ with natural grading by degree.
 Note that the standard polynomial multiplication is compatible with that grading as for polynomials with
@@ -803,26 +811,27 @@ is a polynomial of degree $0$ ($1_p = X^0$).  \\
 $P$ can be enriched with coalgebra structure with comultiplication $\Delta$ such that for all
 $n \in \mathbb{N}$:
 \begin{equation*}
-\Delta(X^n) = \sum^n_{i = 0} X^i \otimes X^{n-i}.
+\Delta(X^n) = \sum^n_{i = 0} \binom{n}{i} X^i \otimes X^{n-i}.
 \end{equation*}
 it extends linearly to the rest of $P$. \\
 Counit is then $0$ for all elements with positive degree (degree $>0$). Here comes the proof: \\
 Since for all $n \in \mathcal{N}$
 \begin{align*}
-(1_P \otimes \varepsilon )\Delta(X^n) &= X^n \otimes 1_K &\mathrm{and} \\
-(1_P \otimes \varepsilon )\Delta(X^n) &= \sum^n_{i = 0} X^i \otimes \varepsilon(X^{n-i}) &\mathrm{and} \\
-\sum^n_{i = 0} X^i \otimes \varepsilon(X^{n-i}) &= X^n \otimes \varepsilon(1_P) &+
-\sum^{n-1}_{i=0} X^i \otimes \varepsilon(X^{n-i}) \\ &=
-X^n \otimes 1_K &+ \sum^{n-1}_{i=0} X^i \otimes \varepsilon(X^{n-i})
+(I \otimes \varepsilon )\Delta(X^n) &= X^n \otimes 1_K &\mathrm{and} \\
+(I \otimes \varepsilon )\Delta(X^n) &= \sum^n_{i = 0}\binom{n}{i} X^i \otimes \varepsilon(X^{n-i}) &\mathrm{and} \\
+\sum^n_{i = 0}\binom{n}{i} X^i \otimes \varepsilon(X^{n-i}) &= X^n \otimes \varepsilon(1_P) &+
+\sum^{n-1}_{i=0}\binom{n}{i} X^i \otimes \varepsilon(X^{n-i}) \\ &=
+X^n \otimes 1_K &+ \sum^{n-1}_{i=0}\binom{n}{i} X^i \otimes \varepsilon(X^{n-i})
 \end{align*}
 we have that for all $n \in \mathbb{N}$
 \begin{equation*}
-\sum^{n-1}_{i=0} X^i \otimes \varepsilon(X^{n-i}) = 0
+\sum^{n-1}_{i=0}\binom{n}{i} X^i \otimes \varepsilon(X^{n-i}) = 0
 \end{equation*}
 but we also have that
 \begin{equation*}
-\sum^{n-1}_{i=0} X^i \otimes \varepsilon(X^{n-i}) = \sum^{n-1}_{i=0} \varepsilon(X^{n-i})X^i \otimes 1_K =
-\left( \sum^{n-1}_{i=0} \varepsilon(X^{n-i})X^i \right)\otimes 1_K
+\sum^{n-1}_{i=0}\binom{n}{i} X^i \otimes \varepsilon(X^{n-i}) = \sum^{n-1}_{i=0}\binom{n}{i}
+ \varepsilon(X^{n-i})X^i \otimes 1_K =
+\left( \sum^{n-1}_{i=0}\binom{n}{i} \varepsilon(X^{n-i})X^i \right)\otimes 1_K
 \end{equation*}
 Because $X_0, \dots, X_{n-1}$ are linearly independent we have that \text{$\forall_{0 \leq i \leq n-1}\
 \varepsilon(X^{n - i}) = 0$}. Keeping in mind that $n$ was arbitrary, we have that for all $n \geq 1$
@@ -831,10 +840,66 @@ positive degree we have that $\varepsilon(p) = 0$. \\
 We can now check that $P$ with that structure is a graded, connected Hopf algebra that is both commutative
 and cocommutative. \\
 It is a bialebra, because:
+\begin{enumerate}
+\item for all $n, m \in \mathbb{N}$
 \begin{align*}
-a
+\Delta m(X^n \otimes X^m) = \Delta(X^{n+m}) = \sum_{k=0}^{n+m}\binom{n+m}{k}X^i \otimes X^{n+m - k}
 \end{align*}
-\todo{BAM! DO ROBOTY!}
+and on the other hand:
+\begin{gather*}
+    (m\otimes m)(I \otimes T \otimes I)(\Delta \otimes \Delta) (X^n \otimes X^m) = \\
+    (m \otimes m)(I \otimes T \otimes I)\left(\left(\sum_{i=0}^n\binom{n}{i}X^i \otimes X^{n-i}\right)
+    \otimes\left(\sum_{j=0}^m\binom{m}{j}X^j \otimes X^{m-i}\right)\right) = \\
+    (m \otimes m)(I \otimes T \otimes I)\left(\sum_{\substack{0\leq i \leq n \\ 0 \leq j \leq m}}
+    \binom{n}{i}\binom{m}{j}X^i\otimes X^{n-i} \otimes X^j \otimes X^{m-j}\right) = \\
+    (m \otimes m)\left(\sum_{\substack{0 \leq i \leq n \\ 0 \leq j \leq m}}
+    \binom{n}{i}\binom{m}{j}X^i \otimes X^j \otimes X^{n-i} \otimes X^{m-j}\right) = \\
+    \sum_{\substack{0 \leq i \leq n \\ 0 \leq j \leq m}}\binom{n}{i}\binom{m}{j}X^{i+j}\otimes X^{n+m-i-j}
+    = \\
+    \sum_{k=0}^{n+m}\sum_{i=0}^k \binom{n}{i}\binom{m}{k-i}X^k\otimes X^{n+m-k} = \\
+    \sum_{k=0}^{n+m}\binom{n+m}{k}X^k\otimes X^{n+m-k}
+\end{gather*}
+so $\Delta m = (m \otimes m)(I \otimes T \otimes I)(\Delta \otimes \Delta)$.
+\item for all $n, m \in \mathbb{N}$ that $n + m \geq 1$ (w.l.o.g. $m \geq 1$)
+\begin{gather*}
+    \varepsilon m(X^n \otimes X^m) = \varepsilon (X^{n+m}) = 0 \mathrm{\ and}\\
+    {^Km}(\varepsilon \otimes \varepsilon)(X^n \otimes X^m) = {^Km}(\varepsilon(X^n)\otimes 0) = 0
+\end{gather*}
+and for $n = 0$, $m = 0$
+\begin{gather*}
+    \varepsilon m(X^0 \otimes X^0) = \varepsilon (1_P \otimes 1_P) = 1_K \mathrm{\ and}\\
+    {^Km}(\varepsilon \otimes \varepsilon)(X^0 \otimes X^0) =
+    {^Km}(\varepsilon \otimes \varepsilon)(1_P \otimes 1_P) = {^Km}(1_K \otimes 1_K) = 1_K,
+\end{gather*}
+so $\varepsilon m = ^Km(\varepsilon \otimes \varepsilon)$.
+\item for all $k \in K$
+\begin{gather*}
+    \Delta u(k) = \Delta(k1_P) =
+    \Delta(kX^0) = k\Delta(X_0) = k(X^0 \otimes X^0) \mathrm{\ and} \\
+    (u\otimes u){^K\Delta}(k) = (u\otimes u) (1_K \otimes k) = k(u \otimes u)(1_K \otimes 1_K) =
+    k(1_P \otimes 1_P) = k(X^0 \otimes X^0),
+\end{gather*}
+so $\Delta u = (u \otimes u)^K\Delta$.
+\item for all $k \in K$
+\begin{gather*}
+    \varepsilon u(k) = k\varepsilon (k1_P) = \varepsilon (kX^0) = k\varepsilon (X^0) = k1_K = k.
+\end{gather*}
+so $\varepsilon u = I$
+\end{enumerate}
+It is commutative, because for all $n, m \in \mathbb{N}$
+\begin{gather*}
+    m(X^n \otimes X^m) = X^{n+m} = X^{m+n} = m(X^m \otimes X^n).
+\end{gather*}
+and cocommutative, because for all $n \in \mathbb{N}$
+\begin{gather*}
+    \Delta(X^n) = \sum_{i=0}^n X^i \otimes X^{n - i} = \sum_{i=0} X^{n-i} \otimes X^i
+\end{gather*}
+It is graded as $P = \bigoplus_{i=0}^\infty \mathrm{Lin}(X_0, \dots, X_i)$ \\
+and connected as for all $n \in \mathbb{N}$
+\begin{gather*}
+    m(X^n \otimes X^0) = X^{n+0} = X^n,
+\end{gather*}
+so $X^0 =1_P$ ($X^0$ is an identity element of $m$).
 \subsection{Graded, connected Hopf algebra of non-commuting variables}\label{gcha}
 \subsubsection{Free associative Hopf algebra}
 This is the main example of our interest. It will be used to describe inverse and forward riffle shuffling.\\
@@ -905,6 +970,11 @@ where $S$ is a multiset, because some of the $i_0, \dots, i_k$ can be the same. 
 randomly dividing a stack of cards into two stacks by putting each card with probability $\frac{1}{2}$ to
 the left or to the right and $m$ will be an operation of deterministic putting the left stack on the top
 of the right stack. $\Psi^{[2]}$ will be then application of one iteration of inverse riffle shuffle.
+In the simillar way for $s \in \mathcal{X}^*$:
+\begin{equation}
+    \Psi^{[a]}(s) = m^{[a]}\Delta^{[a]}(s) =
+    \sum_{\substack{s_1, \dots, s_a\prec s\\ \mathrm{pairwise\ disjoint}}}s_1\dots s_a
+\end{equation}
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -985,13 +1055,11 @@ m[\mathcal{H}_\nu \otimes \mathcal{H}_\upsilon] &\subseteq \mathcal{H}_{\nu\upsi
 \Delta[\mathcal{H}_\nu] &\subseteq \bigoplus_{\substack{s_1 \prec \nu \\ s_2 = \nu/ s_1}}
 \mathcal{H}_{s_1} \otimes \mathcal{H}_{s_2}.
 \end{align*}
-We can observe that
-\todo{pokrywa całość}
-This will be the grading we will be using for our probabilistic interpretation. It i
+This will be the grading we will be using for our probabilistic interpretation.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-\subsubsection{Alternative structure \smalltodo{a}}
+\subsubsection{Alternative structure}
 \indent Now we will describe an alternative graded and connected Hopf algebra structure on $\mathcal{H}$ - a
 vector space spanned
 by finite words over the fixed alphabet $\mathcal{X}$. It will describe the structure of forward riffle
@@ -1063,6 +1131,11 @@ is still an identity element with respect to multiplication. Commutativity is cl
 In the shuffling interpretation $\Delta^*$ will be the operation of dividing a stack of cards at some random
 point and putting the top pile on the left creating two stacks. $m^*$ will be the operation of combining two
 stacks together with the same probability of every possible interlace of two stacks.
+The ${\Psi^*}^{[a]}$ looks like:
+\begin{equation*}
+{\Psi^*}^{[a]}(s)={\Delta^*}^{[a]} {m^*}^{[a]}(s) =
+\end{equation*}
+\todo{write}
 \subsubsection{Graded dual}
 Now we will see that there is another method of introducing that structure.
 The structure of $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$ (where for all $i \in \mathbb{N}$
@@ -1075,17 +1148,53 @@ We define multiplication
 \text{$\Delta^* : \mathcal{H}^{\mathrm{gd}*} \otimes \gdd{\mathcal{H}} \to \gdd{\mathcal{H}}$} and
 comultiplication
 \text{$m^* : \gdd{\mathcal{H}} \to \gdd{\mathcal{H}} \otimes \gdd{\mathcal{H}}$} as
-(for all $h_1^*, h_2^*, h^* \in \gdd{\mathcal{H}}$):
+(for all $a^*, b^*, \in \gdd{\mathcal{H}}$):
 \begin{align*}
-\Delta^*(h_1^* \otimes h_2^*) &= (h_1^* \otimes h_2^*)\Delta, \\
-m^*(h^*) &= h^*m.
+\Delta^*(a^* \otimes b^*) &= (a^* \otimes b^*)\Delta, \\
+m^*(a^*) &= a^*m.
 \end{align*}
-
-
-
-
-\todo{COŚTAM}
-%/////////////////////////////////////////////////////////////////////////////////////////////////////////
+\indent\textbf{Reminder. } For a vector space $V$ with basis $\mathcal{B}$,
+$b \in \mathcal{B}$ let $b^*$
+denote a linear functional such that $b^*(b) = 1$ and
+$\forall_{b' \in \mathcal{B}\setminus \{b\}}\ b^*(b') = 0$. \\[8pt]
+Now we will show that such defined multiplication and comultiplication are the same as defined previously
+in the sens that $\gdd{\mathcal{H}} \simeq \mathcal{H}^*$ as a Hopf algebras with an isomorphism $\varphi$
+that for all $a \in \mathcal{X}^*$ maps $a \mapsto a^*$. \\
+For all $a, b \in \mathcal{X}^*$:
+\begin{gather*}
+\Delta^*(a^* \otimes b^*)(s) = (a^* \otimes b^*)\Delta(s) =
+(a^* \otimes b^*)\left(\sum_{\substack{s_1 \prec s \\ s_2 = s / s_1}} s_1 \otimes s_2 \right)=\\
+\sum_{\substack{s_1 \prec s \\ s_2 = s / s_1}} a^*(s_1) \otimes b^*(s_2)
+\end{gather*}
+which is equal to one on those $s$ for which holds $a \prec s$ and $b = s/a$, and zero on all other elements
+of $s$, so indeed
+\[
+\Delta^*(a^* \otimes b^*) =
+\sum\{s^* : a \prec s \mathrm{\ and\ } b = s/a\}.
+\]
+So we have:
+\[
+\Delta^*(\varphi[a]\otimes \varphi[b]) = \Delta^*(a^* \otimes b^*) =
+\sum\{s^* : a \prec s \mathrm{\ and\ } b = s/a\} = \varphi\left[\Delta^*(a \otimes b)\right].
+\]
+As well:
+\begin{equation*}
+    m^*(a^*)(s_1 \otimes s_2) = a^*m(s_1 \otimes s_2) =
+    a^*(s_1s_2)
+\end{equation*}
+which is one only for $s_1$, $s_2$ such that $s_1s_2 = a$, so indeed
+\[
+m^*(a^*) = \sum\{ s_1^* \otimes s_2^* : a=s_1s_2 \}.
+\]
+and we have:
+\[
+m^*(\varphi[a]) = m^*(a^*) = \sum\{ s_1^* \otimes s_2^* : a=s_1s_2 \} = \varphi[m^*(a)].
+\]
+That gives us, that for all $\nu \in \mathcal{X}^*$, for all $a \in \mathbb{N}$ transformations $\Psi$
+and $\Psi^*$ on $\mathcal{H}_\nu$ are conjugate (and that is the
+reason why we are denoting them with "$^*$").
+\todo{matrixes?}
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1105,10 +1214,6 @@ m^*(h^*) &= h^*m.
 probabilities. Thus with a Markov chain one can associate a certain linear transformation given by that
 matrix. The following theorem states dependency in opposite direction - that given linear transfomation
 with some features gives a Markov chain with the basis of transformed vector space as a state space. \\[8pt]
-\indent\textbf{Reminder. } For a vector space $V$ with basis $\mathcal{B}$,
-$b \in \mathcal{B}$ let $b^*$
-denote a linear functional such that $b^*(b) = 1$ and
-$\forall_{b' \in \mathcal{B}\setminus \{b\}}\ b^*(b') = 0$.
 \begin{theorem}\label{theorem}
 Let $V$ be a linear space over field $K$ that is $\mathbb{R}$ or $\mathbb{Q}$,
  with basis $\mathcal{B}$.
@@ -1153,9 +1258,9 @@ Let $\ndotsm{b}{0}{m} \in \mathbb{B}$ be a sequence such that
 \end{equation*}
 We have:
 \begin{gather*}
-    \mathbb{P}(X_m = b_m \mid X_0 = b_0, \dots, X_{m-1} = b_{m-1}) =
+    \mathbb{P}(X_m = b_m \mid X_0 = b_0, \dots, X_{m-1} = b_{m-1}) = \\[16pt]
     \frac{\mathbb{P}(X_0 = b_0, X_1 = b_1, \dots, X_{m-1}
-    = b_{m-1}, X_m = b_m)}{\mathbb{P}(X_0 = b_0, \dots, X_{m-1} = b_{m-1})} = \\
+    = b_{m-1}, X_m = b_m)}{\mathbb{P}(X_0 = b_0, \dots, X_{m-1} = b_{m-1})} = \\[16pt]
     \frac{\frac{b_0^*\psi(x_0)}{s_0}\displaystyle\prod_{i = 0}^{m-1}\frac{b_{i+1}^*\psi(b_i)}{s}}
     {\frac{b_0^*\psi(x_0)}{s_0}\displaystyle\prod_{i=0}^{m-2}\frac{b_{i+1}^*\psi(b_i)}{s}} =
     \frac{b_m^*\psi(b_{m-1})}{s}.
@@ -1212,21 +1317,24 @@ $\mathcal{H}_\nu$ with $\Psi$ and $\mathcal{H}_\nu$ with $\Psi^*$ are satisfying
 theorem \ref{theorem}, so they sets Markov chains on $\mathcal{B}_\nu$. As stated in the theorem,
 for all $b \in \mathcal{B}_\nu$ the probability of going from $b$ to $b$ will be in this case equal to
 $|\nu|/2^{|\nu|})$ and probability to any other accessible $b' \in \mathcal{B}_\nu$ will be $1/2^\nu$. \\
-Analisis of $\mathcal{H}$ and $\mathcal{H}^*$ (see \ref{ghca}) gives that accessible states are exactly
-the same as in, accordingly inverse and forward riffle shuffle. It is done once again below in slightly
-different way. So generated Markov chains are exactly the one for inverse and forward riffle shuffle.
+Analisis of $\mathcal{H}$ and $\mathcal{H}^*$ (see \ref{gcha}) gives that accessible states are exactly
+the same as in, accordingly inverse and forward riffle shuffle. So generated Markov chains are exactly
+the one for inverse and forward riffle shuffle.
 Futher analisis gives that for any $a \in \mathbb{N}$ coefficients of $\Psi^{[a]}(b)$ and ${\Psi^*}^{[a]}(b)$
 matches with transition probabilities from $b$ to corresponding outcomes. The sum of coefficients also
 depends only on $|\nu|$ for a choosen $\nu$. So $\Psi^{[a]}$ and ${\Psi^*}^{[a]}$ set Markov chains as well
-and that chains are the chains of inverse $a$-shuffling and froward $a$-shuffling respectively.
-\todo{How does it set?}
-
-Let's take a non-commuting variables algebra from its example. Let's take $\mathcal{H}_\nu$ for some
-$\nu \in \mathcal{X}^*$. Then $\Psi^{[2]}$ sets the Markov chain of inverse riffle shuffle the deck of cards
-containing cards labeled by $x$s appearing in $\nu$. Chains state space is then the basis of
-$\mathcal{H}_\nu$. Let's call it $\mathcal{B}_\nu$
-Chains transition matrix is equal to transition matrix of $\Psi^{[2]}$ written in $\mathcal{B}_\nu$.  \\
-
+and that chains are the chains of inverse $a$-shuffling and forward $a$-shuffling respectively.
+\\
+As for all $\nu$ transformation $\Psi$ and $\Psi^*$ on $\mathcal{H}_\nu$ are conjugated to each other
+it gives us, that their matrices are transpositions of each other, so matrices of corresponding chains are
+transpositions of each other, so indeed forward and backward riffle shuffling is one method of shuffling
+once applied forward and once backward in the sense that (for $(F_0, F_1, \dots)$ for forward and
+$(I_0, I_1, \dots)$ for
+inverse rifffle shuffling):
+\begin{equation*}
+\mathbb{P}(F_{n+1} = s_2 \mid F_n = s_1) = \mathbb{P}(I_{n+1} = s_1 \mid I_n = s_2).
+\end{equation*}
+\todo{theorem of the above, not so powerfull}
 
 
 

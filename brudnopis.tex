@@ -14,10 +14,14 @@
 
 \newtheorem{observation}{Observation}
 \newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
 \newcommand{\gdd}[1]{#1^{\mathrm{gd}*}}
+\newcommand{\todo}[1]{\hfill \break \textbf{\Huge TO DO: #1 \hfill \break}\normalsize}
 \newcommand{\smalltodo}[1]{\textbf{\ To do}}
 \newcommand{\onedotsn}[1]{{#1}_1, \dots, {#1}_n}
 \newcommand{\ndotsm}[3]{{#1}_{#2}, \dots, {#1}_{#3}}
+\newcommand{\SimeqSym}{{\simeq_\mathrm{sym}}}
 \title{Explanation of connection between Hopf algebras and Markov chains}
 \author{Bartosz Sójka}
 \date{May 2018}
@@ -658,8 +662,7 @@ coordinaate). \\
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-\\ Ta- daaaam! \\[4pt]
+ Ta- daaaam! \\[4pt]
 But where are that Markov chain? Where are these "subspaces preserved by $\Psi$"?
 
 Let us denote $\mathcal{H}$ as a dual to $\mathcal{H}$ what we want to do is to see how induced
@@ -857,5 +860,20 @@ $a$ subsets, each configuration of them with probability $1/a^n$. Similar analis
 gives that there is a probability $n^{a-1}/a^n$ for obtaining an identity permutation and a
 probability $1/a^n$ for obtaining any other possible. \\
 For forward case
+
+\todo{How does it set?}
+
+Let's take a non-commuting variables algebra from its example. Let's take $\mathcal{H}_\nu$ for some
+$\nu \in \mathcal{X}^*$. Then $\Psi^{[2]}$ sets the Markov chain of inverse riffle shuffle the deck of cards
+containing cards labeled by $x$s appearing in $\nu$. Chains state space is then the basis of
+$\mathcal{H}_\nu$. Let's call it $\mathcal{B}_\nu$
+Chains transition matrix is equal to transition matrix of $\Psi^{[2]}$ written in $\mathcal{B}_\nu$.  \\
+
+It is grading with smallest components preserved by $\Psi$.
+
+It will be put more
+precise in the section 3. where we will present connection between Markov chains and Hopf algebras.
+
+$\sum\!\!\!\!\!\int$, $n\!\!\!h$
 
 \end{document}

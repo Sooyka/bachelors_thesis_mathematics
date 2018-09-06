@@ -157,9 +157,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 OUTPUT /home/bartosz/Studia/Praca_licencjacka/praca.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/pl/plr10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/pl/plbx10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/pl/plbxti10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/pl/plbxti10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/pl/plbx12.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/pl/plbxti10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/pl/plbxti10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/pl/plbx8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/pl/plbx6.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/pl/plmib10.tfm

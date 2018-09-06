@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.8.31)  4 SEP 2018 17:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.8.31)  6 SEP 2018 14:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -607,25 +607,27 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \c@observation=\count114
 \c@definition=\count115
+\c@theorem=\count116
+\c@lemma=\count117
  (/home/bartosz/Studia/Praca_licencjacka/brudnopis.aux)
 \openout1 = `brudnopis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
  (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
  (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
@@ -638,19 +640,19 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 Package graphics Info: Driver file: pdftex.def on input line 99.
  (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
-\Gread@gobject=\count116
+\Gread@gobject=\count118
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
+\scratchcounter=\count119
 \scratchdimen=\dimen130
 \scratchbox=\box28
-\nofMPsegments=\count118
-\nofMParguments=\count119
+\nofMPsegments=\count120
+\nofMParguments=\count121
 \everyMPshowfont=\toks28
-\MPscratchCnt=\count120
+\MPscratchCnt=\count122
 \MPscratchDim=\dimen131
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
+\MPnumerator=\count123
+\makeMPintoPDFobject=\count124
 \everyMPtoPDFconversion=\toks29
 ))) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -668,195 +670,302 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 \Gin@req@width=\dimen133
 )
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 25.
+Package hyperref Info: Link coloring OFF on input line 29.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count123
+\c@section@level=\count125
 )
-LaTeX Info: Redefining \ref on input line 25.
-LaTeX Info: Redefining \pageref on input line 25.
-LaTeX Info: Redefining \nameref on input line 25.
+LaTeX Info: Redefining \ref on input line 29.
+LaTeX Info: Redefining \pageref on input line 29.
+LaTeX Info: Redefining \nameref on input line 29.
  (/home/bartosz/Studia/Praca_licencjacka/brudnopis.out) (/home/bartosz/Studia/Praca_licencjacka/brudnopis.out)
 \@outlinefile=\write3
 \openout3 = `brudnopis.out'.
 
-LaTeX Font Info:    Try loading font information for OML+plm on input line 26.
+LaTeX Font Info:    Try loading font information for OML+plm on input line 30.
  (/home/bartosz/texmf/tex/latex/polski/omlplm.fd
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMS+plsy on input line 26.
+LaTeX Font Info:    Try loading font information for OMS+plsy on input line 30.
  (/home/bartosz/texmf/tex/latex/polski/omsplsy.fd
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMX+plex on input line 26.
+LaTeX Font Info:    Try loading font information for OMX+plex on input line 30.
  (/home/bartosz/texmf/tex/latex/polski/omxplex.fd
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <10> on input line 26.
+(Font)              <10> on input line 30.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <7> on input line 26.
+(Font)              <7> on input line 30.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <5> on input line 26.
-LaTeX Font Info:    Try loading font information for U+msa on input line 26.
+(Font)              <5> on input line 30.
+LaTeX Font Info:    Try loading font information for U+msa on input line 30.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 26.
+LaTeX Font Info:    Try loading font information for U+msb on input line 30.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (16.354pt too wide) in paragraph at lines 37--37
+Overfull \hbox (16.354pt too wide) in paragraph at lines 41--41
 [] 
  []
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 99--102
+Underfull \hbox (badness 10000) in paragraph at lines 103--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
 
-Overfull \hbox (16.354pt too wide) in paragraph at lines 131--131
+Overfull \hbox (16.354pt too wide) in paragraph at lines 135--135
 [] 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
+
+ []
+
 [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 245--247
+Underfull \hbox (badness 10000) in paragraph at lines 249--251
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--251
+Underfull \hbox (badness 10000) in paragraph at lines 252--255
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--266
+Underfull \hbox (badness 10000) in paragraph at lines 265--270
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--271
+Underfull \hbox (badness 10000) in paragraph at lines 272--275
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 304--308
+Underfull \hbox (badness 10000) in paragraph at lines 308--312
 
  []
 
 
-LaTeX Warning: Citation `Diaconis2014' on page 6 undefined on input line 349.
+LaTeX Warning: Citation `Diaconis2014' on page 6 undefined on input line 353.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--350
+Underfull \hbox (badness 10000) in paragraph at lines 349--354
 
  []
 
 [6]
-Overfull \hbox (23.52057pt too wide) in paragraph at lines 366--366
+Overfull \hbox (23.52057pt too wide) in paragraph at lines 370--370
 [] 
  []
 
 
-Overfull \hbox (186.09135pt too wide) in paragraph at lines 388--388
+Overfull \hbox (186.09135pt too wide) in paragraph at lines 392--392
 [] 
  []
 
 [7]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 412.
+(hyperref)                than one, level fixed on input line 416.
 
 
-Overfull \hbox (78.33606pt too wide) in paragraph at lines 413--420
+Overfull \hbox (78.33606pt too wide) in paragraph at lines 417--424
 \OT4/cmr/m/n/10 We de-fine mul-ti-pli-ca-tion $^^A[] : \OMS/plsy/m/n/10 H[] 
  H[] ! H[]$ \OT4/cmr/m/n/10 and co-mul-ti-pli-ca-tion []
  []
 
 
-LaTeX Warning: Citation `Diaconis2014' on page 8 undefined on input line 435.
+LaTeX Warning: Citation `Diaconis2014' on page 8 undefined on input line 439.
 
 
-Overfull \hbox (74.98442pt too wide) in paragraph at lines 458--458
+Overfull \hbox (74.98442pt too wide) in paragraph at lines 462--462
 [] 
  []
 
 [8]
 
-LaTeX Warning: Citation `Diaconis2014' on page 9 undefined on input line 484.
+LaTeX Warning: Citation `Diaconis2014' on page 9 undefined on input line 488.
 
 
-LaTeX Warning: Citation `Diaconis2014' on page 9 undefined on input line 504.
+LaTeX Warning: Citation `Diaconis2014' on page 9 undefined on input line 508.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 498--507
+Underfull \hbox (badness 10000) in paragraph at lines 502--511
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 508--514
+Underfull \hbox (badness 10000) in paragraph at lines 512--518
 
  []
 
 [9]
-Overfull \hbox (25.80707pt too wide) detected at line 546
+Overfull \hbox (25.80707pt too wide) detected at line 550
 [] \OML/plm/m/it/10 ^^L[] \OT4/cmr/m/n/10 = [] \OML/plm/m/it/10 b[] [] \OT4/cmr/m/n/10 = [] \OML/plm/m/it/10 b[] [] \OT4/cmr/m/n/10 = [] [] = [] \U/msb/m/n/10 P\OT4/cmr/m/n/10 (\OML/plm/m/it/10 X[] \OT4/cmr/m/n/10 = \OML/plm/m/it/10 b\OT4/cmr/m/n/10 ) [] 1
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 556.
-[10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 556.
+
+Underfull \hbox (badness 10000) in paragraph at lines 566--567
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 568.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 568.
+ [10]
+Overfull \hbox (10.02829pt too wide) in paragraph at lines 576--579
+\OT4/cmr/m/n/10 równowa»ne sposoby. To, »e s¡ do siebie odwrotne (du-alne) b¦dzie wyprowad-
+ []
+
+
+LaTeX Warning: Citation `Diaconis2014' on page 11 undefined on input line 584.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 591--596
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 591--596
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 597--615
+
+ []
+
+[11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 668--675
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--688
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--688
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--688
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 755--764
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 774--776
+
+ []
+
+[14]
+Overfull \hbox (16.3464pt too wide) in paragraph at lines 827--835
+\OT4/cmr/m/n/10 Because $\OML/plm/m/it/10 X[]; [] ; X[]$ \OT4/cmr/m/n/10 are lin-early in-de-pen-dent we have that [].
+ []
+
+[15]
+Overfull \hbox (20.3612pt too wide) in paragraph at lines 837--839
+\OT4/cmr/bx/n/24.88 TO DO: BAM! DO ROBOTY!
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 837--839
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 837--839
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 840--841
+
+ []
+
+
+LaTeX Warning: Reference `three' on page 16 undefined on input line 849.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 849--855
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 864--865
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 866--871
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 873.
+[16]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 873.
  (/home/bartosz/Studia/Praca_licencjacka/brudnopis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 556.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 556.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 873.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 873.
 Package rerunfilecheck Info: File `brudnopis.out' has not changed.
-(rerunfilecheck)             Checksum: E194568DBB2681AFEA25813D5D40A19C;361.
+(rerunfilecheck)             Checksum: 850232CE308C10848113F389AA97C2C2;522.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 556.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 873.
  ) 
 Here is how much of TeX's memory you used:
- 7371 strings out of 494869
- 105663 string characters out of 6179141
- 206685 words of memory out of 5000000
- 10547 multiletter control sequences out of 15000+600000
- 12086 words of font info for 37 fonts, out of 8000000 for 9000
+ 7418 strings out of 494869
+ 106244 string characters out of 6179141
+ 206802 words of memory out of 5000000
+ 10581 multiletter control sequences out of 15000+600000
+ 13094 words of font info for 39 fonts, out of 8000000 for 9000
  56 hyphenation exceptions out of 8191
- 42i,22n,30p,263b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plsc.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plme.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/pl/plr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plti10.pfb>
-Output written on /home/bartosz/Studia/Praca_licencjacka/brudnopis.pdf (10 pages, 135178 bytes).
+ 42i,22n,30p,263b,394s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plsc.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plme.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi7.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/pl/plr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plti10.pfb>
+Output written on /home/bartosz/Studia/Praca_licencjacka/brudnopis.pdf (16 pages, 177480 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 125 compressed objects within 2 object streams
- 21 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 197 PDF objects out of 1000 (max. 8388607)
+ 159 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 57 words of extra memory for PDF output out of 10000 (max. 10000000)
 

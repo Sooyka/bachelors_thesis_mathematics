@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: praca.aux
 The style file: alpha.bst
 Database file #1: my_bibliography.bib
-You've used 3 entries,
+You've used 4 entries,
             2543 wiz_defined-function locations,
-            580 strings with 4902 characters,
-and the built_in function-call counts, 1246 in all, are:
-= -- 121
-> -- 75
+            588 strings with 5036 characters,
+and the built_in function-call counts, 1652 in all, are:
+= -- 162
+> -- 94
 < -- 0
-+ -- 27
-- -- 27
-* -- 97
-:= -- 225
-add.period$ -- 11
-call.type$ -- 3
-change.case$ -- 20
-chr.to.int$ -- 3
-cite$ -- 3
-duplicate$ -- 44
-empty$ -- 81
-format.name$ -- 30
-if$ -- 245
++ -- 34
+- -- 33
+* -- 129
+:= -- 292
+add.period$ -- 14
+call.type$ -- 4
+change.case$ -- 26
+chr.to.int$ -- 4
+cite$ -- 4
+duplicate$ -- 58
+empty$ -- 111
+format.name$ -- 37
+if$ -- 328
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 5
-newline$ -- 18
-num.names$ -- 9
-pop$ -- 19
+missing$ -- 6
+newline$ -- 23
+num.names$ -- 12
+pop$ -- 22
 preamble$ -- 1
-purify$ -- 24
+purify$ -- 31
 quote$ -- 0
-skip$ -- 35
+skip$ -- 48
 stack$ -- 0
-substring$ -- 46
-swap$ -- 3
+substring$ -- 75
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
+type$ -- 24
 warning$ -- 0
-while$ -- 11
-width$ -- 4
-write$ -- 42
+while$ -- 15
+width$ -- 5
+write$ -- 55

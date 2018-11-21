@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1536237554 "brudnopis.tex" "/home/bartosz/Studia/Praca_licencjacka/brudnopis.pdf" "brudnopis" 1536237554
+["pdflatex"] 1542216412 "brudnopis.tex" "/home/bartosz/Studia/Praca_licencjacka/brudnopis.pdf" "brudnopis" 1542216412
   "/etc/texmf/web2c/texmf.cnf" 1492723455 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/bartosz/Studia/Praca_licencjacka/brudnopis.aux" 1536237554 1753 0b8607c0ea5329df64ecb32688fbfaa7 ""
+  "/home/bartosz/Studia/Praca_licencjacka/brudnopis.aux" 1542216412 2061 5e1b8b2c1e48bd8ca8eaf9015dbacb6b ""
   "/home/bartosz/texmf/tex/latex/polski/omlplm.fd" 1494024529 1553 7e55eec7e7ffbbc85187034f06b5977a ""
   "/home/bartosz/texmf/tex/latex/polski/omsplsy.fd" 1494024529 1472 cdbddbc0209f1dca4b38ccca913f65d7 ""
   "/home/bartosz/texmf/tex/latex/polski/omxplex.fd" 1494024529 1283 a1205ac8611390c6de04f8d76756c3c4 ""
@@ -105,13 +105,13 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1488610416 31340 0f53f8665296bf8fe6c697f9505e31d8 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1535748359 133835 269d64aa98dc76c5aa0c695331094f94 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1535750571 906930 c16e2dbb3f42156fb33dc4fbc14fe8b8 ""
-  "brudnopis.aux" 1536237554 1753 0b8607c0ea5329df64ecb32688fbfaa7 ""
-  "brudnopis.out" 1536237554 522 850232ce308c10848113f389aa97c2c2 ""
-  "brudnopis.tex" 1536237553 47911 65ad83ea2bb69b902a259db5c51c1924 ""
+  "brudnopis.aux" 1542216412 2061 5e1b8b2c1e48bd8ca8eaf9015dbacb6b ""
+  "brudnopis.out" 1542216412 685 b1417395b1cbcc8bc9a14d5eefb0b976 ""
+  "brudnopis.tex" 1536523621 49104 700e6318dcc49e6aec91316a3a2fadca ""
   (generated)
-  "brudnopis.aux"
-  "/home/bartosz/Studia/Praca_licencjacka/brudnopis.pdf"
-  "brudnopis.log"
-  "brudnopis.pdf"
   "brudnopis.out"
+  "/home/bartosz/Studia/Praca_licencjacka/brudnopis.pdf"
+  "brudnopis.aux"
   "/home/bartosz/Studia/Praca_licencjacka/brudnopis.log"
+  "brudnopis.pdf"
+  "brudnopis.log"

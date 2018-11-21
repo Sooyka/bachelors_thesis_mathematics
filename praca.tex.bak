@@ -131,8 +131,8 @@ Again there are $n$ ways (pairs of division and concatenation) of obtaining an i
 for every $0 \leq k \leq n$ by putting $k$ cards on the right and then $n-k$ cards on the left.
 Again every other permutation can be obtained it at most one way and, again, every pair of division and
 concatenation have the same probability. To see that every non-identity permutation can be obtained in
-at most one way we can think of division as of choosing a subsequence of the deck and placing it to the left.
-Now suppose we have chosen too different subsets. Let $c$ be a card that is in one of them but not in the
+at most one way we can think of dision as of choosing a subsequence of the deck and placing it to the left.
+Now suppouse we have chosen too different subsets. Let $c$ be a card that is in one of them but not in the
 other. If that card is not the most bottom of the chosen subset results will be different as in one case
 it will be between some cards from the left pile and in second not. The same goes with not the top one
 from non-chosen set. It gives that for diff rent subsets chooses to give the same result the cards that
@@ -992,7 +992,7 @@ For every $s \in \mathcal{X}^*$ it looks like this:
     \Psi^{[2]}(s) = m\Delta(s) =
     \sum_{s_1*s_2=s}s_1s_2
 \end{equation*}
-In the similar way for every $s \in \mathcal{X}^*$:
+In the simillar way for every $s \in \mathcal{X}^*$:
 \begin{equation*}
     \Psi^{[a]}(s) = m^{[a]}\Delta^{[a]}(s) =
     \sum_{s_1*\dots *s_a=s}s_1\dots s_a
@@ -1002,7 +1002,7 @@ In the similar way for every $s \in \mathcal{X}^*$:
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-\subsection{Some further remarks about structure}
+\subsection{Some futher remarks about structure}
 In paragraph 2.3 ~\cite{Diaconis2014} describes some aspects of the structure of free associative algebra.
 They will be important in the chapter about eigenbases. Here we will present a shortened version for
  lookup.
@@ -1147,8 +1147,8 @@ the same and at least one interlace is different it will lead to word with diffe
 \indent Now we will show that terms in $m^*\Delta^*(g \otimes h)$ and $(\Delta^*\otimes \Delta^*)(I \otimes T
 \otimes I)(m^* \otimes m^*)(g \otimes h)$ are the same. \\
 We will do it by showing that for every pair of interlace and division (from $m^*\Delta^*$) there exist
-one pair of pairs of interlaces and divisions (from $(\Delta^*\otimes \Delta^*)(I \otimes T \otimes I)(m^*
-\otimes m^*)$) that leads to the same term and that for every pair of pairs of interlaces and divisions (from
+one pair of pairs of interlaces and divsions (from $(\Delta^*\otimes \Delta^*)(I \otimes T \otimes I)(m^*
+\otimes m^*)$) that leads to the same term and that for every pair of pairs of interlaces and divsions (from
 $(\Delta^*\otimes \Delta^*)(I \otimes T \otimes I)(m^*\otimes m^*)$) there exist one pair of interlace and
  division (from
 $m^*\Delta^*$) that leads to the same term. \\
@@ -1175,7 +1175,7 @@ For every $s \in \mathcal{X}^*$, it looks like this:
 \sum\{\sum\{s': s_1*s_2=s'\}:s=s_1s_2\} = \\
 \sum\{s' : s=s_1s_2\mathrm{\ and\ }s_1*s_2=s\}.
 \end{gather*}
-In the similar way, for every $s \in \mathcal{X}^*$:
+In the simmilar way, for every $s \in \mathcal{X}^*$:
 \begin{gather*}
 {\Psi^*}^{[a]}(s)={\Delta^*}^{[a]} {m^*}^{[a]}(s) = {\Delta^*}^{[a]}\sum\{s_1 \otimes \dots \otimes s_a :
 s=s_1\dots s_a\} = \\
@@ -1187,7 +1187,7 @@ s=s_1\dots s_a\} = \\
 Now we will see that there is another method of introducing that structure.
 The structure of $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$ (where for all $i \in \mathbb{N}$
 $\mathcal{H}_i^*$ is a vector space dual to $\mathcal{H}$) with actions induced by actions
-from Hopf algebra $\mathcal{H}$ turns out to be one described above. (Note that $\mathcal{H} =
+from Hopf algebra $\mathcal{H}$ turns out to be one discrebed above. (Note that $\mathcal{H} =
 \displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i$ is isomorphic as a linear space
 to $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$.) \\
 \indent Let $\gdd{\mathcal{H}}$ denote $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$.
@@ -1222,7 +1222,7 @@ in the sens that $\gdd{\mathcal{H}} \simeq \mathcal{H}^*$ as a Hopf algebras wit
 that for all $a \in \mathcal{X}^*$ maps $a \mapsto a^*$.
 \begin{theorem}
     For $\mathcal{H}^*$ and $\gdd{\mathcal{H}}$ as defined in this section $\varphi : \mathcal{H}^* \to
-    \gdd{\mathcal{H}}$ is an isomorphism of Hopf algebras.
+    \gdd{\mathcal{H}}$ is an isomorhism of Hopf algebras.
 \end{theorem}
 \begin{proof}
 For all $a, b \in \mathcal{X}^*$:
@@ -1277,7 +1277,7 @@ What is more we have that for all $a \in \mathbb{N}$:
     {m^*}^{[a]}(a^*)=a^*m^{[a]}
 \end{gather*}
 So as well $\Psi^{[a]}$ and ${\Psi^*}^{[a]}$ are conjugate to each other as linear transformations of
-$\mathcal{H}_\nu$.\\ That gives us that their matrixes written in basis of $\mathcal{H}_\nu$ are transpositions
+$\mathcal{H}_\nu$.\\ That gives us that their matrixes writen in basis of $\mathcal{H}_\nu$ are transpositions
 to each other.
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1297,7 +1297,7 @@ to each other.
 \section{Connection}\label{three}
 \indent In the chapter one we said that with every Markov chain  have corresponding matrix of transition
 probabilities. Thus with a Markov chain one can associate a certain linear transformation given by that
-matrix. The following theorem states dependency in opposite direction - that given linear transformation
+matrix. The following theorem states dependency in opposite direction - that given linear transfomation
 with some features gives a Markov chain with the basis of transformed vector space as a state space. \\[8pt]
 \begin{theorem}\label{theorem}
 Let $V$ be a linear space over field $K$ that is $\mathbb{R}$ or $\mathbb{Q}$,
@@ -1380,7 +1380,7 @@ Hopf algebra of non-cocommutative variables (from 2.7.3) is a model for forward 
 It goes as follows.
 Let $\mathcal{X}$ be the finite set of all possible types of cards. Let $\nu$ be a tuple of
 elements from $\mathcal{X}$ that represents our actual deck of cards (the same type of card can occur
-multiple times, the order in $\nu$ should be the order in which we think cards are ordered), the height of
+multiple times, the order in $\nu$ should be the order in which we think cards are ordered), the hight of
 the deck is then $|\nu|$. Now we can take a look at a subspace $\mathcal{H}_\nu$ of vector space
 $\mathcal{H}$ built over $\mathcal{X}$ as described in 2.6.2. $\mathcal{H}_\nu$ will be the subspaces
 spanned by words that for every type of cards consists of exactly the same number of cards of that type as
@@ -1402,12 +1402,12 @@ $\mathcal{H}_\nu$ with $\Psi$ and $\mathcal{H}_\nu$ with $\Psi^*$ are satisfying
 theorem \ref{theorem}, so they sets Markov chains on $\mathcal{B}_\nu$. As stated in the theorem,
 for all $b \in \mathcal{B}_\nu$ the probability of going from $b$ to $b$ will be in this case equal to
 $|\nu|/2^{|\nu|})$ and probability to any other accessible $b' \in \mathcal{B}_\nu$ will be $1/2^\nu$. \\
-Analysis of $\mathcal{H}$ and $\mathcal{H}^*$ (see \ref{gcha}) gives that accessible states are exactly
+Analisis of $\mathcal{H}$ and $\mathcal{H}^*$ (see \ref{gcha}) gives that accessible states are exactly
 the same as in, accordingly inverse and forward riffle shuffle. So generated Markov chains are exactly
 the one for inverse and forward riffle shuffle.
-Further analyses gives that for any $a \in \mathbb{N}$ coefficients of $\Psi^{[a]}(b)$ and ${\Psi^*}^{[a]}(b)$
+Futher analisis gives that for any $a \in \mathbb{N}$ coefficients of $\Psi^{[a]}(b)$ and ${\Psi^*}^{[a]}(b)$
 matches with transition probabilities from $b$ to corresponding outcomes. The sum of coefficients also
-depends only on $|\nu|$ for a chosen $\nu$. So $\Psi^{[a]}$ and ${\Psi^*}^{[a]}$ set Markov chains as well
+depends only on $|\nu|$ for a choosen $\nu$. So $\Psi^{[a]}$ and ${\Psi^*}^{[a]}$ set Markov chains as well
 and that chains are the chains of inverse $a$-shuffling and forward $a$-shuffling respectively.
 
 \begin{theorem}
@@ -1428,10 +1428,10 @@ accordingly forward and inverse riffle $a$-shuffle. Then
 \end{proof}
 Above theorem states, that indeed forward and inverse riffle shuffling is one method of shuffling
 once applied forward and once backward. \\[8pt]
-Note that assumptions in the theorem are important, for example we can not make in that  way  a Markov chain
-of decompositions of the deck, like applying $\Delta$ and then $\Delta \otimes I$. That will give
+Note that assuptions in the theorem are important, for example we can not make in that  way  a markov chain
+of decompositions of the deck, like appliing $\Delta$ and then $\Delta \otimes I$. That will give
 $\Delta^{[3]}$ where all possible scenarios of decompositions have equal probabilities.
-It is different than splitting the deck in two and then randomly one of these halves.
+It is different than spliting the deck in two and then randomly one of these halfs.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1449,7 +1449,7 @@ It is different than splitting the deck in two and then randomly one of these ha
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \section{Left and right eigenbases}
 
-The reasons we bother with finding the eigenbasis are described in 1.?.?. For a given deck $\nu$
+The reasons we bother with finding the eigenbasis are desribed in 1.?.?. For a given deck $\nu$
 we will find left and right eigenbases of $\mathcal{H}_\nu$ for inverse and forward riffle shuffling.
 Note that because
 $m\Delta$ and $\Delta^*m^*$ are dual to each other left eigenbasis for inverse riffle-shuffle is right
@@ -1486,7 +1486,7 @@ ah
 \end{proof}
 Next observation is presented in ~\cite{Diaconis2014} and it is called the symmeterization lemma.
 \begin{theorem}
-(Symmetrization lemma). Let $x_1, \dots, x_n$ be primitive elements of any Hopf algebra $\mathcal{H}$, then
+(Symmetrization lemma). Let $x_1, \dots, x_n$ be primitive elements of any Hopf alebra $\mathcal{H}$, then
 $\displaystyle\sum_{\sigma \in S_k} x_{\sigma(1)}\cdot\ldots\cdot x_{\sigma(k)}$ is an eigenvector of
 $\Psi^{[a]}$ with eigenvalue $a^k$.
 \end{theorem}
@@ -1528,9 +1528,7 @@ for every Lyndon word $l$. Hence
 \begin{equation*}
 \mathcal{E} \coloneqq\left\{\mathrm{sym}(w) : w \in \mathcal{X}^*\right\}
 \end{equation*}
-is a left eigenbasis of $\mathcal{H}$ with respect to $\Psi^{[a]}$ for every $a$ with an eigenvalue for every
-$w$ equal to number of Lyndon factors in $w$.
- What is more:
+is a left eigenbasis of $\mathcal{H}$ with respect to $\Psi^{[a]}$ for every $a$. What is more:
 
 \begin{theorem}
 Let $\mathcal{H}$ be a free associative Hopf algebra of words over the alphabet $\mathcal{X}$.
@@ -1565,18 +1563,15 @@ element $b$ of $\mathcal{H}$ with Lyndon factorization $b=b_1\dots b_k$, let
     f_b \coloneqq \frac{1}{A'(b)}f_{b_1}\cdot\ldots\cdot f_{b_k},
 \end{equation*}
 where the normalisation constant $A'(b)$ is calculated as follows: for each Lyndon basis element $b'$, let
-$a'_{b'}(b)$ be the number of times $b'$ occurs in the Lyndon factorisation of $b$, and set $A'(b) =
-\prod_{b'}a'_{b'}(b)!$. Then $f_b$ is an eigenvector of ${\Psi^*}^{[a]}$ of eigenvalue $a^k$, and $\{f_b\}$
+$a'_{b'}(b)$ be the number of times $b'$ accurs in the Lyndon factorisation of $b$, and set $A'(b) =
+\prod_{b'}a'_{b'}(b)!$. Then $f_b$ is an eigenvector of ${\Psi^*}^{[a]}$ od eigenvalue $a^k$, and $\{f_b\}$
 is the dual basis to $\{g_b\}$. \\
 The proof can be found in~\cite{Diaconis2014}.
+\subsection{Reference to~\cite{Diaconis2014}}
+
 \section{Summation}
 We had shown how to describe certain Markov chain using Hopf algebras. There are other examples of doing so.
-Polynomial algebra gives model for rock-breaking. Although with this approach there is some apparatus
-to build, it gives benefits of possibility to derive from knowledge of the well-known mathematical
-structures, when they appear in the study of some probabilistic actions involving some combinatorial
-objects.
-Which is a beautiful example of how various branches of mathematics contribute to answering given question.
-
+Polinomial algebra gives model for rock-bracking.
 \bibliography{my_bibliography}{}
 \bibliographystyle{alpha}
 \end{document}

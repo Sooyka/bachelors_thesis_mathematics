@@ -1,25 +1,24 @@
 \select@language {english}
 \contentsline {section}{\numberline {1}Markov chains}{5}{section.1}
-\contentsline {subsection}{\numberline {1.1}Gilbert-Shannon-Reeds model of riffle shuffle}{6}{subsection.1.1}
-\contentsline {section}{\numberline {2}Hopf algebras}{7}{section.2}
-\contentsline {subsection}{\numberline {2.1}Preliminaries}{7}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Notational remarks}{7}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Tensor products}{8}{subsubsection.2.1.2}
-\contentsline {subsection}{\numberline {2.2}Algebras}{12}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Coalgebras}{13}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Bialgebras}{16}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Convolution}{18}{subsubsection.2.4.1}
-\contentsline {subsection}{\numberline {2.5}Hopf algebras}{19}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}Examples}{20}{subsection.2.6}
-\contentsline {subsubsection}{\numberline {2.6.1}Graded, connected Hopf algebra of polinomials}{20}{subsubsection.2.6.1}
-\contentsline {subsection}{\numberline {2.7}Graded, connected Hopf algebra of non-commuting variables}{23}{subsection.2.7}
-\contentsline {subsubsection}{\numberline {2.7.1}Free associative Hopf algebra}{23}{subsubsection.2.7.1}
-\contentsline {subsubsection}{\numberline {2.7.2}Some futher remarks about structure}{24}{subsubsection.2.7.2}
-\contentsline {subsubsection}{\numberline {2.7.3}Alternative structure}{26}{subsubsection.2.7.3}
-\contentsline {subsubsection}{\numberline {2.7.4}Graded dual}{28}{subsubsection.2.7.4}
-\contentsline {section}{\numberline {3}Connection}{29}{section.3}
-\contentsline {section}{\numberline {4}Left and right eigenbasises}{33}{section.4}
-\contentsline {subsection}{\numberline {4.1}Left eigenbasis}{33}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Right eigenbasis}{35}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Reference to~\cite {Diaconis2014}}{35}{subsection.4.3}
-\contentsline {section}{\numberline {5}Summation}{35}{section.5}
+\contentsline {section}{\numberline {2}Gilbert-Shannon-Reeds model of riffle shuffle}{6}{section.2}
+\contentsline {section}{\numberline {3}Hopf algebras}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Preliminaries}{7}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Rotational remarks}{7}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Tensor products}{8}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Algebras}{12}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Coalgebras}{13}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Bialgebras}{16}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Convolution}{18}{subsubsection.3.4.1}
+\contentsline {subsection}{\numberline {3.5}Hopf algebras}{19}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Examples}{20}{subsection.3.6}
+\contentsline {subsubsection}{\numberline {3.6.1}Graded, connected Hopf algebra of polynomials}{20}{subsubsection.3.6.1}
+\contentsline {section}{\numberline {4}Graded, connected, associative Hopf algebras of variables}{23}{section.4}
+\contentsline {subsection}{\numberline {4.1}Free associative Hopf algebra}{23}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Some further remarks about structure}{25}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Alternative structure }{26}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Graded dual}{29}{subsubsection.4.3.1}
+\contentsline {section}{\numberline {5}Connection}{31}{section.5}
+\contentsline {section}{\numberline {6}Left and right eigenbases}{34}{section.6}
+\contentsline {subsection}{\numberline {6.1}Left eigenbasis}{34}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Right eigenbasis}{37}{subsection.6.2}
+\contentsline {section}{\numberline {7}Summation}{37}{section.7}

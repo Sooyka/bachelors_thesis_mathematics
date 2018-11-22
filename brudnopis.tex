@@ -895,4 +895,173 @@ structures, when they appear in the study of some probabilistic aspects of behav
 objects.
 Which is a beautiful example of how various branch
 
+
+\textbf{Remark.}
+This is clear that such $s_\mathcal{B}$ is linear. \\
+
+For a linear space $V$ over field $K$, with basis $\mathcal{B}$ and its dual basis $\mathcal{B}^*$
+we define a linear function $s_\mathcal{B} : V \to K$ as:
+\begin{equation*}
+    s_\mathcal{B}(v)=\sum_{b_i^*\in\mathcal{B}^*}b_i^*(v)
+\end{equation*}
+$s_\mathcal{B}(v)$ is then a sum of coefficients
+
+$V \times W$. Note that we are taking entire $V \times W$ as a basis
+of $Z$, not just a basis of $V \times W$. Consequently, every non-zero element of $Z$ has unique
+representation in the form
+$\displaystyle\sum^n_{i = 1}\alpha_i(v_i,w_i)$.
+%for some $n \in \mathbb{N}$, $\alpha_1, \dots, \alpha_n \in K$, $v_1,
+%\dots, v_n \in V$, $w_1, \dots, w_n\in W$.
+Let $\simeq$ be the smallest equivalence relation on $Z$ satisfying: \\
+%
+For all $v,v_1,v_2 \in V$, $w, w_1, w_2 \in W$, $k \in K$
+\begin{gather*}
+(v,w_1) + (v, w_2) \simeq (v, w_1 + w_2), \\
+(v_1,w) +(v_2, w) \simeq (v_1+v_2,w), \\
+k(v, w) \simeq (kv, w), \\
+k(v, w) \simeq (v, kw).
+\end{gather*}
+Since for all $z_1, z_2, z_3, z_4 \in Z$, all $k \in K$
+\begin{align*}
+z_1 \simeq z_2 \land z_3 \simeq z_4 &\implies z_1 + z_3 \simeq z_2 + z_4 \mathrm{\ and} \\
+z_1 \simeq z_2 &\implies kz_1 \simeq kz_2,
+\end{align*}
+%
+we treat $Z/_\simeq$ as a vector space with operations
+%
+\begin{align*}
+[z_1]_\simeq + [z_2]_\simeq &\coloneqq [z_1 + z_2]_\simeq, \\
+k[z_1]_\simeq &\coloneqq [kz_1]_\simeq.
+\end{align*}
+%
+We denote equivalence class $[(v,w)]_\simeq$ as $v \otimes w$.
+The tensor product $V \otimes W \coloneqq Z/_\simeq$.
+Note that in $V \otimes W$ there are vectors that cannot be written as $v \otimes w$ for any $v$, $w$.
+However, every $z \in V \otimes W$ can be written in as $z =\displaystyle\sum^n_{i = 1}v_i \otimes w_i$
+for some $v_1, \dots, v_n \in V$, $w_1, \dots, w_n \in W$.
+(More detailed explanation of this fact and the following example will come in the
+\hyperref[observation:1]{Observation 1.}.)\\
+For example take $v_1,\dots, v_n, w_1, \dots, w_n$ such that they are linearly independent
+in corresponding spaces.
+Then take $\displaystyle\sum^n_{i=1}(v_i,w_i)$. There are no $v, w$
+such that $ [(v,w)]_\simeq = \left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_\simeq$.
+Thus, for the element $\left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_\simeq$ of $V\otimes W$
+there are no $v, w$ such that $v \otimes w = \left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_\simeq$.
+However, since $\left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_\simeq =
+\displaystyle\sum^n_{i=1}[(v_i,w_i)]_\simeq$ it can be written as
+$\displaystyle\sum^n_{i=1}v_i \otimes w_i$. \\
+Now we will make some further observations on how $V \otimes W$ looks like.
+\begin{observation}
+\label{observation:1}
+If $\{b_i\}_{i \in I}$, $\{c_j\}_{j \in J}$ are bases of, respectively, $V$and $W$,
+then $\{b_i \otimes c_j : i \in I, j \in J\}$ is the basis of $V \otimes W$.
+\end{observation}
+\begin{proof}
+Let $z = \displaystyle\sum^n_{i = 1}\alpha_i(v_i,w_i)$ be an arbitrary non-zero element of $Z$. We will show
+that $[z]_\simeq$ has representation as $\displaystyle\sum^m_{i = 1}\beta_i [(b_i,c_i)]_\simeq$
+$\left(=\displaystyle\sum^m_{i = 1}\beta_i(b_i \otimes c_i)\right)$.
+
+\begin{align*}
+[z]_\simeq = \left[\sum^n_{i = 1}\alpha_i(v_i,w_i)\right]_\simeq &=
+\sum^n_{i = 1}\alpha_i[(v_i,w_i)]_\simeq \\
+&= \sum^n_{i = 1}\alpha_i\left[\left(\sum^{l_1}_{j=1}\gamma_{i,j}b_{i,j},
+\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_\simeq \\
+&= \sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(b_{i,j},
+\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_\simeq \\
+&= \sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(\sum^{l_2}_{k=1}\gamma_{i,k}
+\left(b_{i,j},c_{i,k}\right)\right)\right]_\simeq \\
+&= \sum^n_{i = 1}\alpha_i\left[\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\gamma_{i,j}\gamma_{i,k}(b_{i,j}, c_{i,k})\right]_\simeq \\
+&= \sum^n_{i = 1}\alpha_i\left(\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_\simeq\right) \\
+&= \sum_{\substack{1 \leq i \leq n \\1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
+\alpha_i\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_\simeq
+\end{align*}
+Thus $\{b_i \otimes c_j : i \in I, j \in J\}$ spans $V \otimes W$. To prove linear independence we can
+observe that if $\displaystyle\sum^m_{i = 1}\alpha_i [(v_i,w_i)]_\simeq = 0$,
+then either $v_1, \dots v_n$ or $w_1, \dots, w_n$ have to be linearly dependent. It can't occur if
+$v_1, \dots v_n$ and $w_1, \dots, w_n$ are from the bases of $V$ and $W$.\\
+This observation also justifies
+recently cited fact and the example.
+\end{proof}
+\begin{observation}
+If $V$ and $W$ are finite dimensional and $\mathrm{ dim}(V)=n$, \text{$\mathrm{ dim}(W)=m$}, then
+$\mathrm{dim}(V \otimes W)=nm$.
+\end{observation}
+\begin{proof}
+The proof is immediate from the \hyperref[observation:1]{Observation 1.}. Since if
+$\{b_i\}_{i \in I}$, $\{c_j\}_{j \in J}$ are bases of, respectively, $V$and $W$ and
+$\mathrm{ dim}(V)=n$ and $\mathrm{ dim}(W)=m$, then $\mid \{b_i \otimes c_j : i \in I, j \in J\} \mid = nm$
+\end{proof}
+\begin{observation}
+\label{observation:3}
+$V \otimes W$ is a vector space of elements in the shape of $\ \displaystyle\sum^n_{i = 1}v_i \otimes w_i$
+with operations on them defined such that for all $v,v_1,v_2 \in V$, $w, w_1, w_2 \in W$, $k \in K$ there
+hold
+\begin{gather*}
+v_1 \otimes w + v_2 \otimes w = (v_1 + v_2) \otimes w, \\
+v \otimes w_1 + v \otimes w_2 = v \otimes (w_1 + w_2), \\
+k (v \otimes w) = (kv) \otimes w = v \otimes (kw).
+\end{gather*}
+\end{observation}
+\begin{proof}
+This observation is just a recollection of the definition.
+\end{proof}
+\begin{observation}
+For vector spaces $U, V, W$ over the field $K$ there is a natural isomorphism between
+$(U \otimes V) \otimes W$ and $U \otimes (V \otimes W)$ therefore there is no ambiguity in writing
+$U \otimes V \otimes W$ or a product of any greater number of vector spaces in that way. (We will also
+write "$u \otimes v \otimes w$" for some of their elements.) Form of elements, operations on them and
+structure of that vector spaces are fully analogous to the described above (with respect to all
+"coordinates" in terms like $u \otimes v \otimes w$ and so on). So the space $U \otimes V \otimes W$
+has elements of shape $\ \displaystyle\sum^n_{i = 1}u_i \otimes v_i \otimes w_i$
+(each for some $u_1, \dots, u_n \in U$, $v_1, \dots v_n \in V$, $w_1, \dots, w_n \in W$) and for all
+$u, u_1, u_2 \in U$, $v,v_1,v_2 \in V$, $w, w_1, w_2 \in W$, $k \in K$ there hold
+\begin{gather*}
+u_1 \otimes v \otimes w + u_2 \otimes v \otimes w = (u_1+u_2) \otimes v \otimes w, \\
+u \otimes v_1 \otimes w + u \otimes v_2 \otimes w = u \otimes (v_1 + v_2) \otimes w, \\
+u \otimes v \otimes w_1 + u \otimes v \otimes w_2 = u \otimes v \otimes (w_1 + w_2), \\
+k (u \otimes v \otimes w) = (ku) \otimes v \otimes w = u \otimes (kv) \otimes w = u \otimes v \otimes (kw).
+\end{gather*}
+\end{observation}
+\begin{proof}
+Left to the reader.
+\end{proof}
+\begin{observation}\label{observation:5}
+If $V$ is a vector space over $K$, then all elements of $K \otimes V$ ($V \otimes K$) can be expressed in
+form $1 \otimes v$ ($v \otimes 1$) and there are natural isomorphisms ${^Lm} : K \otimes V \to V$,
+(${^Rm} : V \otimes K \to V$) given by
+\begin{align*}
+{^Lm}(k \otimes v) &= kv, \\
+{^Rm}(v \otimes k) &= kv.
+\end{align*}
+\end{observation}
+\begin{proof}
+An arbitrary element of $K \otimes V$ has form $\displaystyle\sum^n_{i=1}k_i \otimes v_i$ but
+\begin{equation*}
+\sum^n_{i=1}k_i \otimes v_i = \sum^n_{i=1} 1 \otimes k_iv_i = 1 \otimes \sum^n_{i=1}k_iv_i.
+\end{equation*}
+${^Lm}$ is linear (left for the reader) and is bijective because for all $v, v_1, v_2 \in V$
+\begin{equation*}
+\varphi(1 \otimes v) = v
+\end{equation*}
+and
+\begin{align*}
+1 \otimes v_1 = 1 \otimes v_2 &\iff 1 \otimes v_1 - 1 \otimes v_2 = 0 \iff \\
+1 \otimes (v_1 - v_2) = 0 &\iff v_1 -v_2 = 0 \iff v_1 = v_2.
+\end{align*}
+The proof for $V \otimes K$ and ${^Rm}$ is analogous. In the later sections we will use notations of
+${^Lm}$ and ${^Rm}$ for those isomorphism for any space.
+\end{proof}
+\textbf{Remark. } In a special case when $V = W = K$ the natural isomorphisms described above
+take form of $m_K : K \otimes K \to K$ that for all $k_1, k_2\in K$
+\text{$m_K(k_1 \otimes k_2) = k_1k_2$}. This isomorphism of $K \otimes K$ and $K$ is just a field
+multiplication from $K$. \\[8pt]
+\noindent \textbf{Remark. } Thanks to \hyperref[observation:3]{Observation 3.} there is no ambiguity in
+writing
+$kv \otimes w$. \\
+I hope that this third observation will also help us understand what the tensor product is and what it is
+ not.
+It will be good to keep it in mind when we are intensively dealing with it in a combinatorical way in
+the following sections.
 \end{document}

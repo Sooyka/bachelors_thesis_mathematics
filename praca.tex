@@ -96,25 +96,26 @@ $K_{i,j} = \mathbb{P}(X_{n+1} = s_j \mid X_n = s_i)$ is called the transition ma
 write $K(s_i, s_j)$ instead of $K_{i,j}$. Note that the sum of
 any row is equal to 1 since it is the sum of probabilities of moving somewhere from $s_i$.
 Now $K^n_{i,j}$ is the chance of moving from $s_i$ to $s_j$ in $n$ steps. \\
-Markov chains can be also viewed as random walks on the directed, labeled graphs, where states are vertices
+Markov chains can be also viewed as random walks on directed, labeled graphs, where states are vertices
 and edge's label is the probability of moving from one vertex to another. \\
 Card shuffling can be viewed as a Markov chain on all possible arrangements of the cards
 in the deck with $K(x,y)$ equal to probability of going from arrangement $x$ to arrangement $y$ in one
 shuffle.
 \\ More extensive introduction can be found in~\cite{LePeWi}. \\
 With the certain conditions distribution of $X_n$ converges to one distribution called stationary
-distribution. Finding eigenbases and eigenvalues give us for example how fast chain converges to that
+distribution. Finding eigenbases and eigenvalues gives us for example how fast the Markov chain converges
+to that
 distribution.
 %\textbf{\Huge BAM!}\normalsize
 \section{Gilbert-Shannon-Reeds model of riffle shuffle}
 Gilbert-Shannon-Reeds gave realistic model for forward and inverse riffle shuffle.
 For forward riffle shuffle it states that we are cutting the deck with binomial distribution:
-with probability $\binom{k}{n}/2^n$ for taking $k$ top cards from the deck of $n$ cards
+with probability $\binom{n}{k}/2^n$ for taking $k$ top cards from the deck of $n$ cards
 and then riffle piles together with the same probability of every possible interlace. As riffling piles with
-$k$ cards and $n-k$ cards comes to choosing a $k$ element subset of $n$ element set there is $\binom{k}{n}$
-ways to do that, so then the probability of a particular interlace is equal to $1/\binom{k}{n}$.
+$k$ cards and $n-k$ cards comes to choosing a $k$ element subset of $n$ element set there is $\binom{n}{k}$
+ways to do that, so then the probability of a particular interlace is equal to $1/\binom{n}{k}$.
 Because of that probability of any pair of particular split and particular interlace is equal to
-$\frac{\binom{k}{n}}{2^n}\frac{1}{\binom{k}{n}} = \frac{1}{2^n}$. To obtain probabilities of outcomes
+$\frac{\binom{n}{k}}{2^n}\frac{1}{\binom{k}{n}} = \frac{1}{2^n}$. To obtain probabilities of outcomes
 we need to check how pairs of splits and interlaces corresponds to outcomes. There are two cases:
 result of identity permutation can be obtained in $n$ ways by cutting the deck and then placing the top back
 as it is an valid example of an interlace too. Any other permutation can by obtained in at most one way.
@@ -129,15 +130,15 @@ For reverse riffle shuffle it states that we are sequentially putting cards from
 the or to the right with probability $\frac{1}{2}$. Then we place left pile on the top of the right pile.
 Again there are $n$ ways (pairs of division and concatenation) of obtaining an identity permutation -
 for every $0 \leq k \leq n$ by putting $k$ cards on the right and then $n-k$ cards on the left.
-Again every other permutation can be obtained it at most one way and, again, every pair of division and
+Again every other permutation can be obtained in at most one way and, again, every pair of division and
 concatenation have the same probability. To see that every non-identity permutation can be obtained in
 at most one way we can think of division as of choosing a subsequence of the deck and placing it to the left.
-Now suppose we have chosen too different subsets. Let $c$ be a card that is in one of them but not in the
+Now suppose we have chosen two different subsets. Let $c$ be a card that is in one of them but not in the
 other. If that card is not the most bottom of the chosen subset results will be different as in one case
 it will be between some cards from the left pile and in second not. The same goes with not the top one
-from non-chosen set. It gives that for diff rent subsets chooses to give the same result the cards that
-differ them have to be top ones from the non chosen and the most bottom ones from chosen what means
-giving the identity permutation as we then just cut deck into to peaces in different ways. \\
+from non-chosen set. It gives that for different subsets chooses to give the same result the cards that
+differ them have to be top ones from the unselected and the most bottom ones from chosen what means
+giving the identity permutation as we then just cut deck into two peaces in different ways. \\
 Conclusion is that in this model both for forward and inverse riffle shuffle probability of obtaining
 an identity permutation is equal to $n/2^n$ and for any other possible $1/2^n$. \\
 We can also consider forward and inverse $a$-shuffles. An $a$-shuffle is a shuffle where decomposition
@@ -176,7 +177,7 @@ and all tensor products will be taken over $K$. Note that when we want to presen
 multiplication from $K$ as a linear map $K \otimes K \to K$ it will be denoted as $m_K$. As it is then an
 isomorphism let $\Delta_K \coloneqq m_K^{-1}$. The $1$ from $K$ will be denoted as $1_K$.\\[8pt]
 \textbf{Remark. } Let $U, V, W, Z$ be vector spaces over field $K$.
-z5We will use notation
+We will use notation
 $\varphi \otimes \psi:U \otimes V \to W \otimes Z$ which, for
 $\varphi$, $\psi$ such that $\varphi : U \to W$, $\psi : V \to Z$, means a linear map that
 for all $u \in U$, $v \in V$ satisfies:
@@ -220,165 +221,12 @@ a vector space of all linear functions from $V$ to $K$.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \subsubsection{Tensor products}
 %
-First we will introduce tensor product of the vector spaces. Let $V, W$ be vector spaces over the field $K$.
-Let $Z$ be a vector space with basis $V \times W$. Note that we are taking entire $V \times W$ as a basis
-of $Z$, not just a basis of $V \times W$. Consequently, every non-zero element of $Z$ has unique
-representation in the form
-$\displaystyle\sum^n_{i = 1}\alpha_i(v_i,w_i)$.
-%for some $n \in \mathbb{N}$, $\alpha_1, \dots, \alpha_n \in K$, $v_1,
-%\dots, v_n \in V$, $w_1, \dots, w_n\in W$.
-Let $\simeq$ be the smallest equivalence relation on $Z$ satisfying: \\
-%
-For all $v,v_1,v_2 \in V$, $w, w_1, w_2 \in W$, $k \in K$
-\begin{gather*}
-(v,w_1) + (v, w_2) \simeq (v, w_1 + w_2), \\
-(v_1,w) +(v_2, w) \simeq (v_1+v_2,w), \\
-k(v, w) \simeq (kv, w), \\
-k(v, w) \simeq (v, kw).
-\end{gather*}
-Since for all $z_1, z_2, z_3, z_4 \in Z$, all $k \in K$
-\begin{align*}
-z_1 \simeq z_2 \land z_3 \simeq z_4 &\implies z_1 + z_3 \simeq z_2 + z_4 \mathrm{\ and} \\
-z_1 \simeq z_2 &\implies kz_1 \simeq kz_2,
-\end{align*}
-%
-we treat $Z/_\simeq$ as a vector space with operations
-%
-\begin{align*}
-[z_1]_\simeq + [z_2]_\simeq &\coloneqq [z_1 + z_2]_\simeq, \\
-k[z_1]_\simeq &\coloneqq [kz_1]_\simeq.
-\end{align*}
-%
-We denote equivalence class $[(v,w)]_\simeq$ as $v \otimes w$.
-The tensor product $V \otimes W \coloneqq Z/_\simeq$.
-Note that in $V \otimes W$ there are vectors that cannot be written as $v \otimes w$ for any $v$, $w$.
-However, every $z \in V \otimes W$ can be written in as $z =\displaystyle\sum^n_{i = 1}v_i \otimes w_i$
-for some $v_1, \dots, v_n \in V$, $w_1, \dots, w_n \in W$.
-(More detailed explanation of this fact and the following example will come in the
-\hyperref[observation:1]{Observation 1.}.)\\
-For example take $v_1,\dots, v_n, w_1, \dots, w_n$ such that they are linearly independent
-in corresponding spaces.
-Then take $\displaystyle\sum^n_{i=1}(v_i,w_i)$. There are no $v, w$
-such that $ [(v,w)]_\simeq = \left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_\simeq$.
-Thus, for the element $\left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_\simeq$ of $V\otimes W$
-there are no $v, w$ such that $v \otimes w = \left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_\simeq$.
-However, since $\left[\displaystyle\sum^n_{i=1}(v_i,w_i)\right]_\simeq =
-\displaystyle\sum^n_{i=1}[(v_i,w_i)]_\simeq$ it can be written as
-$\displaystyle\sum^n_{i=1}v_i \otimes w_i$. \\
-Now we will make some further observations on how $V \otimes W$ looks like.
-\begin{observation}
-\label{observation:1}
-If $\{b_i\}_{i \in I}$, $\{c_j\}_{j \in J}$ are bases of, respectively, $V$and $W$,
-then $\{b_i \otimes c_j : i \in I, j \in J\}$ is the basis of $V \otimes W$.
-\end{observation}
-\begin{proof}
-Let $z = \displaystyle\sum^n_{i = 1}\alpha_i(v_i,w_i)$ be an arbitrary non-zero element of $Z$. We will show
-that $[z]_\simeq$ has representation as $\displaystyle\sum^m_{i = 1}\beta_i [(b_i,c_i)]_\simeq$
-$\left(=\displaystyle\sum^m_{i = 1}\beta_i(b_i \otimes c_i)\right)$.
-
-\begin{align*}
-[z]_\simeq = \left[\sum^n_{i = 1}\alpha_i(v_i,w_i)\right]_\simeq &=
-\sum^n_{i = 1}\alpha_i[(v_i,w_i)]_\simeq \\
-&= \sum^n_{i = 1}\alpha_i\left[\left(\sum^{l_1}_{j=1}\gamma_{i,j}b_{i,j},
-\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_\simeq \\
-&= \sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(b_{i,j},
-\sum^{l_2}_{k=1}\gamma_{i,k}c_{i,k}\right)\right]_\simeq \\
-&= \sum^n_{i = 1}\alpha_i\left[\sum^{l_1}_{j=1}\gamma_{i,j}\left(\sum^{l_2}_{k=1}\gamma_{i,k}
-\left(b_{i,j},c_{i,k}\right)\right)\right]_\simeq \\
-&= \sum^n_{i = 1}\alpha_i\left[\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
-\gamma_{i,j}\gamma_{i,k}(b_{i,j}, c_{i,k})\right]_\simeq \\
-&= \sum^n_{i = 1}\alpha_i\left(\sum_{\substack{1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
-\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_\simeq\right) \\
-&= \sum_{\substack{1 \leq i \leq n \\1 \leq j \leq l_1 \\ 1 \leq k \leq l_2}}
-\alpha_i\gamma_{i,j}\gamma_{i,k}[(b_{i,j}, c_{i,k})]_\simeq
-\end{align*}
-Thus $\{b_i \otimes c_j : i \in I, j \in J\}$ spans $V \otimes W$. To prove linear independence we can
-observe that if $\displaystyle\sum^m_{i = 1}\alpha_i [(v_i,w_i)]_\simeq = 0$,
-then either $v_1, \dots v_n$ or $w_1, \dots, w_n$ have to be linearly dependent. It can't occur if
-$v_1, \dots v_n$ and $w_1, \dots, w_n$ are from the bases of $V$ and $W$.\\
-This observation also justifies
-recently cited fact and the example.
-\end{proof}
-\begin{observation}
-If $V$ and $W$ are finite dimensional and $\mathrm{ dim}(V)=n$, \text{$\mathrm{ dim}(W)=m$}, then
-$\mathrm{dim}(V \otimes W)=nm$.
-\end{observation}
-\begin{proof}
-The proof is immediate from the \hyperref[observation:1]{Observation 1.}. Since if
-$\{b_i\}_{i \in I}$, $\{c_j\}_{j \in J}$ are bases of, respectively, $V$and $W$ and
-$\mathrm{ dim}(V)=n$ and $\mathrm{ dim}(W)=m$, then $\mid \{b_i \otimes c_j : i \in I, j \in J\} \mid = nm$
-\end{proof}
-\begin{observation}
-\label{observation:3}
-$V \otimes W$ is a vector space of elements in the shape of $\ \displaystyle\sum^n_{i = 1}v_i \otimes w_i$
-with operations on them defined such that for all $v,v_1,v_2 \in V$, $w, w_1, w_2 \in W$, $k \in K$ there
-hold
-\begin{gather*}
-v_1 \otimes w + v_2 \otimes w = (v_1 + v_2) \otimes w, \\
-v \otimes w_1 + v \otimes w_2 = v \otimes (w_1 + w_2), \\
-k (v \otimes w) = (kv) \otimes w = v \otimes (kw).
-\end{gather*}
-\end{observation}
-\begin{proof}
-This observation is just a recollection of the definition.
-\end{proof}
-\begin{observation}
-For vector spaces $U, V, W$ over the field $K$ there is a natural isomorphism between
-$(U \otimes V) \otimes W$ and $U \otimes (V \otimes W)$ therefore there is no ambiguity in writing
-$U \otimes V \otimes W$ or a product of any greater number of vector spaces in that way. (We will also
-write "$u \otimes v \otimes w$" for some of their elements.) Form of elements, operations on them and
-structure of that vector spaces are fully analogous to the described above (with respect to all
-"coordinates" in terms like $u \otimes v \otimes w$ and so on). So the space $U \otimes V \otimes W$
-has elements of shape $\ \displaystyle\sum^n_{i = 1}u_i \otimes v_i \otimes w_i$
-(each for some $u_1, \dots, u_n \in U$, $v_1, \dots v_n \in V$, $w_1, \dots, w_n \in W$) and for all
-$u, u_1, u_2 \in U$, $v,v_1,v_2 \in V$, $w, w_1, w_2 \in W$, $k \in K$ there hold
-\begin{gather*}
-u_1 \otimes v \otimes w + u_2 \otimes v \otimes w = (u_1+u_2) \otimes v \otimes w, \\
-u \otimes v_1 \otimes w + u \otimes v_2 \otimes w = u \otimes (v_1 + v_2) \otimes w, \\
-u \otimes v \otimes w_1 + u \otimes v \otimes w_2 = u \otimes v \otimes (w_1 + w_2), \\
-k (u \otimes v \otimes w) = (ku) \otimes v \otimes w = u \otimes (kv) \otimes w = u \otimes v \otimes (kw).
-\end{gather*}
-\end{observation}
-\begin{proof}
-Left to the reader.
-\end{proof}
-\begin{observation}\label{observation:5}
-If $V$ is a vector space over $K$, then all elements of $K \otimes V$ ($V \otimes K$) can be expressed in
-form $1 \otimes v$ ($v \otimes 1$) and there are natural isomorphisms ${^Lm} : K \otimes V \to V$,
-(${^Rm} : V \otimes K \to V$) given by
-\begin{align*}
-{^Lm}(k \otimes v) &= kv, \\
-{^Rm}(v \otimes k) &= kv.
-\end{align*}
-\end{observation}
-\begin{proof}
-An arbitrary element of $K \otimes V$ has form $\displaystyle\sum^n_{i=1}k_i \otimes v_i$ but
+First we will introduce tensor product of the vector spaces. Let $V, W$ be vector spaces over the field $K$
+with basises , respectively, $\mathcal{B}_V$, $\mathcal{B}_W$. \\
+We define tensor product $V \otimes W$ as a linear space with basis
 \begin{equation*}
-\sum^n_{i=1}k_i \otimes v_i = \sum^n_{i=1} 1 \otimes k_iv_i = 1 \otimes \sum^n_{i=1}k_iv_i.
+\{v \otimes w : v \in \mathcal{B}_V, w \in \mathcal{B}_W \}.
 \end{equation*}
-${^Lm}$ is linear (left for the reader) and is bijective because for all $v, v_1, v_2 \in V$
-\begin{equation*}
-\varphi(1 \otimes v) = v
-\end{equation*}
-and
-\begin{align*}
-1 \otimes v_1 = 1 \otimes v_2 &\iff 1 \otimes v_1 - 1 \otimes v_2 = 0 \iff \\
-1 \otimes (v_1 - v_2) = 0 &\iff v_1 -v_2 = 0 \iff v_1 = v_2.
-\end{align*}
-The proof for $V \otimes K$ and ${^Rm}$ is analogous. In the later sections we will use notations of
-${^Lm}$ and ${^Rm}$ for those isomorphism for any space.
-\end{proof}
-\textbf{Remark. } In a special case when $V = W = K$ the natural isomorphisms described above
-take form of $m_K : K \otimes K \to K$ that for all $k_1, k_2\in K$
-\text{$m_K(k_1 \otimes k_2) = k_1k_2$}. This isomorphism of $K \otimes K$ and $K$ is just a field
-multiplication from $K$. \\[8pt]
-\noindent \textbf{Remark. } Thanks to \hyperref[observation:3]{Observation 3.} there is no ambiguity in
-writing
-$kv \otimes w$. \\
-I hope that this third observation will also help us understand what the tensor product is and what it is
- not.
-It will be good to keep it in mind when we are intensively dealing with it in a combinatorical way in
-the following sections.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -397,20 +245,20 @@ the following sections.
 
 \subsection{Algebras}
 \begin{definition}
-A \textbf{$\textbf{K}$-algebra} is a vector space $\mathcal{H}$ with additional
+A \textbf{$\textbf{K}$-algebra} is a vector space $\mathcal{A}$ with additional
 associative, linear operation
-\text{$m:\mathcal{H} \otimes \mathcal{H} \to \mathcal{H}$} called multiplication and a linear map
-\text{$u:K\to \mathcal{H}$} called unit such that for all $a \in \mathcal{H}$
+\text{$m:\mathcal{A} \otimes \mathcal{A} \to \mathcal{A}$} called multiplication and a linear map
+\text{$u:K\to \mathcal{A}$} called unit such that for all $a \in \mathcal{A}$
 \begin{equation*}
 m(u(1_K) \otimes a) = m(a \otimes u(1_K)) = a.
 \end{equation*}
 \end{definition}
-\textbf{Explanation. } Operation $m$ defines on $\mathcal{H}$ a structure of a unitary ring by setting the
+\textbf{Explanation. } Operation $m$ defines on $\mathcal{A}$ a structure of a unitary ring by setting the
 ring multiplication (let it be denoted as "$\cdot$") as $a \cdot b = m(a \otimes b)$. The identity element
-of that ring multiplication is then $u(1)$. (We will be calling $u(1)$ also an identity element of
-multiplication $m$ in K-algebra $\mathcal{H}$ or the $1$ in the $\mathcal{H}$ and
-denote it as $1_\mathcal{H}$)\\
-\textit{Proof.} The fact that $m$ is associative means that for all $a_1, a_2, a_3 \in \mathcal{H}$
+of that ring multiplication is then $u(1_K)$. (We will be calling $u(1)$ also an identity element of
+multiplication $m$ in K-algebra $\mathcal{A}$ or the $1$ in the $\mathcal{A}$ and
+denote it as $1_\mathcal{A}$)\\
+\textit{Proof.} The fact that $m$ is associative means that for all $a_1, a_2, a_3 \in \mathcal{A}$
 \begin{equation*}
 m(m(a_1 \otimes a_2) \otimes a_3) = m(a_1 \otimes m(a_2 \otimes a_3)).
 \end{equation*}
@@ -419,41 +267,42 @@ That implies that
 (a\cdot b) \cdot c = m(m(a \otimes b) \otimes c) = m(a \otimes m(b \otimes c)) = a \cdot (b \cdot c).
 \end{equation*}
 So "$\cdot$" is proper ring multiplication. Recalling the definition of $u$, we can write that for all
-$a \in \mathcal{H}$
+$a \in \mathcal{A}$
 \begin{equation*}
 u(1_K) \cdot a = a \cdot u(1_K) = a
 \end{equation*}
 So indeed it is an identity
 element of that ring. As $u$ is linear map it can be seen as natural insertion of a field $K$ into an
-algebra $\mathcal{H}$ that maps $1_K$ to $1_\mathcal{H}$ ($1$ from the $K$ to the identity element of
-multiplication in $\mathcal{H}$) and extends linearly. Given that we can observe
-that for all $a \in \mathcal{H}$, all $k \in K$, $a$ multiplicated by $u(k)$ (no matter if from the left
-or right) is exactly the $ka$ (an element of vector space $\mathcal{H}$).
-So we can think about $u[K]$ as a copy of $K$ in $\mathcal{H}$ that acts on $\mathcal{H}$ just like $K$.\\
-\indent  Because of associativity we can define $m^{[3]} : \mathcal{H}^{\otimes 3} \to \mathcal{H}$ as
+algebra $\mathcal{A}$ that maps $1_K$ to $1_\mathcal{A}$ ($1$ from the $K$ to the identity element of
+multiplication in $\mathcal{A}$) and extends linearly. Given that we can observe
+that for all $a \in \mathcal{A}$, all $k \in K$, $a$ multiplicated by $u(k)$ (no matter if from the left
+or right) is exactly the $ka$ (an element of vector space $\mathcal{A}$).
+So we can think about $u[K]$ as a copy of $K$ in $\mathcal{A}$ that acts on $\mathcal{A}$ just like $K$.\\
+\indent  Because of associativity we can define $m^{[3]} : \mathcal{A}^{\otimes 3} \to \mathcal{A}$ as
 \begin{equation*}
 m^{[3]} \coloneqq m(m\otimes I)
 \end{equation*}
-and for all $a_1, a_2, a_3 \in \mathcal{H}$ write
+and for all $a_1, a_2, a_3 \in \mathcal{A}$ write
 \begin{equation*}
 m^{[3]}(a_1 \otimes a_2 \otimes a_3) = a_1 \cdot a_2 \cdot a_3
 \end{equation*}
 with no ambiguity.
 And further: \\
-\indent Let $A$ be an algebra with multiplication $m$ and unit $u$. We will recurrently define a
+\indent Let $A$ be an algebra with multiplication $m$ and unit $u$. We will recurrsivly define a
 sequence of maps
-$(m^{[n]})_{n \geq 2}$, such that $m^{[n]} : \underbrace{A \otimes \dots \otimes A}_{n\ times} \to A$
+$(m^{[n]})_{n \geq 2}$, such that $m^{[n]} : \underbrace{\mathcal{A} \otimes \dots \otimes
+\mathcal{A} }_{n\ times} \to \mathcal{A} $
 as follows:
 \begin{align*}
 m^{[2]} &\coloneqq m, \\
 m^{[n]} &\coloneqq m^{[n-1]}(m \otimes \underbrace{I \otimes \dots \otimes I}_{n-2 \mathrm{\ times}})
 \end{align*}
 which is a multiplication of all factors together. \\
-Because of that, for all $a_1, \dots, a_n \in A$ we can write
+Because of that, for all $a_1, \dots, a_n \in \mathcal{A} $ we can write
 \begin{equation*}
 m^{[n]}(a_1 \otimes \dots \otimes a_n) = a_1 \cdot \ldots \cdot a_n.
 \end{equation*}
-\textbf{Remark. } An algebra $A$ is said to be commutative iff for all $a_1, a_2 \in A$
+\textbf{Remark. } An algebra $\mathcal{A} $ is said to be commutative iff for all $a_1, a_2 \in \mathcal{A}$
 \begin{equation*}
 m(a_1 \otimes a_2 ) = m(a_2 \otimes a_1).
 \end{equation*}
@@ -476,11 +325,11 @@ multiplication in an algebra of our interest.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \subsection{Coalgebras}
 \begin{definition}
-A \textbf{$\textbf{K}$-coalgebra} is a vector space $\mathcal{H}$
+A \textbf{$\textbf{K}$-coalgebra} is a vector space $\mathcal{C}$
 with additional coassociative, linear operation
-\text{$\Delta : \mathcal{H} \to \mathcal{H} \otimes \mathcal{H}$} called comultiplication and
-a linear map \text{$\varepsilon : \mathcal{H} \to K$} called counit such that for all
-$a \in \mathcal{H}$
+\text{$\Delta : \mathcal{C} \to \mathcal{C} \otimes \mathcal{C}$} called comultiplication and
+a linear map \text{$\varepsilon : \mathcal{C} \to K$} called counit such that for all
+$a \in \mathcal{C}$
 \begin{align*}
 (\varepsilon \otimes I)\Delta(a) &= 1 \otimes a \mathrm{\ and} \\
 (I \otimes \varepsilon)\Delta(a) &= a \otimes 1.
@@ -494,7 +343,7 @@ m(I \otimes u)(a \otimes 1_K) &= a
 means exactly what was in the definition of $u$. \\[8pt]
 \textbf{Explanation.} We will introduce a notation called Sweedler notation [Swe69] which will be
 very useful
-for writing coproducts. As for all $a \in \mathcal{H}$ we have
+for writing coproducts. As for all $a \in \mathcal{C}$ we have
 \text{$\Delta(a) = \displaystyle\sum^n_{i=1}a_{1,i} \otimes a_{2,i}$}, we will write
 \begin{equation*}
 \Delta(a) = \displaystyle\sum a_1 \otimes a_2.
@@ -516,11 +365,11 @@ For a linear space of polynomials we can define comultiplication as:
 The coassociativity of $\Delta$ means that $(\Delta \otimes I)\Delta = (I \otimes \Delta)\Delta$.
 In Sweedler notation it can be written as
 \begin{equation*}
-\forall_{a \in \mathcal{H}}\ \sum\Delta(a_1) \otimes a_2 = \sum a_1 \otimes \Delta(a_2)
+\forall_{a \in \mathcal{C}}\ \sum\Delta(a_1) \otimes a_2 = \sum a_1 \otimes \Delta(a_2)
 \end{equation*}
 or in a more expanded form as
 \begin{equation}\label{swe1}
-\forall_{a\in \mathcal{H}}\ \sum\ {a_1}_1 \otimes {a_1}_2 \otimes a_2 = \sum a_1 \otimes {a_2}_1
+\forall_{a\in \mathcal{C}}\ \sum\ {a_1}_1 \otimes {a_1}_2 \otimes a_2 = \sum a_1 \otimes {a_2}_1
 \otimes {a_2}_2.
 \end{equation}
 Because of these equalities, terms from (\ref{swe1}) can be written as
@@ -529,19 +378,20 @@ We can also define
 \begin{equation*}
 \Delta^{[3]} \coloneqq (\Delta \otimes I)\Delta
 \end{equation*}
-Now, for all $a \in \mathcal{H}$ there will be an equality
+Now, for all $a \in \mathcal{C}$ there will be an equality
 \begin{equation*}
 \Delta^{[3]}(a) = \sum a_1 \otimes a_2 \otimes a_3
 \end{equation*}
 which can be viewed as a sum of possible decompositions of $a$ into three parts.
 In this point of view we can say that coassociativity of $\Delta$ means that $\Delta$ represents
-decomposition such that, when done twice, probabilities of possible outcomes are the same
-no matter which set of parts ($a_1$ or $a_2$) was been taken in the second iteration. It can become more
+decomposition such that result is the same, no matter which set of parts ($a_1$ or $a_2$) have been taken
+in the second iteration. It can become more
 clear with an introduction of the examples that are presented in \ref{polinomials} and later. \\
 Now we will take it a step further: \\[8pt]
-\indent Let $C$ be a coalgebra with comultiplication $\Delta$ and counit $\varepsilon$.
+\indent Let $\mathcal{C} $ be a coalgebra with comultiplication $\Delta$ and counit $\varepsilon$.
 We will recurrently define a sequence of maps $(\Delta^{[n]})_{n \geq 2}$, such that
-$\Delta^{[n]} : C \to \underbrace{C \otimes \dots \otimes C}_{n \mathrm{\ times}}$ as follows:
+$\Delta^{[n]} : \mathcal{C}  \to \underbrace{\mathcal{C}  \otimes \dots \otimes
+\mathcal{C} }_{n \mathrm{\ times}}$ as follows:
 \begin{align*}
 \Delta^{[2]} &\coloneqq \Delta, \\
 \Delta^{[n]} &\coloneqq (\Delta \otimes
@@ -558,26 +408,26 @@ The proof can be found in ~\cite{DNR} (Proposition 1.1.7 and Lemma 1.1.10, sites
 notation is slightly different there - it is $\Delta_1 \coloneqq \Delta$ not $\Delta^{[2]} \coloneqq
  \Delta$. \\
 This formula is a generalization of coassociativity. It means that $\Delta^{[n]}$ is coproduct where
-$\Delta$ is applied $n-1$ times to any one tensor factor at each stage. Thanks to that we can write
+$\Delta$ is applied $n-1$ times to any tensor factor at each stage. Thanks to that we can write
 \begin{equation*}
 \Delta^{[n]}(a) = \sum a_1 \otimes \dots \otimes a_n
 \end{equation*}
 with no ambiguity. \\
 Interpretation is an extension of that described in the previous paragraph for $n = 2$. Now we are just
-decomposing $a$ into $n$ parts and probabilities of outcomes do not depend on which factors we are
+decomposing $a$ into $n$ parts and result do not depend on which factors we are
 applying $\Delta$ at each stage.  \\[8pt]
 The counit property written in Sweedler notation takes form
 \begin{align*}
 \sum\varepsilon(a_1) \otimes a_2 &= 1 \otimes a, \\
 \sum a_1 \otimes \varepsilon(a_2) &= a \otimes 1.
 \end{align*}
-Applying isomorphisms $m_L$ and $m_R$ from
+Applying isomorphisms $m_L$ and $m_R$ defined in
 \hyperref[observation:5]{Observation 5.} on both sides respectively we get
 \begin{align*}
 \sum\varepsilon(a_1)a_2 &= a, \\
 \sum a_1\varepsilon(a_2) &= a.
 \end{align*}
-\textbf{Remark. } A coalgebra $C$ is said to be cocommutative iff for all $c \in C$
+\textbf{Remark. } A coalgebra $\mathcal{C} $ is said to be cocommutative iff for all $c \in \mathcal{C} $
 \begin{equation*}
 \sum c_1 \otimes c_2 = \sum c_2 \otimes c_1.
 \end{equation*}
@@ -598,12 +448,12 @@ Applying isomorphisms $m_L$ and $m_R$ from
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \subsection{Bialgebras}
 \begin{definition}
-A \textbf{$\textbf{K}$-bialgebra} is vector space $\mathcal{H}$ with both an algebra structure
-$(\mathcal{H}, m, u)$ and a coalgebra structure $(\mathcal{H}, \Delta, \varepsilon)$ such that $m$, $u$
+A \textbf{$\textbf{K}$-bialgebra} is vector space $\mathcal{B}$ with both an algebra structure
+$(\mathcal{B}, m, u)$ and a coalgebra structure $(\mathcal{B}, \Delta, \varepsilon)$ such that $m$, $u$
 are morphisms of coalgebras and $\Delta$, $\varepsilon$ are morphisms of algebras.
 \end{definition}
-\textbf{Explanation. } In fact, for a given vector space $\mathcal{H}$ with both an algebra structure
-$(\mathcal{H}, m, u)$ and a coalgebra structure $(\mathcal{H}, \Delta, \varepsilon)$, the fact that
+\textbf{Explanation. } In fact, for a given vector space $\mathcal{B}$ with both an algebra structure
+$(\mathcal{B}, m, u)$ and a coalgebra structure $(\mathcal{B}, \Delta, \varepsilon)$, the fact that
 $m$ and $u$ are morphisms of coalgebras is equivalent to the fact that $\Delta$ and $\varepsilon$ are
 morphisms of
 algebras and both are equivalent to conjuction of following conditions:
@@ -613,19 +463,19 @@ algebras and both are equivalent to conjuction of following conditions:
 \Delta u &= (u \otimes u)\Delta_K, \\
 \varepsilon u &= I.
 \end{align*}
-They can also be written as: for all $g, h \in \mathcal{H}$, all $k \in K$
+They can also be written as: for all $g, h \in \mathcal{B}$, all $k \in K$
 \begin{align*}
 \sum (g \cdot h)_1 \otimes (g \cdot h)_2 &= \sum g_1 \cdot h_1 \otimes g_2 \cdot h_2, \\
 \varepsilon(g \cdot h) &= \varepsilon(g)\varepsilon(h), \\
-\sum (1_\mathcal{H})_1 \otimes (1_\mathcal{H})_2 &= 1_\mathcal{H} \otimes 1_\mathcal{H}, \\
-\varepsilon (1_\mathcal{H}) &= 1_K.
+\sum (1_\mathcal{B})_1 \otimes (1_\mathcal{B})_2 &= 1_\mathcal{B} \otimes 1_\mathcal{B}, \\
+\varepsilon (1_\mathcal{B}) &= 1_K.
 \end{align*}
-or as: for all $g, h \in \mathcal{H}$, all $k \in K$
+or as: for all $g, h \in \mathcal{B}$, all $k \in K$
 \begin{align*}
 \Delta(g \cdot h) &= \sum g_1 \cdot h_1 \otimes g_2 \cdot h_2, \\
 \varepsilon(g \cdot h) &= \varepsilon(g)\varepsilon(h), \\
-\Delta (1_\mathcal{H}) &= 1_\mathcal{H} \otimes 1_\mathcal{H}, \\
-\varepsilon (1_\mathcal{H}) &= 1_K.
+\Delta (1_\mathcal{B}) &= 1_\mathcal{B} \otimes 1_\mathcal{B}, \\
+\varepsilon (1_\mathcal{B}) &= 1_K.
 \end{align*}
 \textbf{Remark. } Note that for the condition
 $\Delta m = (m\otimes m)(I \otimes T \otimes I)(\Delta \otimes \Delta)$
@@ -634,7 +484,7 @@ $(m \otimes m)(\Delta \otimes \Delta)$ which, when applied to vector $g \otimes 
 $\displaystyle\sum g_1 \cdot g_2 \otimes h_1 \cdot h_2$ not $\sum g_1 \cdot h_1 \otimes g_2 \cdot h_2$
 and we want comultiplication and multiplication to be done componentwise. Definition with
 one $T$ is enough for all powers of $m$ and $\Delta$ as stated in the following remark:\\
-\textbf{Remark. } It can be proven by induction that for all ${^1h}, \dots, {^nh} \in \mathcal{H}$
+\textbf{Remark. } It can be proven by induction that for all ${^1h}, \dots, {^nh} \in \mathcal{B}$
 \begin{equation}
 \Delta^{[m]}m^{[n]}({^1h} \otimes \dots \otimes {^nh}) = \sum {^1h}_1 \cdot \ldots \cdot {^nh}_1
 \otimes \dots \otimes {^1h}_m\cdot  \ldots \cdot {^nh}_m.
@@ -643,7 +493,7 @@ one $T$ is enough for all powers of $m$ and $\Delta$ as stated in the following 
 Left to the reader.
 \end{proof}
 To simplify the notation, we will write a symbol for algebra multiplication also for componentwise
-multiplication, \\ so for all ${^1h}_1, \dots, {^1h}_m, \dots, {^nh}_1, \dots , {^nh}_m \in \mathcal{H}$:
+multiplication, \\ so for all ${^1h}_1, \dots, {^1h}_m, \dots, {^nh}_1, \dots , {^nh}_m \in \mathcal{B}$:
 \begin{equation}
 ({^1h}_1\otimes \dots \otimes {^1h}_m)\cdot \ldots \cdot ({^nh}_1 \otimes \dots \otimes {^nh}_m) \coloneqq
 {^1h}_1 \cdot \ldots \cdot {^nh}_1 \otimes \dots \otimes {^1h}_m\cdot  \ldots \cdot {^nh}_m.
@@ -658,14 +508,14 @@ Element $b$ of a bialgebra $\mathcal{B}$ is said to be \textbf{primitive} iff
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \begin{definition}
-For a bialgebra $\mathcal{H}$ we define a \textbf{Hopf-square} map
-$\Psi^{[2]} : \mathcal{H} \to \mathcal{H}$ as $\Psi^{[2]} \coloneqq m\Delta$.
+For a bialgebra $\mathcal{B}$ we define a \textbf{Hopf-square} map
+$\Psi^{[2]} : \mathcal{B} \to \mathcal{B}$ as $\Psi^{[2]} \coloneqq m\Delta$.
 \end{definition}
-\textbf{Comment. } It will be a very important function in this paper. It will be this function, that will
+\textbf{Comment. } This will be a very important function in this paper. It will be this function, that will
 set a structure
 of a Markov chain on a Hopf algebra. In Hopf algebras that we will
 use for modelling Markov chains, the Hopf square map will preserve some of those algebras'
-(viewed as a vector space) finite dimensional subspaces. Bases of these preserved
+(viewed as a vector space) finite dimensional subspaces. Basises of these preserved
 subspaces can be then treated as spaces of states (aces of spades, haha)
 of our associated Markov chains. Note that one Hopf algebra can set a structure of many Markov chains,
 each one having a basis of algebra's finite dimensional subspace preserved by $\Psi^{[2]}$ as its (chains)
@@ -723,11 +573,11 @@ hence $f * u\varepsilon = f$. Similarly, $u\varepsilon * f = f$. \\
 Let us note that if $A = K$, then $*$ is the convolution product defined on the dual algebra of the
 coalgebra $C$. This is why in the case $A$ is an arbitrary algebra we will also call $*$ the convolution
 product. \\[8pt]
-\indent For a bialgebra $\mathcal{H}$ we denote $\mathcal{H}^A$, $\mathcal{H}^C$ as, respectively,
+\indent For a bialgebra $\mathcal{B}$ we denote $\mathcal{B}^A$, $\mathcal{B}^C$ as, respectively,
 the underlying algebra and coalgebra structure. We can define algebra structure on
-$Hom(\mathcal{H}^C, \mathcal{H}^A)$ as above. Note that the identity map $I : \mathcal{H} \to \mathcal{H}$
+$Hom(\mathcal{B}^C, \mathcal{B}^A)$ as above. Note that the identity map $I : \mathcal{B} \to \mathcal{B}$
 is an
-element of $Hom(\mathcal{H}^C, \mathcal{H}^A)$ but it is not the identity element of its algebra structure
+element of $Hom(\mathcal{B}^C, \mathcal{B}^A)$ but it is not the identity element of its algebra structure
 with convolution product. The $u\varepsilon$ is that identity element.
 \begin{definition}
 Let $\mathcal{H}$ be a bialgebra. A linear map $S \in Hom(\mathcal{H}^C, \mathcal{H}^A)$ is called an
@@ -822,9 +672,9 @@ Since for all $n \in \mathcal{N}$
 \begin{align*}
 (I \otimes \varepsilon )\Delta(X^n) &= X^n \otimes 1_K &\mathrm{and} \\
 (I \otimes \varepsilon )\Delta(X^n) &= \sum^n_{i = 0}\binom{n}{i} X^i \otimes \varepsilon(X^{n-i}) &\mathrm{and} \\
-\sum^n_{i = 0}\binom{n}{i} X^i \otimes \varepsilon(X^{n-i}) &= X^n \otimes \varepsilon(1_P) &+
+\sum^n_{i = 0}\binom{n}{i} X^i \otimes \varepsilon(X^{n-i}) &= X^n \otimes \varepsilon(1_P) +
 \sum^{n-1}_{i=0}\binom{n}{i} X^i \otimes \varepsilon(X^{n-i}) \\ &=
-X^n \otimes 1_K &+ \sum^{n-1}_{i=0}\binom{n}{i} X^i \otimes \varepsilon(X^{n-i})
+X^n \otimes \, 1_K \ \ \ + \sum^{n-1}_{i=0}\binom{n}{i} X^i \otimes \varepsilon(X^{n-i})
 \end{align*}
 we have that for all $n \in \mathbb{N}$
 \begin{equation*}
@@ -836,10 +686,10 @@ but we also have that
  \varepsilon(X^{n-i})X^i \otimes 1_K =
 \left( \sum^{n-1}_{i=0}\binom{n}{i} \varepsilon(X^{n-i})X^i \right)\otimes 1_K
 \end{equation*}
-Because $X_0, \dots, X_{n-1}$ are linearly independent we have that \text{$\forall_{0 \leq i \leq n-1}\
+Because $X^0, \dots, X^{n-1}$ are linearly independent we have that \text{$\forall_{0 \leq i \leq n-1}\
 \varepsilon(X^{n - i}) = 0$}. Keeping in mind that $n$ was arbitrary, we have that for all $n \geq 1$
 $\varepsilon(X^n) = 0$ and then by linearity of $\varepsilon$, that for every polynomial $p \in P$ with a
-positive degree we have that $\varepsilon(p) = 0$. \\
+positive degree we have that $\varepsilon(p) = 0$. $\square$\\
 We can now check that $P$ with that structure is a graded, connected Hopf algebra that is both commutative
 and cocommutative. \\
 It is a bialebra, because:
@@ -874,7 +724,7 @@ and for $n = 0$, $m = 0$
     m_K(\varepsilon \otimes \varepsilon)(X^0 \otimes X^0) =
     m_K(\varepsilon \otimes \varepsilon)(1_P \otimes 1_P) = m_K(1_K \otimes 1_K) = 1_K,
 \end{gather*}
-so $\varepsilon m = ^Km(\varepsilon \otimes \varepsilon)$.
+so $\varepsilon m = m_K(\varepsilon \otimes \varepsilon)$.
 \item for all $k \in K$
 \begin{gather*}
     \Delta u(k) = \Delta(k1_P) =
@@ -895,7 +745,7 @@ It is commutative, because for all $n, m \in \mathbb{N}$
 \end{gather*}
 and cocommutative, because for all $n \in \mathbb{N}$
 \begin{gather*}
-    \Delta(X^n) = \sum_{i=0}^n X^i \otimes X^{n - i} = \sum_{i=0} X^{n-i} \otimes X^i
+    \Delta(X^n) = \sum_{i=0}^n \binom{n}{i} X^i \otimes X^{n - i} = \sum_{i=0} \binom{n}{n-i}X^{n-i} \otimes X^i
 \end{gather*}
 It is graded as $P = \bigoplus_{i=0}^\infty \mathrm{Lin}(X_0, \dots, X_i)$ \\
 and connected as for all $n \in \mathbb{N}$
@@ -909,8 +759,8 @@ shuffling.\\[4pt]
 \textbf{Notational remark.} Let  $\mathcal{X} = \{x_1, \dots, x_N\}$ be a finite set.
 Let $\mathcal{X}^*$ - all finite words over an alphabet $\mathcal{X}$.
 Let $s, s_1,\dots, s_n \in \mathcal{X}^*$ We will write $s_1 \prec s$ for "$s_1$ is a subword of $s$"
-(a subword doesn't have to be a contiguous fragment). For $s_1, \dots, s_n \prec s$
-we say that $s_1, \dots, s_n$ are pairwise disjoint in $s$ if we there exits their occurrences in $s$ such
+(here a subword does not have to be a contiguous fragment). For $s_1, \dots, s_n \prec s$
+we say that $s_1, \dots, s_n$ are pairwise disjoint in $s$ if there exits their occurrences in $s$ such
 that no pair of them share any position in $s$. We say that $s$ is a disjoint union of $s_1, \dots, s_n$
 if there exists occurrences $s_1, \dots, s_n$ in $s$ such that every position in $s$ is occupied by
 exactly one of the occurrences of $s_1, \dots, s_n$. We denote that as $s_1*\dots *s_n=s$.
@@ -948,17 +798,17 @@ And counit is then $\varepsilon : \mathcal{H} \to K$ such that for all $s \in \m
 \begin{proof}
 Associativity of $m$ and coassociativity of $\Delta$ are obvious. Actions fit together,
 because we define them so. Algebra is graded straight from definition and connected because an empty word
-is an identity element in respect of concatenation multiplication. Cocomutativity can be checked immediately.
+is an identity element with respect to concatenation multiplication. Cocomutativity can be checked immediately.
 \end{proof}
 \noindent Let $s = x_{i_0}\dots x_{i_k} \in \mathcal{X}^*$. What is not so obvious is
 how $\Delta(x_{i_0}\dots x_{i_k})$ looks like:
-\begin{align*}
+\begin{align}
 \Delta(x_{i_0}\dots x_{i_k}) &= \Delta m^{[k]}(x_{i_0} \otimes \dots \otimes x_{i_k}) \\
 &= (m^{[k]} \otimes m^{[k]}) \left(\sum (x_{i_0})_1 \otimes \dots \otimes (x_{i_k})_1 \otimes
 (x_{i_0})_2 \otimes \dots \otimes (x_{i_k})_2\right) \\
-&= \sum (x_{i_0})_1 \dots (x_{i_k})_1 \otimes
+&= \label{siedem}\sum (x_{i_0})_1 \dots (x_{i_k})_1 \otimes
 (x_{i_0})_2 \dots (x_{i_k})_2.
-\end{align*}
+\end{align}
 It may be unclear what this sum really is. It is taken over all possible combinations of all "possible
 values" of $(x_{i_j})_1$ and $(x_{i_j})_2$ for $ 0 \leq j \leq k$. We can recall that for all
 $x_i \in \mathcal{X}$ we
@@ -972,7 +822,7 @@ because for each component of that sum, for each $x_{i_j}$ we decide if we are t
 subsequence ($x_{i_j}$ as a "value" of $(x_{i_j})_1$ and $1_\mathcal{H}$ as a "value" of $(x_{i_j})_2$) or
 into the right subsequence ($1_\mathcal{H}$ as a "value" of $(x_{i_j})_1$ and $x_{i_j}$ as a "value" of
 $(x_{i_j})_2$). \\
-We can write the sum from (2.5) as:
+We can write the sum from \hyperref[siedem]{(7)} as:
 \begin{equation*}
 \sum (x_{i_0})_1 \dots (x_{i_k})_1 \otimes (x_{i_0})_2 \dots (x_{i_k})_2 =
 \sum_{s_1*s_2=s} s_1 \otimes s_2.
@@ -1010,7 +860,7 @@ They will be important in the chapter about eigenbases. Here we will present a s
 ~\cite{Garsia_auvancesin} shows that symmetrized sums of certain primitive elements form a basis of a free associative algebra.
 It will turn out that this will be the left eigenbasis of $m\Delta$.
 Here will be introduced concepts useful for
-construction of that basis. Explanation why this is an eigenbasis comes in Chapter 4.
+construction of that basis. Explanation why this is an eigenbasis comes in Chapter 6.
 \begin{definition}
 A word in an ordered alphabet is \textbf{Lyndon}, if it is strictly smaller (in lexicographical order)
  than all its cyclic rearrangements.
@@ -1032,7 +882,7 @@ For a Lyndon word $l$ a \textbf{standard bracketing} $\boldsymbol{\lambda(l)}$ o
 as
 $\lambda(a) \coloneqq a$ for a letter and $\lambda(l) \coloneqq [\lambda(l_1), \lambda(l_2)]$, where $(l_1,
 l_2)$
-is a standard factorisation of $l$. $[x, y] = x\cdot y - y\cdot x$ for every words $x, y$.
+is a standard factorisation of $l$. $[x, y] = xy - yx$ for every words $x, y$.
 \end{definition}
 \begin{definition}
 The \textbf{symmetrized product} of word $w$ is
@@ -1041,7 +891,7 @@ The \textbf{symmetrized product} of word $w$ is
 \end{equation*}
 where $(l_1, \dots, l_k)$ is a Lyndon factorization of $w$.
 \end{definition}
-[GR89, Th. 5.2] shows that $\{\mathrm{sym}(w) : w \in \mathcal{X^*}\}$ form a basis for free associative
+[GR89, Th. 5.2] \label{basis}shows that $\{\mathrm{sym}(w) : w \in \mathcal{X^*}\}$ form a basis for free associative
 algebra. \\
 Let $|w|$ be the length of word $w$. For a word $w = a_1\dots a_{|w|}$ and permutation
 $\sigma \in S_{|w|}$ let $\sigma(w) \coloneqq a_{\sigma(1)}\dots a_{\sigma(|w|)}$. \\
@@ -1083,7 +933,8 @@ This will be the grading we will be using for our probabilistic interpretation.
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 \subsection{Alternative structure    }
-\indent Now we will describe an alternative graded and connected Hopf algebra structure on $\mathcal{H}$ - a
+\indent Now we will describe an alternative graded and connected Hopf algebra structure on $\mathcal{H}$ -
+the
 vector space spanned
 by finite words over the fixed alphabet $\mathcal{X}$. It will describe the structure of forward riffle
 shuffle.
@@ -1092,20 +943,20 @@ built on $\mathcal{H}$ as $\mathcal{H}^*$ and call it a graded dual of $\mathcal
 will come later).
 (Note that $\mathcal{H}$ is isomorphic to $\mathcal{H}^*$ as a vector space and $\mathcal{H}^*$ in this
 sense is not the vector space dual to $\mathcal{H}$). \\
-We define multiplication $\Delta^* : \mathcal{H}^* \otimes \mathcal{H}^* \to \mathcal{H}^*$ as
-for all $s_1, s_2 \in \mathcal{X}^*$:
+We define multiplication $\Delta^* : \mathcal{H}^* \otimes \mathcal{H}^* \to \mathcal{H}^*$
+for all $s_1, s_2 \in \mathcal{X}^*$ as:
 \begin{equation*}
 \Delta^*(s_1 \otimes s_2) = \sum\{s : s_1*s_2 = s\}.
 \end{equation*}
 which is the sum of all possible interlaces of $s_1$ and $s_2$ \\
-and comultiplication $m^* : \mathcal{H}^* \to \mathcal{H}^* \otimes \mathcal{H}^*$ as for all $s \in
-\mathcal{X}^*$:
+and comultiplication $m^* : \mathcal{H}^* \to \mathcal{H}^* \otimes \mathcal{H}^*$ for all $s \in
+\mathcal{X}^*$ as:
 \begin{equation*}
 m^*(s) = \sum\{ s_1 \otimes s_2 : s=s_1s_2 \}
 \end{equation*}
 which is the sum of all possible divisions of $s$ into its prefix and suffix \\
 and both extended linearly. \\
-Unit $u : K \to \mathcal{H}^*$:
+We define Unit $u : K \to \mathcal{H}^*$:
 \begin{equation*}
 u(1_K) = e
 \end{equation*}
@@ -1173,7 +1024,7 @@ For every $s \in \mathcal{X}^*$, it looks like this:
 {\Psi^*}^{[2]}(s) = \Delta^* m^*(s) = \Delta^* \sum\{s_1 \otimes s_2 : s=s_1s_2\} = \\
 \sum\{\Delta^*(s_1 \otimes s_2) : s=s_1s_2\} = \\
 \sum\{\sum\{s': s_1*s_2=s'\}:s=s_1s_2\} = \\
-\sum\{s' : s=s_1s_2\mathrm{\ and\ }s_1*s_2=s\}.
+\sum\{s' : s=s_1s_2\mathrm{\ and\ }s_1*s_2=s'\}.
 \end{gather*}
 In the similar way, for every $s \in \mathcal{X}^*$:
 \begin{gather*}
@@ -1185,12 +1036,12 @@ s=s_1\dots s_a\} = \\
 \end{gather*}
 \subsubsection{Graded dual}
 Now we will see that there is another method of introducing that structure.
-The structure of $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$ (where for all $i \in \mathbb{N}$
+The structure of $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$ (where for all natural $i$
 $\mathcal{H}_i^*$ is a vector space dual to $\mathcal{H}$) with actions induced by actions
 from Hopf algebra $\mathcal{H}$ turns out to be one described above. (Note that $\mathcal{H} =
 \displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i$ is isomorphic as a linear space
 to $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$.) \\
-\indent Let $\gdd{\mathcal{H}}$ denote $\displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$.
+\indent Let $\gdd{\mathcal{H}} \coloneqq \displaystyle\bigoplus^{\infty}_{i = 0} \mathcal{H}_i^*$.
 We define multiplication
 \text{$\Delta^* : \mathcal{H}^{\mathrm{gd}*} \otimes \gdd{\mathcal{H}} \to \gdd{\mathcal{H}}$} and
 comultiplication
@@ -1210,7 +1061,7 @@ for all $s \in \mathcal{X}^*$
 \begin{equation*}
 \varepsilon_{\gdd{\mathcal{H}}}(s^*) = \begin{cases}
 0 \mathrm{\ for\ } s^* \notin \mathcal{H}^*_0 \\
-1_K \mathrm{\ for\ } s \in \mathcal{H}^*_0
+1_K \mathrm{\ for\ } s^* \in \mathcal{H}^*_0
 \end{cases}
 \end{equation*}
 \indent\textbf{Reminder. } For a vector space $V$ with basis $\mathcal{B}$,
@@ -1277,7 +1128,7 @@ What is more we have that for all $a \in \mathbb{N}$:
     {m^*}^{[a]}(a^*)=a^*m^{[a]}
 \end{gather*}
 So as well $\Psi^{[a]}$ and ${\Psi^*}^{[a]}$ are conjugate to each other as linear transformations of
-$\mathcal{H}_\nu$.\\ That gives us that their matrixes written in basis of $\mathcal{H}_\nu$ are transpositions
+$\mathcal{H}_\nu$.\\ That gives us that their matrices written in basis of $\mathcal{H}_\nu$ are transpositions
 to each other.
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1299,43 +1150,54 @@ to each other.
 probabilities. Thus with a Markov chain one can associate a certain linear transformation given by that
 matrix. The following theorem states dependency in opposite direction - that given linear transformation
 with some features gives a Markov chain with the basis of transformed vector space as a state space. \\[8pt]
+\textbf{Definition.}
+For a linear space $V$ over field $K$, with basis $\mathcal{B}$ and its dual basis $\mathcal{B}^*$
+we define a linear function $\sigma_\mathcal{B} : V \to K$ as:
+\begin{equation*}
+    \sigma_\mathcal{B}(v)=\sum_{b_i^*\in\mathcal{B}^*}b_i^*(v)
+\end{equation*}
+$\sigma_\mathcal{B}(v)$ is then a sum of coefficients standing by elements of $\mathcal{B}$ in $v$
+written in $\mathcal{B}$.
 \begin{theorem}\label{theorem}
 Let $V$ be a linear space over field $K$ that is $\mathbb{R}$ or $\mathbb{Q}$,
  with basis $\mathcal{B}$.
 Let $\psi : V \to V$ be a linear operation such that for
-all $b \in \mathcal{B}$ coefficients of vector $\psi(b)$ written in $\mathcal{B}$ are $\geq 0$ and their
-sum $s$ is the same.
-($\forall_{b_1, b_2 \in \mathbb{B}}\ b_1^*\psi(b_2) \geq 0 \land \exists_{s \in K}\ \forall_{b \in
-\mathcal{B}}\ \displaystyle\sum_{b_i \in \mathcal{B}}b_i^*\psi(b) = s$).
-Let $x_0 \in V\setminus\{0\}$ and
-$n_0 \in \mathbb{N}$, $\alpha_1, \dots, \alpha_{n_0} \in K$, $b_1', \dots, b_{n_0}' \in \mathcal{B}$
-be such that $x_0 = \displaystyle\sum_{i = 0}^n \alpha_i b_i'$. Let $s_0 \coloneqq
-\displaystyle\sum_{i = 1}^n \alpha_i$. ($s_0 = \displaystyle\sum_{b \in \mathcal{B}} b^*(x_0)$).
-Let $(\mathcal{B}^\omega, \mathbb{P})$ be a probabilistic space. For all $i \in \mathbb{N}$ let
-$X_i : \mathcal{B}^\omega \to \mathcal{B}$ be a projection on the $i$-th co-ordinate.
-Let $\mathbb{P}$ be such that for every $n \in \mathbb{N}$, every
-$\ndotsm{b}{0}{n} \in \mathcal{B}$:
+all $b \in \mathcal{B}$ coefficients of vector $\psi(b)$ written in $\mathcal{B}$ are greater than $0$
+and their
+sum $s$ is the same
+$(\forall_{b_1, b_2 \in \mathcal{B}}\ b_1^*\psi(b_2) \geq 0 \land \exists_{s \in K}\ \forall_{b \in
+\mathcal{B}}\ \sigma_\mathcal{B}\psi(b) = s)$. \\
+Let $x_0 \in V\setminus\{0 \}$ and
+ $s_0 \coloneqq
+\sigma_\mathcal{B}(x_0)$. \\
+Let $(\mathcal{B}^\mathbb{N}, \mathbb{P})$ be a probabilistic space such that
+for every $n \in \mathbb{N}$, every $\ndotsm{b}{0}{n} \in \mathcal{B}$:
 \begin{equation*}
 \mathbb{P}(X_0 = b_0, X_1 = b_1, \dots, X_n = b_n) =
 \frac{b_0^*(x_0)}{s_0}\prod_{i = 0}^{n-1}\frac{b_{i+1}^*\psi(b_i)}{s}.
 \end{equation*}
+(where for all $i \in \mathbb{N}$
+$X_i : \mathcal{B}^\mathbb{N} \to \mathcal{B}$ is a projection on the $i$-th co-ordinate of
+$\mathcal{B}^\mathbb{N}$.) \\
 Then $(X_0, X_1, \dots)$ is a Markov chain with state space $\mathcal{B}$
 in which, for all $b_1, b_2 \in \mathcal{B}$, the probability of going from $b_1$ to $b_2$ is equal to the
 coefficient standing by $b_2$ in $\psi(b_1)$, written in $\mathcal{B}$, divided by $s$.
 \end{theorem}
 \begin{proof}
-We have defined a measure $\mathbb{P}$ on basic open subsets of $\mathcal{B}^\omega$. Definition is valid,
+We have defined a measure $\mathbb{P}$ on basic open subsets of $\mathcal{B}^\mathbb{N}$.
+Definition is valid,
 because for all $n \in \mathbb{N}$, all $\ndotsm{b}{0}{n} \in \mathcal{B}$:
 \begin{gather*}
 \sum_{b \in \mathcal{B}}\mathbb{P}(X_0 = b_0, X_1 = b_1, \dots, X_n = b_n, X_{n+1} = b) =
 \sum_{b \in \mathcal{B}}\frac{b_0^*(x_0)}{s_0}\prod_{i = 0}^{n-1}
 \frac{b_{i+1}^*\psi(b_i)}{s}\frac{b^*\psi(b_n)}{s} = \\
-\frac{b_0^*(x_0)}{s_0}\prod_{i=0}^{n-1}\frac{b_{i+1}^*\psi(b_i)}{s}\sum\frac{b^*\psi(b_n)}{s} =
-\mathbb{P}(X_0 = b_0, X_1 = b_1, \dots, X_n = b_n)\frac{\sum_{b \in \mathcal{B}}b^*\psi(b_n)}{s} = \\
+\frac{b_0^*(x_0)}{s_0}\prod_{i=0}^{n-1}\frac{b_{i+1}^*\psi(b_i)}{s}\sigma_\mathcal{B}\left(\frac{\psi(b_n)}
+{s}\right) =
+\mathbb{P}(X_0 = b_0, X_1 = b_1, \dots, X_n = b_n)\frac{\sigma_\mathcal{B}\psi(b_n)}{s} = \\
 \mathbb{P}(X_0 = b_0, X_1 = b_1, \dots, X_n = b_n)\frac{s}{s}  = \mathbb{P}(X_0 = b_0, X_1 = b_1, \dots,
 X_n = b_n).
 \end{gather*}
-Now we will show that $(X_0, X_1, \dots)$ is indeed a Markov. We will check the $(1.1)$ property from
+Now we will show that $(X_0, X_1, \dots)$ is indeed a Markov chain. We will check the $(1.1)$ property from
 Chapter 1. \\
 Let $\ndotsm{b}{0}{m} \in \mathbb{B}$ be a sequence such that
 \begin{equation*}
@@ -1357,16 +1219,18 @@ And on the other hand:
 \frac{\displaystyle\sum_{(c_0, \dots, c_{m-2}) \in \mathcal{B}^{m-1}}
 \mathbb{P}(X_0 = c_0, \dots, X_{m-2} = c_{m-2}, X_{m-1} = b_{m-1}, X_m = b_m)}
 {\displaystyle\sum_{(c_0, \dots, c_{m-2}) \in \mathcal{B}^{m-1}}\mathbb{P}(X_0 = c_0,
-\dots, X_{m-2} = c_{m-2}, X_{m-1} = c_{m-1})} = \\[16pt]
+\dots, X_{m-2} = c_{m-2}, X_{m-1} = b_{m-1})} = \\[16pt]
 \frac{\displaystyle\sum_{(c_0, \dots, c_{m-2}) \in \mathcal{B}^{m-1}}\frac{b_0^*\psi(x_0)}{s_0}
 \left(\displaystyle\prod_{i = 0}^{m-3}\frac{c_{i+1}^*\psi(c_i)}{s}\right)\frac{b_{m-1}^*\psi(c_{m-2})}{s}
 \frac{b_m^*\psi(b_{m-1})}{s}}{\displaystyle\sum_{(\ndotsm{c}{0}{m-2}) \in \mathcal{B}^{m-1}}
+\frac{b_0^*\psi(x_0)}{s_0}
 \left(\prod_{i= 0}^{m-3}\frac{c_{i+1}^*
 \psi(c_i)}{s}\right)\frac{b_{m-1}^*\psi(c_{m-2})}{s}} = \\[16pt]
 \frac{\frac{b_m^*\psi(b_{m-1})}{s}\displaystyle\sum_{(c_0, \dots, c_{m-2}) \in \mathcal{B}^{m-1}}
 \frac{b_0^*\psi(x_0)}{s_0}
 \left(\displaystyle\prod_{i = 0}^{m-3}\frac{c_{i+1}^*\psi(c_i)}{s}\right)\frac{b_{m-1}^*\psi(c_{m-2})}{s}}
-{\displaystyle\sum_{(\ndotsm{c}{0}{m-2}) \in \mathcal{B}^{m-1}}\left(\prod_{i= 0}^{m-3}\frac{c_{i+1}^*
+{\displaystyle\sum_{(\ndotsm{c}{0}{m-2}) \in \mathcal{B}^{m-1}}\frac{b_0^*\psi(x_0)}{s_0}
+\left(\prod_{i= 0}^{m-3}\frac{c_{i+1}^*
 \psi(c_i)}{s}\right)\frac{b_{m-1}^*\psi(c_{m-2})}{s}} = \frac{b_m^*\psi(b_{m-1})}{s}
 \end{gather*}
 and the chain indeed has claimed transition probability, because for all $b_1, b_2 \in \mathcal{B}$,
@@ -1403,7 +1267,7 @@ theorem \ref{theorem}, so they sets Markov chains on $\mathcal{B}_\nu$. As state
 for all $b \in \mathcal{B}_\nu$ the probability of going from $b$ to $b$ will be in this case equal to
 $|\nu|/2^{|\nu|})$ and probability to any other accessible $b' \in \mathcal{B}_\nu$ will be $1/2^\nu$. \\
 Analysis of $\mathcal{H}$ and $\mathcal{H}^*$ (see \ref{gcha}) gives that accessible states are exactly
-the same as in, accordingly inverse and forward riffle shuffle. So generated Markov chains are exactly
+the same as in, inverse and forward riffle shuffle, respectively. So generated Markov chains are exactly
 the one for inverse and forward riffle shuffle.
 Further analyses gives that for any $a \in \mathbb{N}$ coefficients of $\Psi^{[a]}(b)$ and ${\Psi^*}^{[a]}(b)$
 matches with transition probabilities from $b$ to corresponding outcomes. The sum of coefficients also
@@ -1412,8 +1276,8 @@ and that chains are the chains of inverse $a$-shuffling and forward $a$-shufflin
 
 \begin{theorem}
 For the fixed deck of cards $\nu$ and natural number $a$
-let $(F_0, F_1, \dots)$ and $(I_0, I_1, \dots)$ be Markov chains for
-accordingly forward and inverse riffle $a$-shuffle. Then
+let $(F_0, F_1, \dots)$ and $(I_0, I_1, \dots)$ be Markov chains for, respectively,
+forward and inverse riffle $a$-shuffle. Then
 \begin{equation*}
 \mathbb{P}(F_{n+1} = s_2 \mid F_n = s_1) = \mathbb{P}(I_{n+1} = s_1 \mid I_n = s_2).
 \end{equation*}
@@ -1484,14 +1348,14 @@ ah
 \end{gather*}
 
 \end{proof}
-Next observation is presented in ~\cite{Diaconis2014} and it is called the symmeterization lemma.
+Next observation is presented in ~\cite{Diaconis2014} and it is called the symmetrization lemma.
 \begin{theorem}
 (Symmetrization lemma). Let $x_1, \dots, x_n$ be primitive elements of any Hopf algebra $\mathcal{H}$, then
 $\displaystyle\sum_{\sigma \in S_k} x_{\sigma(1)}\cdot\ldots\cdot x_{\sigma(k)}$ is an eigenvector of
 $\Psi^{[a]}$ with eigenvalue $a^k$.
 \end{theorem}
 
-Now for the basis introduced at the end of \textbf{2.6.2} to be eigenbasis we only need to check that for
+Now for the basis introduced in \hyperref[basis]{\textbf{4.2}} to be eigenbasis we only need to check that for
 every Lyndon
 word $l$, element $\lambda(l)$ is primitive.
 
@@ -1529,8 +1393,8 @@ for every Lyndon word $l$. Hence
 \mathcal{E} \coloneqq\left\{\mathrm{sym}(w) : w \in \mathcal{X}^*\right\}
 \end{equation*}
 is a left eigenbasis of $\mathcal{H}$ with respect to $\Psi^{[a]}$ for every $a$ with an eigenvalue for every
-$w$ equal to number of Lyndon factors in $w$.
- What is more:
+$w$ equal to $a^{l_w}$, where $l_w$ number of Lyndon factors in the Lyndon factorisation of $w$.
+What is more:
 
 \begin{theorem}
 Let $\mathcal{H}$ be a free associative Hopf algebra of words over the alphabet $\mathcal{X}$.

@@ -222,11 +222,61 @@ a vector space of all linear functions from $V$ to $K$.
 \subsubsection{Tensor products}
 %
 First we will introduce tensor product of the vector spaces. Let $V, W$ be vector spaces over the field $K$
-with basises , respectively, $\mathcal{B}_V$, $\mathcal{B}_W$. \\
+with basises , respectively, $\mathcal{B}$, $\mathcal{C}$. \\
 We define tensor product $V \otimes W$ as a linear space with basis
 \begin{equation*}
-\{v \otimes w : v \in \mathcal{B}_V, w \in \mathcal{B}_W \}.
+\{v \otimes w : v \in \mathcal{B}, w \in \mathcal{C} \}.
 \end{equation*}
+
+For arbitrary elements $v \in V$, $w \in W$ such that $v =\sum_{b_i\in \mathcal{B}}
+\beta_1 b_i$ and $w = \sum_{c_i \in \mathcal{C}} \gamma_i c_i$ we will interpret
+expresion $v \otimes w$ as:
+\begin{equation*}
+        v \otimes w \coloneqq \sum_{b_i \in \mathcal{B}}\sum_{c_j \in \mathcal{C}} \beta_i\gamma_j
+        b_i\otimes c_j
+\end{equation*}
+
+\begin{observation}
+If $V$ and $W$ are finite dimensional and $\mathrm{ dim}(V)=n$, \text{$\mathrm{ dim}(W)=m$}, then
+$\mathrm{dim}(V \otimes W)=nm$.
+\end{observation}
+
+\begin{observation}\label{observation:2}
+If $V$ is a vector space over $K$, then all elements of $K \otimes V$ ($V \otimes K$) can be expressed in
+form $1 \otimes v$ ($v \otimes 1$) and there are natural isomorphisms $m_L : K \otimes V \to V$,
+($m_R : V \otimes K \to V$) given by
+\begin{align*}
+m_L(k \otimes v) &= kv, \\
+m_R(v \otimes k) &= kv.
+\end{align*}
+\end{observation}
+\begin{proof}
+An arbitrary element of $K \otimes V$ has form $\displaystyle\sum^n_{i=1}k_i \otimes v_i$ but
+\begin{equation*}
+\sum^n_{i=1}k_i \otimes v_i = \sum^n_{i=1} 1 \otimes k_iv_i = 1 \otimes \sum^n_{i=1}k_iv_i.
+\end{equation*}
+$m_L$ is linear (left for the reader) and is bijective because for all $v, v_1, v_2 \in V$
+\begin{equation*}
+\varphi(1 \otimes v) = v
+\end{equation*}
+and
+\begin{align*}
+1 \otimes v_1 = 1 \otimes v_2 &\iff 1 \otimes v_1 - 1 \otimes v_2 = 0 \iff \\
+1 \otimes (v_1 - v_2) = 0 &\iff v_1 -v_2 = 0 \iff v_1 = v_2.
+\end{align*}
+The proof for $V \otimes K$ and $m_R$ is analogous.\end{proof}
+ In the later sections we will use notations of
+$m_L$ and $m_R$ for those isomorphism for any space. \\
+\textbf{Remark. } In a special case when $V = W = K$ the natural isomorphisms described above
+take form of $m_K : K \otimes K \to K$ that for all $k_1, k_2\in K$
+\text{$m_K(k_1 \otimes k_2) = k_1k_2$}. This isomorphism of $K \otimes K$ and $K$ is just a field
+multiplication from $K$.
+\begin{observation}
+For vector spaces $U, V, W$ over the field $K$ there is a natural isomorphism between
+$(U \otimes V) \otimes W$ and $U \otimes (V \otimes W)$ therefore there is no ambiguity in writing
+$U \otimes V \otimes W$ or a product of any greater number of vector spaces in that way. (As well as denoting
+elements of their basises in the form "$u \otimes v \otimes w$".)
+\end{observation}
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
 %/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -667,7 +717,8 @@ $n \in \mathbb{N}$:
 \Delta(X^n) = \sum^n_{i = 0} \binom{n}{i} X^i \otimes X^{n-i}.
 \end{equation*}
 it extends linearly to the rest of $P$. \\
-Counit is then $0$ for all elements with positive degree (degree $>0$). Here comes the proof: \\
+Counit is then $1_K$ for $X^0$ since $\varepsilon u = I$ and
+$0$ for all elements with positive degree (degree $>0$). Here comes the proof: \\
 Since for all $n \in \mathcal{N}$
 \begin{align*}
 (I \otimes \varepsilon )\Delta(X^n) &= X^n \otimes 1_K &\mathrm{and} \\
@@ -1184,7 +1235,6 @@ in which, for all $b_1, b_2 \in \mathcal{B}$, the probability of going from $b_1
 coefficient standing by $b_2$ in $\psi(b_1)$, written in $\mathcal{B}$, divided by $s$.
 \end{theorem}
 \begin{proof}
-We have defined a measure $\mathbb{P}$ on basic open subsets of $\mathcal{B}^\mathbb{N}$.
 Definition is valid,
 because for all $n \in \mathbb{N}$, all $\ndotsm{b}{0}{n} \in \mathcal{B}$:
 \begin{gather*}
@@ -1331,7 +1381,7 @@ Let $h \in \mathcal{H}$ be a primitive element.
 \begin{gather*}
 \Psi^{[a]}(h) = \\ m^{[a]}\Delta^{[a]}(h) = \\
 m^{[a]}(\sum h_1 \otimes \dots \otimes h_i) = \\
-m^{[a]}(\underbrace{\overbrace{h \otimes 1_\mathcal{H} \otimes \dots \otimes 1_\mathcal{H}}^{i\
+m^{[a]}(ce{\overbrace{h \otimes 1_\mathcal{H} \otimes \dots \otimes 1_\mathcal{H}}^{i\
 \mathrm{factors}} +
 \overbrace{1_\mathcal{H} \otimes h \otimes \dots \otimes 1_\mathcal{H}}^{a\ \mathrm{factors}} +
 \dots +
